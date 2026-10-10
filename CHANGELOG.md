@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.36.0 · 10.10.2026 · Torch throw
+
+With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again.
+
 ## Alpha 1.35.0 · 10.10.2026 · Launcher colours
 
 The whole in-game interface now uses the launcher's colours: black, grey, orange and white. Menus, settings, inventory and hotbar match, and your lives are orange hexagons like the visor in the logo. Plus a bigger icon for the taskbar and desktop.

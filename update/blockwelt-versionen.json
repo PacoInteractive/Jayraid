@@ -1,22 +1,22 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-10T13:27:56.5083672+02:00",
-  "neueste": "2026-10-10-launcher-farben",
+  "erstellt": "2026-10-10T13:57:48.9072769+02:00",
+  "neueste": "2026-10-10-fackelwurf",
   "versionen": [
     {
-      "id": "2026-10-10-launcher-farben",
-      "name": "Alpha 1.35.0",
+      "id": "2026-10-10-fackelwurf",
+      "name": "Alpha 1.36.0",
       "datum": "10.10.2026",
-      "neu": "Launcher-Farben: Die ganze Oberflaeche im Spiel hat jetzt die Farben des Launchers: Schwarz, Grau, Orange und Weiss. Menues, Einstellungen, Inventar und Leiste passen zusammen, die Leben sind orange Waben wie das Visier im Logo. Dazu ein groesseres Symbol fuer Taskleiste und Desktop.",
-      "paket": "2026-10-10-launcher-farben.zip",
-      "paketSha256": "c277052968731c59bbc2d60ac1402ae79f7992ff63aa470f03272a2d55ff5bed",
-      "groesse": 2324303,
+      "neu": "Fackelwurf: Mit der Fackel in der Hand die rechte Maustaste halten: Punkte zeigen die Bahn, ein Umriss den Landeplatz. Loslassen wirft. Die Fackel steckt dann schraeg im Boden, brennt weiter, leuchtet und zuendet Holz, Laub und Gras an; im Wasser erlischt sie. Drueberlaufen hebt sie wieder auf.",
+      "paket": "2026-10-10-fackelwurf.zip",
+      "paketSha256": "29fe7b7be5dbfe5a2b6b230c9ec5aa1084d1ee96081bc6e4f6febf27d7449255",
+      "groesse": 2327067,
       "dateien": {
-        "Blockwelt2.Core.dll": "05d671a80c89e64e2fc1ad06037ee76d6b746297d4eb4cd78c9cf24253fe087d",
+        "Blockwelt2.Core.dll": "b16ead3b10449dcc527d388da2fe321ed5611baa1d442a06ab2437dd161215ad",
         "Blockwelt2.deps.json": "46d6e148b6388fe2be365a6262d61cec0e84169ba7bb50be23758fcca664241f",
-        "Blockwelt2.dll": "fdf2ffad4371bad6efdbb8356a0676466faf96dc060e1d5b194dc73778ef472b",
+        "Blockwelt2.dll": "741719fba128fc6a764b9cddbe1be2310f14bcee1464bee6ad7e985dfcf94459",
         "Blockwelt2.exe": "1655f7e580491dad14c0577758d3cedbd330c5855401fbb24d874b3cfa40ae79",
-        "Blockwelt2.Render.dll": "7b0585b79a69a8ec5a6867d6ece98794a397716f571a58b4c7169b6d23bfcaaa",
+        "Blockwelt2.Render.dll": "6ed6a573114edf1815a9db2df7ed654b0665c7680f85f4405bb695dd439e3398",
         "Blockwelt2.runtimeconfig.json": "95505548c838f72a6a829fd5332dbc674c715ce26a216e9eb32bec8b5821eae2",
         "OpenTK.Audio.OpenAL.dll": "f99dae9e1f6829bbd3203080b26061657e59eba0da963a5fd47b0566b0e99619",
         "OpenTK.Compute.dll": "2e959e7f8f61ad673ea2c48474eed04ca0808242b68d0c3d6f4fd891e2dbf056",
@@ -33,18 +33,35 @@
         "runtimes/osx-x64/native/libglfw.3.dylib": "8fbe63b69057050892c494cf6b3934ee294a09028656810bdc0bf81831021b71",
         "runtimes/win-x64/native/glfw3.dll": "e15c2dca331d4c15b7f60fbad81f7774ec4cf23c94484d4dc1912c016eaa93ea",
         "runtimes/win-x86/native/glfw3.dll": "20b769b3e1733bccd87a1fe309ffd02fcdcc6f88d5fceff433f056aaea4d08be",
-        "version.txt": "3f01477a52bc0785f1e5d0318784e5b993ea4b854592055b87a04c38c5047863"
+        "version.txt": "3c53529ea0af433cc2fc949d6c586fae7499f7e378e31f82b975525fc43a6bd2"
       },
       "eigenerOrdner": true,
-      "nr": 46,
-      "nameEn": "Alpha 1.35.0",
-      "neuEn": "Launcher colours: The whole in-game interface now uses the launcher\u0027s colours: black, grey, orange and white. Menus, settings, inventory and hotbar match, and your lives are orange hexagons like the visor in the logo. Plus a bigger icon for the taskbar and desktop."
+      "nr": 47,
+      "nameEn": "Alpha 1.36.0",
+      "neuEn": "Torch throw: With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again."
     }
   ],
   "launcher": {
-    "version": "1.3.2",
+    "version": "1.3.3",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "feedd5424772b4459f92332d277f16c0ca2c522442aa7445986c18a319adb1b7",
-    "groesse": 6762461
-  }
+    "paketSha256": "0656145de15886cc43cbda38cc8d4dbb63c2bcab9276b68aeb48f4780ff4a6d2",
+    "groesse": 6764096
+  },
+  "medien": [
+    {
+      "name": "vorschau-wellen.zip",
+      "sha256": "353b816c7120f852bbd5f6580c8d67710c49a399678ab8d511eb0690ad07db08",
+      "groesse": 43079657
+    },
+    {
+      "name": "vorschau-szene-04.zip",
+      "sha256": "4be76f00edf19365aed37575ed1c1a305ff45a8200eaf1f58aa855d18144b82f",
+      "groesse": 48921610
+    },
+    {
+      "name": "vorschau-szene-05.zip",
+      "sha256": "ce1760fc81634cebdb7e606f6d200ce6155f80bda1a88c9604404b1694d0d819",
+      "groesse": 44840159
+    }
+  ]
 }
