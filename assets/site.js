@@ -1,5 +1,5 @@
-// Jayraid – Website. Schreibt Ueberschriften in der Sechseckschrift des Launchers
-// (genau wie Look.HexText) und zeigt die neueste Version aus der signierten Liste.
+// Jayraid – website. Draws headings in the launcher's hexagon font (exactly like
+// Look.HexText) and shows the latest version from the signed version list.
 (function () {
   "use strict";
   var SQRT3 = Math.sqrt(3), NS = "http://www.w3.org/2000/svg";
@@ -9,7 +9,7 @@
     return f[ch] || f[ch.toUpperCase()] || null;
   }
 
-  // Wie Look.HexText: jede gesetzte Zelle ein Sechseck, ungerade Spalten eine halbe Zelle hoeher.
+  // Like Look.HexText: every set cell is a hexagon, odd columns sit half a cell higher.
   function hexText(text, cap, shadow) {
     var r = cap / (7 * SQRT3), colStep = 1.5 * r, rowStep = SQRT3 * r, gap = r * 0.9;
     var cells = [], pen = 0, top = 0, bottom = 7 * rowStep;
@@ -60,15 +60,15 @@
   function render(el) {
     var text = el.getAttribute("data-hex");
     el.textContent = "";
-    el.appendChild(hexText(text, parseFloat(el.getAttribute("data-cap")) || 16, el.hasAttribute("data-schatten")));
+    el.appendChild(hexText(text, parseFloat(el.getAttribute("data-cap")) || 16, el.hasAttribute("data-shadow")));
     if (!el.closest("[aria-label]")) el.setAttribute("aria-label", text);
     el.setAttribute("role", "img");
   }
 
   document.querySelectorAll("[data-hex]").forEach(render);
 
-  // Die neueste Version aus der unterschriebenen Liste (dieselbe, die der Launcher liest).
-  function mb(b) { return (b / 1024 / 1024).toFixed(1).replace(".", ",") + " MB"; }
+  // The latest version from the signed list (the same one the launcher reads).
+  function mb(b) { return (b / 1024 / 1024).toFixed(1) + " MB"; }
   fetch("update/blockwelt-versionen.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (list) {
@@ -76,15 +76,15 @@
       var v = (list.versionen || []).filter(function (x) { return x.id === list.neueste; })[0];
       var l = list.launcher;
       if (v) {
-        document.getElementById("neu-name").textContent = v.name;
-        document.getElementById("neu-datum").textContent = v.datum;
-        document.getElementById("neu-text").textContent = v.neu;
+        document.getElementById("news-name").textContent = v.nameEn || v.name;
+        document.getElementById("news-date").textContent = v.datum;
+        document.getElementById("news-text").textContent = v.neuEn || v.neu;
       }
       var parts = [];
-      if (v) parts.push("Spiel " + v.name);
+      if (v) parts.push("Game " + (v.nameEn || v.name));
       if (l) parts.push("Launcher " + l.version + " · " + mb(l.groesse));
       parts.push("Windows 10/11");
       document.getElementById("version").textContent = parts.join(" · ");
     })
-    .catch(function () { /* ohne Liste bleibt der Standardtext */ });
+    .catch(function () { /* without the list the default text stays */ });
 })();

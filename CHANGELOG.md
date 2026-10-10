@@ -1,186 +1,183 @@
-# Änderungen
+# Changelog
 
-Alle Versionen von Jayraid, die neueste oben. Versionsnamen: **Alpha 1.x.y** für die C#-Fassung (neuer Inhalt zählt die Mitte hoch, eine reine Nachbesserung das Ende), **Indev 0.N** für die früheren Browserfassungen.
+Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
-Die ausführliche Entwicklungsgeschichte mit allen technischen Einzelheiten steht in [ENTWICKLUNG.md](ENTWICKLUNG.md).
+## Alpha 1.34.0 · 09.10.2026 · Fire and sparks
 
-## Alpha 1.34.0 · 09.10.2026 · Feuer und Funken
+Burning ends again (water and rain put it out), rain douses burning blocks, fire flickers livelier and spreads smoothly. Particles carry a hex pixel pattern, hits show cross stars, and grass has no more grey dots.
 
-Der Brand am Koerper endet wieder (Wasser und Regen loeschen), Regen loescht brennende Bloecke, das Feuer lodert lebendiger und breitet sich fliessend aus. Partikel haben jetzt ein Hex-Pixel-Muster, Treffer zeigen Kreuzsterne, das Gras hat keine grauen Punkte mehr.
+## Alpha 1.33.0 · 09.10.2026 · Fire
 
-## Alpha 1.33.0 · 09.10.2026 · Feuer
+Wood, planks, leaves and grass catch fire: from a burning player, fire arrows and cannonballs. It spreads a little and chars the blocks away; water puts it out. All particles and the rain are now real 3D prisms instead of flat sprites.
 
-Holz, Bretter, Laub und Gras fangen Feuer: durch einen brennenden Spieler, Brandpfeile und Kanonenkugeln. Es breitet sich begrenzt aus und verkohlt die Bloecke, Wasser loescht. Alle Partikel und der Regen sind jetzt echte 3D-Prismen statt flacher Bildchen.
+## Alpha 1.32.0 · 09.10.2026 · Block throw
 
-## Alpha 1.32.0 · 09.10.2026 · Blockwurf
+Hold Q and right click to throw the block in your hand in an arc; it sets itself where it hits. A preview shows the path and landing cell, and every throw is the same at any frame rate (made for speedruns). The launcher starts the game without a terminal window.
 
-Q halten und rechts klicken wirft den Block in der Hand im Bogen nach vorn; wo er anstoesst, setzt er sich. Eine Vorschau zeigt Bahn und Landeplatz, jeder Wurf ist bei jeder Bildrate gleich (fuer Speedruns). Der Launcher startet das Spiel ohne Terminalfenster.
+## Alpha 1.31.0 · 08.10.2026 · Inventory
 
-## Alpha 1.31.0 · 08.10.2026 · Inventar
+Free inventory: key I unfolds 48 slots, drag anything anywhere and swap it. New worlds start empty; the sabre is loot from defeated sabre divers. You can man the howitzer yourself. Far fewer stutters while the world loads.
 
-Freies Inventar: Taste I klappt 48 Faecher auf, alles laesst sich mit der Maus verschieben und tauschen. Neue Welten beginnen leer, den Saebel gibt es nur von besiegten Saebeltauchern. Die Haubitze laesst sich selbst bedienen. Weniger Ruckler beim Nachladen der Welt.
+## Alpha 1.30.0 · 08.10.2026 · Twelve lives
 
-## Alpha 1.30.0 · 08.10.2026 · Zwoelf Leben
+A dozen whole lives as hexagons instead of half hearts: every hit costs exactly one. The bell's sound wave hits exactly as far as you can see it. The golem's treasure chest leaps in an arc in front of the player and visibly eats its way into the ground.
 
-Ein Dutzend ganze Leben als Waben statt halber Herzen: jeder Treffer kostet genau eins. Die Schallwelle der Glocke trifft genau so weit, wie man sie sieht. Die Schatztruhe des Golems springt im Bogen vor den Spieler und frisst sich sichtbar in den Boden.
+## Alpha 1.29.0 · 07.10.2026 · Pixel workshop
 
-## Alpha 1.29.0 · 07.10.2026 · Pixelwerkstatt
+The angry traders now slap you with fish made of hexagon pixels. New: the pixel workshop to pixel the sabre, torch, wands and the fish yourself (with an eyedropper) and put them straight into the game. The launcher version menu is smaller.
 
-Die wuetenden Haendler schlagen jetzt mit Fischen aus Sechseckpixeln zu. Neu: die Pixelwerkstatt, um Saebel, Fackel, Zauberstaebe und den Fisch selbst zu pixeln (mit Pipette) und direkt ins Spiel zu uebernehmen. Das Versionsmenue im Launcher ist kleiner.
+## Alpha 1.28.0 · 07.10.2026 · Cave fires
 
-## Alpha 1.28.0 · 07.10.2026 · Hoehlenfeuer
+Green fires in the caves, the green cave wand (sometimes from traders) shows the way, bell battle music, hexagon buttons and inventory, torch and wand made of hexagons, outlines between stacked blocks fixed.
 
-Gruene Feuer in den Hoehlen, der gruene Hoehlenstab (manchmal vom Haendler) zeigt den Weg dorthin, Glocken-Kampfmusik, Knoepfe und Inventar als Waben, Fackel und Stab aus Waben, Umrisslinien zwischen gestapelten Bloecken behoben.
+## Alpha 1.27.0 · 06.10.2026 · The ending
 
-## Alpha 1.27.0 · 06.10.2026 · Spielende
+Jayraid has an ending: the bell creature on the ships guards the wand, a blue companion from the caves, the golem only topples to the sabre and only dies to the wand, the treasure chest and the credits. Also: jump out of the water onto a low shore.
 
-Jayraid hat ein Ende: das Glockenwesen auf den Schiffen bewacht den Zauberstab, ein blauer Begleiter aus den Hoehlen, der Golem stuerzt nur durch den Saebel und stirbt nur durch den Stab, die Schatztruhe und der Abspann. Dazu: aus dem Wasser ans Ufer springen.
+## Alpha 1.26.0 · 06.10.2026 · Shadows and bloom
 
-## Alpha 1.26.0 · 06.10.2026 · Schatten und Bloom
+Golem, divers and guns cast shadows and stand in the shade of trees and walls; the sun, fire and the golem furnace glow beyond their edges (both under Light in the settings).
 
-Golem, Taucher und Geschütze werfen Schatten und stehen im Schatten von Bäumen und Mauern; Sonne, Feuer und der Ofen des Golems leuchten über ihren Rand hinaus (beides in den Einstellungen unter Licht).
+## Alpha 1.25.0 · 06.10.2026 · Ambient occlusion
 
-## Alpha 1.25.0 · 06.10.2026 · Umgebungsverdeckung
+Niches, wall bases, ground under roofs and tree crowns and narrow gorges get less skylight: short rays check the surroundings of every face.
 
-Nischen, Mauerfüße, der Boden unter Dächern und Baumkronen und enge Schluchten bekommen weniger Himmelslicht: kurze Strahlen prüfen die Umgebung jeder Fläche.
+## Alpha 1.24.0 · 06.10.2026 · Death animation
 
-## Alpha 1.24.0 · 06.10.2026 · Todesanimation
+When you die, the view tips to the ground, hand and sabre crumble into hexagons, and the screen goes dark cell by cell.
 
-Beim Sterben kippt der Blick zu Boden, Hand und Säbel zerfallen in Sechsecke, das Bild wird Wabe für Wabe dunkel.
+## Alpha 1.23.2 · 06.10.2026 · Reset ruins
 
-## Alpha 1.23.2 · 06.10.2026 · Ruinen zurücksetzen
+/ruine leads to the nearest untouched ruin; /ruine neu resets a ruin after a fight.
 
-/ruine führt zur nächsten unberührten Ruine; /ruine neu setzt eine bekämpfte Ruine zurück.
+## Alpha 1.23.1 · 04.10.2026 · Version numbers
 
-## Alpha 1.23.1 · 04.10.2026 · Versionsnummern
+Every version carries its Alpha number; the game shows it in the main menu.
 
-Jede Version trägt ihre Alpha-Nummer; das Spiel zeigt sie im Hauptmenü.
+## Alpha 1.23.0 · 04.10.2026 · Boss music
 
-## Alpha 1.23.0 · 04.10.2026 · Bossmusik
+Its own music for the golem fight: slower, deeper, with heavy bass. It never mixes with the enemy music.
 
-Eigene Musik im Kampf gegen den Golem: langsamer, tiefer, mit schwerem Bass. Sie mischt sich nie mit der Gegner-Musik.
+## Alpha 1.22.0 · 04.10.2026 · Rivers
 
-## Alpha 1.22.0 · 04.10.2026 · Flüsse
+New worlds have brooks springing from hillsides and great rivers carving deep valleys down to the sea.
 
-Neue Welten haben Bäche, die an Hängen entspringen, und große Flüsse, die sich tiefe Täler bis zum Meer graben.
+## Alpha 1.21.1 · 04.10.2026 · Golem improved
 
-## Alpha 1.21.1 · 04.10.2026 · Golem verbessert
-
-Der Golem wirft Taucher nach dir, springt aus Kratern und reißt Löcher in die Mauer.
+The golem throws divers at you, leaps out of craters and tears holes in the wall.
 
 ## Alpha 1.21.0 · 04.10.2026 · Golem
 
-Burgruinen mit einem Golem: leise sein, sonst wacht er auf. Neues Befehlsfeld, z. B. /ruine.
+Castle ruins with a golem: be quiet, or it wakes up. New command field, e.g. /ruine.
 
 ## Alpha 1.20.0 · 04.10.2026 · Logo
 
-Das neue Jayraid-Logo im Hauptmenü, als Fenster- und Programmsymbol.
+The new Jayraid logo in the main menu, as window and program icon.
 
 ## Alpha 1.19.0 · 04.10.2026 · Jayraid
 
-Das Spiel heißt jetzt Jayraid: neuer Name in Fenster, Menü und Launcher.
+The game is now called Jayraid: new name in window, menu and launcher.
 
-## Alpha 1.18.0 · 04.10.2026 · Deutsch
+## Alpha 1.18.0 · 04.10.2026 · German
 
-Das Spiel spricht Deutsch: Sprache im Spiel oder im Launcher wählen.
+The game speaks German: pick the language in the game or in the launcher.
 
-## Alpha 1.17.0 · 03.10.2026 · Wellengang
+## Alpha 1.17.0 · 03.10.2026 · Waves
 
-Animiertes Wasser mit Wellengang und Glitzern.
+Animated water with swells and glitter.
 
-## Alpha 1.16.0 · 03.10.2026 · Neues Wasser
+## Alpha 1.16.0 · 03.10.2026 · New water
 
-Wasser mit Tiefe und Farbverläufen; weniger Felsnadeln (Generator 3).
+Water with depth and colour gradients; fewer rock spires (generator 3).
 
-## Alpha 1.15.0 · 03.10.2026 · Schärfefilter
+## Alpha 1.15.0 · 03.10.2026 · Sharpening
 
-Der Schärfefilter im Grafikmenü.
+The sharpening filter in the graphics menu.
 
-## Alpha 1.14.0 · 03.10.2026 · Weltschmiede
+## Alpha 1.14.0 · 03.10.2026 · Worldsmith
 
-Welt- und Texturwerte aus der Weltschmiede.
+World and texture values from the Worldsmith.
 
-## Alpha 1.13.1 · 03.10.2026 · Flieger überarbeitet
+## Alpha 1.13.1 · 03.10.2026 · Flyer reworked
 
-Der Flieger fliegt besser und erscheint auch ohne Schaden.
+The flyer flies better and appears with damage off too.
 
-## Alpha 1.13.0 · 02.10.2026 · Flieger
+## Alpha 1.13.0 · 02.10.2026 · The flyer
 
-Neuer Gegner: der fliegende Taucher mit Feuerpfeilen.
+New enemy: the flying diver with fire arrows.
 
-## Alpha 1.12.0 · 02.10.2026 · Weltgenerierung
+## Alpha 1.12.0 · 02.10.2026 · World generation
 
-Neue Welten: Gebirge, Höhleneingänge, viele Baumarten, 16 Varianten je Block.
+New worlds: mountain ranges, cave entrances, many kinds of trees, 16 variants per block.
 
-## Alpha 1.11.0 · 01.10.2026 · Texturen
+## Alpha 1.11.0 · 01.10.2026 · Textures
 
-Neue Blocktexturen.
+New block textures.
 
-## Alpha 1.10.0 · 01.10.2026 · Fackel
+## Alpha 1.10.0 · 01.10.2026 · Torch
 
-Die Fackel, reichere Höhlen, neue Trefferzahlen.
+The torch, richer caves, new hit counts.
 
-## Alpha 1.9.0 · 30.09.2026 · Höhlenlicht
+## Alpha 1.9.0 · 30.09.2026 · Cave light
 
-Dunkle Höhlen mit echtem Licht.
+Dark caves with real light.
 
-## Alpha 1.8.2 · 30.09.2026 · Kanon
+## Alpha 1.8.2 · 30.09.2026 · Canon
 
-Deine Gegner-Musik mit Kanon.
+Your enemy music with its canon.
 
-## Alpha 1.8.1 · 30.09.2026 · Vor dem Kanon
+## Alpha 1.8.1 · 30.09.2026 · Before the canon
 
-Zwischenstand der Gegner-Musik.
+Work in progress of the enemy music.
 
-## Alpha 1.8.0 · 29.09.2026 · Musik
+## Alpha 1.8.0 · 29.09.2026 · Music
 
-Musik, wenn Gegner nahen, und der Blockwelt Komponist.
+Music when enemies approach, and the Blockwelt Composer.
 
-## Alpha 1.7.1 · 29.09.2026 · Verrottete hörbar
+## Alpha 1.7.1 · 29.09.2026 · The rotten, audible
 
-Die Verrotteten schleifen und stöhnen.
+The rotten drag and groan.
 
-## Alpha 1.7.0 · 29.09.2026 · Verrottete
+## Alpha 1.7.0 · 29.09.2026 · The rotten
 
-Neuer Gegner: verrottete Taucher in Höhlen.
+New enemy: rotten divers in caves.
 
-## Alpha 1.6.1 · 29.09.2026 · Hüttenbau
+## Alpha 1.6.1 · 29.09.2026 · Hut building
 
-Schiffbrüchige bauen ungestört ihre Hütten.
+Castaways build their huts in peace.
 
-## Alpha 1.6.0 · 29.09.2026 · Geräusche
+## Alpha 1.6.0 · 29.09.2026 · Sounds
 
-Echte Materialgeräusche: Schritte, Graben, Setzen, Wasser.
+Real material sounds: steps, digging, placing, water.
 
-## Alpha 1.5.1 · 29.09.2026 · Fehler behoben
+## Alpha 1.5.1 · 29.09.2026 · Bugs fixed
 
-Die ersten Funde des Fehlerjägers sind behoben.
+The first findings of the bug hunter are fixed.
 
-## Alpha 1.5.0 · 28.09.2026 · Fehlerjäger
+## Alpha 1.5.0 · 28.09.2026 · Bug hunter
 
-Der Fehlerjäger sucht automatisch Fehler im Spiel.
+The bug hunter searches the game for errors automatically.
 
-## Alpha 1.4.1 · 28.09.2026 · Kanten-Fix
+## Alpha 1.4.1 · 28.09.2026 · Ledge fix
 
-Taucher hängen nicht mehr an Kanten in der Luft.
+Divers no longer hang in the air at ledges.
 
-## Alpha 1.4.0 · 28.09.2026 · Eigener Verstand
+## Alpha 1.4.0 · 28.09.2026 · Minds of their own
 
-Taucher merken sich, wie du kämpfst, und passen sich an.
+Divers remember how you fight and adapt.
 
-## Alpha 1.3.0 · 28.09.2026 · Säbelstich
+## Alpha 1.3.0 · 28.09.2026 · Sabre thrust
 
-Taucher stechen mit dem Säbel; Live-Ansicht im Training.
+Divers thrust with the sabre; live view in training.
 
-## Alpha 1.2.0 · 27.09.2026 · KI-Training
+## Alpha 1.2.0 · 27.09.2026 · AI training
 
-Die Taucher wurden im KI-Trainingszentrum trainiert.
+The divers were trained in the AI training centre.
 
-## Alpha 1.1.0 · 27.09.2026 · Alles aus Stand 38
+## Alpha 1.1.0 · 27.09.2026 · Everything from edition 38
 
-Alles aus der Browserfassung 38: Taucher, Bogenschützen, Kanonen, Mörser, Haubitze, Untergang, Händler, Wetter.
+Everything from browser edition 38: divers, archers, cannons, mortar, howitzer, sinking ships, traders, weather.
 
-## Alpha 1.0.0 · 20.09.2026 · Erste C#-Fassung
+## Alpha 1.0.0 · 20.09.2026 · First C# edition
 
-Die erste spielbare Fassung in C#: Welt, Bauen, Abbauen, Wasser.
-
+The first playable C# edition: world, building, mining, water.

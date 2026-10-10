@@ -1,6 +1,6 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-10T11:45:34.0422853+02:00",
+  "erstellt": "2026-10-10T11:56:51.322863+02:00",
   "neueste": "2026-10-09-feuer-fix",
   "versionen": [
     {
@@ -44,7 +44,7 @@
   "launcher": {
     "version": "1.3.0",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "840ba48fb9ddcf41498fe57b0a28ddcc5f8ae0627497b940f31949d1c5439aaa",
-    "groesse": 6780782
+    "paketSha256": "1090672fb53b22c60604b2e25bc3327c99c5723869d13e685e0cfbd6577e34a3",
+    "groesse": 6780609
   }
 }

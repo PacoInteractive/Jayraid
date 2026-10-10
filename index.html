@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jayraid – Hexagon-Voxel-Abenteuer</title>
-<meta name="description" content="Jayraid: Inseln aus Sechseck-Säulen, Piratenschiffe, Taucher, Höhlen, Burgruinen und ein Golem. Offizieller Download des Jayraid Launchers.">
+<title>Jayraid – a hexagon voxel adventure</title>
+<meta name="description" content="Jayraid: islands of hexagon pillars, pirate ships, divers, caves, castle ruins and a golem. Official download of the Jayraid Launcher.">
 <meta property="og:title" content="Jayraid">
-<meta property="og:description" content="Ein Hexagon-Voxel-Abenteuer. Offizieller Download des Jayraid Launchers.">
-<meta property="og:image" content="bilder/titel.jpg">
+<meta property="og:description" content="A hexagon voxel adventure. Official download of the Jayraid Launcher.">
+<meta property="og:image" content="images/title.jpg">
 <meta name="theme-color" content="#111112">
 <link rel="icon" href="assets/symbol.png">
 <link rel="stylesheet" href="assets/site.css">
@@ -26,79 +26,79 @@
     <span class="word"><span data-hex="JAY" data-cap="20"></span><span class="orange" data-hex="RAID" data-cap="20"></span><span class="sub" data-hex="LAUNCHER" data-cap="9"></span></span>
   </a>
   <nav>
-    <a href="#spiel"><i></i><span data-hex="DAS SPIEL" data-cap="11"></span></a>
-    <a href="#neu"><i></i><span data-hex="NEU" data-cap="11"></span></a>
-    <a href="#installieren"><i></i><span data-hex="INSTALLIEREN" data-cap="11"></span></a>
-    <a href="#steuerung"><i></i><span data-hex="STEUERUNG" data-cap="11"></span></a>
+    <a href="#game"><i></i><span data-hex="THE GAME" data-cap="11"></span></a>
+    <a href="#news"><i></i><span data-hex="NEWS" data-cap="11"></span></a>
+    <a href="#install"><i></i><span data-hex="INSTALL" data-cap="11"></span></a>
+    <a href="#controls"><i></i><span data-hex="CONTROLS" data-cap="11"></span></a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-bild" style="background-image:url('bilder/titel.jpg')"></div>
-  <div class="hero-inhalt">
-    <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="64" data-schatten></span><span class="orange" data-hex="RAID" data-cap="64" data-schatten></span></h1>
-    <p class="lead">Ein Hexagon-Voxel-Abenteuer. Inseln aus Sechseck-Säulen, Piratenschiffe, Taucher mit Säbel und Bogen,
-      Höhlen voller Verrotteter, Burgruinen mit einem schlafenden Golem – und ein Ende, das man erreichen kann.</p>
-    <a class="knopf gross" id="download" href="update/Jayraid-Launcher.zip" download>
-      <span data-hex="HERUNTERLADEN" data-cap="22"></span>
+  <div class="hero-image" style="background-image:url('images/title.jpg')"></div>
+  <div class="hero-content">
+    <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="64" data-shadow></span><span class="orange" data-hex="RAID" data-cap="64" data-shadow></span></h1>
+    <p class="lead">A hexagon voxel adventure. Islands of hexagon pillars, pirate ships, divers with sabres and bows,
+      caves full of rotten ones, castle ruins with a sleeping golem – and an ending you can actually reach.</p>
+    <a class="button big" id="download" href="update/Jayraid-Launcher.zip" download>
+      <span data-hex="DOWNLOAD" data-cap="22"></span>
     </a>
     <p class="info" id="version">Jayraid Launcher · Windows 10/11</p>
-    <p class="info klein">Benötigt die <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a>.
-      Einmal installiert, holt sich der Launcher jede neue Version selbst – mit einem großen <b>UPDATE</b>-Knopf.</p>
+    <p class="info small">Requires the <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a>.
+      Once installed, the launcher fetches every new version by itself – with a big <b>UPDATE</b> button.</p>
   </div>
 </section>
 
 <main>
 
-<section id="spiel">
-  <h2><span data-hex="DAS SPIEL" data-cap="26"></span></h2>
-  <div class="karten">
-    <article class="karte"><img src="bilder/golem.jpg" alt="Golem in der Burgruine" loading="lazy">
-      <div><h3>Burgruinen und der Golem</h3><p>Ein angeketteter Steinriese schläft an der Rückwand. Leise sein! Wach wird er zum Bosskampf: nur der Säbel wirft ihn um, nur der Zauberstab verletzt ihn am Boden.</p></div></article>
-    <article class="karte"><img src="bilder/feuer.jpg" alt="Brennende Bäume" loading="lazy">
-      <div><h3>Feuer</h3><p>Holz, Bretter, Laub und Gras fangen Feuer – durch Brandpfeile, Kanonenkugeln oder einen brennenden Spieler. Wasser und Regen löschen.</p></div></article>
-    <article class="karte"><img src="bilder/inventar.jpg" alt="Inventar" loading="lazy">
-      <div><h3>Freies Inventar</h3><p>Taste <kbd>I</kbd> klappt 48 Wabenfächer auf; alles lässt sich ziehen, stapeln und tauschen. Neue Welten beginnen leer.</p></div></article>
-    <article class="karte"><img src="bilder/blockwurf.jpg" alt="Blockwurf" loading="lazy">
-      <div><h3>Blockwurf für Speedruns</h3><p><kbd>Q</kbd> halten + Rechtsklick wirft den Block im Bogen. Die Vorschau zeigt den Landeplatz – jeder Wurf ist bei jeder Bildrate gleich.</p></div></article>
-    <article class="karte"><img src="bilder/haendler-fisch.jpg" alt="Händler mit Fisch" loading="lazy">
-      <div><h3>Ein echtes Ende</h3><p>Das Glockenwesen auf den Piratenschiffen bewacht den Zauberstab. Fällt es, gehen die Händler mit Hexpixel-Fischen auf dich los.</p></div></article>
-    <article class="karte"><img src="bilder/pixelwerkstatt.jpg" alt="Pixelwerkstatt" loading="lazy">
-      <div><h3>Pixelwerkstatt</h3><p>Säbel, Fackel, Zauberstäbe und den Fisch Wabe für Wabe selbst pixeln und direkt ins laufende Spiel übernehmen.</p></div></article>
+<section id="game">
+  <h2><span data-hex="THE GAME" data-cap="26"></span></h2>
+  <div class="cards">
+    <article class="card"><img src="images/golem.jpg" alt="Golem in the castle ruin" loading="lazy">
+      <div><h3>Castle ruins and the golem</h3><p>A chained stone giant sleeps against the back wall. Be quiet! Once awake it becomes a boss fight: only the sabre knocks it over, only the wand hurts it on the ground.</p></div></article>
+    <article class="card"><img src="images/fire.jpg" alt="Burning trees" loading="lazy">
+      <div><h3>Fire</h3><p>Logs, planks, leaves and grass catch fire – from fire arrows, cannonballs or a burning player. Water and rain put it out.</p></div></article>
+    <article class="card"><img src="images/inventory.jpg" alt="Inventory" loading="lazy">
+      <div><h3>Free inventory</h3><p>Press <kbd>I</kbd> to unfold 48 honeycomb slots; drag, stack and swap everything. New worlds start empty.</p></div></article>
+    <article class="card"><img src="images/block-throw.jpg" alt="Block throw" loading="lazy">
+      <div><h3>Block throw for speedruns</h3><p>Hold <kbd>Q</kbd> and right click to throw a block in an arc. The preview shows where it lands – every throw is the same at any frame rate.</p></div></article>
+    <article class="card"><img src="images/trader-fish.jpg" alt="Trader with a fish" loading="lazy">
+      <div><h3>A real ending</h3><p>The bell creature on the pirate ships guards the wand. Once it falls, the traders come after you with hex-pixel fish.</p></div></article>
+    <article class="card"><img src="images/pixel-workshop.jpg" alt="Pixel workshop" loading="lazy">
+      <div><h3>Pixel workshop</h3><p>Pixel the sabre, torch, wands and the fish yourself, hexagon by hexagon, and apply them straight to the running game.</p></div></article>
   </div>
 </section>
 
-<section id="neu">
-  <h2><span data-hex="NEU" data-cap="26"></span></h2>
-  <div class="panel neu">
-    <div class="neu-kopf"><span class="neu-name" id="neu-name">Alpha</span><span class="marke" data-hex="NEUESTE" data-cap="10"></span><span class="neu-datum" id="neu-datum"></span></div>
-    <p id="neu-text">Die neueste Version steht im Launcher bereit.</p>
-    <p class="klein"><a href="CHANGELOG.md">Alle Änderungen seit der ersten Version →</a></p>
+<section id="news">
+  <h2><span data-hex="NEWS" data-cap="26"></span></h2>
+  <div class="panel news">
+    <div class="news-head"><span class="news-name" id="news-name">Alpha</span><span class="tag" data-hex="LATEST" data-cap="10"></span><span class="news-date" id="news-date"></span></div>
+    <p id="news-text">The latest version is ready in the launcher.</p>
+    <p class="small"><a href="CHANGELOG.md">All changes since the very first version →</a></p>
   </div>
 </section>
 
-<section id="installieren">
-  <h2><span data-hex="INSTALLIEREN" data-cap="26"></span></h2>
-  <ol class="schritte">
-    <li class="panel"><span class="nr" data-hex="1" data-cap="28"></span><div><h3>Herunterladen</h3><p><a href="update/Jayraid-Launcher.zip" download>Jayraid-Launcher.zip</a> laden und in einen eigenen Ordner entpacken, z. B. <code>Dokumente\Jayraid</code>.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="2" data-cap="28"></span><div><h3>Launcher starten</h3><p><code>Jayraid-Launcher.exe</code> öffnen. Fragt Windows nach, auf „Weitere Informationen → Trotzdem ausführen“ klicken.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="3" data-cap="28"></span><div><h3>Installieren und spielen</h3><p><b>INSTALLIEREN</b>, dann <b>SPIELEN</b>. Jede Datei wird vorher gegen die unterschriebene Versionsliste geprüft.</p></div></li>
+<section id="install">
+  <h2><span data-hex="INSTALL" data-cap="26"></span></h2>
+  <ol class="steps">
+    <li class="panel"><span class="nr" data-hex="1" data-cap="28"></span><div><h3>Download</h3><p>Get <a href="update/Jayraid-Launcher.zip" download>Jayraid-Launcher.zip</a> and unpack it into a folder of its own, e.g. <code>Documents\Jayraid</code>.</p></div></li>
+    <li class="panel"><span class="nr" data-hex="2" data-cap="28"></span><div><h3>Start the launcher</h3><p>Open <code>Jayraid-Launcher.exe</code>. If Windows asks, click “More info → Run anyway”.</p></div></li>
+    <li class="panel"><span class="nr" data-hex="3" data-cap="28"></span><div><h3>Install and play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. Every file is checked against the signed version list first.</p></div></li>
   </ol>
-  <p class="hinweis panel">Neue Versionen kommen von selbst: Beim Start fragt der Launcher hier nach. Gibt es etwas Neues, wird der große Knopf zu
-    <b class="orange">UPDATE</b> – ein Klick, fertig. Auch der Launcher selbst aktualisiert sich so.</p>
+  <p class="note panel">New versions arrive by themselves: on start the launcher checks this site. If there is something new, the big button turns into
+    <b class="orange">UPDATE</b> – one click and you are done. The launcher updates itself the same way.</p>
 </section>
 
-<section id="steuerung">
-  <h2><span data-hex="STEUERUNG" data-cap="26"></span></h2>
-  <div class="panel tabelle">
-    <div><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <kbd>Shift</kbd> <kbd>Leertaste</kbd></span><span>Laufen, Sprinten, Springen</span></div>
-    <div><span>Linksklick / Rechtsklick</span><span>Abbauen, Säbelhieb · Bauen, Säbelstich, Geschütz bedienen</span></div>
-    <div><span><kbd>1</kbd> … <kbd>0</kbd>, Mausrad</span><span>Fach der Leiste wählen</span></div>
-    <div><span><kbd>I</kbd></span><span>Inventar auf/zu</span></div>
-    <div><span><kbd>Q</kbd> · <kbd>Q</kbd> + Rechtsklick</span><span>Block setzen · Block werfen</span></div>
-    <div><span><kbd>T</kbd> <kbd>R</kbd> <kbd>C</kbd></span><span>Fackel, goldener Zauberstab, grüner Höhlenstab</span></div>
-    <div><span><kbd>E</kbd></span><span>Handeln, Truhe öffnen, dem Begleiter einen Säbel geben</span></div>
-    <div><span><kbd>Esc</kbd> <kbd>F11</kbd></span><span>Pause, Vollbild</span></div>
+<section id="controls">
+  <h2><span data-hex="CONTROLS" data-cap="26"></span></h2>
+  <div class="panel table">
+    <div><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <kbd>Shift</kbd> <kbd>Space</kbd></span><span>Walk, sprint, jump</span></div>
+    <div><span>Left click / right click</span><span>Mine, sabre slash · build, sabre thrust, man a gun</span></div>
+    <div><span><kbd>1</kbd> … <kbd>0</kbd>, mouse wheel</span><span>Choose a hotbar slot</span></div>
+    <div><span><kbd>I</kbd></span><span>Open / close the inventory</span></div>
+    <div><span><kbd>Q</kbd> · <kbd>Q</kbd> + right click</span><span>Place a block · throw a block</span></div>
+    <div><span><kbd>T</kbd> <kbd>R</kbd> <kbd>C</kbd></span><span>Torch, golden wand, green cave wand</span></div>
+    <div><span><kbd>E</kbd></span><span>Trade, open a chest, give your companion a sabre</span></div>
+    <div><span><kbd>Esc</kbd> <kbd>F11</kbd></span><span>Pause, full screen</span></div>
   </div>
 </section>
 
@@ -106,8 +106,8 @@
 
 <footer>
   <span class="footer-mark"></span>
-  <p>Jayraid · © 2026 Jaylen (PacoInteractive). Alle Rechte vorbehalten. · <a href="LICENSE">Lizenz</a></p>
-  <p class="klein">Dies ist die offizielle Seite von Jayraid. Lade den Launcher nur von hier – er prüft jede Version auf Echtheit.</p>
+  <p>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved. · <a href="LICENSE">License</a></p>
+  <p class="small">This is the official Jayraid site. Only download the launcher from here – it verifies every version.</p>
 </footer>
 
 <script src="assets/hexfont.js"></script>
