@@ -1,21 +1,21 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-10T12:29:16.9264366+02:00",
-  "neueste": "2026-10-09-feuer-fix",
+  "erstellt": "2026-10-10T13:27:56.5083672+02:00",
+  "neueste": "2026-10-10-launcher-farben",
   "versionen": [
     {
-      "id": "2026-10-09-feuer-fix",
-      "name": "Alpha 1.34.0",
-      "datum": "09.10.2026",
-      "neu": "Feuer und Funken: Der Brand am Koerper endet wieder (Wasser und Regen loeschen), Regen loescht brennende Bloecke, das Feuer lodert lebendiger und breitet sich fliessend aus. Partikel haben jetzt ein Hex-Pixel-Muster, Treffer zeigen Kreuzsterne, das Gras hat keine grauen Punkte mehr.",
-      "paket": "2026-10-09-feuer-fix.zip",
-      "paketSha256": "f6beae078fcf7bcfe1391eefc0d0ee768ffe80e357d069aa4626187df31338c9",
-      "groesse": 2322715,
+      "id": "2026-10-10-launcher-farben",
+      "name": "Alpha 1.35.0",
+      "datum": "10.10.2026",
+      "neu": "Launcher-Farben: Die ganze Oberflaeche im Spiel hat jetzt die Farben des Launchers: Schwarz, Grau, Orange und Weiss. Menues, Einstellungen, Inventar und Leiste passen zusammen, die Leben sind orange Waben wie das Visier im Logo. Dazu ein groesseres Symbol fuer Taskleiste und Desktop.",
+      "paket": "2026-10-10-launcher-farben.zip",
+      "paketSha256": "c277052968731c59bbc2d60ac1402ae79f7992ff63aa470f03272a2d55ff5bed",
+      "groesse": 2324303,
       "dateien": {
         "Blockwelt2.Core.dll": "05d671a80c89e64e2fc1ad06037ee76d6b746297d4eb4cd78c9cf24253fe087d",
         "Blockwelt2.deps.json": "46d6e148b6388fe2be365a6262d61cec0e84169ba7bb50be23758fcca664241f",
-        "Blockwelt2.dll": "df13b4163d9c0f770d850278bd09a11332ac93071ecfe9d7449b653424ebd467",
-        "Blockwelt2.exe": "61303addce24c3cc912a5151988014a9429f67e7501d73d05f4c0523c61020cd",
+        "Blockwelt2.dll": "fdf2ffad4371bad6efdbb8356a0676466faf96dc060e1d5b194dc73778ef472b",
+        "Blockwelt2.exe": "1655f7e580491dad14c0577758d3cedbd330c5855401fbb24d874b3cfa40ae79",
         "Blockwelt2.Render.dll": "7b0585b79a69a8ec5a6867d6ece98794a397716f571a58b4c7169b6d23bfcaaa",
         "Blockwelt2.runtimeconfig.json": "95505548c838f72a6a829fd5332dbc674c715ce26a216e9eb32bec8b5821eae2",
         "OpenTK.Audio.OpenAL.dll": "f99dae9e1f6829bbd3203080b26061657e59eba0da963a5fd47b0566b0e99619",
@@ -33,18 +33,18 @@
         "runtimes/osx-x64/native/libglfw.3.dylib": "8fbe63b69057050892c494cf6b3934ee294a09028656810bdc0bf81831021b71",
         "runtimes/win-x64/native/glfw3.dll": "e15c2dca331d4c15b7f60fbad81f7774ec4cf23c94484d4dc1912c016eaa93ea",
         "runtimes/win-x86/native/glfw3.dll": "20b769b3e1733bccd87a1fe309ffd02fcdcc6f88d5fceff433f056aaea4d08be",
-        "version.txt": "d507e5f0daa8d7cfd47082aa51ae7d553b0d902b49d415e29b8712d5df32df73"
+        "version.txt": "3f01477a52bc0785f1e5d0318784e5b993ea4b854592055b87a04c38c5047863"
       },
       "eigenerOrdner": true,
-      "nr": 1,
-      "nameEn": "Alpha 1.34.0",
-      "neuEn": "Fire and sparks: Burning ends again (water and rain put it out), rain douses burning blocks, fire flickers livelier and spreads smoothly. Particles carry a hex pixel pattern, hits show cross stars, and grass has no more grey dots."
+      "nr": 46,
+      "nameEn": "Alpha 1.35.0",
+      "neuEn": "Launcher colours: The whole in-game interface now uses the launcher\u0027s colours: black, grey, orange and white. Menus, settings, inventory and hotbar match, and your lives are orange hexagons like the visor in the logo. Plus a bigger icon for the taskbar and desktop."
     }
   ],
   "launcher": {
-    "version": "1.3.1",
+    "version": "1.3.2",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "be4d4ab60a156666a6379fe4461548651e800fa963e82eeb45b345dcbb5ca2b3",
-    "groesse": 6762438
+    "paketSha256": "feedd5424772b4459f92332d277f16c0ca2c522442aa7445986c18a319adb1b7",
+    "groesse": 6762461
   }
 }

@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.35.0 · 10.10.2026 · Launcher colours
+
+The whole in-game interface now uses the launcher's colours: black, grey, orange and white. Menus, settings, inventory and hotbar match, and your lives are orange hexagons like the visor in the logo. Plus a bigger icon for the taskbar and desktop.
+
 ## Alpha 1.34.0 · 09.10.2026 · Fire and sparks
 
 Burning ends again (water and rain put it out), rain douses burning blocks, fire flickers livelier and spreads smoothly. Particles carry a hex pixel pattern, hits show cross stars, and grass has no more grey dots.
