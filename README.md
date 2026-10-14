@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://pacointeractive.github.io/Jayraid/"><img src="https://img.shields.io/badge/Website-pacointeractive.github.io%2FJayraid-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Website"></a>
-  <a href="update/Jayraid-Launcher.zip?raw=1"><img src="https://img.shields.io/badge/Download-Jayraid%20Launcher-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Download"></a>
+  <a href="https://paco-interactive.itch.io/jayraid"><img src="https://img.shields.io/badge/Play-Browser%20preview-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Browser preview"></a>
 </p>
 
 <p align="center">
@@ -17,14 +17,19 @@
 
 ---
 
-This is the **official download page** of Jayraid. It holds the finished, signed versions –
+This is the **official download page** of Jayraid. It holds the finished, signed versions:
 the Jayraid Launcher fetches every new version from here.
 
-## Play
+## Play (closed alpha)
 
-1. Download [**Jayraid-Launcher.zip**](update/Jayraid-Launcher.zip?raw=1) and unpack it into a folder of its own.
-2. Start `Jayraid-Launcher.exe` (requires the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)).
-3. Click **INSTALL**, then **PLAY**.
+Jayraid is in a **closed alpha with 20 tester places**. Every tester gets a personal code for the launcher.
+
+1. Go to the [website](https://pacointeractive.github.io/Jayraid/) and click **CLAIM A PLACE**. You get your code file and the launcher.
+2. Install the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) if you do not have it, and unpack the launcher into a folder of its own.
+3. Start `Jayraid-Launcher.exe` and type in your code (or drag the code file into the window).
+4. Click **INSTALL**, then **PLAY**.
+
+No place left? Play the [browser preview on itch.io](https://paco-interactive.itch.io/jayraid): one island, no download.
 
 Whenever there is a new version, the launcher shows a big **UPDATE** button on start. The launcher updates itself the same way.
 
@@ -42,10 +47,10 @@ forged version. So only download Jayraid from here.
 
 | Folder | |
 |---|---|
-| `update/` | Signed version list, game package and launcher (read by the launcher) |
+| `update/` | Signed version list, encrypted game package, tester list and launcher (read by the launcher) |
 | `index.html`, `assets/`, `images/` | The website |
 | [`CHANGELOG.md`](CHANGELOG.md) | All changes |
 
 ---
 
-<sub>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved – see [LICENSE](LICENSE).</sub>
+<sub>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved. See [LICENSE](LICENSE).</sub>

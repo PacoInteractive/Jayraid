@@ -1,4 +1,4 @@
-// Jayraid – website. Draws headings in the launcher's hexagon font (exactly like
+// Jayraid website. Draws headings in the launcher's hexagon font (exactly like
 // Look.HexText) and shows the latest version from the signed version list.
 (function () {
   "use strict";

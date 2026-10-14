@@ -1,6 +1,6 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-14T17:05:15.2913053+02:00",
+  "erstellt": "2026-10-14T20:28:33.4122718+02:00",
   "neueste": "2026-10-10-fackelwurf",
   "versionen": [
     {
@@ -9,7 +9,7 @@
       "datum": "10.10.2026",
       "neu": "Fackelwurf: Mit der Fackel in der Hand die rechte Maustaste halten: Punkte zeigen die Bahn, ein Umriss den Landeplatz. Loslassen wirft. Die Fackel steckt dann schraeg im Boden, brennt weiter, leuchtet und zuendet Holz, Laub und Gras an; im Wasser erlischt sie. Drueberlaufen hebt sie wieder auf.",
       "paket": "2026-10-10-fackelwurf.jpak",
-      "paketSha256": "92decafd6990d2a2abfecb5437cf054ed15d42e2ab66cfbc12c46d5e6485bc55",
+      "paketSha256": "7bd0a658f045b43064beb6b2980b33e382294699cc7514e89b2c6e03c553817b",
       "groesse": 2327100,
       "dateien": {
         "Blockwelt2.Core.dll": "b16ead3b10449dcc527d388da2fe321ed5611baa1d442a06ab2437dd161215ad",
@@ -44,10 +44,10 @@
     }
   ],
   "launcher": {
-    "version": "1.4.0",
+    "version": "1.4.1",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "3841b9f0f39512eb430fd28acb2e3bf97db51fd74da6f9c0365cf40ad29f933a",
-    "groesse": 6772930
+    "paketSha256": "69bc89255dab23c0becabea082dae4e5ea76127e92b2a3112ef62750d1137fd4",
+    "groesse": 6773671
   },
   "medien": [
     {
