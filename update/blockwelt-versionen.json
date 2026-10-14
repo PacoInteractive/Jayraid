@@ -1,6 +1,6 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-10T13:57:48.9072769+02:00",
+  "erstellt": "2026-10-14T17:05:15.2913053+02:00",
   "neueste": "2026-10-10-fackelwurf",
   "versionen": [
     {
@@ -8,9 +8,9 @@
       "name": "Alpha 1.36.0",
       "datum": "10.10.2026",
       "neu": "Fackelwurf: Mit der Fackel in der Hand die rechte Maustaste halten: Punkte zeigen die Bahn, ein Umriss den Landeplatz. Loslassen wirft. Die Fackel steckt dann schraeg im Boden, brennt weiter, leuchtet und zuendet Holz, Laub und Gras an; im Wasser erlischt sie. Drueberlaufen hebt sie wieder auf.",
-      "paket": "2026-10-10-fackelwurf.zip",
-      "paketSha256": "29fe7b7be5dbfe5a2b6b230c9ec5aa1084d1ee96081bc6e4f6febf27d7449255",
-      "groesse": 2327067,
+      "paket": "2026-10-10-fackelwurf.jpak",
+      "paketSha256": "92decafd6990d2a2abfecb5437cf054ed15d42e2ab66cfbc12c46d5e6485bc55",
+      "groesse": 2327100,
       "dateien": {
         "Blockwelt2.Core.dll": "b16ead3b10449dcc527d388da2fe321ed5611baa1d442a06ab2437dd161215ad",
         "Blockwelt2.deps.json": "46d6e148b6388fe2be365a6262d61cec0e84169ba7bb50be23758fcca664241f",
@@ -38,14 +38,16 @@
       "eigenerOrdner": true,
       "nr": 47,
       "nameEn": "Alpha 1.36.0",
-      "neuEn": "Torch throw: With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again."
+      "neuEn": "Torch throw: With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again.",
+      "verschluesselt": true,
+      "zipSha256": "29fe7b7be5dbfe5a2b6b230c9ec5aa1084d1ee96081bc6e4f6febf27d7449255"
     }
   ],
   "launcher": {
-    "version": "1.3.3",
+    "version": "1.4.0",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "0656145de15886cc43cbda38cc8d4dbb63c2bcab9276b68aeb48f4780ff4a6d2",
-    "groesse": 6764096
+    "paketSha256": "3841b9f0f39512eb430fd28acb2e3bf97db51fd74da6f9c0365cf40ad29f933a",
+    "groesse": 6772930
   },
   "medien": [
     {

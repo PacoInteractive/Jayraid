@@ -39,12 +39,26 @@
     <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="64" data-shadow></span><span class="orange" data-hex="RAID" data-cap="64" data-shadow></span></h1>
     <p class="lead">A hexagon voxel adventure. Islands of hexagon pillars, pirate ships, divers with sabres and bows,
       caves full of rotten ones, castle ruins with a sleeping golem – and an ending you can actually reach.</p>
-    <a class="button big" id="download" href="update/Jayraid-Launcher.zip" download>
-      <span data-hex="DOWNLOAD" data-cap="22"></span>
-    </a>
+    <!-- Die geschlossene Alpha: 20 Tester-Plaetze. Wer einen Platz bekommt, erhaelt seinen Code als Datei und den Launcher. -->
+    <div class="tester" id="tester">
+      <div class="tester-head"><span class="orange" data-hex="CLOSED ALPHA" data-cap="13"></span><span class="tester-count" id="tester-count">20 tester places</span></div>
+      <div class="cells" id="tester-cells" aria-hidden="true"></div>
+      <p class="tester-text" id="tester-text">Help shape Jayraid: test every new version first and tell me what you think. Each tester gets a personal code for the launcher.</p>
+      <button class="button big" id="claim" type="button"><span data-hex="CLAIM A PLACE" data-cap="22"></span></button>
+      <div class="tester-done" id="tester-done" hidden>
+        <p>You are tester <b class="orange" id="done-nr">#1</b>. Your code:</p>
+        <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
+        <p class="tester-buttons">
+          <a class="button" id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a>
+          <a class="button big small-big" id="done-launcher" href="update/Jayraid-Launcher.zip" download><span data-hex="DOWNLOAD LAUNCHER" data-cap="16"></span></a>
+        </p>
+        <p class="info small">Unpack the launcher, start it and type in your code – or drag the code file into its window. Keep the code to yourself.</p>
+      </div>
+    </div>
     <p class="info" id="version">Jayraid Launcher · Windows 10/11</p>
     <p class="info small">Requires the <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a>.
       Once installed, the launcher fetches every new version by itself – with a big <b>UPDATE</b> button.</p>
+    <p class="info small" id="preview" hidden>No place left? <a id="preview-link" href="#" rel="noopener">Play the browser preview</a> – one island, no download.</p>
   </div>
 </section>
 
@@ -80,8 +94,8 @@
 <section id="install">
   <h2><span data-hex="INSTALL" data-cap="26"></span></h2>
   <ol class="steps">
-    <li class="panel"><span class="nr" data-hex="1" data-cap="28"></span><div><h3>Download</h3><p>Get <a href="update/Jayraid-Launcher.zip" download>Jayraid-Launcher.zip</a> and unpack it into a folder of its own, e.g. <code>Documents\Jayraid</code>.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="2" data-cap="28"></span><div><h3>Start the launcher</h3><p>Open <code>Jayraid-Launcher.exe</code>. If Windows asks, click “More info → Run anyway”.</p></div></li>
+    <li class="panel"><span class="nr" data-hex="1" data-cap="28"></span><div><h3>Claim a place</h3><p>Claim one of the tester places above. You get your personal code (also as a file) and <code>Jayraid-Launcher.zip</code>; unpack it into a folder of its own, e.g. <code>Documents\Jayraid</code>.</p></div></li>
+    <li class="panel"><span class="nr" data-hex="2" data-cap="28"></span><div><h3>Start and unlock</h3><p>Open <code>Jayraid-Launcher.exe</code> (if Windows asks: “More info → Run anyway”). Type in your code or drag the code file into the window.</p></div></li>
     <li class="panel"><span class="nr" data-hex="3" data-cap="28"></span><div><h3>Install and play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. Every file is checked against the signed version list first.</p></div></li>
   </ol>
   <p class="note panel">New versions arrive by themselves: on start the launcher checks this site. If there is something new, the big button turns into
@@ -111,6 +125,7 @@
   <p class="small">This is the official Jayraid site. Only download the launcher from here – it verifies every version.</p>
 </footer>
 
+<script src="assets/config.js"></script>
 <script src="assets/hexfont.js"></script>
 <script src="assets/site.js"></script>
 </body>

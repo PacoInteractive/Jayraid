@@ -87,4 +87,73 @@
       document.getElementById("version").textContent = parts.join(" · ");
     })
     .catch(function () { /* without the list the default text stays */ });
+
+  // ── The closed alpha: 20 tester places (Cloudflare Worker, see config.js) ──
+  var cfg = window.JAYRAID || {};
+  var api = (cfg.testerApi || "").replace(/\/$/, "");
+  // Nur beim Testen auf diesem PC: ?api=http://localhost:8787 statt des echten Zaehlers.
+  if (location.hostname === "localhost" && new URLSearchParams(location.search).get("api")) api = new URLSearchParams(location.search).get("api");
+  var claim = document.getElementById("claim"), cells = document.getElementById("tester-cells");
+  var countEl = document.getElementById("tester-count"), textEl = document.getElementById("tester-text");
+  if (cfg.preview) {
+    document.getElementById("preview-link").href = cfg.preview;
+    document.getElementById("preview").hidden = false;
+  }
+
+  function showCells(total, free) {
+    cells.textContent = "";
+    for (var i = 0; i < total; i++) {
+      var c = document.createElement("i");
+      if (i < total - free) c.className = "taken";
+      cells.appendChild(c);
+    }
+    countEl.textContent = free + " of " + total + " tester places left";
+  }
+
+  function full(total) {
+    showCells(total, 0);
+    claim.disabled = true;
+    claim.classList.add("off");
+    textEl.textContent = "All " + total + " tester places are taken. Thank you! The browser preview is open for everyone.";
+    document.getElementById("preview").hidden = !cfg.preview;
+  }
+
+  function done(r) {
+    showCells(r.gesamt, Math.max(0, r.gesamt - r.nr));
+    document.getElementById("done-nr").textContent = "#" + r.nr;
+    document.getElementById("done-code").textContent = r.code;
+    var file = document.getElementById("done-file");
+    file.href = URL.createObjectURL(new Blob([r.datei], { type: "text/plain" }));
+    claim.hidden = true;
+    textEl.hidden = true;
+    document.getElementById("tester-done").hidden = false;
+    // Gleich beides: erst die Code-Datei, dann den Launcher.
+    file.click();
+    setTimeout(function () { document.getElementById("done-launcher").click(); }, 700);
+  }
+
+  if (!api) {
+    // Noch kein Zaehler eingerichtet: die Plaetze sind noch nicht offen.
+    showCells(20, 20);
+    countEl.textContent = "20 tester places";
+    claim.disabled = true;
+    claim.classList.add("off");
+    textEl.textContent = "The tester places open soon. Follow the project to be among the first 20.";
+  } else {
+    fetch(api + "/stand", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (s) { if (s.frei <= 0) full(s.gesamt); else showCells(s.gesamt, s.frei); })
+      .catch(function () { countEl.textContent = "Tester places: no connection right now"; });
+    claim.addEventListener("click", function () {
+      claim.disabled = true;
+      fetch(api + "/platz", { method: "POST" })
+        .then(function (r) { return r.json(); })
+        .then(function (r) {
+          if (r.code) done(r);
+          else if (r.fehler === "voll") full(r.gesamt || 20);
+          else { claim.disabled = false; textEl.textContent = "Something went wrong. Please try again."; }
+        })
+        .catch(function () { claim.disabled = false; textEl.textContent = "No connection. Please try again in a moment."; });
+    });
+  }
 })();
