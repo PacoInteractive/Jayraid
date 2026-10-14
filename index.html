@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jayraid · a hexagon voxel adventure</title>
-<meta name="description" content="Jayraid: islands of hexagon pillars, pirate ships, divers, caves, castle ruins and a golem. Official download of the Jayraid Launcher.">
+<meta name="description" content="Jayraid: a sandbox game in an endless hexagon world with divers, trader ships, a bell creature and a chained golem. Closed alpha with 20 tester places.">
 <meta property="og:title" content="Jayraid">
 <meta property="og:description" content="A hexagon voxel adventure. Official download of the Jayraid Launcher.">
 <meta property="og:image" content="images/title.jpg">
@@ -37,8 +37,8 @@
   <div class="hero-image" style="background-image:url('images/title.jpg')"></div>
   <div class="hero-content">
     <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="64" data-shadow></span><span class="orange" data-hex="RAID" data-cap="64" data-shadow></span></h1>
-    <p class="lead">A hexagon voxel adventure. Islands of hexagon pillars, pirate ships, divers with sabres and bows,
-      caves full of rotten ones, castle ruins with a sleeping golem. And an ending you can actually reach.</p>
+    <p class="lead">A sandbox game in an endless world made of hexagons. Build and explore freely, or follow the story:
+      fight the divers, board the trader ships, face the bell creature and wake the chained golem in the castle ruin.</p>
     <!-- Die geschlossene Alpha: 20 Tester-Plaetze. Wer einen Platz bekommt, erhaelt seinen Code als Datei und den Launcher. -->
     <div class="tester" id="tester">
       <div class="tester-head"><span class="orange" data-hex="CLOSED ALPHA" data-cap="13"></span><span class="tester-count" id="tester-count">20 tester places</span></div>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <p class="info" id="version">Jayraid Launcher · Windows 10/11</p>
-    <p class="info small">Requires the <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a>.
+    <p class="info small"><b>What you need:</b> Windows 10 or 11 and the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> from Microsoft (a one time install, choose "Desktop Runtime" for Windows x64).
       Once installed, the launcher fetches every new version by itself, with a big <b>UPDATE</b> button.</p>
     <p class="info small" id="preview" hidden>No place left? <a id="preview-link" href="#" rel="noopener">Play the browser preview</a>: one island, no download.</p>
   </div>
@@ -66,19 +66,21 @@
 
 <section id="game">
   <h2><span data-hex="THE GAME" data-cap="26"></span></h2>
+  <p class="intro">Jayraid is a sandbox game in an endless world made of hexagons. Explore, mine and build whatever you want, as long as you want.
+    If you are looking for a goal, there is a story with two bosses and a real ending.</p>
   <div class="cards">
-    <article class="card"><img src="images/golem.jpg" alt="Golem in the castle ruin" loading="lazy">
-      <div><h3>Castle ruins and the golem</h3><p>A chained stone giant sleeps against the back wall. Be quiet! Once awake it becomes a boss fight: only the sabre knocks it over, only the wand hurts it on the ground.</p></div></article>
-    <article class="card"><img src="images/fire.jpg" alt="Burning trees" loading="lazy">
-      <div><h3>Fire</h3><p>Logs, planks, leaves and grass catch fire: from fire arrows, cannonballs or a burning player. Water and rain put it out.</p></div></article>
-    <article class="card"><img src="images/inventory.jpg" alt="Inventory" loading="lazy">
-      <div><h3>Free inventory</h3><p>Press <kbd>I</kbd> to unfold 48 honeycomb slots; drag, stack and swap everything. New worlds start empty.</p></div></article>
-    <article class="card"><img src="images/block-throw.jpg" alt="Block throw" loading="lazy">
-      <div><h3>Block throw for speedruns</h3><p>Hold <kbd>Q</kbd> and right click to throw a block in an arc. The preview shows where it lands, and every throw is the same at any frame rate.</p></div></article>
-    <article class="card"><img src="images/trader-fish.jpg" alt="Trader with a fish" loading="lazy">
-      <div><h3>A real ending</h3><p>The bell creature on the pirate ships guards the wand. Once it falls, the traders come after you with hex-pixel fish.</p></div></article>
-    <article class="card"><img src="images/pixel-workshop.jpg" alt="Pixel workshop" loading="lazy">
-      <div><h3>Pixel workshop</h3><p>Pixel the sabre, torch, wands and the fish yourself, hexagon by hexagon, and apply them straight to the running game.</p></div></article>
+    <article class="card"><img src="images/world.jpg" alt="Hexagon mountains and a watchtower" loading="lazy">
+      <div><h3>An endless hexagon world</h3><p>Every world is generated from a seed and never ends: islands of hexagon pillars, mountains, rivers, forests and caves. Every block can be mined and placed. Build anything you like.</p></div></article>
+    <article class="card"><img src="images/traders.jpg" alt="Traders on the deck of their ship" loading="lazy">
+      <div><h3>Two factions</h3><p>The traders sail the seas on their ships and are friendly to you. The divers live in camps with watchtowers and attack on sight. Ships and towers even shell each other.</p></div></article>
+    <article class="card"><img src="images/bell.jpg" alt="The bell creature on a ship" loading="lazy">
+      <div><h3>The bell creature</h3><p>On every trader ship waddles a giant bell. It guards a golden magic wand. Strike it and it rings sound waves that hurt. Defeat it, and the traders turn against you.</p></div></article>
+    <article class="card"><img src="images/cave-fire.jpg" alt="A green fire in a cave" loading="lazy">
+      <div><h3>Caves and green fire</h3><p>Deep inside the mountains burn green fires, guarded by rotten divers. A green wand from the traders shows you the way. Take a torch, it is dark down there.</p></div></article>
+    <article class="card"><img src="images/companion.jpg" alt="The blue companion with a sabre" loading="lazy">
+      <div><h3>A blue companion</h3><p>Sometimes a defeated rotten diver turns blue and stands up again. It follows you from then on. Hand it a sabre and it fights at your side.</p></div></article>
+    <article class="card"><img src="images/golem.jpg" alt="The golem in the castle ruin" loading="lazy">
+      <div><h3>The chained golem</h3><p>In old castle ruins a stone giant sleeps in chains. Wake it and the boss fight begins: knock it down with the sabre, then hit it with the golden wand. Its treasure chest ends the story.</p></div></article>
   </div>
 </section>
 

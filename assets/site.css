@@ -165,3 +165,6 @@ footer p { margin: 4px 0; }
   .cards { grid-template-columns: 1fr; }
   .table div { grid-template-columns: 1fr; gap: 2px; }
 }
+
+/* Die Einleitung ueber den Karten (Vorstellung des Spiels). */
+.intro { max-width: 860px; color: #d9e0d5; font-size: 1.05rem; margin: -6px 0 20px; }
