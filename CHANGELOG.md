@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.38.0 · 16.10.2026 · Combat, blocking and a living world
+
+Your fist hits what the crosshair is on. Hold both mouse buttons to block one hit (the bar above the hotbar refills in four seconds). A sabre thrust knocks enemies back, standing still and hammering gets punished with a sprinting stab, and at most two enemies attack at once. Enemies look more battered with every hit. Mining takes time (dirt two, sand and gravel three, stone four seconds), snow, sand and dry gravel crumble, and gravel by the water becomes wet gravel. Fire chars wood and grass, and traders put out ship fires with snow. Grass has climate zones up to snow, and the arms are new.
+
 ## Alpha 1.37.0 · 16.10.2026 · Trader window and new font
 
 Press E at a trader to open a window: your inventory on the left, the trader's inventory on the right and a trade field in between. Drag an offer into the field, the cost is shown below, and with enough material you confirm the trade. Plus a redrawn hexagon font that is much easier to read.
