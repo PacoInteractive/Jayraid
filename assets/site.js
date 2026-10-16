@@ -2,34 +2,19 @@
 // Look.HexText) and shows the latest version from the signed version list.
 (function () {
   "use strict";
-  var SQRT3 = Math.sqrt(3), NS = "http://www.w3.org/2000/svg";
+  var NS = "http://www.w3.org/2000/svg";
 
-  function glyph(ch) {
-    var f = window.HEXFONT || {};
-    return f[ch] || f[ch.toUpperCase()] || null;
-  }
-
-  // Like Look.HexText: every set cell is a hexagon, odd columns sit half a cell higher.
+  // Like Look.HexText, laid out by hexfont.js: small text snaps to whole pixels,
+  // large text is drawn as hexagons (odd columns half a cell higher).
   function hexText(text, cap, shadow) {
-    var r = cap / (7 * SQRT3), colStep = 1.5 * r, rowStep = SQRT3 * r, gap = r * 0.9;
-    var cells = [], pen = 0, top = 0, bottom = 7 * rowStep;
-    for (var n = 0; n < text.length; n++) {
-      var g = glyph(text[n]);
-      if (!g || text[n] === " ") { pen += (g ? g[1] : 3) * colStep + gap; continue; }
-      var rows = g[2];
-      for (var i = 0; i < rows.length; i++)
-        for (var c = 0; c < rows[i].length; c++) {
-          if (rows[i][c] !== "#") continue;
-          var cx = pen + c * colStep + r;
-          var cy = (i + g[0]) * rowStep + rowStep / 2 - (c & 1) * (rowStep / 2);
-          cells.push([cx, cy]);
-          top = Math.min(top, cy - rowStep / 2);
-          bottom = Math.max(bottom, cy + rowStep / 2);
-        }
-      pen += g[1] * colStep + gap;
-    }
-    var off = shadow ? Math.max(1, cap * 0.08) : 0;
-    var w = Math.max(1, pen - gap + off), h = bottom - top + off;
+    var m = window.hexFontMetrics(cap), cells = [], top = 0, bottom = m.cap;
+    var pen = window.hexFontLayout(text, 0, 0, cap, function (x, y, w, h, snap) {
+      cells.push([x, y, w, h, snap]);
+      top = Math.min(top, y);
+      bottom = Math.max(bottom, y + h);
+    });
+    var off = shadow ? Math.max(1, Math.round(cap * 0.08)) : 0;
+    var w = Math.max(1, pen - m.gap + off), h = bottom - top + off;
     var svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", "0 " + top.toFixed(2) + " " + w.toFixed(2) + " " + h.toFixed(2));
     svg.setAttribute("width", w.toFixed(1));
@@ -40,16 +25,19 @@
     function layer(dx, fill) {
       var d = "";
       for (var k = 0; k < cells.length; k++) {
-        var x = cells[k][0] + dx, y = cells[k][1] + dx;
+        var c = cells[k], x = c[0] + dx, y = c[1] + dx;
+        if (c[4]) { d += "M" + x + " " + y + "h" + c[2] + "v" + c[3] + "h" + (-c[2]) + "Z"; continue; }
+        var r = c[2] / 2 * 1.02, mx = x + c[2] / 2, my = y + c[3] / 2;
         for (var s = 0; s < 6; s++) {
           var a = s * Math.PI / 3;
-          d += (s ? "L" : "M") + (x + r * 1.02 * Math.cos(a)).toFixed(2) + " " + (y + r * 1.02 * Math.sin(a)).toFixed(2);
+          d += (s ? "L" : "M") + (mx + r * Math.cos(a)).toFixed(2) + " " + (my + r * Math.sin(a)).toFixed(2);
         }
         d += "Z";
       }
       var p = document.createElementNS(NS, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", fill);
+      if (m.snap) p.setAttribute("shape-rendering", "crispEdges");
       svg.appendChild(p);
     }
     if (shadow) layer(off, "rgba(8,8,8,.75)");

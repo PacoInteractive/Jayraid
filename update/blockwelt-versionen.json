@@ -1,22 +1,22 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-14T20:28:33.4122718+02:00",
-  "neueste": "2026-10-10-fackelwurf",
+  "erstellt": "2026-10-16T11:24:25.565784+02:00",
+  "neueste": "2026-10-16-haendler",
   "versionen": [
     {
-      "id": "2026-10-10-fackelwurf",
-      "name": "Alpha 1.36.0",
-      "datum": "10.10.2026",
-      "neu": "Fackelwurf: Mit der Fackel in der Hand die rechte Maustaste halten: Punkte zeigen die Bahn, ein Umriss den Landeplatz. Loslassen wirft. Die Fackel steckt dann schraeg im Boden, brennt weiter, leuchtet und zuendet Holz, Laub und Gras an; im Wasser erlischt sie. Drueberlaufen hebt sie wieder auf.",
-      "paket": "2026-10-10-fackelwurf.jpak",
-      "paketSha256": "7bd0a658f045b43064beb6b2980b33e382294699cc7514e89b2c6e03c553817b",
-      "groesse": 2327100,
+      "id": "2026-10-16-haendler",
+      "name": "Alpha 1.37.0",
+      "datum": "16.10.2026",
+      "neu": "Haendlerfenster und neue Schrift: Taste E bei einem Haendler oeffnet ein Fenster: links dein Inventar, rechts das Inventar des Haendlers, dazwischen ein Tauschfeld. Zieh ein Angebot hinein, unten steht, was es kostet, und mit genug Material bestaetigst du den Tausch. Dazu eine neu gezeichnete Sechseckschrift, die viel besser lesbar ist.",
+      "paket": "2026-10-16-haendler.jpak",
+      "paketSha256": "fc131f51909770d5dc84ad47bbc28fd09c766d086661169db46f8c49468f07b2",
+      "groesse": 2344515,
       "dateien": {
-        "Blockwelt2.Core.dll": "b16ead3b10449dcc527d388da2fe321ed5611baa1d442a06ab2437dd161215ad",
+        "Blockwelt2.Core.dll": "d7bd2bac15366b6ae1bdf5c09624db73fd78ce37253651496f5b3dc4319613ba",
         "Blockwelt2.deps.json": "46d6e148b6388fe2be365a6262d61cec0e84169ba7bb50be23758fcca664241f",
-        "Blockwelt2.dll": "741719fba128fc6a764b9cddbe1be2310f14bcee1464bee6ad7e985dfcf94459",
+        "Blockwelt2.dll": "d26658a8d292bbe11d274a2e0942aa2492c6337c98760e7fda359ed9b3eeb237",
         "Blockwelt2.exe": "1655f7e580491dad14c0577758d3cedbd330c5855401fbb24d874b3cfa40ae79",
-        "Blockwelt2.Render.dll": "6ed6a573114edf1815a9db2df7ed654b0665c7680f85f4405bb695dd439e3398",
+        "Blockwelt2.Render.dll": "c479592e385427abc7e996a8b70c05255410a82d5fc0ae0fcf17ee781943b16b",
         "Blockwelt2.runtimeconfig.json": "95505548c838f72a6a829fd5332dbc674c715ce26a216e9eb32bec8b5821eae2",
         "OpenTK.Audio.OpenAL.dll": "f99dae9e1f6829bbd3203080b26061657e59eba0da963a5fd47b0566b0e99619",
         "OpenTK.Compute.dll": "2e959e7f8f61ad673ea2c48474eed04ca0808242b68d0c3d6f4fd891e2dbf056",
@@ -33,21 +33,21 @@
         "runtimes/osx-x64/native/libglfw.3.dylib": "8fbe63b69057050892c494cf6b3934ee294a09028656810bdc0bf81831021b71",
         "runtimes/win-x64/native/glfw3.dll": "e15c2dca331d4c15b7f60fbad81f7774ec4cf23c94484d4dc1912c016eaa93ea",
         "runtimes/win-x86/native/glfw3.dll": "20b769b3e1733bccd87a1fe309ffd02fcdcc6f88d5fceff433f056aaea4d08be",
-        "version.txt": "3c53529ea0af433cc2fc949d6c586fae7499f7e378e31f82b975525fc43a6bd2"
+        "version.txt": "ecfaf06294d82b98ae00d93ee6c9c15579bd498afbc4b0dcea18a381747aaee4"
       },
       "eigenerOrdner": true,
-      "nr": 47,
-      "nameEn": "Alpha 1.36.0",
-      "neuEn": "Torch throw: With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again.",
+      "nr": 48,
+      "nameEn": "Alpha 1.37.0",
+      "neuEn": "Trader window and new font: Press E at a trader to open a window: your inventory on the left, the trader\u0027s inventory on the right and a trade field in between. Drag an offer into the field, the cost is shown below, and with enough material you confirm the trade. Plus a redrawn hexagon font that is much easier to read.",
       "verschluesselt": true,
-      "zipSha256": "29fe7b7be5dbfe5a2b6b230c9ec5aa1084d1ee96081bc6e4f6febf27d7449255"
+      "zipSha256": "82f49b658ad5a574ef5abc84fe60c4e82f7b47111aabb51e14d2f52b29c14ea5"
     }
   ],
   "launcher": {
-    "version": "1.4.1",
+    "version": "1.4.2",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "69bc89255dab23c0becabea082dae4e5ea76127e92b2a3112ef62750d1137fd4",
-    "groesse": 6773671
+    "paketSha256": "887636b891f1f3181d1d0f2f058f93a62b4a83d3bcbc9c1b8bdbc369efb0eab0",
+    "groesse": 6775108
   },
   "medien": [
     {

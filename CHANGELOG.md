@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.37.0 · 16.10.2026 · Trader window and new font
+
+Press E at a trader to open a window: your inventory on the left, the trader's inventory on the right and a trade field in between. Drag an offer into the field, the cost is shown below, and with enough material you confirm the trade. Plus a redrawn hexagon font that is much easier to read.
+
 ## Alpha 1.36.0 · 10.10.2026 · Torch throw
 
 With the torch in hand, hold the right mouse button: dots show the arc, an outline the landing spot. Release to throw. The torch then sticks in the ground, keeps burning, lights up the area and sets wood, leaves and grass on fire; water puts it out. Walk over it to pick it up again.
