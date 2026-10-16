@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.39.0 · 16.10.2026 · Bell leap and step up
+
+The bell creature has a new attack: after ringing it crouches and leaps at you, and a golden ring shows where it will land. The landing breaks through any block, so step out of the ring. New: walk into a one block ledge and you step right up. Changed: your guard comes up in front of you instead of to the side, your lives sit on the left above the hotbar and the item name on the right.
+
 ## Alpha 1.38.0 · 16.10.2026 · Combat, blocking and a living world
 
 Your fist hits what the crosshair is on. Hold both mouse buttons to block one hit (the bar above the hotbar refills in four seconds). A sabre thrust knocks enemies back, standing still and hammering gets punished with a sprinting stab, and at most two enemies attack at once. Enemies look more battered with every hit. Mining takes time (dirt two, sand and gravel three, stone four seconds), snow, sand and dry gravel crumble, and gravel by the water becomes wet gravel. Fire chars wood and grass, and traders put out ship fires with snow. Grass has climate zones up to snow, and the arms are new.
