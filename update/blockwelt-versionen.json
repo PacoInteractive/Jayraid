@@ -1,6 +1,6 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-17T13:38:46.8806927+02:00",
+  "erstellt": "2026-10-17T17:07:02.747309+02:00",
   "neueste": "2026-10-17-werkzeugfix",
   "versionen": [
     {
@@ -9,7 +9,7 @@
       "datum": "16.10.2026",
       "neu": "Haendlerfenster und neue Schrift: Taste E bei einem Haendler oeffnet ein Fenster: links dein Inventar, rechts das Inventar des Haendlers, dazwischen ein Tauschfeld. Zieh ein Angebot hinein, unten steht, was es kostet, und mit genug Material bestaetigst du den Tausch. Dazu eine neu gezeichnete Sechseckschrift, die viel besser lesbar ist.",
       "paket": "2026-10-16-haendler.jpak",
-      "paketSha256": "ad9e4d74949d944357771afccfdb04c886240001758a61305849252a91192133",
+      "paketSha256": "e4b7be621e5fbfa5f08b51cf004d150bac8cc4921fa89bacaefc2faf1297ce6c",
       "groesse": 2344515,
       "dateien": {
         "Blockwelt2.Core.dll": "d7bd2bac15366b6ae1bdf5c09624db73fd78ce37253651496f5b3dc4319613ba",
@@ -48,7 +48,7 @@
       "datum": "16.10.2026",
       "neu": "Kampf, Blocken und lebendige Welt: Die Faust trifft, was im Fadenkreuz ist. Beide Maustasten halten blockt einen Schlag (der Balken ueber der Leiste laedt vier Sekunden). Der Saebelstich stoesst Gegner zurueck, wer nur stehen bleibt und haemmert, bekommt einen Sprint-Stich, und hoechstens zwei Gegner greifen gleichzeitig an. Gegner sehen mit jedem Treffer beschaedigter aus. Abbauen braucht Zeit (Erde zwei, Sand und Kies drei, Stein vier Sekunden), Schnee, Sand und trockener Kies zerfallen, Kies am Wasser wird nasser Kies. Feuer verkohlt Holz und Gras, die Haendler loeschen Schiffsbraende mit Schnee. Gras hat Klimazonen bis zum Schnee, und die Arme sind neu.",
       "paket": "2026-10-16-kampf.jpak",
-      "paketSha256": "9649e580d01aede77cfd6115d1f53af018c1a76ef07924aaef1d06879b471b70",
+      "paketSha256": "1715d8af7af9f16189317b8191eacd2c653c761165f302940436d4ff8f2aa0d9",
       "groesse": 2359570,
       "dateien": {
         "Blockwelt2.Core.dll": "21f47d420485b8d78c77f44d2ca4044e1e5e13304ad1522f9dda428db9e255a6",
@@ -87,7 +87,7 @@
       "datum": "16.10.2026",
       "neu": "Glockensprung und Hochsteigen: Das Glockenwesen hat einen neuen Angriff: nach dem Laeuten duckt es sich und springt auf dich, ein goldener Ring zeigt, wo es landet. Die Landung durchbricht jeden Block, wer aus dem Ring tritt, entkommt. Neu: eine Stufe von einem Block steigst du einfach hinauf, indem du dagegen laeufst. Geaendert: die Deckung kommt nach vorn statt zur Seite, die Leben stehen links ueber der Leiste und der Name des Gegenstands rechts.",
       "paket": "2026-10-16-glockensprung.jpak",
-      "paketSha256": "f688423f4d49cb27371767d1cc293bc668bc808b0f4b4c345d77a75c1e8f4d50",
+      "paketSha256": "8062488408691c162fa707651fcf4095fe13b43e37b1d023386d04f66a417b98",
       "groesse": 2364308,
       "dateien": {
         "Blockwelt2.Core.dll": "253be349557aff4cc9858debf2e58d048c805bd056325d3d66d4410e761b069c",
@@ -126,7 +126,7 @@
       "datum": "17.10.2026",
       "neu": "Werkzeugtasten repariert: Fehler behoben: T, R und C holen Fackel und Zauberstaebe jetzt in ein freies Fach der Leiste. Vorher rutschten dabei die Bloecke aus dem Fach in der Hand unbemerkt in den Rucksack. Ausserdem hinterlaesst auch ein sofort geloeschtes Feuer einen leichten Brandfleck.",
       "paket": "2026-10-17-werkzeugfix.jpak",
-      "paketSha256": "2bc32966cdff5a42babfde50894f089f33816e9754b7d8117be20a2895957960",
+      "paketSha256": "001819422429d154ad28033837e48d1a11bdc7c100a90d0f29f450894fd53e45",
       "groesse": 2364810,
       "dateien": {
         "Blockwelt2.Core.dll": "6c4fb2fc3cb5cb1c0f1a07e58600d5d1de255cc204a3599c60d6b00fa4812999",
@@ -163,7 +163,7 @@
   "launcher": {
     "version": "1.4.2",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "93f6de70c130607afc50c729a46d34e970c2058c362eb708ce515539ea33d949",
+    "paketSha256": "380279bf2a2e2018cd2cefad71c84d2bc4e5a99264e1cdb5af77e7b27d565463",
     "groesse": 6775334
   },
   "medien": [
