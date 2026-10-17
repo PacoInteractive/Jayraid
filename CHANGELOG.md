@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.39.1 · 17.10.2026 · Tool keys fixed
+
+Fixed: T, R and C now put the torch and the wands into a free hotbar slot. Before, the blocks in the slot you were holding quietly moved into your backpack. Also, a fire that gets put out right away now leaves a light burn mark.
+
 ## Alpha 1.39.0 · 16.10.2026 · Bell leap and step up
 
 The bell creature has a new attack: after ringing it crouches and leaps at you, and a golden ring shows where it will land. The landing breaks through any block, so step out of the ring. New: walk into a one block ledge and you step right up. Changed: your guard comes up in front of you instead of to the side, your lives sit on the left above the hotbar and the item name on the right.
