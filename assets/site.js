@@ -82,6 +82,9 @@
   // Nur beim Testen auf diesem PC: ?api=http://localhost:8787 statt des echten Zaehlers.
   if (location.hostname === "localhost" && new URLSearchParams(location.search).get("api")) api = new URLSearchParams(location.search).get("api");
   var claim = document.getElementById("claim"), cells = document.getElementById("tester-cells");
+  // Kein Windows (Mac, Linux, Handy): den Hinweis beim Knopf hervorheben, damit niemand aus Versehen einen Platz nimmt.
+  var osNote = document.getElementById("tester-os");
+  if (osNote && !/Win/i.test(navigator.userAgent)) osNote.classList.add("warn");
   var countEl = document.getElementById("tester-count"), textEl = document.getElementById("tester-text");
   if (cfg.preview) {
     document.getElementById("preview-link").href = cfg.preview;

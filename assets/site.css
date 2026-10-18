@@ -108,6 +108,9 @@ nav a:hover i { background: var(--orange); }
 }
 .cells i.taken { background: #3a3a3e; }
 .tester-text { color: #d9e0d5; margin-bottom: 16px; }
+.tester-os { color: #aab3a8; font-size: .92em; margin: -6px 0 16px; }
+.tester-os a { color: var(--orange, #f08c1e); }
+.tester-os.warn { color: #f08c1e; }
 button.button { font: inherit; cursor: pointer; }
 .button.off, .button:disabled, .button.big.off, .button.big:disabled { background: var(--button); color: var(--dim); border-color: var(--edge); box-shadow: none; cursor: default; transform: none; }
 .tester-done { padding: 16px 18px; background: rgba(28,28,30,.92); border: 1px solid var(--edge); border-left: 4px solid var(--orange); }
