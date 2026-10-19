@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.40.0 · 19.10.2026 · Story goals and sound
+
+New: the first time you enter a world, the game asks if you want to follow the story. Say yes and goals guide you, top right with an arrow, the distance and a golden beam, from the first watchtower to the chained golem. Say no and it stays a pure sandbox. Press J to switch anytime. Fixed: no sound on PCs without OpenAL installed, the game now brings its own. Changed: messages no longer replace each other and wait until a fight calms down, and the torch next to the cannons uses the new model.
+
 ## Alpha 1.39.1 · 17.10.2026 · Tool keys fixed
 
 Fixed: T, R and C now put the torch and the wands into a free hotbar slot. Before, the blocks in the slot you were holding quietly moved into your backpack. Also, a fire that gets put out right away now leaves a light burn mark.
