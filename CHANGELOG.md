@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.41.1 · 21.10.2026 · Jumping and swimming
+
+New: swim with sprint in deep water, in the direction you look, with arm strokes and bubbles. Changed: jumping has weight, your momentum carries you through the air, and take off and landing kick up dust and sound.
+
 ## Alpha 1.41.0 · 20.10.2026 · Blood moon
 
 New: three game modes (Sandbox, Adventure, Challenge), day and night in every world, blood moon raids on your base with field cannons, watchtowers with Melvin at the top, a poison moon with acid rain, a saving screen when you leave a world and a new main menu. Challenge has only four lives. Changed: divers only attack when you strike first or during a raid, deeper and punchier sounds, more weight when you walk, short notes at the top instead of long messages, and music only plays during raids.
