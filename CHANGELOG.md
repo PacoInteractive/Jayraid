@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.41.0 · 20.10.2026 · Blood moon
+
+New: three game modes (Sandbox, Adventure, Challenge), day and night in every world, blood moon raids on your base with field cannons, watchtowers with Melvin at the top, a poison moon with acid rain, a saving screen when you leave a world and a new main menu. Challenge has only four lives. Changed: divers only attack when you strike first or during a raid, deeper and punchier sounds, more weight when you walk, short notes at the top instead of long messages, and music only plays during raids.
+
 ## Alpha 1.40.0 · 19.10.2026 · Story goals and sound
 
 New: the first time you enter a world, the game asks if you want to follow the story. Say yes and goals guide you, top right with an arrow, the distance and a golden beam, from the first watchtower to the chained golem. Say no and it stays a pure sandbox. Press J to switch anytime. Fixed: no sound on PCs without OpenAL installed, the game now brings its own. Changed: messages no longer replace each other and wait until a fight calms down, and the torch next to the cannons uses the new model.
