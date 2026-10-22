@@ -238,3 +238,72 @@ footer p { margin: 4px 0; }
   .side { flex-direction: column; align-items: stretch; }
   .brand { padding-bottom: 0; }
 }
+
+/* ── The little diver helper (helper.js) ──────────────────────────── */
+.helper { position: fixed; right: 20px; bottom: 16px; z-index: 30; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.helper-bot { position: relative; width: 92px; height: 115px; padding: 0; border: 0; background: none; cursor: pointer; }
+.helper-bot svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 14px rgba(0,0,0,.5)); }
+.helper-bot:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.diver { animation: float 3.2s ease-in-out infinite; transform-origin: 60px 80px; }
+.helper-bot:hover .diver { animation-duration: 1.6s; }
+.helper-bot.nod .diver { animation: nod .5s ease-in-out, float 3.2s ease-in-out .5s infinite; }
+.eye { animation: blink 4.6s infinite; transform-box: fill-box; transform-origin: center; }
+.lamp { animation: lamp 2s ease-in-out infinite; }
+.arm { transform-box: fill-box; transform-origin: 50% 10%; }
+.arm-l { animation: paddle 1.6s ease-in-out infinite; }
+.arm-r { animation: paddle 1.6s ease-in-out .8s infinite; }
+.helper-bot:hover .arm-r, .helper.open .arm-r { animation: wave .5s ease-in-out infinite alternate; }
+.leg { transform-box: fill-box; transform-origin: 50% 0; }
+.leg-l { animation: kick 1.2s ease-in-out infinite; }
+.leg-r { animation: kick 1.2s ease-in-out .6s infinite; }
+.bubbles i {
+  position: absolute; left: 50%; bottom: 92%; width: 8px; height: 8px; border-radius: 50%;
+  border: 1.5px solid rgba(237,244,232,.55); opacity: 0; animation: bubble 3.6s ease-in infinite;
+}
+.bubbles i:nth-child(2) { width: 6px; height: 6px; margin-left: 6px; animation-delay: 1.2s; }
+.bubbles i:nth-child(3) { width: 10px; height: 10px; margin-left: -8px; animation-delay: 2.4s; }
+
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(2deg); } }
+@keyframes nod { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-8deg) translateY(2px); } 65% { transform: rotate(6deg); } }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+@keyframes lamp { 0%, 100% { fill: #f08c1e; } 50% { fill: #ffd28a; } }
+@keyframes paddle { 0%, 100% { transform: rotate(8deg); } 50% { transform: rotate(-14deg); } }
+@keyframes wave { from { transform: rotate(-150deg); } to { transform: rotate(-110deg); } }
+@keyframes kick { 0%, 100% { transform: rotate(10deg); } 50% { transform: rotate(-10deg); } }
+@keyframes bubble { 0% { opacity: 0; transform: translate(0, 0) scale(.6); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(6px, -70px) scale(1.1); } }
+
+.helper-box {
+  position: relative; width: 300px; padding: 16px 18px 12px; border-top: 2px solid var(--orange);
+  box-shadow: 0 14px 40px rgba(0,0,0,.55); animation: pop .18s ease-out;
+}
+.helper-box::after {
+  content: ""; position: absolute; right: 38px; bottom: -9px; width: 16px; height: 16px;
+  background: var(--panel); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transform: rotate(45deg);
+}
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
+.helper-say { margin: 0 18px 10px 0; color: var(--text); font-size: .95rem; }
+.helper-asks { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.helper-asks button {
+  font: inherit; font-size: .85rem; padding: 6px 10px; cursor: pointer;
+  background: var(--button); color: var(--ink); border: 1px solid var(--edge); border-radius: 2px;
+}
+.helper-asks button:hover { background: var(--button-hover); border-color: var(--orange); }
+.helper-close { position: absolute; right: 8px; top: 6px; border: 0; background: none; color: var(--dim); font-size: 1.3rem; cursor: pointer; line-height: 1; }
+.helper-close:hover { color: var(--ink); }
+.helper-hide { border: 0; background: none; padding: 0; color: var(--dim); font: inherit; font-size: .78rem; cursor: pointer; }
+.helper-hide:hover { color: var(--orange); }
+
+/* Hidden: only the helmet peeks in from the edge */
+.helper.hidden .helper-bot { width: 56px; height: 70px; transform: translate(24px, 30px) rotate(-18deg); opacity: .8; }
+.helper.hidden .helper-bot:hover { opacity: 1; transform: translate(16px, 22px) rotate(-12deg); }
+.helper-bot { transition: transform .3s, width .3s, height .3s, opacity .3s; }
+
+@media (max-width: 860px) {
+  .helper { right: 10px; bottom: 10px; }
+  .helper-bot { width: 70px; height: 88px; }
+  .helper-box { width: min(300px, calc(100vw - 20px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .diver, .eye, .lamp, .arm, .leg, .bubbles i, .helper-box { animation: none !important; }
+}
+.helper.open .bubbles { display: none; }
