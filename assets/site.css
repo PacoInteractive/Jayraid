@@ -80,7 +80,7 @@ nav a.on i, nav a:hover i { background: var(--orange); }
 .content { margin-left: var(--side-width); }
 
 /* ── PLAY: hero image with the play bar at the bottom ─────────────── */
-.play { position: relative; padding: 0; }
+.play { position: relative; padding: 0; max-width: none; }
 .play-image {
   position: absolute; inset: 0 0 auto 0; height: 620px;
   background-size: cover; background-position: center 45%;
@@ -481,4 +481,37 @@ kbd { transition: transform .1s, border-bottom-width .1s; }
   .log-entry.fix::before { left: -23px; }
   .log-entry { padding: 14px 14px 10px; }
   .log-label { min-width: 0; }
+}
+
+/* ── Edit mode (editor.js, open the page with ?edit) ──────────────── */
+.edit-mode body { padding-top: 46px; }
+.edit-mode .side { top: 46px; }
+.edit-mode .helper { display: none; }
+.ed-bar {
+  position: fixed; inset: 0 0 auto 0; z-index: 100; height: 46px;
+  display: flex; align-items: center; gap: 14px; padding: 0 14px;
+  background: #0b0b0c; border-bottom: 2px solid var(--orange); font-size: .85rem; color: var(--dim);
+}
+.ed-bar b { color: var(--orange); letter-spacing: .08em; }
+.ed-file { color: var(--ink); }
+.ed-bar.dirty .ed-count { color: var(--orange); }
+.ed-help { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.ed-space { flex: 1; }
+.ed-bar button, .ed-tools button {
+  font: inherit; cursor: pointer; background: var(--button); color: var(--ink); border: 1px solid var(--edge); padding: 6px 12px;
+}
+.ed-bar button:hover, .ed-tools button:hover { background: var(--button-hover); }
+.ed-bar .ed-main { background: var(--orange); color: var(--orange-ink); border-color: var(--orange-hover); font-weight: 600; }
+.ed-tools { position: absolute; z-index: 99; display: none; gap: 2px; padding: 3px; background: #0b0b0c; border: 1px solid var(--orange); }
+.ed-tools button { padding: 3px 9px; font-size: .9rem; }
+.edit-mode [contenteditable] { outline: 1px dashed transparent; outline-offset: 3px; cursor: text; }
+.edit-mode [contenteditable]:hover { outline-color: rgba(240,140,30,.6); }
+.edit-mode [contenteditable]:focus { outline: 2px solid var(--orange); background: rgba(240,140,30,.06); }
+.edit-mode [data-hex], .edit-mode [style*="background-image"] { cursor: pointer; }
+.edit-mode .ed-current { outline: 1px solid rgba(240,140,30,.45); outline-offset: 2px; }
+@media (max-width: 860px) {
+  .ed-help { display: none; }
+  .ed-bar { gap: 8px; padding: 0 8px; font-size: .78rem; }
+  .ed-bar button { padding: 5px 8px; }
+  .edit-mode .side { top: 46px; }
 }
