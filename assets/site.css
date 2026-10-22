@@ -402,3 +402,83 @@ kbd { transition: transform .1s, border-bottom-width .1s; }
 .helper.hint .helper-box { width: auto; max-width: 260px; padding: 10px 30px 10px 14px; }
 .helper.hint .helper-hide { display: none; }
 .helper.hint .helper-say { margin: 0; font-size: .9rem; }
+
+/* ── Changelog page (changelog.js) ─────────────────────────────────── */
+.log-head { padding-top: 56px; }
+.log-head h1 { margin: 0 0 18px; }
+.log-stats { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.log-stat { background: var(--panel); border: 1px solid var(--line); padding: 12px 18px; min-width: 130px; }
+.log-stat b { display: block; font-size: 1.35rem; color: var(--orange); line-height: 1.3; }
+.log-stat span { color: var(--dim); font-size: .85rem; }
+.log-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.log-filter { display: flex; border: 1px solid var(--edge); }
+.log-filter button {
+  font: inherit; font-size: .9rem; padding: 9px 16px; cursor: pointer;
+  background: var(--panel); color: var(--dim); border: 0; border-left: 1px solid var(--edge);
+  transition: background .15s, color .15s;
+}
+.log-filter button:first-child { border-left: 0; }
+.log-filter button:hover { color: var(--ink); background: var(--panel-light); }
+.log-filter button.on { background: var(--orange); color: var(--orange-ink); }
+#log-search {
+  font: inherit; font-size: .95rem; padding: 9px 14px; width: min(320px, 100%);
+  background: var(--panel); color: var(--ink); border: 1px solid var(--edge); border-radius: 0;
+}
+#log-search:focus { outline: none; border-color: var(--orange); }
+
+.log { padding-top: 34px; }
+.log-month { margin-bottom: 18px; }
+.log-month-name {
+  position: sticky; top: 0; z-index: 2; margin: 0; padding: 12px 0 10px;
+  font-size: .85rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+  background: linear-gradient(var(--suit) 80%, rgba(17,17,18,0));
+}
+/* The timeline: a thin line with a hexagon at every version */
+.log-entries { position: relative; padding-left: 34px; }
+.log-entries::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: #2a2a2d; }
+.log-entry {
+  position: relative; margin-bottom: 12px; padding: 16px 20px 14px;
+  background: var(--panel); border: 1px solid var(--line);
+  transition: border-color .2s, background .2s;
+}
+.log-entry:hover { border-color: var(--edge); }
+.log-entry::before {
+  content: ""; position: absolute; left: -33px; top: 20px; width: 16px; height: 18px; background: #4a4a4e;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); transition: background .2s, transform .3s;
+}
+.log-entry:hover::before { background: var(--orange); transform: rotate(60deg); }
+.log-entry.latest { border-left: 3px solid var(--orange); }
+.log-entry.latest::before { background: var(--orange); box-shadow: 0 0 12px var(--orange); }
+.log-entry.fix { padding: 12px 20px 10px; background: transparent; }
+.log-entry.fix::before { width: 10px; height: 12px; left: -30px; top: 17px; }
+.log-entry-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-bottom: 2px; }
+.log-name { font-weight: 600; color: var(--ink); }
+.log-entry.latest .log-name { color: var(--orange); }
+.log-date { color: var(--dim); font-size: .88rem; margin-left: auto; }
+.log-tag { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 1px 7px; background: var(--orange); color: var(--orange-ink); }
+.log-tag.dim { background: var(--button); color: var(--dim); }
+.log-title { margin: 0 0 8px; font-size: 1.12rem; font-weight: 600; color: var(--text); }
+.log-entry.fix .log-title { font-size: 1rem; margin-bottom: 4px; }
+.log-line { color: var(--dim); font-size: .95rem; margin: 0 0 6px; max-width: 900px; }
+.log-label {
+  display: inline-block; min-width: 68px; margin-right: 10px; padding: 0 7px; text-align: center;
+  font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; line-height: 1.7;
+  border: 1px solid var(--edge); color: var(--ink); vertical-align: 1px;
+}
+.log-label.new { border-color: rgba(240,140,30,.6); color: var(--orange); }
+.log-label.fixed { border-color: rgba(120,200,110,.5); color: var(--good); }
+.log-label.changed { border-color: #5a5a60; color: #c9cfc6; }
+.anim .log-entry { animation: rise .6s cubic-bezier(.2,.8,.2,1) both; }
+
+@media (max-width: 860px) {
+  .log-head { padding-top: 36px; }
+  .log-tools { flex-direction: column; align-items: stretch; }
+  .log-filter button { flex: 1; padding: 9px 8px; }
+  #log-search { width: 100%; }
+  .log-entries { padding-left: 24px; }
+  .log-entries::before { left: 4px; }
+  .log-entry::before { left: -26px; }
+  .log-entry.fix::before { left: -23px; }
+  .log-entry { padding: 14px 14px 10px; }
+  .log-label { min-width: 0; }
+}

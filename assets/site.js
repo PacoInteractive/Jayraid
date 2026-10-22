@@ -98,7 +98,7 @@
       var all = (list.versionen || []).slice().reverse();
       var v = all.filter(function (x) { return x.id === list.neueste; })[0];
       var l = list.launcher;
-      if (v) {
+      if (v && document.getElementById("news-name")) {
         var t = split(v);
         document.getElementById("news-name").textContent = v.nameEn || v.name;
         document.getElementById("news-date").textContent = v.datum + (t[0] ? " · " + t[0] : "");
@@ -107,7 +107,7 @@
       }
       var rows = document.getElementById("versions");
       all.forEach(function (x) {
-        if (x === v) return;
+        if (x === v || !rows) return;
         var t = split(x), row = document.createElement("div");
         row.className = "version";
         row.innerHTML = "<b></b><span class=\"date\"></span><p></p>";
@@ -129,7 +129,8 @@
   }
 
   // The menu marks the section you are looking at, like the launcher.
-  var links = document.querySelectorAll("nav a");
+  // On other pages (changelog) the menu stays as it is.
+  var links = document.querySelectorAll('nav a[href^="#"]');
   function mark() {
     var current = links[0];
     links.forEach(function (a) {
@@ -138,8 +139,10 @@
     });
     links.forEach(function (a) { a.classList.toggle("on", a === current); });
   }
-  window.addEventListener("scroll", mark, { passive: true });
-  mark();
+  if (links.length) {
+    window.addEventListener("scroll", mark, { passive: true });
+    mark();
+  }
 
   // ── The closed alpha: 20 tester places (Cloudflare Worker, see config.js) ──
   var cfg = window.JAYRAID || {};
@@ -147,6 +150,7 @@
   // Nur beim Testen auf diesem PC: ?api=http://localhost:8787 statt des echten Zaehlers.
   if (location.hostname === "localhost" && new URLSearchParams(location.search).get("api")) api = new URLSearchParams(location.search).get("api");
   var claim = document.getElementById("claim"), cells = document.getElementById("tester-cells");
+  if (!claim) return;
   // Kein Windows (Mac, Linux, Handy): den Hinweis beim Knopf hervorheben, damit niemand aus Versehen einen Platz nimmt.
   var osNote = document.getElementById("tester-os");
   if (osNote && !/Win/i.test(navigator.userAgent)) osNote.classList.add("warn");
