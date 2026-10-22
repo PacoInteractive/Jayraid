@@ -80,7 +80,7 @@ nav a.on i, nav a:hover i { background: var(--orange); }
 .content { margin-left: var(--side-width); }
 
 /* ── PLAY: hero image with the play bar at the bottom ─────────────── */
-.play { position: relative; padding: 0; }
+.play { position: relative; padding: 0; max-width: none; }
 .play-image {
   position: absolute; inset: 0 0 auto 0; height: 620px;
   background-size: cover; background-position: center 45%;
