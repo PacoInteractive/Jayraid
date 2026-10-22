@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jayraid · Changelog</title>
+<meta name="description" content="Every version of Jayraid since the first C# build, newest first.">
+<meta property="og:title" content="Jayraid · Changelog">
+<meta property="og:image" content="images/title.jpg">
+<meta name="theme-color" content="#111112">
+<link rel="icon" href="assets/symbol.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="changelog-page">
+
+<aside class="side">
+  <a class="brand" href="index.html" aria-label="Jayraid">
+    <svg class="mark" viewBox="-50 -50 100 100" aria-hidden="true">
+      <polygon class="m1" points="43.3,25 0,50 -43.3,25 -43.3,-25 0,-50 43.3,-25"/>
+      <polygon class="m2" points="34.6,20 0,40 -34.6,20 -34.6,-20 0,-40 34.6,-20"/>
+      <polygon class="m3" points="28.6,16.5 0,33 -28.6,16.5 -28.6,-16.5 0,-33 28.6,-16.5"/>
+      <polygon class="m4" points="0,0 -28.6,16.5 -28.6,-16.5 0,-33"/>
+      <polygon class="m5" points="13,7.5 0,15 -13,7.5 -13,-7.5 0,-15 13,-7.5"/>
+    </svg>
+    <span class="word"><span data-hex="JAY" data-cap="20"></span><span class="orange" data-hex="RAID" data-cap="20"></span><span class="sub" data-hex="LAUNCHER" data-cap="9"></span></span>
+  </a>
+  <nav>
+    <a href="index.html#play"><i></i><span data-hex="PLAY" data-cap="12"></span></a>
+    <a href="index.html#news"><i></i><span data-hex="NEWS" data-cap="12"></span></a>
+    <a href="index.html#game"><i></i><span data-hex="THE GAME" data-cap="12"></span></a>
+    <a href="index.html#install"><i></i><span data-hex="INSTALL" data-cap="12"></span></a>
+    <a href="index.html#controls"><i></i><span data-hex="CONTROLS" data-cap="12"></span></a>
+    <a href="changelog.html" class="on"><i></i><span data-hex="CHANGELOG" data-cap="12"></span></a>
+  </nav>
+  <div class="side-foot">
+    <a class="discord" id="discord" href="#" rel="noopener" hidden>Join the Discord</a>
+    <p>Hexagon voxel adventure</p>
+    <p id="side-version">Alpha 1.41.0 · Launcher 1.4.3</p>
+  </div>
+</aside>
+
+<div class="content">
+
+<!-- Die Seite liest CHANGELOG.md und baut daraus die Zeitleiste (assets/changelog.js). -->
+<section class="log-head">
+  <h1 class="reveal"><span data-hex="CHANGELOG" data-cap="40" data-shadow></span></h1>
+  <p class="intro reveal">Every version of Jayraid since the first C# build, newest first.
+    New content raises the middle number, a pure fix the last one.</p>
+  <div class="log-stats reveal" id="log-stats"></div>
+  <div class="log-tools reveal">
+    <div class="log-filter" role="group" aria-label="Show">
+      <button type="button" class="on" data-filter="all">All</button>
+      <button type="button" data-filter="content">Content</button>
+      <button type="button" data-filter="fix">Fixes</button>
+    </div>
+    <input type="search" id="log-search" placeholder="Search, e.g. golem or fire" aria-label="Search the changelog">
+  </div>
+</section>
+
+<section class="log">
+  <div id="log"><p class="small">Loading the changelog…</p></div>
+  <p class="small log-empty" id="log-empty" hidden>Nothing found. Try another word.</p>
+</section>
+
+<footer>
+  <span class="footer-mark"></span>
+  <p>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved. · <a href="LICENSE">License</a> · <a href="CHANGELOG.md">Plain text</a></p>
+  <p class="small">This is the official Jayraid site. Only download the launcher from here.</p>
+</footer>
+
+</div>
+
+<!-- Bubbles, der kleine Taucher-Helfer (assets/helper.js). -->
+<div class="helper" id="helper">
+  <div class="helper-box panel" hidden>
+    <button class="helper-close" type="button" aria-label="Close">×</button>
+    <p class="helper-say" aria-live="polite"></p>
+    <div class="helper-asks" hidden></div>
+    <button class="helper-hide" type="button">Hide Bubbles</button>
+  </div>
+  <button class="helper-bot" type="button" aria-label="Ask Bubbles">
+    <span class="bubbles" aria-hidden="true"><i></i><i></i><i></i></span>
+    <svg viewBox="0 0 120 150" aria-hidden="true">
+      <g class="diver">
+        <!-- Luftschlauch mit Licht -->
+        <rect x="56" y="2" width="8" height="12" rx="2" fill="#3a3a3e"/>
+        <polygon class="lamp" points="60,-6 66,-2.5 66,4.5 60,8 54,4.5 54,-2.5" fill="#f08c1e"/>
+        <!-- Beine -->
+        <g class="leg leg-l"><rect x="44" y="118" width="12" height="18" rx="3" fill="#202024"/><rect x="40" y="132" width="17" height="8" rx="3" fill="#46464a"/></g>
+        <g class="leg leg-r"><rect x="64" y="118" width="12" height="18" rx="3" fill="#202024"/><rect x="63" y="132" width="17" height="8" rx="3" fill="#46464a"/></g>
+        <!-- Koerper -->
+        <rect x="38" y="90" width="44" height="34" rx="9" fill="#2c2c30" stroke="#46464a" stroke-width="2"/>
+        <rect x="38" y="112" width="44" height="6" fill="#f08c1e"/>
+        <polygon points="60,98 65,101 65,107 60,110 55,107 55,101" fill="#784416"/>
+        <!-- Arme -->
+        <g class="arm arm-l"><rect x="24" y="94" width="14" height="24" rx="6" fill="#2c2c30" stroke="#46464a" stroke-width="2"/></g>
+        <g class="arm arm-r"><rect x="82" y="94" width="14" height="24" rx="6" fill="#2c2c30" stroke="#46464a" stroke-width="2"/></g>
+        <!-- Helm wie das Logo -->
+        <polygon points="60,10 104,33 104,77 60,100 16,77 16,33" fill="#1c1c1e" stroke="#46464a" stroke-width="3"/>
+        <polygon points="60,20 94,38 94,72 60,90 26,72 26,38" fill="#784416"/>
+        <polygon points="60,25 89,40.5 89,69.5 60,85 31,69.5 31,40.5" fill="#f08c1e"/>
+        <polygon points="60,25 31,40.5 31,55 60,40" fill="#ffb04a" opacity=".8"/>
+        <!-- Gesicht -->
+        <g class="eyes">
+          <g class="eye"><ellipse cx="47" cy="56" rx="6" ry="7.5" fill="#180e06"/><g class="pupil"><circle cx="48.5" cy="53.5" r="2.2" fill="#fff"/></g></g>
+          <g class="eye"><ellipse cx="73" cy="56" rx="6" ry="7.5" fill="#180e06"/><g class="pupil"><circle cx="74.5" cy="53.5" r="2.2" fill="#fff"/></g></g>
+        </g>
+        <ellipse cx="38" cy="66" rx="5" ry="3" fill="#ff6b4a" opacity=".55"/>
+        <ellipse cx="82" cy="66" rx="5" ry="3" fill="#ff6b4a" opacity=".55"/>
+        <path d="M54 68 Q60 74 66 68" fill="none" stroke="#180e06" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </button>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/hexfont.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/helper.js"></script>
+<script src="assets/changelog.js"></script>
+</body>
+</html>

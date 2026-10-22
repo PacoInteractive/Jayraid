@@ -51,7 +51,12 @@
     b.addEventListener("click", function () {
       var x = answers[key];
       say.textContent = x.a;
-      if (x.go) document.querySelector(x.go).scrollIntoView({ behavior: "smooth" });
+      if (x.go) {
+        var target = document.querySelector(x.go);
+        // Auf der Changelog-Seite gibt es die Abschnitte nicht: dann zur Startseite.
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+        else setTimeout(function () { location.href = "index.html" + x.go; }, 1600);
+      }
       if (x.link === "preview" && window.JAYRAID && window.JAYRAID.preview) {
         var a = document.createElement("a");
         a.href = window.JAYRAID.preview;
