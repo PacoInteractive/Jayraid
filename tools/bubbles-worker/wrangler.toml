@@ -1,0 +1,14 @@
+# Bubbles' Gehirn (Cloudflare Worker). Einrichten: siehe LIESMICH.md
+name = "jayraid-bubbles"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Das Modell. claude-opus-5-5 antwortet am besten, claude-haiku-5-5 kostet einen Bruchteil.
+MODEL = "claude-opus-5-5"
+# Nur Anfragen von deiner Website werden beantwortet.
+ALLOWED_ORIGIN = "https://pacointeractive.github.io"
+# Von hier liest Bubbles den Changelog.
+SITE = "https://pacointeractive.github.io/Jayraid"
+# Hoechstens so viele Nachrichten pro Besucher in 10 Minuten.
+MAX_PER_10_MIN = "20"
