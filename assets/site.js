@@ -54,6 +54,14 @@
   }
 
   document.querySelectorAll("[data-hex]").forEach(render);
+  window.jayraidHex = render;
+
+  // Bearbeitungsmodus: mit ?edit an der Adresse (assets/editor.js).
+  if (/[?&]edit\b/.test(location.search)) {
+    var ed = document.createElement("script");
+    ed.src = "assets/editor.js";
+    document.body.appendChild(ed);
+  }
 
   // Animationen: nur mit JS und nur, wenn niemand "weniger Bewegung" eingestellt hat.
   // Ohne JS bleibt alles sichtbar.
