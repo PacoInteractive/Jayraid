@@ -55,6 +55,36 @@
 
   document.querySelectorAll("[data-hex]").forEach(render);
 
+  // Animationen: nur mit JS und nur, wenn niemand "weniger Bewegung" eingestellt hat.
+  // Ohne JS bleibt alles sichtbar.
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!still && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("anim");
+    // Was nebeneinander steht, erscheint kurz nacheinander.
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.transitionDelay = Math.min(i, 5) * 70 + "ms";
+    });
+    var seen = new IntersectionObserver(function (list) {
+      list.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add("in");
+        seen.unobserve(el);
+        // Danach gelten wieder die normalen Hover-Uebergaenge.
+        setTimeout(function () { el.classList.remove("reveal", "in"); el.style.transitionDelay = ""; }, 1200);
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".reveal").forEach(function (el) { seen.observe(el); });
+    // Die Gluehsechsecke im Startbild bekommen zufaellige Plaetze und Takte.
+    document.querySelectorAll(".hexes i").forEach(function (h) {
+      h.style.left = (8 + Math.random() * 88) + "%";
+      h.style.setProperty("--size", (6 + Math.random() * 12).toFixed(1) + "px");
+      h.style.animationDuration = (9 + Math.random() * 9).toFixed(1) + "s";
+      h.style.animationDelay = (-Math.random() * 18).toFixed(1) + "s";
+    });
+  }
+
   // The latest version from the signed list (the same one the launcher reads).
   // The newest one goes big into NEWS, the ones before as rows like in the launcher.
   function split(v) {
@@ -131,6 +161,7 @@
     for (var i = 0; i < total; i++) {
       var c = document.createElement("i");
       if (i < total - free) c.className = "taken";
+      c.style.animationDelay = i * 40 + "ms";
       cells.appendChild(c);
     }
     countEl.textContent = free + " of " + total + " places left";

@@ -1,4 +1,4 @@
-// Der kleine Taucher unten rechts: schwimmt, blinzelt, schaut der Maus nach und
+// Bubbles, der kleine Taucher unten rechts: schwimmt, blinzelt, schaut der Maus nach und
 // beantwortet die haeufigsten Fragen. Feste Antworten, keine KI.
 (function () {
   "use strict";
@@ -34,12 +34,13 @@
   }
   function close() {
     box.hidden = true;
-    root.classList.remove("open");
+    root.classList.remove("open", "hint");
     asks.hidden = true;
   }
 
   function menu() {
-    show("Hi! I'm a friendly diver. Most of us are, as long as you don't hit us first. What do you need?");
+    root.classList.remove("hint");
+    show("Hi, I'm Bubbles! Most divers are friendly, as long as you don't hit us first. What do you need?");
     asks.hidden = false;
   }
 
@@ -80,7 +81,7 @@
   // Kurze Hinweise beim Scrollen.
   var seen = {}, timer;
   window.addEventListener("scroll", function () {
-    if (!box.hidden || root.classList.contains("hidden")) return;
+    if (!box.hidden || root.classList.contains("hidden") || window.innerWidth < 860) return;
     Object.keys(hints).forEach(function (id) {
       var s = document.querySelector(id);
       if (seen[id] || !s) return;
@@ -88,6 +89,7 @@
       if (r.top < window.innerHeight * 0.5 && r.bottom > 0) {
         seen[id] = true;
         show(hints[id]);
+        root.classList.add("hint");
         clearTimeout(timer);
         timer = setTimeout(function () { if (asks.hidden) close(); }, 6000);
       }

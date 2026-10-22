@@ -307,3 +307,98 @@ footer p { margin: 4px 0; }
   .diver, .eye, .lamp, .arm, .leg, .bubbles i, .helper-box { animation: none !important; }
 }
 .helper.open .bubbles { display: none; }
+
+/* ── Animations (site.js sets .anim, never with reduced motion) ──── */
+/* Start: the picture drifts slowly, title, text and bar come in one after another */
+.anim .play-image { animation: drift 28s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.02) translate(0, 0); } to { transform: scale(1.09) translate(-1.5%, -1%); } }
+.play { overflow: hidden; }
+.anim .play-text h1 > span { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+.anim .play-text h1 > span:nth-child(2) { animation-delay: .12s; }
+.anim .lead { animation: rise .8s .3s cubic-bezier(.2,.8,.2,1) both; }
+.anim .playbar { animation: rise .8s .45s cubic-bezier(.2,.8,.2,1) both; }
+.anim .play-info { animation: fade .8s .7s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* Glowing hexagons rising through the start picture, like sparks over the sea */
+.hexes { position: absolute; inset: 0 0 auto 0; height: 560px; overflow: hidden; pointer-events: none; display: none; }
+.anim .hexes { display: block; }
+.hexes i {
+  position: absolute; bottom: -20px; width: var(--size, 10px); height: calc(var(--size, 10px) * 1.15);
+  background: var(--orange); opacity: 0;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  filter: drop-shadow(0 0 6px rgba(240,140,30,.9));
+  animation: spark 12s linear infinite;
+}
+@keyframes spark {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0); }
+  10% { opacity: .7; }
+  70% { opacity: .35; }
+  100% { opacity: 0; transform: translate(40px, -560px) rotate(240deg); }
+}
+
+/* The claim button: a light sweeps across now and then */
+.button.big { position: relative; overflow: hidden; }
+.anim .button.big:not(:disabled)::after {
+  content: ""; position: absolute; inset: 0; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: translateX(-160%) skewX(-20deg); animation: sweep 4.5s 1.4s ease-in-out infinite;
+}
+@keyframes sweep { 0% { transform: translateX(-160%) skewX(-20deg); } 35%, 100% { transform: translateX(360%) skewX(-20deg); } }
+.button.big:not(:disabled):hover { box-shadow: 0 0 0 4px rgba(240,140,30,.18), 0 10px 34px rgba(240,140,30,.35); }
+.button.big:not(:disabled):active { transform: translateY(1px) scale(.99); }
+
+/* Tester places pop in one by one */
+.anim .cells i { animation: pop-cell .35s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes pop-cell { from { transform: scale(0); } to { transform: scale(1); } }
+
+/* Sidebar: the orange bar slides in, the hexagon turns */
+nav a { transition: background .2s, color .2s, border-color .2s; }
+nav a i { transition: background .2s, transform .35s; }
+nav a:hover i, nav a.on i { transform: rotate(60deg); }
+
+/* Sections slide in while scrolling */
+.anim .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.anim .reveal.in { opacity: 1; transform: none; }
+
+/* Cards: the picture zooms a little, the edge lights up orange */
+.feature { overflow: hidden; transition: border-color .25s, box-shadow .25s, transform .25s; }
+.feature-image { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.feature:hover { border-color: var(--orange); box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+.feature:hover .feature-image { transform: scale(1.05); }
+.feature-text { position: relative; z-index: 1; background: var(--panel); }
+.news-top { overflow: hidden; }
+.news-top-image { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.news-top:hover .news-top-image { transform: scale(1.05); }
+
+/* Blood moon: the red night breathes */
+.anim .bloodmoon::after { animation: moon 5s ease-in-out infinite alternate; }
+@keyframes moon { from { opacity: .82; } to { opacity: 1; } }
+.anim .tag.new { animation: tag 2.4s ease-in-out infinite; }
+@keyframes tag { 0%, 100% { box-shadow: 0 0 0 0 rgba(240,140,30,.6); } 50% { box-shadow: 0 0 0 8px rgba(240,140,30,0); } }
+
+/* Version rows like launcher entries */
+.version { border-left: 3px solid transparent; transition: background .2s, border-color .2s; }
+.version:hover { background: var(--panel-light); border-left-color: var(--orange); }
+
+/* Install steps and controls */
+.steps li { transition: border-color .25s, transform .25s; }
+.steps li:hover { border-color: var(--edge); transform: translateY(-3px); }
+.steps li:hover .nr { color: var(--orange-hover); }
+.table div { transition: background .15s; }
+.table div:hover { background: var(--panel-light); }
+kbd { transition: transform .1s, border-bottom-width .1s; }
+.table div:hover kbd { transform: translateY(1px); border-bottom-width: 1px; }
+
+/* The footer hexagon turns slowly */
+.anim .footer-mark { animation: turn 12s linear infinite; }
+@keyframes turn { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+/* A hint while scrolling is only a small speech bubble */
+.helper.hint .helper-box { width: auto; max-width: 260px; padding: 10px 30px 10px 14px; }
+.helper.hint .helper-hide { display: none; }
+.helper.hint .helper-say { margin: 0; font-size: .9rem; }

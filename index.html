@@ -45,6 +45,7 @@
 <!-- PLAY: grosses Bild, unten die Leiste mit dem Knopf (wie im Launcher). -->
 <section class="play" id="play">
   <div class="play-image" style="background-image:url('images/title.jpg')"></div>
+  <div class="hexes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="play-text">
     <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="72" data-shadow></span><span class="orange" data-hex="RAID" data-cap="72" data-shadow></span></h1>
     <p class="lead">Islands of hexagon pillars, trader ships on the horizon and diver camps up in the hills.
@@ -86,8 +87,8 @@
 
 <!-- NEWS: wie die Versionsliste im Launcher. site.js fuellt sie aus der signierten Liste. -->
 <section id="news">
-  <h2><span data-hex="NEWS" data-cap="24"></span></h2>
-  <article class="news-top panel">
+  <h2 class="reveal"><span data-hex="NEWS" data-cap="24"></span></h2>
+  <article class="news-top panel reveal">
     <div class="news-top-image bloodmoon" style="background-image:url('images/world.jpg')"></div>
     <div class="news-top-text">
       <p class="news-head"><span class="news-name" id="news-name">Alpha 1.41.0</span><span class="tag" data-hex="LATEST" data-cap="10"></span></p>
@@ -95,52 +96,52 @@
       <p id="news-text">Three game modes, day and night, and the blood moon: the divers raid your base and bring field cannons. Watchtowers now have Melvin at the top, the poison moon brings acid rain, and the main menu is new.</p>
     </div>
   </article>
-  <div class="versions panel" id="versions"></div>
+  <div class="versions panel reveal" id="versions"></div>
   <p class="small more"><a href="CHANGELOG.md">Every change since Alpha 1.0.0 →</a></p>
 </section>
 
 <section id="game">
-  <h2><span data-hex="THE GAME" data-cap="24"></span></h2>
-  <p class="intro">Jayraid is a sandbox first. Every world comes from a seed, is built from hexagon pillars and doesn't end.
+  <h2 class="reveal"><span data-hex="THE GAME" data-cap="24"></span></h2>
+  <p class="intro reveal">Jayraid is a sandbox first. Every world comes from a seed, is built from hexagon pillars and doesn't end.
     If you want more than building, there is a story with two bosses and an actual ending.</p>
 
   <div class="features">
-    <article class="feature wide">
+    <article class="reveal feature wide">
       <div class="feature-image bloodmoon" style="background-image:url('images/title.jpg')"><span class="tag new" data-hex="NEW IN 1.41" data-cap="10"></span></div>
       <div class="feature-text">
         <h3>Blood moon</h3>
         <p>Some nights the moon turns red. Then the divers come for your base, and they bring field cannons. Whatever you built during the day had better hold.</p>
       </div>
     </article>
-    <article class="feature">
+    <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/world.jpg')"></div>
       <div class="feature-text">
         <h3>Three ways to play</h3>
         <p>Sandbox if you just want to build. Adventure if you want the story. Challenge if twelve lives sound like too many: you get four.</p>
       </div>
     </article>
-    <article class="feature">
+    <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/traders.jpg')"></div>
       <div class="feature-text">
         <h3>Traders and divers</h3>
         <p>The traders sail between the islands and trade with you. The divers hold the camps and watchtowers. Their ships and towers shoot at each other, with or without you.</p>
       </div>
     </article>
-    <article class="feature">
+    <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/bell.jpg')"></div>
       <div class="feature-text">
         <h3>The bell</h3>
         <p>Every trader ship carries one, and it guards the golden wand. Hit it and it rings. The sound hurts. Take the wand and the traders won't forgive you.</p>
       </div>
     </article>
-    <article class="feature">
+    <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/companion.jpg')"></div>
       <div class="feature-text">
         <h3>Down in the caves</h3>
         <p>Green fires burn deep in the mountains, guarded by rotten divers. Now and then one gets back up blue and follows you. Give it a sabre.</p>
       </div>
     </article>
-    <article class="feature wide flip">
+    <article class="reveal feature wide flip">
       <div class="feature-image" style="background-image:url('images/golem.jpg')"></div>
       <div class="feature-text">
         <h3>The golem</h3>
@@ -151,19 +152,19 @@
 </section>
 
 <section id="install">
-  <h2><span data-hex="INSTALL" data-cap="24"></span></h2>
+  <h2 class="reveal"><span data-hex="INSTALL" data-cap="24"></span></h2>
   <ol class="steps">
-    <li class="panel"><span class="nr" data-hex="1" data-cap="26"></span><div><h3>Claim a place</h3><p>Your browser saves two files: <code>Jayraid-Tester-Code.txt</code> and <code>Jayraid-Launcher.zip</code>.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="2" data-cap="26"></span><div><h3>Prepare Windows</h3><p>Install the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> (x64) once. Unpack the zip into a folder of its own.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="3" data-cap="26"></span><div><h3>Unlock</h3><p>Start <code>Jayraid-Launcher.exe</code>. If Windows warns you: <b>More info</b>, then <b>Run anyway</b>. Enter your code or drop the file onto the window.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="4" data-cap="26"></span><div><h3>Play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. New versions show up as a big <b class="orange">UPDATE</b> button, the launcher updates itself the same way.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="1" data-cap="26"></span><div><h3>Claim a place</h3><p>Your browser saves two files: <code>Jayraid-Tester-Code.txt</code> and <code>Jayraid-Launcher.zip</code>.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="2" data-cap="26"></span><div><h3>Prepare Windows</h3><p>Install the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> (x64) once. Unpack the zip into a folder of its own.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="3" data-cap="26"></span><div><h3>Unlock</h3><p>Start <code>Jayraid-Launcher.exe</code>. If Windows warns you: <b>More info</b>, then <b>Run anyway</b>. Enter your code or drop the file onto the window.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="4" data-cap="26"></span><div><h3>Play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. New versions show up as a big <b class="orange">UPDATE</b> button, the launcher updates itself the same way.</p></div></li>
   </ol>
   <p class="note small">Every version is listed in a signed version list. Before each start the launcher checks every file against it and refuses anything that was changed. Only download the launcher from this page.</p>
 </section>
 
 <section id="controls">
-  <h2><span data-hex="CONTROLS" data-cap="24"></span></h2>
-  <div class="panel table">
+  <h2 class="reveal"><span data-hex="CONTROLS" data-cap="24"></span></h2>
+  <div class="panel table reveal">
     <div><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <kbd>Shift</kbd> <kbd>Space</kbd></span><span>Walk, sprint, jump</span></div>
     <div><span>Left / right click</span><span>Mine and strike · build, sabre thrust, man a gun</span></div>
     <div><span>Both mouse buttons</span><span>Block a hit</span></div>
@@ -185,15 +186,15 @@
 
 </div>
 
-<!-- Der kleine Taucher-Helfer (assets/helper.js). -->
+<!-- Bubbles, der kleine Taucher-Helfer (assets/helper.js). -->
 <div class="helper" id="helper">
   <div class="helper-box panel" hidden>
     <button class="helper-close" type="button" aria-label="Close">×</button>
     <p class="helper-say" aria-live="polite"></p>
     <div class="helper-asks" hidden></div>
-    <button class="helper-hide" type="button">Hide the diver</button>
+    <button class="helper-hide" type="button">Hide Bubbles</button>
   </div>
-  <button class="helper-bot" type="button" aria-label="Ask the diver">
+  <button class="helper-bot" type="button" aria-label="Ask Bubbles">
     <span class="bubbles" aria-hidden="true"><i></i><i></i><i></i></span>
     <svg viewBox="0 0 120 150" aria-hidden="true">
       <g class="diver">
