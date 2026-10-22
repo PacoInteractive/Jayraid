@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jayraid · a hexagon voxel adventure</title>
-<meta name="description" content="Jayraid: a sandbox game in an endless hexagon world with divers, trader ships, a bell creature and a chained golem. Closed alpha with 20 tester places.">
+<meta name="description" content="Jayraid is a voxel game built from hexagons: trader ships, diver camps, blood moon raids and a chained golem. Closed alpha with 20 tester places.">
 <meta property="og:title" content="Jayraid">
 <meta property="og:description" content="A hexagon voxel adventure. Official download of the Jayraid Launcher.">
 <meta property="og:image" content="images/title.jpg">
@@ -14,8 +14,9 @@
 </head>
 <body>
 
-<header class="top">
-  <a class="brand" href="#" aria-label="Jayraid">
+<!-- Wie die Seitenleiste im Launcher: Logo, Menue, unten der Stand. -->
+<aside class="side">
+  <a class="brand" href="#play" aria-label="Jayraid">
     <svg class="mark" viewBox="-50 -50 100 100" aria-hidden="true">
       <polygon class="m1" points="43.3,25 0,50 -43.3,25 -43.3,-25 0,-50 43.3,-25"/>
       <polygon class="m2" points="34.6,20 0,40 -34.6,20 -34.6,-20 0,-40 34.6,-20"/>
@@ -26,111 +27,211 @@
     <span class="word"><span data-hex="JAY" data-cap="20"></span><span class="orange" data-hex="RAID" data-cap="20"></span><span class="sub" data-hex="LAUNCHER" data-cap="9"></span></span>
   </a>
   <nav>
-    <a href="#game"><i></i><span data-hex="THE GAME" data-cap="11"></span></a>
-    <a href="#news"><i></i><span data-hex="NEWS" data-cap="11"></span></a>
-    <a href="#install"><i></i><span data-hex="INSTALL" data-cap="11"></span></a>
-    <a href="#controls"><i></i><span data-hex="CONTROLS" data-cap="11"></span></a>
+    <a href="#play" class="on"><i></i><span data-hex="PLAY" data-cap="12"></span></a>
+    <a href="#news"><i></i><span data-hex="NEWS" data-cap="12"></span></a>
+    <a href="#game"><i></i><span data-hex="THE GAME" data-cap="12"></span></a>
+    <a href="#install"><i></i><span data-hex="INSTALL" data-cap="12"></span></a>
+    <a href="#controls"><i></i><span data-hex="CONTROLS" data-cap="12"></span></a>
   </nav>
-</header>
+  <div class="side-foot">
+    <a class="discord" id="discord" href="#" rel="noopener" hidden>Join the Discord</a>
+    <p>Hexagon voxel adventure</p>
+    <p id="side-version">Alpha 1.41.0 · Launcher 1.4.3</p>
+  </div>
+</aside>
 
-<section class="hero">
-  <div class="hero-image" style="background-image:url('images/title.jpg')"></div>
-  <div class="hero-content">
-    <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="64" data-shadow></span><span class="orange" data-hex="RAID" data-cap="64" data-shadow></span></h1>
-    <p class="lead">A sandbox game in an endless world made of hexagons. Build and explore freely, or follow the story:
-      fight the divers, board the trader ships, face the bell creature and wake the chained golem in the castle ruin.</p>
+<div class="content">
+
+<!-- PLAY: grosses Bild, unten die Leiste mit dem Knopf (wie im Launcher). -->
+<section class="play" id="play">
+  <div class="play-image" style="background-image:url('images/title.jpg')"></div>
+  <div class="hexes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="play-text">
+    <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="72" data-shadow></span><span class="orange" data-hex="RAID" data-cap="72" data-shadow></span></h1>
+    <p class="lead">Islands of hexagon pillars, trader ships on the horizon and diver camps up in the hills.
+      Build what you like, or follow the story to the golem in the castle ruin.</p>
+  </div>
+
+  <div class="playbar">
     <!-- Die geschlossene Alpha: 20 Tester-Plaetze. Wer einen Platz bekommt, erhaelt seinen Code als Datei und den Launcher. -->
-    <div class="tester" id="tester">
-      <div class="tester-head"><span class="orange" data-hex="CLOSED ALPHA" data-cap="13"></span><span class="tester-count" id="tester-count">20 tester places</span></div>
+    <div class="playbar-left tester" id="tester">
+      <span class="label" data-hex="CLOSED ALPHA" data-cap="11"></span>
       <div class="cells" id="tester-cells" aria-hidden="true"></div>
-      <p class="tester-text" id="tester-text">Help shape Jayraid: test every new version first and tell me what you think. Each tester gets a personal code for the launcher.</p>
-      <p class="tester-os" id="tester-os"><b>Windows 10 or 11 only.</b> On Mac or Linux? <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">Play the free browser preview</a> instead, it runs everywhere.</p>
-      <button class="button big" id="claim" type="button"><span data-hex="CLAIM A PLACE" data-cap="22"></span></button>
-      <div class="tester-done" id="tester-done" hidden>
-        <p>You are tester <b class="orange" id="done-nr">#1</b>. Your code:</p>
-        <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
-        <p class="tester-buttons">
-          <a class="button" id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a>
-          <a class="button big small-big" id="done-launcher" href="update/Jayraid-Launcher.zip" download><span data-hex="DOWNLOAD LAUNCHER" data-cap="16"></span></a>
-        </p>
-        <p class="info small">Unpack the launcher, start it and type in your code, or drag the code file into its window. Keep the code to yourself.</p>
-      </div>
+      <span class="tester-count" id="tester-count">20 tester places</span>
     </div>
-    <p class="info" id="version">Jayraid Launcher · Windows 10/11</p>
-    <p class="info small"><b>What you need:</b> Windows 10 or 11 and the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> from Microsoft (a one time install, choose "Desktop Runtime" for Windows x64).
-      Once installed, the launcher fetches every new version by itself, with a big <b>UPDATE</b> button.</p>
-    <p class="info small" id="preview" hidden>No place left? <a id="preview-link" href="#" rel="noopener">Play the browser preview</a>: one island, no download.</p>
+    <div class="playbar-mid">
+      <button class="button big" id="claim" type="button"><span data-hex="CLAIM A PLACE" data-cap="22"></span></button>
+    </div>
+    <div class="playbar-right">
+      <span class="label" data-hex="VERSION" data-cap="11"></span>
+      <span class="playbar-version" id="version">Alpha 1.41.0</span>
+      <span class="small">Windows 10/11</span>
+    </div>
+  </div>
+
+  <div class="play-info">
+    <p class="tester-text" id="tester-text">Testers get every version first. In return, tell me what works and what doesn't.</p>
+    <p class="tester-os" id="tester-os"><b>Windows 10 or 11 only.</b> On Mac or Linux, <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">play the browser preview</a> instead.</p>
+    <p class="small" id="preview" hidden>All places gone? <a id="preview-link" href="#" rel="noopener">The browser preview</a> is open for everyone: one island, no download.</p>
+    <div class="tester-done panel" id="tester-done" hidden>
+      <p>You are tester <b class="orange" id="done-nr">#1</b>. Your code:</p>
+      <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
+      <p class="tester-buttons">
+        <a class="button" id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a>
+        <a class="button orange-button" id="done-launcher" href="update/Jayraid-Launcher.zip" download><span data-hex="DOWNLOAD LAUNCHER" data-cap="14"></span></a>
+      </p>
+      <p class="small">Unpack the launcher, start it and type in your code, or drag the code file into its window. Keep the code to yourself.</p>
+    </div>
   </div>
 </section>
 
-<main>
+<!-- NEWS: wie die Versionsliste im Launcher. site.js fuellt sie aus der signierten Liste. -->
+<section id="news">
+  <h2 class="reveal"><span data-hex="NEWS" data-cap="24"></span></h2>
+  <article class="news-top panel reveal">
+    <div class="news-top-image bloodmoon" style="background-image:url('images/world.jpg')"></div>
+    <div class="news-top-text">
+      <p class="news-head"><span class="news-name" id="news-name">Alpha 1.41.0</span><span class="tag" data-hex="LATEST" data-cap="10"></span></p>
+      <p class="news-date" id="news-date">20.10.2026 · Blood moon</p>
+      <p id="news-text">Three game modes, day and night, and the blood moon: the divers raid your base and bring field cannons. Watchtowers now have Melvin at the top, the poison moon brings acid rain, and the main menu is new.</p>
+    </div>
+  </article>
+  <div class="versions panel reveal" id="versions"></div>
+  <p class="small more"><a href="CHANGELOG.md">Every change since Alpha 1.0.0 →</a></p>
+</section>
 
 <section id="game">
-  <h2><span data-hex="THE GAME" data-cap="26"></span></h2>
-  <p class="intro">Jayraid is a sandbox game in an endless world made of hexagons. Explore, mine and build whatever you want, as long as you want.
-    If you are looking for a goal, there is a story with two bosses and a real ending.</p>
-  <div class="cards">
-    <article class="card"><img src="images/world.jpg" alt="Hexagon mountains and a watchtower" loading="lazy">
-      <div><h3>An endless hexagon world</h3><p>Every world is generated from a seed and never ends: islands of hexagon pillars, mountains, rivers, forests and caves. Every block can be mined and placed. Build anything you like.</p></div></article>
-    <article class="card"><img src="images/traders.jpg" alt="Traders on the deck of their ship" loading="lazy">
-      <div><h3>Two factions</h3><p>The traders sail the seas on their ships and are friendly to you. The divers live in camps with watchtowers and attack on sight. Ships and towers even shell each other.</p></div></article>
-    <article class="card"><img src="images/bell.jpg" alt="The bell creature on a ship" loading="lazy">
-      <div><h3>The bell creature</h3><p>On every trader ship waddles a giant bell. It guards a golden magic wand. Strike it and it rings sound waves that hurt. Defeat it, and the traders turn against you.</p></div></article>
-    <article class="card"><img src="images/cave-fire.jpg" alt="A green fire in a cave" loading="lazy">
-      <div><h3>Caves and green fire</h3><p>Deep inside the mountains burn green fires, guarded by rotten divers. A green wand from the traders shows you the way. Take a torch, it is dark down there.</p></div></article>
-    <article class="card"><img src="images/companion.jpg" alt="The blue companion with a sabre" loading="lazy">
-      <div><h3>A blue companion</h3><p>Sometimes a defeated rotten diver turns blue and stands up again. It follows you from then on. Hand it a sabre and it fights at your side.</p></div></article>
-    <article class="card"><img src="images/golem.jpg" alt="The golem in the castle ruin" loading="lazy">
-      <div><h3>The chained golem</h3><p>In old castle ruins a stone giant sleeps in chains. Wake it and the boss fight begins: knock it down with the sabre, then hit it with the golden wand. Its treasure chest ends the story.</p></div></article>
-  </div>
-</section>
+  <h2 class="reveal"><span data-hex="THE GAME" data-cap="24"></span></h2>
+  <p class="intro reveal">Jayraid is a sandbox first. Every world comes from a seed, is built from hexagon pillars and doesn't end.
+    If you want more than building, there is a story with two bosses and an actual ending.</p>
 
-<section id="news">
-  <h2><span data-hex="NEWS" data-cap="26"></span></h2>
-  <div class="panel news">
-    <div class="news-head"><span class="news-name" id="news-name">Alpha</span><span class="tag" data-hex="LATEST" data-cap="10"></span><span class="news-date" id="news-date"></span></div>
-    <p id="news-text">The latest version is ready in the launcher.</p>
-    <p class="small"><a href="CHANGELOG.md">All changes since the very first version →</a></p>
+  <div class="features">
+    <article class="reveal feature wide">
+      <div class="feature-image bloodmoon" style="background-image:url('images/title.jpg')"><span class="tag new" data-hex="NEW IN 1.41" data-cap="10"></span></div>
+      <div class="feature-text">
+        <h3>Blood moon</h3>
+        <p>Some nights the moon turns red. Then the divers come for your base, and they bring field cannons. Whatever you built during the day had better hold.</p>
+      </div>
+    </article>
+    <article class="reveal feature">
+      <div class="feature-image" style="background-image:url('images/world.jpg')"></div>
+      <div class="feature-text">
+        <h3>Three ways to play</h3>
+        <p>Sandbox if you just want to build. Adventure if you want the story. Challenge if twelve lives sound like too many: you get four.</p>
+      </div>
+    </article>
+    <article class="reveal feature">
+      <div class="feature-image" style="background-image:url('images/traders.jpg')"></div>
+      <div class="feature-text">
+        <h3>Traders and divers</h3>
+        <p>The traders sail between the islands and trade with you. The divers hold the camps and watchtowers. Their ships and towers shoot at each other, with or without you.</p>
+      </div>
+    </article>
+    <article class="reveal feature">
+      <div class="feature-image" style="background-image:url('images/bell.jpg')"></div>
+      <div class="feature-text">
+        <h3>The bell</h3>
+        <p>Every trader ship carries one, and it guards the golden wand. Hit it and it rings. The sound hurts. Take the wand and the traders won't forgive you.</p>
+      </div>
+    </article>
+    <article class="reveal feature">
+      <div class="feature-image" style="background-image:url('images/companion.jpg')"></div>
+      <div class="feature-text">
+        <h3>Down in the caves</h3>
+        <p>Green fires burn deep in the mountains, guarded by rotten divers. Now and then one gets back up blue and follows you. Give it a sabre.</p>
+      </div>
+    </article>
+    <article class="reveal feature wide flip">
+      <div class="feature-image" style="background-image:url('images/golem.jpg')"></div>
+      <div class="feature-text">
+        <h3>The golem</h3>
+        <p>Chained in an old castle ruin. Walk quietly and it sleeps. The sabre knocks it down, only the golden wand finishes it. Behind it waits the ending.</p>
+      </div>
+    </article>
   </div>
 </section>
 
 <section id="install">
-  <h2><span data-hex="INSTALL" data-cap="26"></span></h2>
+  <h2 class="reveal"><span data-hex="INSTALL" data-cap="24"></span></h2>
   <ol class="steps">
-    <li class="panel"><span class="nr" data-hex="1" data-cap="28"></span><div><h3>Claim a place</h3><p>Click <b>CLAIM A PLACE</b> at the top of this page. Your browser saves two files: <code>Jayraid-Tester-Code.txt</code> with your personal code, and <code>Jayraid-Launcher.zip</code>.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="2" data-cap="28"></span><div><h3>Prepare Windows</h3><p>Install the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> if you do not have it. Unpack the zip into a folder of its own, for example <code>Documents\Jayraid</code>.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="3" data-cap="28"></span><div><h3>Start and unlock</h3><p>Open <code>Jayraid-Launcher.exe</code>. If Windows warns you, click <b>More info</b>, then <b>Run anyway</b>. Type in your code, or drag the code file into the launcher window.</p></div></li>
-    <li class="panel"><span class="nr" data-hex="4" data-cap="28"></span><div><h3>Install and play</h3><p>Click <b>INSTALL</b>, then <b>PLAY</b>. The launcher checks every file against the signed version list before it starts the game.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="1" data-cap="26"></span><div><h3>Claim a place</h3><p>Your browser saves two files: <code>Jayraid-Tester-Code.txt</code> and <code>Jayraid-Launcher.zip</code>.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="2" data-cap="26"></span><div><h3>Prepare Windows</h3><p>Install the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> (x64) once. Unpack the zip into a folder of its own.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="3" data-cap="26"></span><div><h3>Unlock</h3><p>Start <code>Jayraid-Launcher.exe</code>. If Windows warns you: <b>More info</b>, then <b>Run anyway</b>. Enter your code or drop the file onto the window.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="4" data-cap="26"></span><div><h3>Play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. New versions show up as a big <b class="orange">UPDATE</b> button, the launcher updates itself the same way.</p></div></li>
   </ol>
-  <p class="note panel">New versions arrive by themselves: on start the launcher checks this site. If there is something new, the big button turns into
-    <b class="orange">UPDATE</b>. One click and you are done. The launcher updates itself the same way.</p>
+  <p class="note small">Every version is listed in a signed version list. Before each start the launcher checks every file against it and refuses anything that was changed. Only download the launcher from this page.</p>
 </section>
 
 <section id="controls">
-  <h2><span data-hex="CONTROLS" data-cap="26"></span></h2>
-  <div class="panel table">
+  <h2 class="reveal"><span data-hex="CONTROLS" data-cap="24"></span></h2>
+  <div class="panel table reveal">
     <div><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <kbd>Shift</kbd> <kbd>Space</kbd></span><span>Walk, sprint, jump</span></div>
-    <div><span>Left click / right click</span><span>Mine, sabre slash · build, sabre thrust, man a gun</span></div>
-    <div><span><kbd>1</kbd> … <kbd>0</kbd>, mouse wheel</span><span>Choose a hotbar slot</span></div>
-    <div><span><kbd>I</kbd></span><span>Open / close the inventory</span></div>
-    <div><span><kbd>Q</kbd> · <kbd>Q</kbd> + right click</span><span>Place a block · throw a block</span></div>
+    <div><span>Left / right click</span><span>Mine and strike · build, sabre thrust, man a gun</span></div>
+    <div><span>Both mouse buttons</span><span>Block a hit</span></div>
+    <div><span><kbd>1</kbd> … <kbd>0</kbd>, mouse wheel</span><span>Hotbar slot</span></div>
+    <div><span><kbd>I</kbd></span><span>Inventory</span></div>
+    <div><span><kbd>Q</kbd> + right click</span><span>Throw the block in your hand</span></div>
     <div><span><kbd>T</kbd> <kbd>R</kbd> <kbd>C</kbd></span><span>Torch, golden wand, green cave wand</span></div>
-    <div><span>Torch in hand: hold right click, release</span><span>Throw the torch. It sticks in the ground, lights up the area and sets wood, leaves and grass on fire</span></div>
-    <div><span><kbd>E</kbd></span><span>Trade, open a chest, give your companion a sabre</span></div>
+    <div><span><kbd>E</kbd></span><span>Trade, open a chest, hand your companion a sabre</span></div>
+    <div><span><kbd>J</kbd></span><span>Story goals on / off</span></div>
     <div><span><kbd>Esc</kbd> <kbd>F11</kbd></span><span>Pause, full screen</span></div>
   </div>
 </section>
 
-</main>
-
 <footer>
   <span class="footer-mark"></span>
   <p>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved. · <a href="LICENSE">License</a></p>
-  <p class="small">This is the official Jayraid site. Only download the launcher from here. It verifies every version.</p>
+  <p class="small">This is the official Jayraid site. Only download the launcher from here.</p>
 </footer>
+
+</div>
+
+<!-- Bubbles, der kleine Taucher-Helfer (assets/helper.js). -->
+<div class="helper" id="helper">
+  <div class="helper-box panel" hidden>
+    <button class="helper-close" type="button" aria-label="Close">×</button>
+    <p class="helper-say" aria-live="polite"></p>
+    <div class="helper-asks" hidden></div>
+    <button class="helper-hide" type="button">Hide Bubbles</button>
+  </div>
+  <button class="helper-bot" type="button" aria-label="Ask Bubbles">
+    <span class="bubbles" aria-hidden="true"><i></i><i></i><i></i></span>
+    <svg viewBox="0 0 120 150" aria-hidden="true">
+      <g class="diver">
+        <!-- Luftschlauch mit Licht -->
+        <rect x="56" y="2" width="8" height="12" rx="2" fill="#3a3a3e"/>
+        <polygon class="lamp" points="60,-6 66,-2.5 66,4.5 60,8 54,4.5 54,-2.5" fill="#f08c1e"/>
+        <!-- Beine -->
+        <g class="leg leg-l"><rect x="44" y="118" width="12" height="18" rx="3" fill="#202024"/><rect x="40" y="132" width="17" height="8" rx="3" fill="#46464a"/></g>
+        <g class="leg leg-r"><rect x="64" y="118" width="12" height="18" rx="3" fill="#202024"/><rect x="63" y="132" width="17" height="8" rx="3" fill="#46464a"/></g>
+        <!-- Koerper -->
+        <rect x="38" y="90" width="44" height="34" rx="9" fill="#2c2c30" stroke="#46464a" stroke-width="2"/>
+        <rect x="38" y="112" width="44" height="6" fill="#f08c1e"/>
+        <polygon points="60,98 65,101 65,107 60,110 55,107 55,101" fill="#784416"/>
+        <!-- Arme -->
+        <g class="arm arm-l"><rect x="24" y="94" width="14" height="24" rx="6" fill="#2c2c30" stroke="#46464a" stroke-width="2"/></g>
+        <g class="arm arm-r"><rect x="82" y="94" width="14" height="24" rx="6" fill="#2c2c30" stroke="#46464a" stroke-width="2"/></g>
+        <!-- Helm wie das Logo -->
+        <polygon points="60,10 104,33 104,77 60,100 16,77 16,33" fill="#1c1c1e" stroke="#46464a" stroke-width="3"/>
+        <polygon points="60,20 94,38 94,72 60,90 26,72 26,38" fill="#784416"/>
+        <polygon points="60,25 89,40.5 89,69.5 60,85 31,69.5 31,40.5" fill="#f08c1e"/>
+        <polygon points="60,25 31,40.5 31,55 60,40" fill="#ffb04a" opacity=".8"/>
+        <!-- Gesicht -->
+        <g class="eyes">
+          <g class="eye"><ellipse cx="47" cy="56" rx="6" ry="7.5" fill="#180e06"/><g class="pupil"><circle cx="48.5" cy="53.5" r="2.2" fill="#fff"/></g></g>
+          <g class="eye"><ellipse cx="73" cy="56" rx="6" ry="7.5" fill="#180e06"/><g class="pupil"><circle cx="74.5" cy="53.5" r="2.2" fill="#fff"/></g></g>
+        </g>
+        <ellipse cx="38" cy="66" rx="5" ry="3" fill="#ff6b4a" opacity=".55"/>
+        <ellipse cx="82" cy="66" rx="5" ry="3" fill="#ff6b4a" opacity=".55"/>
+        <path d="M54 68 Q60 74 66 68" fill="none" stroke="#180e06" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </button>
+</div>
 
 <script src="assets/config.js"></script>
 <script src="assets/hexfont.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/helper.js"></script>
 </body>
 </html>

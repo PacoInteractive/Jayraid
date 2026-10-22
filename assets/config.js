@@ -3,5 +3,7 @@
 //   preview:   die Browser-Vorschau auf itch.io (leer: kein Link)
 window.JAYRAID = {
   testerApi: "https://jayraid-tester.jayraid-tester.workers.dev",
-  preview: "https://paco-interactive.itch.io/jayraid"
+  preview: "https://paco-interactive.itch.io/jayraid",
+  // discord: der Einladungslink (leer: kein Knopf in der Seitenleiste)
+  discord: ""
 };
