@@ -361,13 +361,13 @@
         what: "Jayraid is in a closed alpha with 20 tester places. Click CLAIM A PLACE at the top: you get a personal code file and the launcher.",
         how: "Click CLAIM A PLACE, unpack the launcher, start it and type in your code. Keep the code to yourself.",
         count: "20 places in total.",
-        why: "Testers get every version first. In return, Jaylen wants to know what works and what doesn't."
+        why: "Testers get every version first. In return, Tixx wants to know what works and what doesn't."
       },
       de: {
         what: "Jayraid ist in einer geschlossenen Alpha mit 20 Tester-Plätzen. Klick oben auf CLAIM A PLACE: Du bekommst eine persönliche Code-Datei und den Launcher.",
         how: "Auf CLAIM A PLACE klicken, Launcher entpacken, starten und Code eingeben. Behalte den Code für dich.",
         count: "Insgesamt 20 Plätze.",
-        why: "Tester bekommen jede Version zuerst. Dafür will Jaylen wissen, was funktioniert und was nicht."
+        why: "Tester bekommen jede Version zuerst. Dafür will Tixx wissen, was funktioniert und was nicht."
       }
     },
     install: {
@@ -421,13 +421,17 @@
       de: { what: "Die Alpha zu testen ist kostenlos. Du brauchst nur einen der 20 Tester-Plätze. Über einen späteren Preis ist meines Wissens nichts entschieden." }
     },
     dev: {
-      names: ["developer", "~dev", "jaylen", "paco", "paco interactive", "who made", "wer hat", "entwickler", "made by", "creator", "ersteller", "~team", "~studio", "~engine", "unity", "unreal", "c#", "programmiert", "programmed"],
+      names: ["tixx", "tix", "creator of", "schoepfer", "erschaffer", "developer", "~dev", "jaylen", "paco", "paco interactive", "who made", "wer hat", "entwickler", "made by", "creator", "ersteller", "~team", "~studio", "~engine", "unity", "unreal", "c#", "programmiert", "programmed"],
       en: {
-        what: "Jayraid is made by Jaylen (Paco Interactive). The first C# version came out on 20 September 2026, and more than 50 versions followed within a month.",
+        what: "Jayraid is made by Tixx from Paco Interactive. He builds the game, the launcher and this website, and he made me too. The first C# version came out on 20 September 2026, and more than 50 versions followed within a month.",
+        who: "Tixx is the creator of Jayraid, from Paco Interactive. Everything here comes from him: the game, the launcher, this page. And me. So be nice to him. Blub.",
+        opinion: "Of course! He made me, so I'm a little biased. But he built a whole game, a launcher and this page. Blub.",
         how: "It's written in C# with its own engine, not Unity or Unreal. Even the font is made of hexagons."
       },
       de: {
-        what: "Jayraid wird von Jaylen (Paco Interactive) gemacht. Die erste C#-Version kam am 20. September 2026, und in einem Monat folgten über 50 Versionen.",
+        what: "Jayraid wird von Tixx von Paco Interactive gemacht. Er baut das Spiel, den Launcher und diese Website, und mich hat er auch erschaffen. Die erste C#-Version kam am 20. September 2026, und in einem Monat folgten über 50 Versionen.",
+        who: "Tixx ist der Schöpfer von Jayraid, von Paco Interactive. Alles hier stammt von ihm: das Spiel, der Launcher, diese Seite. Und ich. Also sei nett zu ihm. Blub.",
+        opinion: "Na klar! Er hat mich gemacht, ich bin also ein bisschen parteiisch. Aber er hat ein ganzes Spiel, einen Launcher und diese Seite gebaut. Blub.",
         how: "Es ist in C# geschrieben, mit eigener Engine, nicht Unity oder Unreal. Sogar die Schrift besteht aus Sechsecken."
       }
     },
@@ -462,8 +466,8 @@
     },
     bubbles: {
       names: ["bubbles", "you", "du", "dich", "dir", "yourself", "mascot", "maskottchen"],
-      en: { what: "I'm Bubbles, a diver. One of the friendly ones. I live in the corner of this page and know a lot about Jayraid. I'm not a big AI, just a well-read diver." },
-      de: { what: "Ich bin Bubbles, ein Taucher. Einer von den netten. Ich wohne in der Ecke dieser Seite und weiss viel über Jayraid. Ich bin keine grosse KI, nur ein belesener Taucher." }
+      en: { what: "I'm Bubbles, a diver. One of the friendly ones. Tixx from Paco Interactive made me. I live in the corner of this page and know a lot about Jayraid. I'm not a big AI, just a well-read diver." },
+      de: { what: "Ich bin Bubbles, ein Taucher. Einer von den netten. Tixx von Paco Interactive hat mich gemacht. Ich wohne in der Ecke dieser Seite und weiss viel über Jayraid. Ich bin keine grosse KI, nur ein belesener Taucher." }
     }
   };
 
@@ -502,6 +506,9 @@
     { re: /(are you (an |a )?(ai|bot|robot|human|real)|bist du (eine |ein )?(ki|bot|roboter|mensch|echt)|chatgpt|claude)/,
       en: ["I'm a small diver bot that lives on this page. No big AI, no internet brain, just a lot of knowledge about Jayraid."],
       de: ["Ich bin ein kleiner Taucher-Bot, der auf dieser Seite wohnt. Keine grosse KI, kein Internet-Gehirn, nur viel Wissen über Jayraid."] },
+    { re: /(who (made|created|built|programmed) you|wer hat dich (gemacht|erschaffen|programmiert|gebaut)|your (creator|maker|dad|father)|dein (schoepfer|erschaffer|papa|vater))/,
+      en: ["Tixx from Paco Interactive made me, together with this whole website. He also makes Jayraid."],
+      de: ["Tixx von Paco Interactive hat mich gemacht, zusammen mit dieser ganzen Website. Er macht auch Jayraid."] },
     { re: /(how old|wie alt|birthday|geburtstag)/,
       en: ["I hatched together with this website in October 2026. The game itself is a bit older: the first C# version came out on 20 September 2026."],
       de: ["Ich bin im Oktober 2026 mit dieser Website geschlüpft. Das Spiel ist etwas älter: Die erste C#-Version kam am 20. September 2026."] },
@@ -581,6 +588,8 @@
     ["why", /\b(why|warum|wieso|weshalb|wozu)\b/],
     ["what", /\b(how long|wie lange|dauert|takes)\b/],
     ["how", /\b(how|wie|use|benutz\w*|verwend\w*|work|funktionier\w*)\b/],
+    ["opinion", /\b(is (he|tixx|tix) (cool|nice|good|great|awesome)|ist (er|tixx|tix) (cool|nett|toll|gut|super|lieb))\b/],
+    ["who", /\b(who is|who made|who created|who built|wer ist|wer hat|wer macht)\b/],
     ["what", /\b(what|was ist|was sind|explain|erklaer\w*|tell me about|erzaehl mir|what is|who is|wer ist)\b/]
   ];
   function facet(n) {
