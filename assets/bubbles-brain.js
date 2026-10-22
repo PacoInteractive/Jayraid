@@ -326,12 +326,14 @@
       en: {
         what: "Every world comes from a seed and never ends: islands of hexagon pillars, mountains, rivers, forests, caves and the sea. Grass has climate zones up to snow, and there's rain and weather.",
         how: "Brooks spring from the hillsides and great rivers carve deep valleys down to the sea.",
-        count: "Endless. Every world goes on as far as you walk."
+        count: "Endless. Every world goes on as far as you walk.",
+        why: "Because hexagons are the bestagons. Six neighbours instead of four, rounder hills, and nobody can call it a cube game."
       },
       de: {
         what: "Jede Welt entsteht aus einem Seed und endet nie: Inseln aus Sechsecksäulen, Berge, Flüsse, Wälder, Höhlen und das Meer. Gras hat Klimazonen bis zum Schnee, und es gibt Regen und Wetter.",
         how: "Bäche entspringen an den Hängen, grosse Flüsse graben tiefe Täler bis zum Meer.",
-        count: "Endlos. Jede Welt geht so weit, wie du läufst."
+        count: "Endlos. Jede Welt geht so weit, wie du läufst.",
+        why: "Weil Sechsecke einfach die besten Ecken haben. Sechs Nachbarn statt vier, rundere Hügel, und niemand kann es Würfelspiel nennen."
       }
     },
     workshop: {
@@ -451,7 +453,7 @@
       de: { what: "Es gibt ein Befehlsfeld. /ruine führt zur nächsten unberührten Ruine, /ruine neu setzt eine Ruine nach einem Kampf zurück." }
     },
     jayraid: {
-      names: ["jayraid", "the game", "this game", "das spiel", "dieses spiel", "worum geht", "what kind of game", "was fuer ein spiel", "genre", "about the game"],
+      names: ["jayraid", "~the game", "~this game", "~das spiel", "~dieses spiel", "worum geht", "what kind of game", "was fuer ein spiel", "genre", "about the game"],
       go: "#game",
       en: {
         what: "Jayraid is a sandbox adventure in an endless world made of hexagon pillars. Build and explore freely, or follow the story: the divers, the trader ships, the bell and the chained golem.",
@@ -463,6 +465,117 @@
         how: "Drei Modi: Sandbox, Adventure und Challenge. Tag und Nacht, Blutmond-Überfälle auf deine Basis und eine Geschichte mit Ende.",
         why: "Weil Würfel schon vergeben waren. Blub."
       }
+    },
+    saves: {
+      names: ["save", "saves", "saving", "speichern", "speichert", "spielstand", "worlds folder", "my world", "meine welt", "backup", "sicherung", "lost world", "verloren"],
+      en: {
+        what: "When you leave a world, a saving screen shows while it saves. Your worlds live in %AppData%\\Blockwelt2\\worlds.",
+        where: "Your worlds are in %AppData%\\Blockwelt2\\worlds. Paste that into the Windows Explorer address bar.",
+        how: "All installed versions share your worlds. Before an older version starts, the launcher backs them up first."
+      },
+      de: {
+        what: "Wenn du eine Welt verlässt, erscheint eine Speichertafel, während sie gespeichert wird. Deine Welten liegen in %AppData%\\Blockwelt2\\worlds.",
+        where: "Deine Welten liegen in %AppData%\\Blockwelt2\\worlds. Kopier das in die Adresszeile des Windows Explorers.",
+        how: "Alle installierten Versionen teilen sich deine Welten. Bevor eine ältere Version startet, sichert der Launcher sie zuerst."
+      }
+    },
+    versions: {
+      names: ["old version", "older version", "alte version", "aeltere version", "downgrade", "installations", "installationen", "switch version", "version wechseln", "previous version", "vorherige version"],
+      go: "#news",
+      en: {
+        what: "The launcher keeps several versions. Under INSTALLATIONS you can select, play or remove each one, older ones included.",
+        where: "Installed versions live in %LocalAppData%\\Blockwelt2\\Versionen.",
+        how: "Open INSTALLATIONS in the launcher, pick a version and click PLAY. Your worlds are backed up before an older version starts."
+      },
+      de: {
+        what: "Der Launcher behält mehrere Versionen. Unter INSTALLATIONS kannst du jede auswählen, spielen oder entfernen, auch ältere.",
+        where: "Installierte Versionen liegen in %LocalAppData%\\Blockwelt2\\Versionen.",
+        how: "Im Launcher INSTALLATIONS öffnen, Version wählen, PLAY klicken. Deine Welten werden gesichert, bevor eine ältere Version startet."
+      }
+    },
+    bugs: {
+      names: ["bug", "bugs", "fehler", "crash", "crashes", "absturz", "abgestuerzt", "stuerzt ab", "freeze", "freezes", "haengt", "stutter", "stutters", "ruckler", "ruckelt", "report", "melden", "feedback", "idea", "ideas", "idee", "ideen", "suggest", "vorschlag", "test", "testing", "what to test", "was testen"],
+      en: {
+        what: "Things that help Tixx most: anything that crashes, freezes or stutters, anything that felt unfair, confusing or boring, and ideas for what Jayraid should get next.",
+        how: "Tell Tixx which version you played. It's shown in the main menu, for example \"Alpha 1.41.1\".",
+        where: "If the game stutters, look at %AppData%\\Blockwelt2\\ruckler.txt. It shows what slowed the game down, which helps a lot with a report.",
+        tips: "The more exact, the better: what you did, what happened, what you expected, and the version from the main menu."
+      },
+      de: {
+        what: "Am meisten helfen Tixx: alles, was abstürzt, hängt oder ruckelt, alles, was sich unfair, verwirrend oder langweilig anfühlt, und Ideen, was Jayraid als Nächstes bekommen soll.",
+        how: "Sag Tixx, welche Version du gespielt hast. Sie steht im Hauptmenü, zum Beispiel „Alpha 1.41.1“.",
+        where: "Wenn das Spiel ruckelt, schau in %AppData%\\Blockwelt2\\ruckler.txt. Dort steht, was das Spiel ausgebremst hat, das hilft bei einer Meldung sehr.",
+        tips: "Je genauer, desto besser: was du gemacht hast, was passiert ist, was du erwartet hast, und die Version aus dem Hauptmenü."
+      }
+    },
+    codehelp: {
+      names: ["lost my code", "code verloren", "code lost", "share code", "code teilen", "code weitergeben", "launcher locked", "gesperrt", "blocked code", "code blocked", "invalid code", "code ungueltig", "code geht nicht", "code doesnt work"],
+      go: "#play",
+      en: {
+        what: "Your tester code is personal. Please don't share it: a shared code can be blocked, and then the launcher locks again.",
+        how: "Type the code into the launcher, or drag Jayraid-Tester-Code.txt into its window. If it doesn't work anymore, ask Tixx."
+      },
+      de: {
+        what: "Dein Tester-Code ist persönlich. Bitte gib ihn nicht weiter: Ein geteilter Code kann gesperrt werden, dann sperrt sich der Launcher wieder.",
+        how: "Tipp den Code in den Launcher oder zieh Jayraid-Tester-Code.txt in sein Fenster. Wenn er nicht mehr geht, frag Tixx."
+      }
+    },
+    unblock: {
+      names: ["unblock", "zulassen", "smart app control", "no run anyway", "kein trotzdem", "button missing", "knopf fehlt", "wont start", "startet nicht", "doesnt start", "geht nicht auf", "oeffnet nicht"],
+      go: "#install",
+      en: {
+        what: "If Windows has no \"Run anyway\" button: right click Jayraid-Launcher.exe, choose Properties and tick \"Unblock\". Also make sure the .NET 8 Desktop Runtime is installed.",
+        tips: "Keep all files of the launcher folder together, don't start the exe from inside the zip."
+      },
+      de: {
+        what: "Wenn Windows keinen Knopf „Trotzdem ausführen“ zeigt: Rechtsklick auf Jayraid-Launcher.exe, Eigenschaften, Haken bei „Zulassen“. Und prüf, ob die .NET 8 Desktop Runtime installiert ist.",
+        tips: "Lass alle Dateien im Launcher-Ordner zusammen und starte die exe nicht direkt aus dem Zip."
+      }
+    },
+    size: {
+      names: ["size", "groesse", "how big", "wie gross", "megabyte", "mb", "gb", "disk", "speicherplatz", "space"],
+      en: { what: "Small! The launcher zip is about 6.5 MB and a game version is about 7 MB." },
+      de: { what: "Klein! Das Launcher-Zip hat etwa 6,5 MB und eine Spielversion etwa 7 MB." }
+    },
+    watchtowers: {
+      names: ["watchtower", "watchtowers", "wachturm", "wachtuerme", "tower", "towers", "turm", "tuerme"],
+      go: "#game",
+      en: { what: "The divers' camps have watchtowers, with Melvin at the top. Towers and trader ships shell each other. The story starts at the first watchtower.", where: "In the diver camps in the hills." },
+      de: { what: "Die Lager der Taucher haben Wachtürme, oben sitzt Melvin. Türme und Händlerschiffe beschiessen sich gegenseitig. Die Geschichte beginnt beim ersten Wachturm.", where: "In den Lagern der Taucher in den Hügeln." }
+    },
+    flyer: {
+      names: ["flyer", "flying diver", "fliegender taucher", "flieger", "fire arrow", "fire arrows", "feuerpfeil", "feuerpfeile"],
+      en: { what: "The flying diver shoots fire arrows. They can set wood, leaves and grass on fire.", beat: "Block its arrows and keep away from wooden walls. Water puts out the fire." },
+      de: { what: "Der fliegende Taucher schiesst Feuerpfeile. Die können Holz, Laub und Gras anzünden.", beat: "Blocke die Pfeile und halte dich von Holzwänden fern. Wasser löscht das Feuer." }
+    },
+    history: {
+      names: ["history", "geschichte von jayraid", "first version", "erste version", "browser edition", "browser version", "old name", "alter name", "how it started", "wie alles anfing", "begann", "started", "did jayraid start", "jayraid begin", "wie hat jayraid angefangen", "angefangen"],
+      go: "#news",
+      en: {
+        what: "Jayraid started as a browser game. The first C# edition came on 20 September 2026 and took over everything from browser edition 38: divers, archers, cannons, sinking ships, traders and weather. Since Alpha 1.19 the game is called Jayraid.",
+        count: "More than 50 versions so far, from Alpha 1.0.0 to today."
+      },
+      de: {
+        what: "Jayraid begann als Browserspiel. Die erste C#-Ausgabe kam am 20. September 2026 und übernahm alles aus Browser-Ausgabe 38: Taucher, Bogenschützen, Kanonen, sinkende Schiffe, Händler und Wetter. Seit Alpha 1.19 heisst das Spiel Jayraid.",
+        count: "Bisher über 50 Versionen, von Alpha 1.0.0 bis heute."
+      }
+    },
+    death: {
+      names: ["respawn", "wiederbeleben", "game over", "when i die", "wenn ich sterbe", "died", "gestorben"],
+      en: { what: "When you die, the view tips to the ground, hand and sabre crumble into hexagons, and the screen goes dark cell by cell. Then you're back." },
+      de: { what: "Wenn du stirbst, kippt die Sicht zu Boden, Hand und Säbel zerfallen in Sechsecke und der Bildschirm wird Zelle für Zelle dunkel. Dann bist du zurück." }
+    },
+    menu: {
+      names: ["main menu", "hauptmenue", "menu", "menue", "options", "optionen", "pause"],
+      go: "#controls",
+      en: { what: "Jayraid has a new main menu since Alpha 1.41, and it shows the version you're playing. Esc pauses, F11 switches to full screen." },
+      de: { what: "Seit Alpha 1.41 hat Jayraid ein neues Hauptmenü, und dort steht die Version, die du spielst. Esc pausiert, F11 schaltet auf Vollbild." }
+    },
+    ruins: {
+      names: ["ruin", "ruins", "ruine", "ruinen", "castle", "burg", "schloss"],
+      go: "#game",
+      en: { what: "Old castle ruins hold the chained golem. /ruine leads you to the nearest untouched one, /ruine neu resets a ruin after a fight.", tips: "Be quiet inside, or the golem wakes up." },
+      de: { what: "In alten Burgruinen liegt der angekettete Golem. /ruine führt dich zur nächsten unberührten, /ruine neu setzt eine Ruine nach einem Kampf zurück.", tips: "Sei drinnen leise, sonst wacht der Golem auf." }
     },
     bubbles: {
       names: ["bubbles", "you", "du", "dich", "dir", "yourself", "mascot", "maskottchen"],
@@ -523,6 +636,36 @@
       de: ["Autsch. Ich bin nur ein kleiner Taucher, aber ich geb mir Mühe. Frag mich etwas über Jayraid, dann beweise ich es."] },
     { re: /(meaning of life|sinn des lebens)/,
       en: ["42. Or twelve, if you count lives in hexagons."], de: ["42. Oder zwölf, wenn du Leben in Sechsecken zählst."] },
+    { strong: true, re: /(weather|wetter|is it raining|regnet es)/,
+      en: ["Under water it's always the same weather: wet. In Jayraid there's rain, and on some nights acid rain."], de: ["Unter Wasser ist immer das gleiche Wetter: nass. In Jayraid gibt es Regen, und in manchen Nächten Säureregen."] },
+    { re: /(hungry|hunger|food|essen|eat\b|pizza|snack)/,
+      en: ["I eat bubbles. They're low in calories. Blub."], de: ["Ich esse Luftblasen. Wenig Kalorien. Blub."] },
+    { re: /(tired|sleep|schlafen|muede|do you sleep|schlaefst du)/,
+      en: ["Divers don't sleep, we float. But you should take a break now and then. The golem will still be there tomorrow."], de: ["Taucher schlafen nicht, wir treiben. Aber du solltest ab und zu Pause machen. Der Golem ist morgen auch noch da."] },
+    { strong: true, re: /\b(im sad|i am sad|feel bad|bin traurig|mir gehts schlecht|schlechten tag|bad day)\b/,
+      en: ["Oh no. Want a fun fact? Or a joke? Or I can just float here and keep you company. Blub."], de: ["Oh nein. Willst du einen Fakt? Oder einen Witz? Oder ich treibe einfach hier und leiste dir Gesellschaft. Blub."] },
+    { strong: true, re: /\b(im happy|i am happy|bin gluecklich|freu mich|super tag|good day|great day)\b/,
+      en: ["That's great! My visor is glowing with you."], de: ["Wie schön! Mein Visier leuchtet mit."] },
+    { re: /(where do you live|wo wohnst du|where are you from|woher kommst du)/,
+      en: ["In the bottom right corner of this page. Before that, somewhere deep in the sea of Jayraid."], de: ["Unten rechts auf dieser Seite. Davor irgendwo tief im Meer von Jayraid."] },
+    { re: /(can you swim|kannst du schwimmen)/,
+      en: ["I'm a diver. Swimming is my whole personality. In Jayraid you swim by sprinting in deep water."], de: ["Ich bin ein Taucher. Schwimmen ist meine ganze Persönlichkeit. In Jayraid schwimmst du, indem du im tiefen Wasser sprintest."] },
+    { re: /(favou?rite colou?r|lieblingsfarbe)/,
+      en: ["Orange. Look at my visor. Look at this whole website. Orange."], de: ["Orange. Schau mein Visier an. Schau diese ganze Website an. Orange."] },
+    { re: /(sing|song|lied|rap)\b/,
+      en: ["Blub blub blub, the golem's in the club... I'll stick to answering questions."], de: ["Blub blub blub, der Golem tanzt im Club... ich bleib lieber beim Fragen beantworten."] },
+    { re: /(motivat|motivier|encourage|aufmunter|i cant do it|ich schaffs nicht|too hard|zu schwer)/,
+      en: ["You can do it! Block, step back, strike. And if the golem wins once, it only means you know its moves now."], de: ["Du schaffst das! Blocken, zurückweichen, zuschlagen. Und wenn der Golem einmal gewinnt, kennst du jetzt seine Züge."] },
+    { re: /(story|geschichte) (please|bitte)|tell me a story|erzaehl (mir )?eine geschichte/,
+      en: ["Once upon a time a diver met a bell on a ship. The bell rang. The diver ran. The end. Short, but true."], de: ["Es war einmal ein Taucher, der traf auf einem Schiff eine Glocke. Die Glocke läutete. Der Taucher rannte. Ende. Kurz, aber wahr."] },
+    { re: /(riddle|raetsel)/,
+      en: ["What has six sides and builds whole worlds? A hexagon! Okay, that wasn't a fair riddle."], de: ["Was hat sechs Seiten und baut ganze Welten? Ein Sechseck! Okay, das war kein faires Rätsel."] },
+    { re: /\b(why hexagons?|warum sechsecke?)\b/,
+      en: ["Because hexagons are the bestagons. Six neighbours instead of four, rounder hills, and nobody can call it a cube game."], de: ["Weil Sechsecke einfach die besten Ecken haben. Sechs Nachbarn statt vier, rundere Hügel, und niemand kann es Würfelspiel nennen."] },
+    { strong: true, re: /(next update|naechstes update|when is the next|wann kommt das naechste|coming soon|bald|roadmap|plans|plaene)/,
+      en: ["I don't know the plans, Tixx keeps them in his head. New versions come often though: more than 50 in a month. Watch the UPDATE button."], de: ["Die Pläne kenne ich nicht, die hat Tixx im Kopf. Neue Versionen kommen aber oft: über 50 in einem Monat. Achte auf den UPDATE-Knopf."] },
+    { strong: true, re: /\b(i love (jayraid|this game|the game)|ich liebe (jayraid|das spiel|dieses spiel)|best game|bestes spiel)\b/,
+      en: ["Blub! I'll tell Tixx. That makes his day."], de: ["Blub! Das sag ich Tixx. Das freut ihn bestimmt."] },
     { re: /(favou?rite|lieblings)/,
       en: ["My favourite thing in Jayraid? The blood moon. From a safe distance, under water."],
       de: ["Mein Lieblingsding in Jayraid? Der Blutmond. Aus sicherer Entfernung, unter Wasser."] },
@@ -674,7 +817,7 @@
 
   // ── Die Antwort ───────────────────────────────────────────────────
   function reply(text) {
-    var n = norm(text), toks = n.split(" "), l = lang(n, st.lang);
+    var n = norm(text), toks = n.split(" "), l = st.fixed || lang(n, st.lang);
     st.lang = l;
     if (!n) return { text: l === "de" ? "Blub?" : "Blub?" };
 
@@ -687,9 +830,47 @@
       st.pending = null;
       return { text: l === "de" ? "Okay! Frag einfach, wenn du etwas wissen willst." : "Okay! Just ask if you want to know something." };
     }
-    st.pending = null;
+    var wasRps = st.pending === "rps";
+    st.pending = wasRps ? "rps" : null;
     if (/^(another( one)?|one more|noch (einer|eins|ein fakt)|nochmal)\b/.test(n) || /\b(fun ?fact|fact|fakt|did you know|wusstest du|erzaehl (mir )?(was|etwas)|tell me something|surprise me|ueberrasch)/.test(n)) {
       return { text: fact(l), chips: [l === "de" ? "Noch einer" : "Another one"] };
+    }
+
+    // Kleine Spiele und Werkzeuge
+    var rps = /\b(rock|paper|scissors|schere|stein|papier)\b/.exec(n);
+    if (st.pending === "rps" || /(rock paper scissors|schere stein papier|play a game|spiel(en)? wir|lass uns spielen)/.test(n)) {
+      var moves = { rock: 0, stein: 0, paper: 1, papier: 1, scissors: 2, schere: 2 };
+      var names = l === "de" ? ["Stein", "Papier", "Schere"] : ["rock", "paper", "scissors"];
+      if (rps && st.pending === "rps") {
+        st.pending = null;
+        var me = Math.floor(Math.random() * 3), you = moves[rps[1]], res = (you - me + 3) % 3;
+        var out = res === 0 ? (l === "de" ? "Unentschieden!" : "A draw!") : res === 1 ? (l === "de" ? "Du gewinnst! Blub." : "You win! Blub.") : (l === "de" ? "Ich gewinne! Taucher-Reflexe." : "I win! Diver reflexes.");
+        return { text: (l === "de" ? "Ich nehme " : "I pick ") + names[me] + ". " + out, chips: l === "de" ? ["Nochmal Schere Stein Papier", "Einen Fakt"] : ["Rock paper scissors again", "A fun fact"] };
+      }
+      st.pending = "rps";
+      return { text: l === "de" ? "Schere, Stein, Papier! Was nimmst du?" : "Rock, paper, scissors! What do you pick?", chips: names.map(function (x) { return x.charAt(0).toUpperCase() + x.slice(1); }) };
+    }
+    if (/\b(roll a dice|roll the dice|throw a dice|wuerfel|wuerfle|dice)\b/.test(n)) {
+      return { text: (l === "de" ? "Ich würfle… " : "Rolling… ") + (1 + Math.floor(Math.random() * 6)) + "!" };
+    }
+    if (/\b(flip a coin|coin flip|muenze|kopf oder zahl|heads or tails)\b/.test(n)) {
+      var head = Math.random() < 0.5;
+      return { text: l === "de" ? (head ? "Kopf!" : "Zahl!") : (head ? "Heads!" : "Tails!") };
+    }
+    var calc = /^(what is |whats |was ist |wie viel ist |calculate |rechne )?([\d\s+\-*/().x:]+)\??$/.exec(text.toLowerCase().trim().replace(/[’']/g, ""));
+    if (calc && /\d\s*[+\-*/x:]\s*\d/.test(calc[2])) {
+      var expr = calc[2].replace(/x/g, "*").replace(/:/g, "/");
+      try {
+        var val = Function('"use strict"; return (' + expr + ');')();
+        if (typeof val === "number" && isFinite(val)) return { text: (l === "de" ? "Das gibt " : "That's ") + (Math.round(val * 1000) / 1000) + ". " + (l === "de" ? "Taucher können rechnen. Blub." : "Divers can count. Blub.") };
+      } catch (e) { /* keine Rechnung */ }
+    }
+    if (/\b(what time|wie spaet|uhrzeit|what day|welcher tag|date today|datum)\b/.test(n)) {
+      var d = new Date();
+      return { text: l === "de" ? "Bei dir ist es " + d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }) + " am " + d.toLocaleDateString("de-DE") + "." : "For you it's " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }) + " on " + d.toLocaleDateString("en-GB") + "." };
+    }
+    if (/(tell me a story|erzaehl (mir )?eine geschichte)/.test(n)) {
+      return { text: l === "de" ? "Es war einmal ein Taucher, der traf auf einem Schiff eine Glocke. Die Glocke läutete. Der Taucher rannte. Ende. Kurz, aber wahr." : "Once upon a time a diver met a bell on a ship. The bell rang. The diver ran. The end. Short, but true." };
     }
 
     // Eine bestimmte Version: "what happened in alpha 1.22", "was kam mit 1.38"
@@ -728,7 +909,7 @@
     // Smalltalk zuerst, wenn kein Ding aus dem Spiel gemeint ist (oder die Nachricht kurz ist).
     for (var i = 0; i < TALK.length; i++) {
       var t = TALK[i];
-      if (t.re.test(n) && (!scores.length || scores[0][1] < 1.5 || (t.short && toks.length <= 2))) {
+      if (t.re.test(n) && (t.strong || !scores.length || scores[0][1] < 1.5 || (t.short && toks.length <= 2))) {
         return { text: pick(t[l]) };
       }
     }
@@ -740,14 +921,14 @@
     // Unbekannte Inhaltswoerter ("what is xyz") sind keine Folgefrage.
     var unknown = keywords(toks).filter(function (t) { return !facet(" " + t + " ") && !MORE.test(t); });
     if (!scores.length && st.topic && (more || FOLLOW.test(n) || (!unknown.length && (f || toks.length <= 4)))) {
-      return answerAbout([st.topic], more ? "more" : (f || "more"), l);
+      return answerAbout([st.topic], more ? "more" : (f || "more"), l, text);
     }
 
     if (scores.length) {
       var ids = [scores[0][0]];
       // Zwei Themen in einer Frage ("Glocke und Golem")
       if (scores[1] && scores[1][1] >= scores[0][1] * 0.75 && /\b(and|und|or|oder|vs|versus|gegen|or the|compare|vergleich|unterschied|difference)\b/.test(n)) ids.push(scores[1][0]);
-      return answerAbout(ids, more ? "more" : (f || "what"), l);
+      return answerAbout(ids, more ? "more" : (f || "what"), l, text);
     }
 
     // Nichts im Wissen: im Changelog nachsehen.
@@ -782,13 +963,25 @@
     };
   }
 
-  function answerAbout(ids, f, l) {
+  // Woerter, die Bubbles auf der Seite markiert: Namen des Themas und die Inhaltswoerter
+  // der Frage und seiner Antwort (die Seite ist englisch, deshalb auch die englische Antwort).
+  function focus(ids, f, question) {
+    var words = [];
+    ids.forEach(function (id) {
+      K[id].names.forEach(function (name) { var nn = norm(name.replace(/^~/, "")); if (nn.length >= 3 && /^[a-z0-9 .#/+-]+$/.test(nn)) words.push(nn); });
+      var en = K[id].en[f] || K[id].en.what || "";
+      keywords(norm(en).split(" ")).forEach(function (w) { if (w.length >= 5) words.push(w); });
+    });
+    keywords(norm(question).split(" ")).forEach(function (w) { words.push(w); });
+    return words.filter(function (w, i) { return words.indexOf(w) === i; });
+  }
+  function answerAbout(ids, f, l, question) {
     var texts = ids.map(function (id) { return about(id, f, l); });
     var id = ids[ids.length - 1];
     st.topic = ids[0];
     var chips = chipsFor(ids[0], l);
     if (chips.length < 3) chips.push(CHIPS[l].more);
-    return { text: texts.join(" "), go: K[id].go || null, chips: chips };
+    return { text: texts.join(" "), go: K[id].go || null, chips: chips, focus: focus(ids, f, question || ""), names: ids.map(function (i) { return K[i].names.map(function (x) { return norm(x.replace(/^~/, "")); }); }) };
   }
 
   window.BubblesBrain = {
@@ -797,6 +990,8 @@
     setChangelog: setChangelog,
     setNews: function (en, de) { st.latestEn = en; st.latestDe = de; },
     setPlaces: function (free, total) { st.places = { free: free, total: total }; },
-    lang: function () { return st.lang; }
+    lang: function () { return st.lang; },
+    // Feste Sprache aus dem Chat ("en" oder "de"); null: automatisch erkennen.
+    setLang: function (l) { st.fixed = l; if (l) st.lang = l; }
   };
 })();

@@ -15,6 +15,7 @@
   // ── Das Chatfenster ───────────────────────────────────────────────
   box.innerHTML =
     '<div class="helper-head"><b>Bubbles</b><span class="helper-mode"></span>' +
+    '<span class="helper-lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></span>' +
     '<button class="helper-close" type="button" aria-label="Close">×</button></div>' +
     '<div class="helper-log" aria-live="polite"></div>' +
     '<div class="helper-asks"></div>' +
@@ -24,6 +25,7 @@
   var log = box.querySelector(".helper-log"), asks = box.querySelector(".helper-asks");
   var form = box.querySelector(".helper-form"), input = form.querySelector("input");
   box.querySelector(".helper-mode").textContent = api ? "AI" : "";
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   var tip = document.createElement("div");
   tip.className = "helper-tip panel";
   tip.hidden = true;
@@ -31,7 +33,37 @@
 
   // Das Wissen und Verstehen steckt in assets/bubbles-brain.js.
   var brain = window.BubblesBrain;
-  function fact(de) { return brain.fact(de ? "de" : "en"); }
+
+  // ── Sprache: Englisch oder Deutsch, Standard Englisch, wird gemerkt ─
+  var T = {
+    en: {
+      hello: "Hi, I'm Bubbles! Most divers are friendly, as long as you don't hit us first. Ask me anything about Jayraid.",
+      switched: "Okay, English it is!", input: "Ask Bubbles anything…", hide: "Hide Bubbles", preview: "Open the browser preview →",
+      start: ["What's new?", "How do I join?", "How do I beat the golem?", "Fun fact"],
+      hints: { "#install": "Psst. Windows will warn you. Click More info, then Run anyway.", "#news": "Blood moon is out. I'm hiding.", "#controls": "Both mouse buttons block a hit. Try it on a sabre diver." }
+    },
+    de: {
+      hello: "Hallo, ich bin Bubbles! Die meisten Taucher sind nett, solange du nicht zuerst zuschlägst. Frag mich alles über Jayraid.",
+      switched: "Alles klar, ab jetzt Deutsch!", input: "Frag Bubbles etwas…", hide: "Bubbles verstecken", preview: "Browser-Vorschau öffnen →",
+      start: ["Was ist neu?", "Wie mache ich mit?", "Wie besiege ich den Golem?", "Erzähl einen Fakt"],
+      hints: { "#install": "Psst. Windows warnt dich. Klick auf Weitere Informationen, dann Trotzdem ausführen.", "#news": "Der Blutmond ist da. Ich versteck mich.", "#controls": "Beide Maustasten blocken einen Schlag. Probier es an einem Säbeltaucher." }
+    }
+  };
+  var lang = store("jr-lang") === "de" ? "de" : "en";
+  function setLang(l, announce) {
+    lang = l;
+    store("jr-lang", l);
+    brain.setLang(l);
+    box.querySelectorAll(".helper-lang button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-lang") === l); });
+    input.placeholder = T[l].input;
+    box.querySelector(".helper-hide").textContent = T[l].hide;
+    showChips();
+    if (announce) add("bot", T[l].switched);
+  }
+  box.querySelectorAll(".helper-lang button").forEach(function (b) {
+    b.addEventListener("click", function () { if (b.getAttribute("data-lang") !== lang) setLang(b.getAttribute("data-lang"), true); });
+  });
+  function fact() { return brain.fact(lang); }
   // Die neueste Version aus der signierten Liste, damit "What's new?" immer stimmt.
   fetch("update/blockwelt-versionen.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
@@ -46,7 +78,6 @@
     .then(function (r) { return r.ok ? r.text() : ""; })
     .then(function (md) { if (md) brain.setChangelog(md); })
     .catch(function () {});
-  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   var placesAsked = false;
   function places() {
     if (placesAsked || !cfg.testerApi) return;
@@ -68,17 +99,82 @@
     return m;
   }
   function nod() { bot.classList.remove("nod"); void bot.offsetWidth; bot.classList.add("nod"); }
-  function goTo(go) {
+  function goTo(go, words, names) {
     if (go === "PREVIEW") {
       if (!cfg.preview) return;
       var a = document.createElement("a");
-      a.href = cfg.preview; a.rel = "noopener"; a.textContent = "Open the browser preview →";
+      a.href = cfg.preview; a.rel = "noopener"; a.textContent = T[lang].preview;
       var p = document.createElement("p"); p.className = "helper-msg bot"; p.appendChild(a);
       log.appendChild(p); log.scrollTop = log.scrollHeight;
       return;
     }
     var target = go && document.querySelector(go);
-    if (target) target.scrollIntoView({ behavior: "smooth" });
+    if (!target) return;
+    if (!spotlight(target, words || [], names || [])) target.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // ── Zur Stelle fuehren und das Wichtigste orange markieren ────────
+  // Jeder Block im Abschnitt bekommt Punkte fuer die Woerter aus Frage und Antwort
+  // (Namen des Themas zaehlen dreifach). Der beste wird hergeholt, leuchtet kurz auf,
+  // und die passenden Woerter darin werden markiert.
+  var marked = [], markTimer;
+  function plain(t) { return t.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss"); }
+  function unmark() {
+    marked.forEach(function (m) {
+      if (m.classList) { m.classList.remove("bubbles-focus"); return; }
+    });
+    document.querySelectorAll("mark.bubbles-mark").forEach(function (m) {
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    marked = [];
+  }
+  function spotlight(section, words, names) {
+    unmark();
+    var strong = [].concat.apply([], names), blocks = section.querySelectorAll(".feature, .steps > li, .table > div, .news-top, .version, .play-text, .playbar, .play-info, .intro, .note");
+    var best = null, bestScore = 0, bestHits = [];
+    Array.prototype.forEach.call(blocks, function (b) {
+      if (b.offsetParent === null) return;
+      var text = " " + plain(b.textContent).replace(/[^a-z0-9.#/]+/g, " ") + " ", score = 0, hits = [];
+      words.forEach(function (w) {
+        if (w.length < 3 || text.indexOf(" " + w) < 0) return;
+        score += strong.indexOf(w) >= 0 ? 3 : 1;
+        hits.push(w);
+      });
+      if (score > bestScore) { bestScore = score; best = b; bestHits = hits; }
+    });
+    if (!best) return false;
+    best.scrollIntoView({ behavior: "smooth", block: "center" });
+    best.classList.add("bubbles-focus");
+    marked.push(best);
+    var re = new RegExp("(^|[^a-zA-Z\u00c0-\u024f])(" + bestHits.map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")([a-z\u00c0-\u024f]*)", "gi");
+    var walker = document.createTreeWalker(best, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+      return n.parentNode.closest("[data-hex], svg, mark, script") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    } }), nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (node) {
+      var text = node.textContent;
+      re.lastIndex = 0;
+      if (!re.test(plain(text))) return;
+      var frag = document.createDocumentFragment(), last = 0, m;
+      re.lastIndex = 0;
+      var low = plain(text);
+      while ((m = re.exec(low))) {
+        var start = m.index + m[1].length, end = start + m[2].length + m[3].length;
+        frag.appendChild(document.createTextNode(text.slice(last, start)));
+        var mark = document.createElement("mark");
+        mark.className = "bubbles-mark";
+        mark.textContent = text.slice(start, end);
+        frag.appendChild(mark);
+        last = end;
+      }
+      frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
+    clearTimeout(markTimer);
+    markTimer = setTimeout(unmark, 14000);
+    return true;
   }
 
   function ask(text) {
@@ -89,7 +185,7 @@
     history.push({ role: "user", content: text });
     var typing = add("bot typing", "");
     typing.innerHTML = "<i></i><i></i><i></i>";
-    function answer(reply, go, chips) {
+    function answer(reply, go, chips, words, names) {
       typing.remove();
       add("bot", reply);
       showChips(chips);
@@ -97,21 +193,20 @@
       if (history.length > 12) history = history.slice(-12);
       busy = false;
       nod();
-      if (go) goTo(go);
+      if (go) goTo(go, words, names);
     }
     var local = brain.reply(text);
-    if (!api) { setTimeout(function () { answer(local.text, local.go, local.chips); }, 450 + Math.min(900, local.text.length * 6)); return; }
+    if (!api) { setTimeout(function () { answer(local.text, local.go, local.chips, local.focus, local.names); }, 450 + Math.min(900, local.text.length * 6)); return; }
     fetch(api, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history }) })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-      .then(function (d) { answer(d.reply || local.text, d.reply ? null : local.go, local.chips); })
-      .catch(function () { answer(local.text, local.go, local.chips); });
+      .then(function (d) { answer(d.reply || local.text, local.go, local.chips, local.focus, local.names); })
+      .catch(function () { answer(local.text, local.go, local.chips, local.focus, local.names); });
   }
 
   // Vorschlaege unter dem Chat: am Anfang feste, danach passend zum Thema.
-  var START = ["What's new?", "How do I join?", "How do I beat the golem?", "Fun fact"];
   function showChips(list) {
     asks.textContent = "";
-    (list && list.length ? list : START).slice(0, 4).forEach(function (q) {
+    (list && list.length ? list : T[lang].start).slice(0, 4).forEach(function (q) {
       var b = document.createElement("button");
       b.type = "button";
       b.textContent = q;
@@ -119,7 +214,7 @@
       asks.appendChild(b);
     });
   }
-  showChips();
+  setLang(lang, false);
   form.addEventListener("submit", function (e) { e.preventDefault(); ask(input.value); input.value = ""; });
 
   function open() {
@@ -127,7 +222,7 @@
     box.hidden = false;
     root.classList.add("open");
     places();
-    if (!log.children.length) add("bot", "Hi, I'm Bubbles! Most divers are friendly, as long as you don't hit us first. Ask me anything about Jayraid, in English or German.");
+    if (!log.children.length) add("bot", T[lang].hello);
     if (window.innerWidth > 860) input.focus();
   }
   function close() {
@@ -160,24 +255,20 @@
   }
   tip.addEventListener("click", function () { open(); add("bot", tip.textContent); });
 
-  var hints = {
-    "#install": "Psst. Windows will warn you. Click More info, then Run anyway.",
-    "#news": "Blood moon is out. I'm hiding.",
-    "#controls": "Both mouse buttons block a hit. Try it on a sabre diver."
-  }, seen = {};
+  var seen = {};
   window.addEventListener("scroll", function () {
-    Object.keys(hints).forEach(function (id) {
+    Object.keys(T.en.hints).forEach(function (id) {
       var s = document.querySelector(id);
       if (seen[id] || !s) return;
       var r = s.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.5 && r.bottom > 0 && say(hints[id])) seen[id] = true;
+      if (r.top < window.innerHeight * 0.5 && r.bottom > 0 && say(T[lang].hints[id])) seen[id] = true;
     });
   }, { passive: true });
   // Ein Fakt nach einer Weile, danach selten, hoechstens drei pro Besuch.
   var told = 0;
   (function later(ms) {
     setTimeout(function () {
-      if (told < 3 && !document.hidden && say(fact(false))) told++;
+      if (told < 3 && !document.hidden && say(fact())) told++;
       if (told < 3) later(80000 + Math.random() * 60000);
     }, ms);
   })(35000);
