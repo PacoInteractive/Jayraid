@@ -8,5 +8,8 @@ window.JAYRAID = {
   discord: "",
   // bubblesApi: der Cloudflare Worker, ueber den Bubbles mit einer echten KI antwortet
   // (tools/bubbles-worker). Leer: Bubbles antwortet mit seinem eigenen kleinen Gehirn.
-  bubblesApi: ""
+  bubblesApi: "",
+  // bubblesLog: derselbe Worker, Bubbles meldet ihm anonym die Fragen, die er nicht beantworten
+  // konnte (tools/bubbles-worker). Leer: nichts wird gesendet.
+  bubblesLog: ""
 };

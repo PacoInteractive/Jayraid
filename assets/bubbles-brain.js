@@ -54,7 +54,7 @@
       }
     },
     divers: {
-      names: ["diver", "divers", "taucher", "~enemy", "~enemies", "gegner", "feind", "feinde", "~camp", "lager", "sabre diver", "archer", "archers", "bogenschuetze", "flyer", "flying diver", "flieger"],
+      names: ["diver", "divers", "taucher", "~enemy", "~enemies", "gegner", "feind", "feinde", "~camp", "lager", "archer", "archers", "bogenschuetze"],
       go: "#game",
       en: {
         what: "The divers are one of the two factions. They live in camps with watchtowers. There are sabre divers, archers, flying divers with fire arrows and rotten divers down in the caves.",
@@ -638,7 +638,7 @@
       en: ["42. Or twelve, if you count lives in hexagons."], de: ["42. Oder zwölf, wenn du Leben in Sechsecken zählst."] },
     { strong: true, re: /(weather|wetter|is it raining|regnet es)/,
       en: ["Under water it's always the same weather: wet. In Jayraid there's rain, and on some nights acid rain."], de: ["Unter Wasser ist immer das gleiche Wetter: nass. In Jayraid gibt es Regen, und in manchen Nächten Säureregen."] },
-    { re: /(hungry|hunger|food|essen|eat\b|pizza|snack)/,
+    { re: /(hungry|hunger|food|essen|\beat\b|pizza|snack)/,
       en: ["I eat bubbles. They're low in calories. Blub."], de: ["Ich esse Luftblasen. Wenig Kalorien. Blub."] },
     { re: /(tired|sleep|schlafen|muede|do you sleep|schlaefst du)/,
       en: ["Divers don't sleep, we float. But you should take a break now and then. The golem will still be there tomorrow."], de: ["Taucher schlafen nicht, wir treiben. Aber du solltest ab und zu Pause machen. Der Golem ist morgen auch noch da."] },
@@ -707,7 +707,7 @@
   // Namen mit ~ sind allgemeine Woerter (run, place, water …) und zaehlen weniger.
   function match(n, toks, name) {
     var w = name.charAt(0) === "~" ? 0.5 : 1, nn = norm(name.replace(/^~/, ""));
-    if (nn.indexOf(" ") >= 0) return (" " + n).indexOf(" " + nn) >= 0 ? 3 * w : 0;
+    if (nn.indexOf(" ") >= 0) return (" " + n).indexOf(" " + nn) >= 0 ? 5 * w : 0;
     for (var i = 0; i < toks.length; i++) {
       var t = toks[i];
       if (t === nn) return 2 * w;
@@ -774,6 +774,104 @@
   }
   function keywords(toks) {
     return toks.filter(function (t) { return t.length >= 4 && !STOP.test(t); });
+  }
+
+  // Rechnet + - * / und Klammern aus, ohne eval (die Seite verbietet eval per CSP).
+  function calcExpr(src) {
+    var t = src.replace(/\s+/g, ""), i = 0;
+    function num() {
+      if (t[i] === "(") { i++; var v = sum(); if (t[i++] !== ")") throw 0; return v; }
+      if (t[i] === "-") { i++; return -num(); }
+      var m = /^\d+(\.\d+)?/.exec(t.slice(i));
+      if (!m) throw 0;
+      i += m[0].length;
+      return parseFloat(m[0]);
+    }
+    function prod() { var v = num(); while (t[i] === "*" || t[i] === "/") { var o = t[i++], r = num(); v = o === "*" ? v * r : v / r; } return v; }
+    function sum() { var v = prod(); while (t[i] === "+" || t[i] === "-") { var o = t[i++], r = prod(); v = o === "+" ? v + r : v - r; } return v; }
+    var out = sum();
+    if (i !== t.length) throw 0;
+    return out;
+  }
+
+  // ── Wissen aus dem Spiel: update/wissen.json (vom Build erzeugt) ───
+  // Jedes Ding wird ein Thema wie die festen oben; gibt es das Thema schon, wird es ergaenzt.
+  var LABELS = {
+    en: { lives: "Lives", health: "Health", damage: "Damage", hits: "Hits to defeat", drops: "Drops", cost: "Cost", price: "Price", speed: "Speed", range: "Range", time: "Time", key: "Key", where: "Found" },
+    de: { lives: "Leben", health: "Leben", damage: "Schaden", hits: "Treffer bis besiegt", drops: "Beute", cost: "Kosten", price: "Preis", speed: "Tempo", range: "Reichweite", time: "Dauer", key: "Taste", where: "Fundort" }
+  };
+  function statLine(stats, l) {
+    if (!stats) return "";
+    var parts = Object.keys(stats).map(function (k) {
+      var v = stats[k];
+      if (v && typeof v === "object" && !Array.isArray(v)) v = v[l] || v.en;
+      if (Array.isArray(v)) v = v.join(", ");
+      return (LABELS[l][k] || k) + ": " + v;
+    });
+    return parts.length ? " " + parts.join(" · ") + "." : "";
+  }
+  function loadKnowledge(data) {
+    if (!data || !Array.isArray(data.things)) return 0;
+    var added = 0;
+    data.things.forEach(function (x) {
+      if (!x || !x.id || !x.name) return;
+      var id = String(x.id), e = K[id] || (K[id] = { names: [], en: {}, de: {} });
+      e.fromGame = true;
+      [x.name.en, x.name.de].concat(x.aliases || []).forEach(function (n) { if (n && e.names.indexOf(n) < 0) e.names.push(String(n)); });
+      if (x.go) e.go = x.go;
+      ["en", "de"].forEach(function (l) {
+        function pickL(v) { return v && (v[l] || v.en); }
+        var what = pickL(x.text), stats = statLine(x.stats, l);
+        if (what) e[l].what = what + stats;
+        else if (stats) e[l].what = (e[l].what || pickL(x.name) + ".") + stats;
+        if (stats) e[l].count = stats.trim();
+        ["where", "beat", "how", "tips", "reward", "danger", "why"].forEach(function (f) { if (pickL(x[f])) e[l][f] = pickL(x[f]); });
+        if (!e[l].what) e[l].what = pickL(x.name);
+      });
+      added++;
+    });
+    return added;
+  }
+
+  // ── FAQ: bubbles-faq.md, von Tixx gepflegt ────────────────────────
+  // Ein Eintrag: "? Frage | weitere Formulierung", dann "en: …", "de: …", optional "go: #abschnitt".
+  var FAQ = [];
+  function setFaq(md) {
+    FAQ = [];
+    md.replace(/\r/g, "").split(/\n\s*\n/).forEach(function (block) {
+      var e = { qs: [], en: "", de: "", go: null };
+      block.split("\n").forEach(function (line) {
+        var m;
+        if ((m = /^\?\s*(.+)$/.exec(line))) e.qs = e.qs.concat(m[1].split("|").map(function (q) { return q.trim(); }));
+        else if ((m = /^(en|de|go):\s*(.+)$/i.exec(line))) e[m[1].toLowerCase()] = m[2].trim();
+      });
+      if (!e.qs.length || !(e.en || e.de)) return;
+      e.kw = [];
+      e.qs.forEach(function (q) { keywords(norm(q).split(" ")).forEach(function (w) { if (e.kw.indexOf(w) < 0) e.kw.push(w); }); });
+      e.full = e.qs.map(norm);
+      FAQ.push(e);
+    });
+  }
+  function sameWord(a, b) {
+    return a === b || (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) || (a.length >= 5 && b.length >= 5 && a[0] === b[0] && lev(a, b) <= 1);
+  }
+  // Wie gut passt die Frage zu einem FAQ-Eintrag? Anteil seiner Stichwoerter, die vorkommen.
+  // Fuer die FAQ zaehlen auch Woerter wie "version" oder "update", nur Fuellwoerter nicht.
+  var FAQSTOP = /^(the|and|for|with|you|your|that|this|from|they|them|have|does|into|about|there|their|what|when|where|which|how|can|could|would|should|will|ich|du|wie|was|wo|wer|ist|der|die|das|und|mit|von|fuer|ein|eine|einen|kann|habe|hast|mein|meine|dein|deine|sich|auch|noch|oder|aber|sind|wird|muss|darf|bitte|please|game|spiel|jayraid|lot|viel|sehr|very|really)$/;
+  function faqWords(list) { return list.filter(function (t) { return t.length >= 3 && !FAQSTOP.test(t); }); }
+  // Jede Formulierung einzeln: Anteil ihrer Stichwoerter, die in der Frage vorkommen.
+  function faqFind(n, toks) {
+    var mine = faqWords(toks), best = null, bestScore = 0;
+    FAQ.forEach(function (e) {
+      if (e.full.indexOf(n) >= 0) { best = e; bestScore = 9; return; }
+      e.full.forEach(function (q) {
+        var kw = faqWords(q.split(" ")), hits = 0;
+        kw.forEach(function (k) { if (mine.some(function (w) { return sameWord(w, k); })) hits++; });
+        var score = kw.length ? hits / kw.length : 0;
+        if (hits >= Math.min(2, kw.length) && score > bestScore) { bestScore = score; best = e; }
+      });
+    });
+    return bestScore >= 0.6 ? best : null;
   }
 
   // ── Zustand des Gespraechs ────────────────────────────────────────
@@ -861,7 +959,8 @@
     if (calc && /\d\s*[+\-*/x:]\s*\d/.test(calc[2])) {
       var expr = calc[2].replace(/x/g, "*").replace(/:/g, "/");
       try {
-        var val = Function('"use strict"; return (' + expr + ');')();
+        var val = calcExpr(expr);
+        if (typeof val === "number" && !isFinite(val)) return { text: l === "de" ? "Durch null teilen? Nicht mal der Golem traut sich das." : "Dividing by zero? Not even the golem dares to do that." };
         if (typeof val === "number" && isFinite(val)) return { text: (l === "de" ? "Das gibt " : "That's ") + (Math.round(val * 1000) / 1000) + ". " + (l === "de" ? "Taucher können rechnen. Blub." : "Divers can count. Blub.") };
       } catch (e) { /* keine Rechnung */ }
     }
@@ -871,6 +970,12 @@
     }
     if (/(tell me a story|erzaehl (mir )?eine geschichte)/.test(n)) {
       return { text: l === "de" ? "Es war einmal ein Taucher, der traf auf einem Schiff eine Glocke. Die Glocke läutete. Der Taucher rannte. Ende. Kurz, aber wahr." : "Once upon a time a diver met a bell on a ship. The bell rang. The diver ran. The end. Short, but true." };
+    }
+
+    // Was Tixx selbst in die FAQ geschrieben hat, gewinnt.
+    var hitFaq = faqFind(n, toks);
+    if (hitFaq) {
+      return { text: (l === "de" ? hitFaq.de : hitFaq.en) || hitFaq.en || hitFaq.de, go: hitFaq.go, focus: hitFaq.kw.concat(keywords(toks)), names: [] };
     }
 
     // Eine bestimmte Version: "what happened in alpha 1.22", "was kam mit 1.38"
@@ -901,7 +1006,8 @@
         var m = match(n, toks, name), key = norm(name.replace(/^~/, "")).split(" ")[0].slice(0, 4);
         if (m > (best[key] || 0)) { s += m - (best[key] || 0); best[key] = m; }
       });
-      if (s) scores.push([id, s]);
+      // Was aus dem Spiel selbst kommt (wissen.json), ist genauer und gewinnt bei Gleichstand.
+      if (s) scores.push([id, K[id].fromGame ? s * 1.5 : s]);
     });
     scores.sort(function (a, b) { return b[1] - a[1]; });
     var f = facet(n), more = MORE.test(n);
@@ -950,11 +1056,13 @@
       });
     });
     if (near) {
+      if (st.onMiss) st.onMiss(text, l);
       st.topic = near[0];
       return { text: l === "de" ? "Meinst du " + near[1] + "? Dann frag einfach nochmal, ich bin ganz Ohr. Also, Helm." : "Did you mean " + near[1] + "? Ask me again, I'm all ears. Well, helmet." };
     }
 
     st.pending = "fact";
+    if (st.onMiss) st.onMiss(text, l);
     return {
       text: l === "de"
         ? pick(["Hm, da bin ich überfragt. Ich bin ein Taucher, kein Lexikon. Frag mich nach den Bossen, den Tauchern, der Installation oder den Tasten. Willst du einen Fakt?", "Das weiss ich leider nicht. Aber über Jayraid weiss ich fast alles. Soll ich dir einen Fakt erzählen?"])
@@ -988,6 +1096,10 @@
     reply: reply,
     fact: function (l) { return fact(l || st.lang); },
     setChangelog: setChangelog,
+    setFaq: setFaq,
+    loadKnowledge: loadKnowledge,
+    // Wird aufgerufen, wenn Bubbles eine Frage nicht beantworten konnte.
+    onMiss: function (fn) { st.onMiss = fn; },
     setNews: function (en, de) { st.latestEn = en; st.latestDe = de; },
     setPlaces: function (free, total) { st.places = { free: free, total: total }; },
     lang: function () { return st.lang; },
