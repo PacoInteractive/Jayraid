@@ -5,52 +5,78 @@
 <h3 align="center">A hexagon voxel adventure</h3>
 
 <p align="center">
-  <a href="https://pacointeractive.github.io/Jayraid/"><img src="https://img.shields.io/badge/Website-pacointeractive.github.io%2FJayraid-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Website"></a>
-  <a href="https://paco-interactive.itch.io/jayraid"><img src="https://img.shields.io/badge/Play-Browser%20preview-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Browser preview"></a>
+  Islands of hexagon pillars, trader ships on the horizon and diver camps up in the hills.<br>
+  Build what you like, or follow the story to the golem in the castle ruin.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-46464a?labelColor=1c1c1e" alt="Windows">
-  <img src="https://img.shields.io/badge/.NET-8%20Desktop%20Runtime-46464a?labelColor=1c1c1e" alt=".NET 8">
-  <img src="https://img.shields.io/badge/License-All%20rights%20reserved-46464a?labelColor=1c1c1e" alt="License">
+  <a href="https://pacointeractive.github.io/Jayraid/"><img src="https://img.shields.io/badge/Claim%20a%20place-pacointeractive.github.io%2FJayraid-f08c1e?style=for-the-badge&labelColor=1c1c1e" alt="Claim a place"></a>
+  <a href="https://paco-interactive.itch.io/jayraid"><img src="https://img.shields.io/badge/Play-Browser%20preview-46464a?style=for-the-badge&labelColor=1c1c1e" alt="Browser preview"></a>
+</p>
+
+<p align="center">
+  <a href="https://pacointeractive.github.io/Jayraid/changelog.html"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FPacoInteractive%2FJayraid%2Fmain%2Fupdate%2Fblockwelt-versionen.json&query=%24.versionen%5B-1%3A%5D.nameEn&label=Latest&color=f08c1e&labelColor=1c1c1e" alt="Latest version"></a>
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FPacoInteractive%2FJayraid%2Fmain%2Fupdate%2Fblockwelt-versionen.json&query=%24.launcher.version&label=Launcher&color=46464a&labelColor=1c1c1e" alt="Launcher version">
+  <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-46464a?labelColor=1c1c1e" alt="Windows 10 / 11">
+  <img src="https://img.shields.io/badge/Closed%20alpha-20%20testers-46464a?labelColor=1c1c1e" alt="Closed alpha, 20 testers">
 </p>
 
 ---
 
-This is the **official download page** of Jayraid. It holds the finished, signed versions:
-the Jayraid Launcher fetches every new version from here.
+## The game
 
-## Play (closed alpha)
+Jayraid is a sandbox first. Every world comes from a seed, is built from hexagon pillars and doesn't end.
+If you want more than building, there is a story with two bosses and an actual ending.
 
-Jayraid is in a **closed alpha with 20 tester places**. Every tester gets a personal code for the launcher.
+<table>
+  <tr>
+    <td width="50%" valign="top"><img src="images/title.jpg" alt="Blood moon over the coast"><br><b>Blood moon</b><br>Some nights the moon turns red. Then the divers come for your base, and they bring field cannons. Whatever you built during the day had better hold.</td>
+    <td width="50%" valign="top"><img src="images/world.jpg" alt="Hexagon mountains and a watchtower"><br><b>Three ways to play</b><br>Sandbox if you just want to build. Adventure if you want the story. Challenge if twelve lives sound like too many: you get four.</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/traders.jpg" alt="Traders on the deck of their ship"><br><b>Traders and divers</b><br>The traders sail between the islands and trade with you. The divers hold the camps and watchtowers. Their ships and towers shoot at each other, with or without you.</td>
+    <td valign="top"><img src="images/bell.jpg" alt="The bell creature on a ship"><br><b>The bell</b><br>Every trader ship carries one, and it guards the golden wand. Hit it and it rings. The sound hurts. Take the wand and the traders won't forgive you.</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/companion.jpg" alt="The blue companion with a sabre"><br><b>Down in the caves</b><br>Green fires burn deep in the mountains, guarded by rotten divers. Now and then one gets back up blue and follows you. Give it a sabre.</td>
+    <td valign="top"><img src="images/golem.jpg" alt="The golem in the castle ruin"><br><b>The golem</b><br>Chained in an old castle ruin. Walk quietly and it sleeps. The sabre knocks it down, only the golden wand finishes it. Behind it waits the ending.</td>
+  </tr>
+</table>
 
-1. Go to the [website](https://pacointeractive.github.io/Jayraid/) and click **CLAIM A PLACE**. You get your code file and the launcher.
-2. Install the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) if you do not have it, and unpack the launcher into a folder of its own.
-3. Start `Jayraid-Launcher.exe` and type in your code (or drag the code file into the window).
-4. Click **INSTALL**, then **PLAY**.
+## Join the closed alpha
 
-No place left? Play the [browser preview on itch.io](https://paco-interactive.itch.io/jayraid): one island, no download.
+Jayraid is in a **closed alpha with 20 tester places**. Testers get every version first and tell me what works and what doesn't.
 
-Whenever there is a new version, the launcher shows a big **UPDATE** button on start. The launcher updates itself the same way.
+1. Open the [website](https://pacointeractive.github.io/Jayraid/) and click **CLAIM A PLACE**. Your browser saves your personal code and `Jayraid-Launcher.zip`.
+2. Install the free [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (x64) once and unpack the launcher into a folder of its own.
+3. Start `Jayraid-Launcher.exe`. If Windows warns you: **More info**, then **Run anyway**. Type in your code or drop the code file onto the window.
+4. **INSTALL**, then **PLAY**. New versions show up as a big **UPDATE** button, and the launcher updates itself the same way.
+
+On Mac, Linux or a phone, or if all places are gone: play the [browser preview on itch.io](https://paco-interactive.itch.io/jayraid), one island, no download.
+Questions? Ask **Bubbles**, the little diver in the corner of the website.
 
 <p align="center">
   <img src="images/launcher.jpg" alt="Jayraid Launcher" width="720">
 </p>
 
-## Authenticity
+## Only from here
 
 Every version is listed in a **digitally signed** version list (`update/blockwelt-versionen.json` + `.sig`, RSA 3072).
-The launcher checks the signature and, before every start, every single file. It refuses to start a modified or
-forged version. So only download Jayraid from here.
+Before every start the launcher checks the signature and every single file, and refuses anything that was changed or forged.
+So only download Jayraid from this page.
 
-## Contents
+## What's in this repository
 
-| Folder | |
+| | |
 |---|---|
-| `update/` | Signed version list, encrypted game package, tester list and launcher (read by the launcher) |
-| `index.html`, `assets/`, `images/` | The website |
-| [`CHANGELOG.md`](CHANGELOG.md) | All changes |
+| `update/` | Signed version list, encrypted game packages, tester list and the launcher. Read by the launcher. |
+| `index.html`, `changelog.html`, `assets/`, `images/` | The website |
+| [`CHANGELOG.md`](CHANGELOG.md) | Every change since Alpha 1.0.0, also [as a page](https://pacointeractive.github.io/Jayraid/changelog.html) |
+| [`bubbles-faq.md`](bubbles-faq.md) | What Bubbles knows besides the game |
+| `tools/` | Bubbles' optional worker and the format for game knowledge |
 
 ---
 
-<sub>Jayraid · © 2026 Jaylen (PacoInteractive). All rights reserved. See [LICENSE](LICENSE).</sub>
+<p align="center">
+  <sub>Made by <b>Tixx</b> · Paco Interactive · © 2026 All rights reserved · <a href="LICENSE">License</a></sub>
+</p>
