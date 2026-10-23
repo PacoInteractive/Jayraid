@@ -1,5 +1,9 @@
 // Bubbles' Gehirn: ein Cloudflare Worker zwischen der Website und der Claude API.
 // Der API-Schluessel bleibt hier als Secret, die Website sieht ihn nie.
+// Ausserdem sammelt er anonym die Fragen, die Bubbles nicht beantworten konnte:
+//   POST /miss          von der Website: { q, lang, page }, ohne IP oder sonstige Daten
+//   GET  /misses        fuer Tixx (Authorization: Bearer ADMIN_TOKEN): Liste, haeufigste zuerst
+//   DELETE /misses/<id> fuer Tixx: eine Frage als erledigt entfernen
 // Was Bubbles ueber das Spiel weiss, liest er live aus CHANGELOG.md der Website,
 // er ist also nach jedem Release von selbst auf dem neuesten Stand.
 import Anthropic from "@anthropic-ai/sdk";
@@ -41,8 +45,8 @@ async function changelog(env) {
 function cors(env, origin) {
   return {
     "Access-Control-Allow-Origin": origin === env.ALLOWED_ORIGIN ? origin : env.ALLOWED_ORIGIN,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
     "Vary": "Origin"
   };
 }
@@ -61,19 +65,93 @@ function clean(messages) {
   return list.length && list[list.length - 1].role === "user" ? list : null;
 }
 
+// Grobe Bremse pro IP (nur im Speicher dieser Worker-Instanz, wird nirgends abgelegt).
+function tooMany(ip, max) {
+  const now = Date.now(), recent = (hits.get(ip) || []).filter((t) => now - t < 600e3);
+  if (recent.length >= max) return true;
+  recent.push(now);
+  hits.set(ip, recent);
+  return false;
+}
+
+async function hash(text) {
+  const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(d)].slice(0, 12).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+// Vergleicht in konstanter Zeit, damit man das Admin-Passwort nicht erraten kann.
+function sameSecret(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+function isAdmin(request, env) {
+  const auth = request.headers.get("Authorization") || "";
+  return sameSecret(auth.replace(/^Bearer\s+/i, ""), env.ADMIN_TOKEN || "");
+}
+
+// Eine unbeantwortete Frage merken. Gleiche Fragen werden gezaehlt statt doppelt gespeichert.
+async function miss(request, env, headers) {
+  if (!env.MISSES) return json({ error: "No storage" }, 501, headers);
+  let body;
+  try { body = await request.json(); } catch (e) { return json({ error: "Bad JSON" }, 400, headers); }
+  const q = String(body.q || "").replace(/\s+/g, " ").trim().slice(0, 300);
+  if (q.length < 2) return json({ error: "Empty" }, 400, headers);
+  const lang = body.lang === "de" ? "de" : "en", page = String(body.page || "").slice(0, 40);
+  const key = "q:" + await hash(q.toLowerCase());
+  const old = await env.MISSES.get(key, "json");
+  const now = new Date().toISOString();
+  const entry = old ? { ...old, count: old.count + 1, last: now } : { q, lang, page, count: 1, first: now, last: now };
+  await env.MISSES.put(key, JSON.stringify(entry), { expirationTtl: 120 * 86400 });
+  return json({ ok: true }, 200, headers);
+}
+
+async function listMisses(env, headers) {
+  if (!env.MISSES) return json({ error: "No storage" }, 501, headers);
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.MISSES.list({ prefix: "q:", cursor });
+    for (const k of page.keys) {
+      const v = await env.MISSES.get(k.name, "json");
+      if (v) out.push({ id: k.name.slice(2), ...v });
+    }
+    cursor = page.list_complete ? null : page.cursor;
+  } while (cursor && out.length < 1000);
+  out.sort((a, b) => b.count - a.count || (b.last > a.last ? 1 : -1));
+  return json({ misses: out }, 200, headers);
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const headers = cors(env, origin);
+    const path = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
-    if (request.method !== "POST") return json({ error: "POST only" }, 405, headers);
     if (origin !== env.ALLOWED_ORIGIN) return json({ error: "Not allowed" }, 403, headers);
-
     const ip = request.headers.get("CF-Connecting-IP") || "?";
-    const now = Date.now(), recent = (hits.get(ip) || []).filter((t) => now - t < 600e3);
-    if (recent.length >= Number(env.MAX_PER_10_MIN || 20)) return json({ error: "Slow down" }, 429, headers);
-    recent.push(now);
-    hits.set(ip, recent);
+
+    if (path === "/misses" || path.indexOf("/misses/") === 0) {
+      if (!isAdmin(request, env)) {
+        tooMany("admin:" + ip, 10);
+        return json({ error: "Not allowed" }, 401, headers);
+      }
+      if (request.method === "GET" && path === "/misses") return listMisses(env, headers);
+      if (request.method === "DELETE" && env.MISSES) {
+        await env.MISSES.delete("q:" + path.slice("/misses/".length).replace(/[^a-f0-9]/g, ""));
+        return json({ ok: true }, 200, headers);
+      }
+      return json({ error: "Bad request" }, 400, headers);
+    }
+    if (request.method !== "POST") return json({ error: "POST only" }, 405, headers);
+    if (path === "/miss") {
+      if (tooMany("miss:" + ip, 15)) return json({ error: "Slow down" }, 429, headers);
+      return miss(request, env, headers);
+    }
+
+    // Chat mit echter KI: nur wenn ein API-Schluessel hinterlegt ist.
+    if (!env.ANTHROPIC_API_KEY) return json({ error: "No AI configured" }, 503, headers);
+    if (tooMany(ip, Number(env.MAX_PER_10_MIN || 20))) return json({ error: "Slow down" }, 429, headers);
 
     let body;
     try { body = await request.json(); } catch (e) { return json({ error: "Bad JSON" }, 400, headers); }

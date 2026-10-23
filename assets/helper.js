@@ -21,6 +21,7 @@
     '<div class="helper-asks"></div>' +
     '<form class="helper-form"><input type="text" maxlength="400" placeholder="Ask Bubbles anything…" aria-label="Message to Bubbles">' +
     '<button type="submit" aria-label="Send">➤</button></form>' +
+    '<p class="helper-note" hidden></p>' +
     '<button class="helper-hide" type="button">Hide Bubbles</button>';
   var log = box.querySelector(".helper-log"), asks = box.querySelector(".helper-asks");
   var form = box.querySelector(".helper-form"), input = form.querySelector("input");
@@ -38,17 +39,18 @@
   var T = {
     en: {
       hello: "Hi, I'm Bubbles! Most divers are friendly, as long as you don't hit us first. Ask me anything about Jayraid.",
-      switched: "Okay, English it is!", input: "Ask Bubbles anything…", hide: "Hide Bubbles", preview: "Open the browser preview →",
+      switched: "Okay, English it is!", note: "Questions I can't answer are saved anonymously, so Tixx can teach me.", input: "Ask Bubbles anything…", hide: "Hide Bubbles", preview: "Open the browser preview →",
       start: ["What's new?", "How do I join?", "How do I beat the golem?", "Fun fact"],
       hints: { "#install": "Psst. Windows will warn you. Click More info, then Run anyway.", "#news": "Blood moon is out. I'm hiding.", "#controls": "Both mouse buttons block a hit. Try it on a sabre diver." }
     },
     de: {
       hello: "Hallo, ich bin Bubbles! Die meisten Taucher sind nett, solange du nicht zuerst zuschlägst. Frag mich alles über Jayraid.",
-      switched: "Alles klar, ab jetzt Deutsch!", input: "Frag Bubbles etwas…", hide: "Bubbles verstecken", preview: "Browser-Vorschau öffnen →",
+      switched: "Alles klar, ab jetzt Deutsch!", note: "Fragen, die ich nicht beantworten kann, werden anonym gespeichert, damit Tixx sie mir beibringen kann.", input: "Frag Bubbles etwas…", hide: "Bubbles verstecken", preview: "Browser-Vorschau öffnen →",
       start: ["Was ist neu?", "Wie mache ich mit?", "Wie besiege ich den Golem?", "Erzähl einen Fakt"],
       hints: { "#install": "Psst. Windows warnt dich. Klick auf Weitere Informationen, dann Trotzdem ausführen.", "#news": "Der Blutmond ist da. Ich versteck mich.", "#controls": "Beide Maustasten blocken einen Schlag. Probier es an einem Säbeltaucher." }
     }
   };
+  var missUrl = (cfg.bubblesLog || "").replace(/\/$/, "");
   var lang = store("jr-lang") === "de" ? "de" : "en";
   function setLang(l, announce) {
     lang = l;
@@ -57,6 +59,9 @@
     box.querySelectorAll(".helper-lang button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-lang") === l); });
     input.placeholder = T[l].input;
     box.querySelector(".helper-hide").textContent = T[l].hide;
+    var note = box.querySelector(".helper-note");
+    note.textContent = T[l].note;
+    note.hidden = !missUrl;
     showChips();
     if (announce) add("bot", T[l].switched);
   }
@@ -78,6 +83,25 @@
     .then(function (r) { return r.ok ? r.text() : ""; })
     .then(function (md) { if (md) brain.setChangelog(md); })
     .catch(function () {});
+  // Wissen aus dem Spiel (vom Build erzeugt) und die FAQ, die Tixx selbst pflegt.
+  fetch("update/wissen.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) { if (data) brain.loadKnowledge(data); })
+    .catch(function () {});
+  fetch("bubbles-faq.md", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.text() : ""; })
+    .then(function (md) { if (md) brain.setFaq(md); })
+    .catch(function () {});
+  // Was Bubbles nicht weiss, geht anonym an den Worker (nur die Frage, keine Daten ueber dich).
+  var missSent = 0;
+  brain.onMiss(function (q, l) {
+    if (!missUrl || missSent >= 10) return;
+    missSent++;
+    fetch(missUrl + "/miss", {
+      method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ q: q.slice(0, 300), lang: l, page: location.pathname.split("/").pop() || "index.html" })
+    }).catch(function () {});
+  });
   var placesAsked = false;
   function places() {
     if (placesAsked || !cfg.testerApi) return;

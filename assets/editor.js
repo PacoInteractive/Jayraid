@@ -6,6 +6,8 @@
 (function () {
   "use strict";
   var REPO = "PacoInteractive/Jayraid", BRANCH = "main";
+  // Nie in einem fremden Rahmen bearbeiten (Schutz gegen untergeschobene Klicks).
+  if (window.top !== window.self) return;
   var file = (location.pathname.split("/").pop() || "index.html");
   if (!/\.html$/.test(file)) file = "index.html";
 
@@ -257,44 +259,75 @@
     saved("Downloaded " + file + ": upload it on GitHub to make it live");
   }
 
+  // Veroeffentlichen geht nicht direkt auf main: Die Aenderung landet auf dem Branch
+  // website-edit und als Pull Request. Live ist sie erst, wenn Tixx ihn auf GitHub mergt.
+  // Der GitHub-Schluessel bleibt nur in diesem Tab (sessionStorage) und ist nach dem Schliessen weg.
+  var EDIT_BRANCH = "website-edit";
+  function session(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); if (v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  store("jr-gh-token", null); // aeltere Fassung hat den Schluessel dauerhaft gespeichert
+
   function publish() {
     if (!changes && !confirm("There are no changes. Publish anyway?")) return;
-    var token = store("jr-gh-token");
+    var token = session("jr-gh-token");
     if (!token) {
-      token = prompt("GitHub access key (fine-grained token with Contents: Read and write, only for " + REPO + ").\n" +
-        "Create one at github.com → Settings → Developer settings → Fine-grained tokens.\nIt is stored only in this browser.");
+      token = prompt("GitHub access key: a fine-grained token, only for " + REPO + ", with an expiry date,\n" +
+        "permissions Contents: Read and write and Pull requests: Read and write.\n" +
+        "Create one at github.com → Settings → Developer settings → Fine-grained tokens.\n" +
+        "It is kept only in this tab and forgotten when you close it.");
       if (!token) return;
       token = token.trim();
-      store("jr-gh-token", token);
+      session("jr-gh-token", token);
     }
     var msg = prompt("Short note for this change:", "Website: edited " + file + " in the browser");
     if (msg === null) return;
-    var api = "https://api.github.com/repos/" + REPO + "/contents/" + file;
-    var hdr = { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" };
-    bar.querySelector(".ed-count").textContent = "Publishing…";
-    fetch(api + "?ref=" + BRANCH, { headers: hdr, cache: "no-store" })
-      .then(function (r) {
-        if (r.status === 401 || r.status === 403) { store("jr-gh-token", null); throw new Error("The access key was refused. Try again with a new key."); }
+    var owner = REPO.split("/")[0], hdr = { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" };
+    function gh(path, method, body) {
+      return fetch("https://api.github.com/repos/" + REPO + path, {
+        method: method || "GET", headers: hdr, cache: "no-store", body: body ? JSON.stringify(body) : undefined
+      }).then(function (r) {
+        if (r.status === 401 || r.status === 403) { session("jr-gh-token", null); throw new Error("The access key was refused or may not do this. Try again with a new key."); }
+        if (r.status === 404 && method === undefined) return null;
         if (!r.ok) throw new Error("GitHub answered " + r.status + ".");
-        return r.json();
-      })
-      .then(function (cur) {
-        // Wurde die Datei inzwischen anders geaendert? Dann nicht einfach ueberschreiben.
-        if (unb64(cur.content) !== original &&
-          !confirm(file + " was changed on GitHub after this page was loaded. Overwrite those changes?")) throw new Error("Not published.");
-        return fetch(api, {
-          method: "PUT", headers: hdr,
-          body: JSON.stringify({ message: msg, content: b64(html()), sha: cur.sha, branch: BRANCH })
+        return r.status === 204 ? {} : r.json();
+      });
+    }
+    var status = bar.querySelector(".ed-count"), pr = null;
+    status.textContent = "Publishing…";
+    gh("/pulls?state=open&head=" + owner + ":" + EDIT_BRANCH)
+      .then(function (open) {
+        pr = open && open[0];
+        if (pr) return null;
+        // Kein offener Pull Request: den Branch frisch auf den Stand von main setzen.
+        return gh("/git/ref/heads/" + BRANCH).then(function (main) {
+          return gh("/git/ref/heads/" + EDIT_BRANCH).then(function (ref) {
+            return ref ? gh("/git/refs/heads/" + EDIT_BRANCH, "PATCH", { sha: main.object.sha, force: true })
+              : gh("/git/refs", "POST", { ref: "refs/heads/" + EDIT_BRANCH, sha: main.object.sha });
+          });
         });
       })
-      .then(function (r) {
-        if (r.status === 401 || r.status === 403) { store("jr-gh-token", null); throw new Error("The access key may not write to " + REPO + "."); }
-        if (!r.ok) throw new Error("GitHub answered " + r.status + ".");
+      .then(function () { return gh("/contents/" + file + "?ref=" + EDIT_BRANCH); })
+      .then(function (cur) {
+        if (!cur) throw new Error(file + " was not found on GitHub.");
+        // Steht dort schon etwas anderes (noch nicht gemergte Aenderung)? Dann nachfragen.
+        if (unb64(cur.content) !== original &&
+          !confirm(file + " has other changes on GitHub that this page doesn't show yet" + (pr ? " (in the open pull request)" : "") + ". Overwrite them?")) throw new Error("Not published.");
+        return gh("/contents/" + file, "PUT", { message: msg, content: b64(html()), sha: cur.sha, branch: EDIT_BRANCH });
+      })
+      .then(function () {
+        return pr || gh("/pulls", "POST", {
+          title: msg, head: EDIT_BRANCH, base: BRANCH,
+          body: "Edited in the browser with the edit mode of the website (?edit). Merge to make it live."
+        });
+      })
+      .then(function (p) {
         original = html();
-        saved("Published. The site updates in one or two minutes.");
+        saved("Saved as a pull request. Merge it on GitHub to make it live: ");
+        var a = document.createElement("a");
+        a.href = p.html_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "open pull request #" + p.number;
+        status.appendChild(a);
       })
       .catch(function (err) {
-        bar.querySelector(".ed-count").textContent = err.message;
+        status.textContent = err.message;
         bar.classList.add("dirty");
       });
   }

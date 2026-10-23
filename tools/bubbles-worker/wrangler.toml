@@ -12,3 +12,9 @@ ALLOWED_ORIGIN = "https://pacointeractive.github.io"
 SITE = "https://pacointeractive.github.io/Jayraid"
 # Hoechstens so viele Nachrichten pro Besucher in 10 Minuten.
 MAX_PER_10_MIN = "20"
+
+# Speicher fuer unbeantwortete Fragen (Cloudflare KV, kostenlos im Free-Plan).
+# Einmal anlegen: npx wrangler kv namespace create MISSES  → die angezeigte id hier eintragen.
+[[kv_namespaces]]
+binding = "MISSES"
+id = "HIER_DIE_ID_EINTRAGEN"
