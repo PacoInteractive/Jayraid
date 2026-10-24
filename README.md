@@ -43,6 +43,19 @@ If you want more than building, there is a story with two bosses and an actual e
   </tr>
 </table>
 
+## Coming soon
+
+Already finished and on the way to the launcher:
+
+- **Alpha 1.46.0 · A new start menu.** A bar with the title, a small animated scene and the news, and a large panel for your worlds. Rename or delete worlds right in the list.
+- **Alpha 1.45.1 · Everything in hex pixels.** Every effect, figure and item in your hand carries hex pixels as big as the pixels of the blocks.
+- **Alpha 1.45.0 · Red lightning.** A thrust with the awakened demon sabre calls down a red bolt, and the necromancer now fights up close.
+- **Alpha 1.44.0 · The fallen sabre.** A giant sabre stuck in a crater, an altar, and a necromancer boss with two phases.
+- **Alpha 1.43.0 · Rune moonstones.** During a blood moon a circle of stones seals you in with the raiders.
+- **Alpha 1.42.0 · Sky and distant view.** Spectacular sunrises and sunsets, a milky way and shooting stars.
+
+Every change: [CHANGELOG.md](CHANGELOG.md).
+
 ## Join the closed alpha
 
 Jayraid is in a **closed alpha with 20 tester places**. Testers get every version first and tell me what works and what doesn't.

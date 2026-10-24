@@ -2,6 +2,30 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
 
+## Alpha 1.46.0 · Coming soon · A new start menu
+
+New: the start menu is new. A bar on the left holds the title, a small animated scene, the main buttons and the news, and a large panel on the right shows your worlds. Rename or delete worlds right in the list, and read the latest news about the game. Behind the panels the island keeps moving, softly blurred, and every panel and button carries a light hex pixel texture.
+
+## Alpha 1.45.1 · Coming soon · Everything in hex pixels
+
+Changed: every effect now carries hex pixels as big as the pixels of the blocks: fireballs, meteors, the red lightning, the ring of fire, beams and sparks. They no longer glare into white. Figures and whatever you hold in your hand carry hex pixels everywhere too.
+
+## Alpha 1.45.0 · Coming soon · Red lightning
+
+New: a thrust with the awakened demon sabre calls down a red bolt of lightning, and whoever it hits keeps burning. Burning divers burn with the real fire of the game, only in red. The necromancer now comes close and strikes with his wand, and his burning undead also rise from the ground behind you.
+
+## Alpha 1.44.0 · Coming soon · The fallen sabre
+
+New: in new worlds a giant sabre of obsidian and glowing rune stone rarely stands tip down in a crater, as if it had fallen from the sky, and its red glow lights up the sky from far away. On the crater rim waits an altar with a floating sabre. Whoever takes it is sealed in by a ring of fire beams, and a necromancer digs his way out of the ground: fireballs, meteor showers, a wave of fire, burning undead without arms and two phases. Whoever defeats him carries the awakened demon sabre. New blocks: obsidian, rune stone and ash.
+
+## Alpha 1.43.0 · Coming soon · Rune moonstones
+
+New: when a blood moon rises, rune moonstones crash down one after another in a circle around your base and seal you in. They charge until the raid begins, then red beams shoot into the sky and the divers step out of the stones. Only when every enemy is defeated do the stones topple, crumble or explode. In Adventure and Challenge your gear stays where you died. In Challenge your hearts crack with every death, and after the third the world is over and you can only watch. New in the settings: a free camera (F4).
+
+## Alpha 1.42.0 · Coming soon · Sky and distant view
+
+New: spectacular sunrises and sunsets with bands of colour from glowing red to violet, sun rays, glowing clouds and a sparkling path of light on the sea. At night a milky way, colourful twinkling stars and shooting stars. Changed: blocks now keep their texture at any distance, not only up close.
+
 ## Alpha 1.41.1 · 21.10.2026 · Jumping and swimming
 
 New: swim with sprint in deep water, in the direction you look, with arm strokes and bubbles. Changed: jumping has weight, your momentum carries you through the air, and take off and landing kick up dust and sound.

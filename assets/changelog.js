@@ -15,9 +15,11 @@
       var d = (head[1] || "").split(".");
       var text = lines.slice(1).join(" ").replace(/\s+/g, " ").trim();
       var nr = (head[0].match(/(\d+)\.(\d+)\.(\d+)/) || []);
+      // Ohne Datum (etwa "Coming soon"): eine Version, die schon fertig ist, aber noch nicht im Launcher.
+      var soon = d.length !== 3;
       out.push({
-        name: head[0], date: head[1] || "", title: head[2] || "",
-        month: d.length === 3 ? months[+d[1] - 1] + " " + d[2] : "",
+        name: head[0], date: head[1] || "", title: head[2] || "", soon: soon,
+        month: soon ? "Coming soon" : months[+d[1] - 1] + " " + d[2],
         fix: nr.length && +nr[3] > 0,
         text: text
       });
@@ -57,13 +59,15 @@
         g.appendChild(group);
         box.appendChild(g);
       }
-      var e = el("article", "log-entry" + (v.fix ? " fix" : "") + (i === 0 ? " latest" : ""));
+      var latest = !v.soon && list.filter(function (x) { return !x.soon; })[0] === v;
+      var e = el("article", "log-entry" + (v.fix ? " fix" : "") + (latest ? " latest" : "") + (v.soon ? " soon" : ""));
       e.dataset.search = (v.name + " " + v.title + " " + v.text).toLowerCase();
       var head = el("div", "log-entry-head");
       head.appendChild(el("span", "log-name", v.name));
-      if (i === 0) head.appendChild(el("span", "log-tag", "Latest"));
+      if (v.soon) head.appendChild(el("span", "log-tag dim", "Coming soon"));
+      else if (latest) head.appendChild(el("span", "log-tag", "Latest"));
       else if (v.fix) head.appendChild(el("span", "log-tag dim", "Fix"));
-      head.appendChild(el("span", "log-date", v.date));
+      if (!v.soon) head.appendChild(el("span", "log-date", v.date));
       e.appendChild(head);
       if (v.title) e.appendChild(el("h3", "log-title", v.title));
       pieces(v.text).forEach(function (p) {
@@ -77,9 +81,10 @@
     });
 
     // Kurz zusammengefasst ueber der Liste.
-    var first = list[list.length - 1], stats = document.getElementById("log-stats");
-    var content = list.filter(function (v) { return !v.fix; }).length;
-    [[list.length, "versions"], [content, "content updates"], [list.length - content, "fixes"], [first ? first.date : "", "first version"]]
+    var out = list.filter(function (v) { return !v.soon; });
+    var first = out[out.length - 1], stats = document.getElementById("log-stats");
+    var content = out.filter(function (v) { return !v.fix; }).length;
+    [[out.length, "versions"], [content, "content updates"], [out.length - content, "fixes"], [first ? first.date : "", "first version"]]
       .forEach(function (s) {
         var b = el("div", "log-stat");
         b.appendChild(el("b", "", String(s[0])));
