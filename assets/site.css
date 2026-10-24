@@ -586,3 +586,57 @@ mark.bubbles-mark {
 .admin-row b { color: var(--orange); }
 .admin-row .button { padding: 6px 12px; font-size: .85rem; }
 @media (max-width: 640px) { .admin-row { grid-template-columns: 40px 1fr; } }
+
+/* ── Changelog: big title picture like the start view, coming soon as cards ── */
+.log-hero { position: relative; padding: 0; max-width: none; overflow: hidden; }
+.log-hero-image {
+  position: absolute; inset: 0 0 auto 0; height: 600px;
+  background-size: cover; background-position: center 30%;
+}
+.log-hero-image::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(17,17,18,.9) 0%, rgba(17,17,18,.5) 42%, rgba(17,17,18,0) 72%),
+              linear-gradient(0deg, var(--suit) 0%, rgba(17,17,18,0) 38%);
+}
+.anim .log-hero-image { animation: drift 30s ease-in-out infinite alternate; }
+.log-hero-text { position: relative; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 56px; }
+.log-hero-text .tag.new { position: static; margin-bottom: 18px; }
+.log-hero-text h1 { margin: 0 0 18px; }
+.log-hero-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+.anim .log-hero-text > * { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+.anim .log-hero-text > :nth-child(2) { animation-delay: .1s; }
+.anim .log-hero-text > :nth-child(3) { animation-delay: .25s; }
+.anim .log-hero-text > :nth-child(4) { animation-delay: .4s; }
+.log-statbar { display: block; padding: 14px 18px; }
+.log-statbar .log-stats { margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.log-statbar .log-stat { background: var(--panel-light); min-width: 0; }
+.anim .log-statbar { animation: rise .8s .5s cubic-bezier(.2,.8,.2,1) both; }
+.log-head { padding-top: 40px; }
+.log-rule { margin-top: 12px; }
+
+/* Coming soon: no timeline, a grid of cards with a dashed edge */
+.soon-month .log-month-name { color: var(--orange); }
+.soon-month .log-entries { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding-left: 0; }
+.soon-month .log-entries::before, .log-entry.soon::before { display: none; }
+.log-entry.soon {
+  margin: 0; padding: 18px 20px 14px; border: 1px dashed rgba(240,140,30,.55); background:
+    linear-gradient(160deg, rgba(240,140,30,.08), rgba(240,140,30,0) 45%), var(--panel);
+}
+.log-entry.soon:hover { border-style: solid; border-color: var(--orange); }
+.log-entry.soon .log-name { color: var(--orange); }
+.log-entry.soon .log-title { font-size: 1.15rem; }
+.log-entry.soon.fix { background: var(--panel); }
+
+/* Coming soon on the start page (index.html) */
+.soon-head { margin: 26px 0 10px; color: var(--orange); }
+
+@media (max-width: 1180px) {
+  .log-statbar .log-stats { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 860px) {
+  .log-hero-image { height: 520px; }
+  .log-hero-image::after { background: linear-gradient(0deg, var(--suit) 0%, rgba(17,17,18,.55) 45%, rgba(17,17,18,.05) 100%); }
+  .log-hero-text { min-height: 440px; padding: 28px 16px; justify-content: flex-end; }
+  .log-statbar .log-stats { grid-template-columns: repeat(2, 1fr); }
+  .soon-month .log-entries { grid-template-columns: 1fr; }
+}

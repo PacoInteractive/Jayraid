@@ -53,7 +53,7 @@
     list.forEach(function (v, i) {
       if (v.month !== month) {
         month = v.month;
-        var g = el("div", "log-month");
+        var g = el("div", "log-month" + (v.soon ? " soon-month" : ""));
         g.appendChild(el("h2", "log-month-name", month));
         group = el("div", "log-entries");
         g.appendChild(group);
@@ -84,7 +84,7 @@
     var out = list.filter(function (v) { return !v.soon; });
     var first = out[out.length - 1], stats = document.getElementById("log-stats");
     var content = out.filter(function (v) { return !v.fix; }).length;
-    [[out.length, "versions"], [content, "content updates"], [out.length - content, "fixes"], [first ? first.date : "", "first version"]]
+    [[out.length, "versions"], [content, "content updates"], [out.length - content, "fixes"], [list.length - out.length, "coming soon"], [first ? first.date : "", "first version"]]
       .forEach(function (s) {
         var b = el("div", "log-stat");
         b.appendChild(el("b", "", String(s[0])));
@@ -101,7 +101,8 @@
       var shown = 0;
       g.querySelectorAll(".log-entry").forEach(function (e) {
         var fix = e.classList.contains("fix");
-        var ok = (filter === "all" || (filter === "fix") === fix) && (!q || e.dataset.search.indexOf(q) >= 0);
+        var soon = e.classList.contains("soon");
+        var ok = (filter === "all" || (filter === "soon" ? soon : !soon && (filter === "fix") === fix)) && (!q || e.dataset.search.indexOf(q) >= 0);
         e.hidden = !ok;
         if (ok) shown++;
       });
