@@ -43,15 +43,17 @@ If you want more than building, there is a story with two bosses and an actual e
   </tr>
 </table>
 
-## Coming soon
+## What's new
 
-Already finished and on the way to the launcher:
+The latest updates, all in the launcher now:
 
-- **Alpha 1.46.0 · A new start menu.** A bar with the title, a small animated scene and the news, and a large panel for your worlds. Rename or delete worlds right in the list.
-- **Alpha 1.45.1 · Everything in hex pixels.** Every effect, figure and item in your hand carries hex pixels as big as the pixels of the blocks.
-- **Alpha 1.45.0 · Red lightning.** A thrust with the awakened demon sabre calls down a red bolt, and the necromancer now fights up close.
+- **Alpha 1.52.0 · The deep.** The world reaches down to Y -99, with four levels of dark caves and bedrock at the very bottom. Your existing worlds get the deep too.
+- **Alpha 1.51.0 · Rain and branches.** Rain makes grass grow back on bare dirt, it rains half as hard under leaves, and branches show bark instead of tree rings.
+- **Alpha 1.50.0 · Third person.** Press F2 to see yourself from behind as a diver who walks, looks around and swings the sabre.
+- **Alpha 1.49.0 · Climate.** Height decides the colours: yellow green grass near the sea, deep green higher up, then snow. Shallow water glows turquoise, the deep sea turns dark blue.
+- **Alpha 1.47.0 · Your own block colours.** Paint the textures of all blocks yourself and the game loads them right away.
+- **Alpha 1.46.0 · A new start menu.** A bar with the title, a small animated scene and the news, and a large panel for your worlds.
 - **Alpha 1.44.0 · The fallen sabre.** A giant sabre stuck in a crater, an altar, and a necromancer boss with two phases.
-- **Alpha 1.43.0 · Rune moonstones.** During a blood moon a circle of stones seals you in with the raiders.
 - **Alpha 1.42.0 · Sky and distant view.** Spectacular sunrises and sunsets, a milky way and shooting stars.
 
 Every change: [CHANGELOG.md](CHANGELOG.md).

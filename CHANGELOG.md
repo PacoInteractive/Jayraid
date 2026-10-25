@@ -1,28 +1,80 @@
 # Changelog
 
-Every version of Jayraid, newest first. Version names: **Alpha 1.x.y** - new content raises the middle number, a pure fix the last one.
+Every version of Jayraid, newest first. Version names: **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
-## Alpha 1.46.0 · Coming soon · A new start menu
+## Alpha 1.52.0 · 25.10.2026 · The deep
 
-New: the start menu is new. A bar on the left holds the title, a small animated scene, the main buttons and the news, and a large panel on the right shows your worlds. Rename or delete worlds right in the list, and read the latest news about the game. Behind the panels the island keeps moving, softly blurred, and every panel and button carries a light hex pixel texture.
+New: the world now reaches down to Y -99, with four levels of dark caves and bedrock at the very bottom. Existing worlds get the deep too, and everything you built stays where it is.
 
-## Alpha 1.45.1 · Coming soon · Everything in hex pixels
+## Alpha 1.51.2 · 25.10.2026 · Clean seams
+
+Changed: no more red specks on the seams between blocks, and neighbouring blocks now meet exactly without gaps.
+
+## Alpha 1.51.1 · 25.10.2026 · Clear distance
+
+Changed: the distance is sharper, blocks no longer smear when you look across the land, and the fog starts further away.
+
+## Alpha 1.51.0 · 25.10.2026 · Rain and branches
+
+New: rain makes grass grow back on bare dirt. Changed: under leaves it rains half as hard, and branches show bark on top and bottom instead of tree rings.
+
+## Alpha 1.50.3 · 25.10.2026 · Soil under blocks
+
+Changed: placing a block on grass turns the grass beneath it into dirt right away.
+
+## Alpha 1.50.2 · 24.10.2026 · Smooth zenith
+
+Changed: the sky straight overhead no longer shows a dark wedge with a hard seam.
+
+## Alpha 1.50.1 · 24.10.2026 · Softer light
+
+Changed: sunrise and sunset are gentler, torches and fires light up the blocks around them softly instead of glaring white, and a fallen sabre now sends up one single pillar of light.
+
+## Alpha 1.50.0 · 24.10.2026 · Third person
+
+New: press F2 to see yourself from behind, as a diver who walks, looks around and swings the sabre; press F2 again to look through your own eyes.
+
+## Alpha 1.49.0 · 24.10.2026 · Climate zones
+
+New: the colours of the world follow the climate. The higher you climb, the cooler it gets: sun bleached grass on the coast, then lush green, pine forest, frost and snow. In cool woodland whole regions turn gold, orange and red. The sea glows turquoise in the shallows and turns deep navy further out, rivers run turquoise green where it is warm and dark blue where it is cold, and the soil is dry near the coast and damp up high.
+
+## Alpha 1.48.1 · 24.10.2026 · Leaves and tops
+
+Changed: the gaps in the leaves are different for every leaf block, and block tops like the log rings now show their picture once and centred.
+
+## Alpha 1.48.0 · 24.10.2026 · New block colours
+
+New: leaves you can see through, with sky and light shining through the tree tops. Changed: every block carries new, hand painted colours.
+
+## Alpha 1.47.0 · 24.10.2026 · Your own block colours
+
+New: you can recolour the block textures yourself. Every block has 16 x 16 hex pixels, and what you put in a bloecke.json file replaces the built in colours, even while you play.
+
+## Alpha 1.46.1 · 24.10.2026 · Sabre in hex pixels
+
+Changed: the sabre now carries a clear hex pixel texture on every cell, in your hand, with the divers and on the altar.
+
+## Alpha 1.46.0 · 24.10.2026 · A new start menu
+
+New: the start menu is new, with a bar on the left for the title, a small animated scene, the main buttons and the news, and a large panel on the right for your worlds. Rename or delete worlds right in the list. Behind the panels the island keeps moving, softly blurred.
+
+## Alpha 1.45.1 · 24.10.2026 · Everything in hex pixels
 
 Changed: every effect now carries hex pixels as big as the pixels of the blocks: fireballs, meteors, the red lightning, the ring of fire, beams and sparks. They no longer glare into white. Figures and whatever you hold in your hand carry hex pixels everywhere too.
 
-## Alpha 1.45.0 · Coming soon · Red lightning
+## Alpha 1.45.0 · 23.10.2026 · Red lightning
 
 New: a thrust with the awakened demon sabre calls down a red bolt of lightning, and whoever it hits keeps burning. Burning divers burn with the real fire of the game, only in red. The necromancer now comes close and strikes with his wand, and his burning undead also rise from the ground behind you.
 
-## Alpha 1.44.0 · Coming soon · The fallen sabre
+## Alpha 1.44.0 · 23.10.2026 · The fallen sabre
 
-New: in new worlds a giant sabre of obsidian and glowing rune stone rarely stands tip down in a crater, as if it had fallen from the sky, and its red glow lights up the sky from far away. On the crater rim waits an altar with a floating sabre. Whoever takes it is sealed in by a ring of fire beams, and a necromancer digs his way out of the ground: fireballs, meteor showers, a wave of fire, burning undead without arms and two phases. Whoever defeats him carries the awakened demon sabre. New blocks: obsidian, rune stone and ash.
+New: in new worlds a giant sabre of obsidian and glowing rune stone rarely stands tip down in a crater, as if it had fallen from the sky. On the crater rim waits an altar with a floating sabre. Whoever takes it is sealed in by a ring of fire beams, and a necromancer digs his way out of the ground: fireballs, meteor showers, burning undead without arms, two phases. Whoever defeats him carries the awakened demon sabre with triple damage. New blocks: obsidian, rune stone, ash.
 
-## Alpha 1.43.0 · Coming soon · Rune moonstones
+## Alpha 1.43.0 · 22.10.2026 · Rune moonstones
 
 New: when a blood moon rises, rune moonstones crash down one after another in a circle around your base and seal you in. They charge until the raid begins, then red beams shoot into the sky and the divers step out of the stones. Only when every enemy is defeated do the stones topple, crumble or explode. In Adventure and Challenge your gear stays where you died. In Challenge your hearts crack with every death, and after the third the world is over and you can only watch. New in the settings: a free camera (F4).
 
-## Alpha 1.42.0 · Coming soon · Sky and distant view
+## Alpha 1.42.0 · 22.10.2026 · Sky and distant view
 
 New: spectacular sunrises and sunsets with bands of colour from glowing red to violet, sun rays, glowing clouds and a sparkling path of light on the sea. At night a milky way, colourful twinkling stars and shooting stars. Changed: blocks now keep their texture at any distance, not only up close.
 
