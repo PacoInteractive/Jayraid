@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Version names: **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.0.0 · Coming soon · The closed beta
+
+New: Jayraid leaves the closed alpha and becomes a closed beta on Wednesday, 28 October 2026 at 21:00 CET. On launch night the launcher welcomes you to the beta, and the Jayraid Discord is open for everyone who plays.
+
 ## Alpha 1.52.0 · 25.10.2026 · The deep
 
 New: the world now reaches down to Y -99, with four levels of dark caves and bedrock at the very bottom. Existing worlds get the deep too, and everything you built stays where it is.
