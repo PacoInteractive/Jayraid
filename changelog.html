@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.workers.dev https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jayraid · Changelog</title>
+<title>Jayraid Changelog</title>
 <meta name="description" content="Every version of Jayraid since the first C# build, newest first.">
-<meta property="og:title" content="Jayraid · Changelog">
+<meta property="og:title" content="Jayraid Changelog">
 <meta property="og:image" content="images/title.jpg">
 <meta name="theme-color" content="#111112">
 <link rel="icon" href="assets/symbol.png">
@@ -46,13 +46,13 @@
 
 <!-- Die Seite liest CHANGELOG.md und baut daraus die Zeitleiste (assets/changelog.js). -->
 <section class="log-hero" id="top">
-  <div class="log-hero-image" style="background-image:url('images/fallen-sabre.jpg')" role="img" aria-label="The fallen sabre, coming in Alpha 1.44.0"></div>
+  <div class="log-hero-image" style="background-image:url('images/fallen-sabre.jpg')" role="img" aria-label="The fallen sabre from Alpha 1.44.0"></div>
   <div class="log-hero-text">
-    <span class="tag new" data-hex="COMING SOON" data-cap="10"></span>
+    <!-- "Coming soon" erscheint nur, wenn CHANGELOG.md eine Version ohne Datum hat (assets/changelog.js). -->
+    <span class="tag new" id="log-soon-tag" data-hex="COMING SOON" data-cap="10" hidden></span>
     <h1 aria-label="Changelog"><span data-hex="CHANGELOG" data-cap="56" data-shadow></span></h1>
-    <p class="lead">Every version of Jayraid since the first C# build, and what comes next:
-      a giant sabre fallen from the sky, rune moonstones, red lightning and a sky full of stars.</p>
-    <p class="log-hero-links"><a class="button orange-button" href="#log">See what's coming</a> <a class="button" href="index.html#play">Claim a place</a></p>
+    <p class="lead" id="log-lead">Every version of Jayraid since the first C# build, newest first.</p>
+    <p class="log-hero-links"><a class="button orange-button" id="log-jump" href="#log">See the latest version</a> <a class="button" href="index.html#play">Claim a place</a></p>
   </div>
   <div class="playbar log-statbar">
     <div class="log-stats" id="log-stats"></div>
@@ -63,13 +63,13 @@
   <div class="log-tools reveal">
     <div class="log-filter" role="group" aria-label="Show">
       <button type="button" class="on" data-filter="all">All</button>
-      <button type="button" data-filter="soon">Coming soon</button>
+      <button type="button" data-filter="soon" hidden>Coming soon</button>
       <button type="button" data-filter="content">Content</button>
       <button type="button" data-filter="fix">Fixes</button>
     </div>
     <input type="search" id="log-search" placeholder="Search, e.g. golem or fire" aria-label="Search the changelog">
   </div>
-  <p class="small log-rule">New content raises the middle number, a pure fix the last one. Coming soon means finished, but not in the launcher yet.</p>
+  <p class="small log-rule">New content raises the middle number, a pure fix the last one.<span id="log-soon-rule" hidden> Coming soon means finished, but not in the launcher yet.</span></p>
 </section>
 
 <section class="log">
@@ -80,7 +80,7 @@
 <footer>
   <span class="footer-mark"></span>
   <p>Jayraid · © 2026 Paco Interactive. All rights reserved. · <a href="LICENSE">License</a> · <a href="CHANGELOG.md">Plain text</a></p>
-  <p class="small">This is the official Jayraid site. Only download the launcher from here.</p>
+  <p class="small">This is the only place to get the launcher.</p>
 </footer>
 
 </div>

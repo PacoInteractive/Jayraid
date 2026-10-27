@@ -84,6 +84,18 @@
       });
     }, { rootMargin: "0px 0px -8% 0px" });
     document.querySelectorAll(".reveal").forEach(function (el) { seen.observe(el); });
+    // Bilder oeffnen sich wie ein Sechseck, sobald sie ins Bild kommen.
+    var lens = new IntersectionObserver(function (list) {
+      list.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("open");
+        lens.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -12% 0px" });
+    document.querySelectorAll(".feature-image, .news-top-image").forEach(function (el) {
+      el.classList.add("hexopen");
+      lens.observe(el);
+    });
     // Die Gluehsechsecke im Startbild bekommen zufaellige Plaetze und Takte.
     document.querySelectorAll(".hexes i").forEach(function (h) {
       h.style.left = (8 + Math.random() * 88) + "%";

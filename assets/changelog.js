@@ -84,13 +84,27 @@
     var out = list.filter(function (v) { return !v.soon; });
     var first = out[out.length - 1], stats = document.getElementById("log-stats");
     var content = out.filter(function (v) { return !v.fix; }).length;
-    [[out.length, "versions"], [content, "content updates"], [out.length - content, "fixes"], [list.length - out.length, "coming soon"], [first ? first.date : "", "first version"]]
-      .forEach(function (s) {
+    var soon = list.filter(function (v) { return v.soon; });
+    [[out.length, "versions"], [content, "content updates"], [out.length - content, "fixes"], soon.length ? [soon.length, "coming soon"] : null, [first ? first.date : "", "first version"]]
+      .filter(Boolean).forEach(function (s) {
         var b = el("div", "log-stat");
         b.appendChild(el("b", "", String(s[0])));
         b.appendChild(el("span", "", s[1]));
         stats.appendChild(b);
       });
+
+    // Der Kopf: steht etwas an, zeigt er es an. Sonst fuehrt der Knopf zur neuesten Version.
+    var jump = document.getElementById("log-jump");
+    if (soon.length) {
+      document.getElementById("log-soon-tag").hidden = false;
+      document.querySelector('.log-filter [data-filter="soon"]').hidden = false;
+      document.getElementById("log-soon-rule").hidden = false;
+      var titles = soon.map(function (v) { return v.title || v.name; }).join(", ");
+      document.getElementById("log-lead").textContent = "Every version of Jayraid since the first C# build, and what comes next: " + titles + ".";
+      jump.textContent = "See what's coming";
+    } else if (out[0]) {
+      jump.textContent = "What's new in " + out[0].name;
+    }
   }
 
   // Filter und Suche.
