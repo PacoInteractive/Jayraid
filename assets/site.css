@@ -608,7 +608,7 @@ mark.bubbles-mark {
 .anim .log-hero-text > :nth-child(3) { animation-delay: .25s; }
 .anim .log-hero-text > :nth-child(4) { animation-delay: .4s; }
 .log-statbar { display: block; padding: 14px 18px; }
-.log-statbar .log-stats { margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.log-statbar .log-stats { margin: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; }
 .log-statbar .log-stat { background: var(--panel-light); min-width: 0; }
 .anim .log-statbar { animation: rise .8s .5s cubic-bezier(.2,.8,.2,1) both; }
 .log-head { padding-top: 40px; }
@@ -631,13 +631,13 @@ mark.bubbles-mark {
 .soon-head { margin: 26px 0 10px; color: var(--orange); }
 
 @media (max-width: 1180px) {
-  .log-statbar .log-stats { grid-template-columns: repeat(3, 1fr); }
+  .log-statbar .log-stats { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 860px) {
   .log-hero-image { height: 520px; }
   .log-hero-image::after { background: linear-gradient(0deg, var(--suit) 0%, rgba(17,17,18,.55) 45%, rgba(17,17,18,.05) 100%); }
   .log-hero-text { min-height: 440px; padding: 28px 16px; justify-content: flex-end; }
-  .log-statbar .log-stats { grid-template-columns: repeat(2, 1fr); }
+  .log-statbar .log-stats { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); }
   .soon-month .log-entries { grid-template-columns: 1fr; }
 }
 
