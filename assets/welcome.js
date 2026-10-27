@@ -209,7 +209,9 @@
     var g = canvas.getContext("2d"), start = performance.now(), done = false, raf = 0;
 
     function size() {
-      var ratio = Math.min(2, window.devicePixelRatio || 1);
+      // Schmale Fenster ohne Retina (unter ~800 Pixel) zeichnen feiner, sonst ist die
+      // kleinste Schrift breiter als das Bild und die langen Zeilen werden abgeschnitten.
+      var ratio = Math.max(Math.min(2, window.devicePixelRatio || 1), Math.min(2, 800 / innerWidth));
       canvas.width = Math.round(innerWidth * ratio);
       canvas.height = Math.round(innerHeight * ratio);
     }
