@@ -93,5 +93,5 @@ So only download Jayraid from this page.
 ---
 
 <p align="center">
-  <sub>Made by <b>Tixx</b> · Paco Interactive · © 2026 All rights reserved · <a href="LICENSE">License</a></sub>
+  <sub>Made by <b>Tixx</b> · © 2026 Paco Interactive · All rights reserved · <a href="LICENSE">License</a></sub>
 </p>
