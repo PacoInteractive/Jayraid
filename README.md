@@ -18,7 +18,7 @@
   <a href="https://pacointeractive.github.io/Jayraid/changelog.html"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FPacoInteractive%2FJayraid%2Fmain%2Fupdate%2Fblockwelt-versionen.json&query=%24.versionen%5B-1%3A%5D.nameEn&label=Latest&color=f08c1e&labelColor=1c1c1e" alt="Latest version"></a>
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FPacoInteractive%2FJayraid%2Fmain%2Fupdate%2Fblockwelt-versionen.json&query=%24.launcher.version&label=Launcher&color=46464a&labelColor=1c1c1e" alt="Launcher version">
   <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-46464a?labelColor=1c1c1e" alt="Windows 10 / 11">
-  <img src="https://img.shields.io/badge/Closed%20alpha-20%20testers-46464a?labelColor=1c1c1e" alt="Closed alpha, 20 testers">
+  <img src="https://img.shields.io/badge/Closed%20alpha-50%20testers-46464a?labelColor=1c1c1e" alt="Closed alpha, 50 testers">
 </p>
 
 ---
@@ -60,7 +60,7 @@ Every change: [CHANGELOG.md](CHANGELOG.md).
 
 ## Join the closed alpha
 
-Jayraid is in a **closed alpha with 20 tester places**. Testers get every version first and tell me what works and what doesn't.
+Jayraid is in a **closed alpha with 50 tester places**. The **beta starts on 28 October 2026 at 21:00 CET**. Testers get every version first and tell me what works and what doesn't.
 
 1. Open the [website](https://pacointeractive.github.io/Jayraid/) and click **CLAIM A PLACE**. Your browser saves your personal code and `Jayraid-Launcher.zip`.
 2. Install the free [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (x64) once and unpack the launcher into a folder of its own.

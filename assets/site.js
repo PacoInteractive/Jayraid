@@ -152,7 +152,7 @@
     mark();
   }
 
-  // ── The closed alpha: 20 tester places (Cloudflare Worker, see config.js) ──
+  // ── The closed alpha: 50 tester places (Cloudflare Worker, see config.js) ──
   var cfg = window.JAYRAID || {};
   var api = (cfg.testerApi || "").replace(/\/$/, "");
   // Nur beim Testen auf diesem PC: ?api=http://localhost:8787 statt des echten Zaehlers.
@@ -203,8 +203,8 @@
 
   if (!api) {
     // Noch kein Zaehler eingerichtet: die Plaetze sind noch nicht offen.
-    showCells(20, 20);
-    countEl.textContent = "20 tester places";
+    showCells(50, 50);
+    countEl.textContent = "50 tester places";
     claim.disabled = true;
     claim.classList.add("off");
     textEl.textContent = "The tester places open soon.";
@@ -219,7 +219,7 @@
         .then(function (r) { return r.json(); })
         .then(function (r) {
           if (r.code) done(r);
-          else if (r.fehler === "voll") full(r.gesamt || 20);
+          else if (r.fehler === "voll") full(r.gesamt || 50);
           else { claim.disabled = false; textEl.textContent = "Something went wrong. Please try again."; }
         })
         .catch(function () { claim.disabled = false; textEl.textContent = "No connection. Please try again in a moment."; });
