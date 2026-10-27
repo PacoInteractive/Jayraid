@@ -1,6 +1,6 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-10-25T15:30:42.6310059+01:00",
+  "erstellt": "2026-10-27T18:34:33.3523466+01:00",
   "neueste": "2026-10-25-tiefe",
   "versionen": [
     {
@@ -9,7 +9,7 @@
       "datum": "25.10.2026",
       "neu": "Regen und Aeste: Neu: Regen laesst auf blanker Erde Gras wachsen. Geaendert: unter Laub regnet es halb so stark, und Aeste haben oben und unten Rinde statt Jahresringen.",
       "paket": "2026-10-25-regen-aeste.jpak",
-      "paketSha256": "8b43f98715db550d461784ef132ec76f48e40fb88f89f91d8acaf7543b82b00c",
+      "paketSha256": "250306c41c3ef5d2a5895606abc2f40976d24642613cdc202a589f071ed07867",
       "groesse": 7259118,
       "dateien": {
         "Blockwelt2.deps.json": "887060bc4927c59576a7b3134544d53474e7eea215a7ceea49265ae5c0d01524",
@@ -57,7 +57,7 @@
       "datum": "25.10.2026",
       "neu": "Klare Ferne: Geaendert: die Ferne ist schaerfer, Bloecke verschmieren beim flachen Blick nicht mehr, und der Nebel beginnt spaeter.",
       "paket": "2026-10-25-klare-ferne.jpak",
-      "paketSha256": "7e2a753f85919e45e786c79b0a30ea42c11aedd5053d0bad259f6afb26181f99",
+      "paketSha256": "1f71c8fd5650fdeaaa8ba5e604a8a6342702f37ec5dfdbe1b6c1e28e047ac740",
       "groesse": 7259762,
       "dateien": {
         "Blockwelt2.deps.json": "887060bc4927c59576a7b3134544d53474e7eea215a7ceea49265ae5c0d01524",
@@ -105,7 +105,7 @@
       "datum": "25.10.2026",
       "neu": "Saubere Fugen: Geaendert: keine roten Striche mehr auf den Fugen zwischen Bloecken, und benachbarte Bloecke schliessen auf den Punkt genau.",
       "paket": "2026-10-25-fugen.jpak",
-      "paketSha256": "284186e94aba0c1edfdb81af89396be9b5be8575e37022cc0320ffbb1a74e2bc",
+      "paketSha256": "dbfd0183aa284390e87a67fd6f895b1a0f1a93b0941da6c07d35344a33a47a6e",
       "groesse": 7261904,
       "dateien": {
         "Blockwelt2.deps.json": "887060bc4927c59576a7b3134544d53474e7eea215a7ceea49265ae5c0d01524",
@@ -153,7 +153,7 @@
       "datum": "25.10.2026",
       "neu": "Die Tiefe: Neu: die Welt geht bis Y -99, mit vier Stockwerken dunkler Hoehlen und Grundgestein ganz unten. Auch bestehende Welten bekommen die Tiefe, alles Gebaute bleibt an seinem Platz.",
       "paket": "2026-10-25-tiefe.jpak",
-      "paketSha256": "b3cf76173a5d91c5c1892b7678660710308b9fa380147230109aa678023175ee",
+      "paketSha256": "b9b32c8924ff7ddb560bcace4573b4e7c99509f628b23d44710827de1e230e64",
       "groesse": 7263422,
       "dateien": {
         "Blockwelt2.deps.json": "887060bc4927c59576a7b3134544d53474e7eea215a7ceea49265ae5c0d01524",
@@ -197,10 +197,10 @@
     }
   ],
   "launcher": {
-    "version": "1.4.3",
+    "version": "1.5.0",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "4e26699d4ab0b9ccdae8415ac5fc3d16c7945b9c4c5be9ea278d7d5638bbf966",
-    "groesse": 6775090
+    "paketSha256": "5c54cafcdebbfe991feaf0bb05b37348629b97dccf779b209fd55bb6b19d3b5d",
+    "groesse": 6781182
   },
   "medien": [
     {
