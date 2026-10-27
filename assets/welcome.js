@@ -3,7 +3,11 @@
 // Zeile uebertragen). Wer spaeter kommt (am Abend oder Tage danach), sieht sie
 // beim ersten Besuch auch; danach gibt es einen Knopf zum Wiederansehen.
 //
-// Zum Pruefen: ?countdown=10 (Start in 10 Sekunden), ?begruessung (sofort zeigen).
+// Nach der Begruessung leuchtet die Seite einige Sekunden in Regenbogenfarben
+// (Klasse "rainbow" in site.css) und kehrt dann zu ihren eigenen Farben zurueck.
+//
+// Zum Pruefen: ?countdown=10 (Start in 10 Sekunden), ?begruessung (sofort zeigen),
+// ?regenbogen (nur den Regenbogen).
 (function () {
   "use strict";
 
@@ -164,6 +168,18 @@
     }
   }
 
+  // ── Der Regenbogen danach ─────────────────────────────────────────────
+
+  var RAINBOW = 11000, rainbowTimer = 0;
+  function rainbow() {
+    var root = document.documentElement;
+    root.classList.remove("rainbow");
+    void root.offsetWidth;   // neu anstossen, falls er noch laeuft
+    root.classList.add("rainbow");
+    clearTimeout(rainbowTimer);
+    rainbowTimer = setTimeout(function () { root.classList.remove("rainbow"); }, RAINBOW);
+  }
+
   // ── Die Begruessung als Vollbild ──────────────────────────────────────
 
   var playing = false;
@@ -208,6 +224,7 @@
         box.remove();
         document.documentElement.classList.remove("welcome-on");
         playing = false;
+        rainbow();
       }, 700);
     }
     function key(e) {
@@ -274,6 +291,7 @@
 
   el.querySelector(".launch-replay").addEventListener("click", function () { play(evening()); });
   if (q.has("begruessung")) play(evening());
+  if (q.has("regenbogen")) rainbow();
 
   if (now() >= LAUNCH) opened(!seen());
   else {
