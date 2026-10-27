@@ -640,3 +640,26 @@ mark.bubbles-mark {
   .log-statbar .log-stats { grid-template-columns: repeat(2, 1fr); }
   .soon-month .log-entries { grid-template-columns: 1fr; }
 }
+
+/* Der Start der Beta (assets/welcome.js): Countdown im Startbild, danach "offen" mit Knopf zum Wiederansehen. */
+.launch { display: inline-grid; justify-items: start; gap: 6px; margin-top: 26px; padding: 14px 18px 12px;
+  background: rgba(17,17,18,.72); border: 1px solid var(--line); border-left: 3px solid var(--orange); width: fit-content; }
+.launch[hidden] { display: none; }
+.launch-label { color: var(--orange); }
+.launch-digits { color: var(--ink); line-height: 0; }
+.launch-units { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.launch-when { font-size: .88rem; color: var(--text); }
+.launch-replay { display: none; margin-top: 4px; }
+.launch.open .launch-digits, .launch.open .launch-units { display: none; }
+.launch.open .launch-replay { display: inline-flex; }
+@media (max-width: 860px) { .launch { margin-top: 18px; padding: 12px 14px 10px; } }
+
+.welcome-on, .welcome-on body { overflow: hidden; }
+.welcome { position: fixed; inset: 0; z-index: 1000; background: var(--suit); animation: welcome-in .5s ease both; }
+.welcome.out { animation: welcome-out .7s ease both; }
+.welcome canvas { display: block; width: 100%; height: 100%; }
+.welcome-skip { position: absolute; right: 20px; bottom: 20px; padding: 10px 12px; background: transparent;
+  border: 1px solid transparent; color: var(--dim); cursor: pointer; }
+.welcome-skip:hover, .welcome-skip:focus-visible { color: var(--ink); border-color: var(--edge); outline: none; }
+@keyframes welcome-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes welcome-out { from { opacity: 1; } to { opacity: 0; } }
