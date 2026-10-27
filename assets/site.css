@@ -663,3 +663,23 @@ mark.bubbles-mark {
 .welcome-skip:hover, .welcome-skip:focus-visible { color: var(--ink); border-color: var(--edge); outline: none; }
 @keyframes welcome-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes welcome-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* Nach der Begruessung (assets/welcome.js): 11 Sekunden Regenbogen. Die Akzentfarbe wandert
+   durch alle Farben, ein Verlauf zieht ueber die Seite, dann blendet alles zurueck ins Orange. */
+@property --rb-hue { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --rb-mix { syntax: "<percentage>"; inherits: true; initial-value: 0%; }
+html.rainbow {
+  --orange: color-mix(in oklab, hsl(var(--rb-hue) 95% 58%) var(--rb-mix), #f08c1e);
+  --orange-hover: color-mix(in oklab, hsl(calc(var(--rb-hue) + 40) 95% 66%) var(--rb-mix), #ffa840);
+  animation: rb-hue 3s linear infinite, rb-mix 11s ease both;
+}
+@keyframes rb-hue { to { --rb-hue: 360; } }
+@keyframes rb-mix { 0% { --rb-mix: 0%; } 12%, 80% { --rb-mix: 100%; } 100% { --rb-mix: 0%; } }
+html.rainbow body::after {
+  content: ""; position: fixed; inset: 0; z-index: 900; pointer-events: none;
+  background: linear-gradient(115deg, #ff3b3b, #ff9f1c, #ffe14d, #3ddc84, #2ec4ff, #5b6cff, #c04dff, #ff3b3b);
+  background-size: 300% 300%; mix-blend-mode: color;
+  animation: rb-sweep 4s linear infinite, rb-veil 11s ease both;
+}
+@keyframes rb-sweep { from { background-position: 0% 50%; } to { background-position: 300% 50%; } }
+@keyframes rb-veil { 0% { opacity: 0; } 12%, 80% { opacity: .42; } 100% { opacity: 0; } }
