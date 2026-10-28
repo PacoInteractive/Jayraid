@@ -12,7 +12,8 @@ So sieht ein Eintrag aus, getrennt durch eine Leerzeile:
 
 - `?` Fragen, mehrere Formulierungen mit `|` trennen. Bubbles erkennt auch ähnliche Sätze.
 - `en:` und `de:` die Antworten (eine reicht, dann nimmt er die vorhandene).
-- `go:` optional: dorthin führt er auf der Seite (#play, #news, #game, #install, #controls).
+- `go:` optional: dorthin führt er auf der Seite (#play, #news, #game, #install, #controls, #about).
+- `img:` optional: ein Bild, das er mitschickt, mit kurzer Beschreibung, z. B. `img: images/golem.jpg Der Golem`.
 
 Tipp: Unbeantwortete Fragen der Besucher (siehe tools/bubbles-worker/LIESMICH.md) sind die beste Quelle für neue Einträge.
 

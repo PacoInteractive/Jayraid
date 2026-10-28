@@ -122,6 +122,16 @@
     log.scrollTop = log.scrollHeight;
     return m;
   }
+  // Ein Bild aus dem Spiel unter der Antwort; ein Klick oeffnet es gross.
+  function addImage(img) {
+    var a = document.createElement("a"), pic = document.createElement("img");
+    a.className = "helper-pic"; a.href = img[0]; a.target = "_blank"; a.rel = "noopener";
+    pic.src = img[0]; pic.alt = img[1] || ""; pic.loading = "lazy";
+    pic.addEventListener("load", function () { log.scrollTop = log.scrollHeight; });
+    a.appendChild(pic);
+    log.appendChild(a);
+    log.scrollTop = log.scrollHeight;
+  }
   function nod() { bot.classList.remove("nod"); void bot.offsetWidth; bot.classList.add("nod"); }
   function goTo(go, words, names) {
     if (go === "PREVIEW") {
@@ -212,6 +222,7 @@
     function answer(reply, go, chips, words, names) {
       typing.remove();
       add("bot", reply);
+      if (local.img) addImage(local.img);
       showChips(chips);
       history.push({ role: "assistant", content: reply });
       if (history.length > 12) history = history.slice(-12);

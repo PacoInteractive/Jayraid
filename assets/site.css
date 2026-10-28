@@ -739,3 +739,8 @@ html.rainbow body::after {
 .privacy h3 { margin: 30px 0 6px; }
 .privacy p, .privacy li { color: var(--text); }
 .privacy ul { padding-left: 20px; }
+
+/* Bubbles schickt ab und zu ein Bild aus dem Spiel mit. */
+.helper-pic { display: block; flex: none; align-self: flex-start; width: 82%; border: 1px solid var(--edge); line-height: 0; }
+.helper-pic img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.helper-pic:hover { border-color: var(--orange); }
