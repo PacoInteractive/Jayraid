@@ -201,10 +201,22 @@
     skipText.setAttribute("data-hex", matchMedia("(pointer: coarse)").matches ? "SKIP" : "ESC  SKIP");
     skipText.setAttribute("data-cap", "10");
     skip.appendChild(skipText);
+    // Die Piano-Musik zur Rede (dieselbe wie im Launcher). Blockiert der Browser den Ton,
+    // weil noch niemand auf die Seite geklickt hat, gibt es oben rechts SOUND ON.
+    var music = new Audio("assets/begruessung.mp3"), sound = document.createElement("button");
+    sound.type = "button";
+    sound.className = "welcome-sound";
+    sound.hidden = true;
+    var soundText = document.createElement("span");
+    soundText.setAttribute("data-hex", "SOUND ON");
+    soundText.setAttribute("data-cap", "10");
+    sound.appendChild(soundText);
     box.appendChild(canvas);
     box.appendChild(skip);
+    box.appendChild(sound);
     document.body.appendChild(box);
     window.jayraidHex(skipText);
+    window.jayraidHex(soundText);
     document.documentElement.classList.add("welcome-on");
     var g = canvas.getContext("2d"), start = performance.now(), done = false, raf = 0;
 
@@ -219,6 +231,7 @@
       if (done) return;
       done = true;
       box.classList.add("out");
+      fadeMusic();
       document.removeEventListener("keydown", key);
       removeEventListener("resize", size);
       setTimeout(function () {
@@ -240,6 +253,20 @@
       if (t > LENGTH) close();
       if (!done) raf = requestAnimationFrame(frame);
     }
+    function fadeMusic() {
+      var v = music.volume, step = setInterval(function () {
+        v = Math.max(0, v - 0.08);
+        music.volume = v;
+        if (v <= 0) { clearInterval(step); music.pause(); }
+      }, 50);
+    }
+    music.play().catch(function () { sound.hidden = false; });
+    sound.addEventListener("click", function (e) {
+      e.stopPropagation();
+      // Spaet eingeschaltet: dort weitermachen, wo das Bild gerade ist.
+      music.currentTime = Math.min(music.duration || 1e9, (performance.now() - start) / 1000);
+      music.play().then(function () { sound.hidden = true; }).catch(function () {});
+    });
     size();
     addEventListener("resize", size);
     document.addEventListener("keydown", key);
