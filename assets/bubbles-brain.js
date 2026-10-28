@@ -11,6 +11,7 @@
   var K = {
     golem: {
       names: ["golem", "stone giant", "steinriese", "riese", "~chained", "angekettet", "~boss", "endboss", "final boss"],
+      img: ["images/golem.jpg", "The golem in the castle ruin"],
       go: "#game",
       en: {
         what: "The golem is a stone giant chained up in old castle ruins. It's the last boss of the story.",
@@ -33,6 +34,7 @@
     },
     bell: {
       names: ["bell", "bell creature", "glocke", "glockenwesen", "ring", "ringing", "läuten", "laeuten"],
+      img: ["images/bell.jpg", "The bell on a trader ship"],
       go: "#game",
       en: {
         what: "The bell is a giant creature that waddles around on every trader ship. It guards the golden wand.",
@@ -95,6 +97,7 @@
     },
     companion: {
       names: ["companion", "tame a diver", "tame divers", "tame", "zaehmen", "zähmen", "blue", "begleiter", "blau", "blauer", "friend", "freund", "pet", "helper diver"],
+      img: ["images/companion.jpg", "A blue companion diver"],
       go: "#game",
       en: {
         what: "Sometimes a defeated rotten diver stands back up, blue, and follows you from then on.",
@@ -111,6 +114,7 @@
     },
     traders: {
       names: ["trader", "traders", "händler", "haendler", "~ship", "~ships", "schiff", "schiffe", "trade", "trading", "handel", "handeln", "kaufen", "~buy", "~shop"],
+      img: ["images/traders.jpg", "Traders on the deck of their ship"],
       go: "#game",
       en: {
         what: "The traders are the friendly faction. They sail between the islands on their ships and trade with you.",
@@ -139,6 +143,7 @@
     },
     bloodmoon: {
       names: ["blood moon", "bloodmoon", "blutmond", "red moon", "roter mond", "raid", "raids", "ueberfall", "überfall", "~attack on my base", "~base"],
+      img: ["images/title.jpg", "Blood moon over the coast"],
       go: "#game",
       en: {
         what: "Some nights the moon turns red. Then the divers raid your base, and they bring field cannons.",
@@ -209,6 +214,7 @@
     },
     sabre: {
       names: ["sabre", "saber", "sword", "säbel", "saebel", "schwert", "weapon", "waffe", "waffen", "weapons"],
+      img: ["images/fallen-sabre.jpg", "A fallen sabre"],
       en: {
         what: "The sabre is your main weapon. Its thrust knocks enemies back, and it's the only thing that can knock the golem down.",
         where: "New worlds start empty. You get a sabre by defeating sabre divers.",
@@ -238,6 +244,7 @@
     },
     caves: {
       names: ["cave", "caves", "hoehle", "höhle", "hoehlen", "höhlen", "green fire", "green fires", "gruenes feuer", "grünes feuer", "underground", "unterirdisch"],
+      img: ["images/cave-fire.jpg", "A green fire in a cave"],
       go: "#game",
       en: {
         what: "Deep inside the mountains burn green fires, guarded by rotten divers. It's dark down there.",
@@ -252,6 +259,7 @@
     },
     fire: {
       names: ["fire", "feuer", "burn", "burning", "brennen", "brand", "flame", "flammen", "extinguish", "loeschen", "löschen"],
+      img: ["images/cave-fire.jpg", "A green fire in a cave"],
       en: {
         what: "Wood, planks, leaves and grass catch fire, from a burning player, fire arrows or cannonballs. Fire spreads and chars the blocks.",
         how: "Water and rain put it out. Jumping into the sea works for you too.",
@@ -322,6 +330,7 @@
     },
     world: {
       names: ["world", "welt", "~map", "karte", "seed", "~island", "~islands", "insel", "inseln", "hexagon", "hexagons", "sechseck", "sechsecke", "river", "rivers", "fluss", "fluesse", "mountain", "mountains", "berg", "berge", "endless", "endlos", "biome", "~snow", "schnee", "weather", "wetter", "~rain", "regen"],
+      img: ["images/world.jpg", "Hexagon mountains and a watchtower"],
       go: "#game",
       en: {
         what: "Every world comes from a seed and never ends: islands of hexagon pillars, mountains, rivers, forests, caves and the sea. Grass has climate zones up to snow, and there's rain and weather.",
@@ -360,15 +369,15 @@
       names: ["join", "tester", "testers", "~place", "~places", "platz", "plaetze", "plätze", "~code", "claim", "mitmachen", "teilnehmen", "~beta", "~alpha", "~access", "zugang", "sign up", "anmelden", "invite", "einladung"],
       go: "#play",
       en: {
-        what: "Jayraid is in a closed alpha with 20 tester places. Click CLAIM A PLACE at the top: you get a personal code file and the launcher.",
+        what: "Jayraid is in a closed alpha with 50 tester places. The beta starts on 28 October 2026 at 21:00 Swiss time. Click CLAIM A PLACE at the top: you get a personal code file and the launcher.",
         how: "Click CLAIM A PLACE, unpack the launcher, start it and type in your code. Keep the code to yourself.",
-        count: "20 places in total.",
+        count: "50 places in total.",
         why: "Testers get every version first. In return, Tixx wants to know what works and what doesn't."
       },
       de: {
-        what: "Jayraid ist in einer geschlossenen Alpha mit 20 Tester-Plätzen. Klick oben auf CLAIM A PLACE: Du bekommst eine persönliche Code-Datei und den Launcher.",
+        what: "Jayraid ist in einer geschlossenen Alpha mit 50 Tester-Plätzen. Die Beta startet am 28. Oktober 2026 um 21:00 Schweizer Zeit. Klick oben auf CLAIM A PLACE: Du bekommst eine persönliche Code-Datei und den Launcher.",
         how: "Auf CLAIM A PLACE klicken, Launcher entpacken, starten und Code eingeben. Behalte den Code für dich.",
-        count: "Insgesamt 20 Plätze.",
+        count: "Insgesamt 50 Plätze.",
         why: "Tester bekommen jede Version zuerst. Dafür will Tixx wissen, was funktioniert und was nicht."
       }
     },
@@ -390,18 +399,19 @@
       names: ["warning", "warns", "warnung", "warnt", "smartscreen", "virus", "viren", "malware", "~safe", "~sicher", "~trust", "vertrauen", "~blocked", "blockiert", "run anyway", "defender"],
       go: "#install",
       en: {
-        what: "Windows warns about every small program it doesn't know yet. Click More info, then Run anyway.",
+        what: "Windows warns about every small program it doesn't know yet. It doesn't mean something is wrong with the file. Click More info, then Run anyway.",
         why: "Big studios pay for a signing certificate that Windows knows. Small games don't have one yet, so Windows is careful.",
         how: "The launcher checks every single file against a signed version list before each start and refuses anything that was changed. Only download it from this page."
       },
       de: {
-        what: "Windows warnt bei jedem kleinen Programm, das es noch nicht kennt. Klick auf Weitere Informationen, dann Trotzdem ausführen.",
+        what: "Windows warnt bei jedem kleinen Programm, das es noch nicht kennt. Das heisst nicht, dass mit der Datei etwas nicht stimmt. Klick auf Weitere Informationen, dann Trotzdem ausführen.",
         why: "Grosse Studios bezahlen ein Signatur-Zertifikat, das Windows kennt. Kleine Spiele haben noch keins, deshalb ist Windows vorsichtig.",
         how: "Der Launcher prüft vor jedem Start jede Datei gegen eine signierte Versionsliste und verweigert alles, was verändert wurde. Lade ihn nur von dieser Seite."
       }
     },
     launcher: {
       names: ["launcher", "update", "updates", "aktualisieren", "patch", "patches", "~download", "herunterladen", "~exe"],
+      img: ["images/launcher.jpg", "The Jayraid launcher"],
       go: "#install",
       en: {
         what: "The Jayraid Launcher installs the game, keeps it up to date and checks every file before it starts.",
@@ -418,21 +428,21 @@
       de: { what: "Der Launcher läuft vorerst nur unter Windows. Auf Mac, Linux oder dem Handy geht die Browser-Vorschau: eine Insel, kein Download.", why: "Das volle Spiel läuft vorerst unter Windows. Über andere Plattformen ist meines Wissens nichts entschieden." }
     },
     price: {
-      names: ["price", "cost", "costs", "~free", "~pay", "~money", "~buy", "preis", "kostet", "kosten", "gratis", "kostenlos", "bezahlen", "geld", "euro", "dollar"],
-      en: { what: "Testing the alpha is free. You just need one of the 20 tester places. Anything about a later price isn't decided, as far as I know." },
-      de: { what: "Die Alpha zu testen ist kostenlos. Du brauchst nur einen der 20 Tester-Plätze. Über einen späteren Preis ist meines Wissens nichts entschieden." }
+      names: ["price", "cost", "costs", "~free", "~pay", "~money", "~buy", "preis", "kostet", "kosten", "gratis", "kostenlos", "bezahlen", "geld", "euro", "dollar", "how much", "wie viel kostet", "was kostet", "kostet das spiel", "game cost", "does the game cost"],
+      en: { what: "Testing the alpha is free. You just need one of the 50 tester places. Anything about a later price isn't decided, as far as I know." },
+      de: { what: "Die Alpha zu testen ist kostenlos. Du brauchst nur einen der 50 Tester-Plätze. Über einen späteren Preis ist meines Wissens nichts entschieden." }
     },
     dev: {
       names: ["tixx", "tix", "creator of", "schoepfer", "erschaffer", "developer", "~dev", "jaylen", "paco", "paco interactive", "who made", "wer hat", "entwickler", "made by", "creator", "ersteller", "~team", "~studio", "~engine", "unity", "unreal", "c#", "programmiert", "programmed"],
       en: {
         what: "Jayraid is made by Tixx from Paco Interactive. He builds the game, the launcher and this website, and he made me too. The first C# version came out on 20 September 2026, and more than 50 versions followed within a month.",
-        who: "Tixx is the creator of Jayraid, from Paco Interactive. Everything here comes from him: the game, the launcher, this page. And me. So be nice to him. Blub.",
+        who: "Tixx is the creator of Jayraid, from Paco Interactive in Switzerland. He has been working on it since the end of September, because it's the game he has the most fun making. Everything here comes from him: the game, the launcher, this page. And me. So be nice to him. Blub.",
         opinion: "Of course! He made me, so I'm a little biased. But he built a whole game, a launcher and this page. Blub.",
         how: "It's written in C# with its own engine, not Unity or Unreal. Even the font is made of hexagons."
       },
       de: {
         what: "Jayraid wird von Tixx von Paco Interactive gemacht. Er baut das Spiel, den Launcher und diese Website, und mich hat er auch erschaffen. Die erste C#-Version kam am 20. September 2026, und in einem Monat folgten über 50 Versionen.",
-        who: "Tixx ist der Schöpfer von Jayraid, von Paco Interactive. Alles hier stammt von ihm: das Spiel, der Launcher, diese Seite. Und ich. Also sei nett zu ihm. Blub.",
+        who: "Tixx ist der Schöpfer von Jayraid, von Paco Interactive aus der Schweiz. Er arbeitet seit Ende September daran, weil es das Spiel ist, das ihm am meisten Spass macht. Alles hier stammt von ihm: das Spiel, der Launcher, diese Seite. Und ich. Also sei nett zu ihm. Blub.",
         opinion: "Na klar! Er hat mich gemacht, ich bin also ein bisschen parteiisch. Aber er hat ein ganzes Spiel, einen Launcher und diese Seite gebaut. Blub.",
         how: "Es ist in C# geschrieben, mit eigener Engine, nicht Unity oder Unreal. Sogar die Schrift besteht aus Sechsecken."
       }
@@ -454,6 +464,7 @@
     },
     jayraid: {
       names: ["jayraid", "~the game", "~this game", "~das spiel", "~dieses spiel", "worum geht", "what kind of game", "was fuer ein spiel", "genre", "about the game"],
+      img: ["images/start.jpg", "The golem and the divers under a blood moon"],
       go: "#game",
       en: {
         what: "Jayraid is a sandbox adventure in an endless world made of hexagon pillars. Build and explore freely, or follow the story: the divers, the trader ships, the bell and the chained golem.",
@@ -576,6 +587,45 @@
       go: "#game",
       en: { what: "Old castle ruins hold the chained golem. /ruine leads you to the nearest untouched one, /ruine neu resets a ruin after a fight.", tips: "Be quiet inside, or the golem wakes up." },
       de: { what: "In alten Burgruinen liegt der angekettete Golem. /ruine führt dich zur nächsten unberührten, /ruine neu setzt eine Ruine nach einem Kampf zurück.", tips: "Sei drinnen leise, sonst wacht der Golem auf." }
+    },
+    beta: {
+      names: ["beta", "launch", "release", "release date", "veroeffentlichung", "erscheint", "erscheinungsdatum", "start der beta", "beta start", "countdown", "21:00", "28 october", "28. oktober", "welcome", "begruessung"],
+      go: "#play",
+      en: {
+        what: "The beta starts on Wednesday, 28 October 2026 at 21:00 Swiss time. The countdown is at the top of the page, and at 21:00 it turns into the welcome.",
+        how: "Claim a tester place, install the launcher, and you're in. The launcher greets you on launch night too.",
+        when: "28 October 2026, 21:00 Swiss time (CET)."
+      },
+      de: {
+        what: "Die Beta startet am Mittwoch, 28. Oktober 2026 um 21:00 Schweizer Zeit. Der Countdown steht oben auf der Seite, um 21:00 wird daraus die Begrüssung.",
+        how: "Hol dir einen Tester-Platz, installier den Launcher, und du bist dabei. Der Launcher begrüsst dich in der Launch-Nacht auch.",
+        when: "28. Oktober 2026, 21:00 Schweizer Zeit (MEZ)."
+      }
+    },
+    privacy: {
+      names: ["privacy", "datenschutz", "~data", "daten", "my data", "meine daten", "tracking", "cookie", "cookies", "gdpr", "dsgvo", "dsg", "ip address", "ip adresse", "~stats", "statistik", "statistics", "telemetry", "telemetrie"],
+      en: {
+        what: "No cookies, no ads, no tracking, no accounts. The game counts playtime with a random number, not with your name or IP. Everything is on the Privacy page, linked at the bottom.",
+        how: "The tester server keeps your place number, the time and a scrambled fingerprint of your IP, so a second click gives you the same code. The IP itself isn't stored.",
+        why: "Tixx wants to know how many people play and for how long. Who you are doesn't matter for that."
+      },
+      de: {
+        what: "Keine Cookies, keine Werbung, kein Tracking, keine Konten. Das Spiel zählt die Spielzeit mit einer Zufallsnummer, nicht mit deinem Namen oder deiner IP. Alles steht auf der Datenschutzseite, unten verlinkt.",
+        how: "Der Tester-Server speichert deine Platznummer, die Zeit und einen verschlüsselten Fingerabdruck deiner IP, damit ein zweiter Klick denselben Code gibt. Die IP selbst wird nicht gespeichert.",
+        why: "Tixx will wissen, wie viele Leute spielen und wie lange. Wer du bist, spielt dafür keine Rolle."
+      }
+    },
+    contact: {
+      names: ["contact", "kontakt", "email", "e-mail", "~mail", "support", "write to", "schreiben", "erreichen", "reach tixx", "feedback", "discord", "community"],
+      go: "#about",
+      en: {
+        what: "Write to jayraid.net@gmail.com, or come to the Discord. Bugs, ideas and screenshots are best in the Discord, the other testers are there too.",
+        where: "The Discord link is in the menu and right under the play button. The email is jayraid.net@gmail.com."
+      },
+      de: {
+        what: "Schreib an jayraid.net@gmail.com oder komm in den Discord. Fehler, Ideen und Screenshots passen am besten in den Discord, dort sind auch die anderen Tester.",
+        where: "Der Discord-Link ist im Menü und gleich unter dem Spielknopf. Die E-Mail ist jayraid.net@gmail.com."
+      }
     },
     bubbles: {
       names: ["bubbles", "you", "du", "dich", "dir", "yourself", "mascot", "maskottchen"],
@@ -839,11 +889,12 @@
   function setFaq(md) {
     FAQ = [];
     md.replace(/\r/g, "").split(/\n\s*\n/).forEach(function (block) {
-      var e = { qs: [], en: "", de: "", go: null };
+      var e = { qs: [], en: "", de: "", go: null, img: null };
       block.split("\n").forEach(function (line) {
         var m;
         if ((m = /^\?\s*(.+)$/.exec(line))) e.qs = e.qs.concat(m[1].split("|").map(function (q) { return q.trim(); }));
         else if ((m = /^(en|de|go):\s*(.+)$/i.exec(line))) e[m[1].toLowerCase()] = m[2].trim();
+        else if ((m = /^img:\s*(\S+)\s*(.*)$/i.exec(line))) e.img = [m[1], m[2].trim()];
       });
       if (!e.qs.length || !(e.en || e.de)) return;
       e.kw = [];
@@ -875,7 +926,7 @@
   }
 
   // ── Zustand des Gespraechs ────────────────────────────────────────
-  var st = { lang: "en", topic: null, told: {}, pending: null, latestEn: "", latestDe: "", places: null };
+  var st = { lang: "en", topic: null, told: {}, pics: {}, pending: null, latestEn: "", latestDe: "", places: null };
   var factOrder = FACTS.map(function (f, i) { return i; }).sort(function () { return Math.random() - 0.5; }), factAt = 0;
   function fact(l) { var f = FACTS[factOrder[factAt++ % FACTS.length]]; return l === "de" ? "Fakt: " + f[1] : "Fun fact: " + f[0]; }
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
@@ -975,7 +1026,7 @@
     // Was Tixx selbst in die FAQ geschrieben hat, gewinnt.
     var hitFaq = faqFind(n, toks);
     if (hitFaq) {
-      return { text: (l === "de" ? hitFaq.de : hitFaq.en) || hitFaq.en || hitFaq.de, go: hitFaq.go, focus: hitFaq.kw.concat(keywords(toks)), names: [] };
+      return { text: (l === "de" ? hitFaq.de : hitFaq.en) || hitFaq.en || hitFaq.de, img: hitFaq.img, go: hitFaq.go, focus: hitFaq.kw.concat(keywords(toks)), names: [] };
     }
 
     // Eine bestimmte Version: "what happened in alpha 1.22", "was kam mit 1.38"
@@ -1089,7 +1140,10 @@
     st.topic = ids[0];
     var chips = chipsFor(ids[0], l);
     if (chips.length < 3) chips.push(CHIPS[l].more);
-    return { text: texts.join(" "), go: K[id].go || null, chips: chips, focus: focus(ids, f, question || ""), names: ids.map(function (i) { return K[i].names.map(function (x) { return norm(x.replace(/^~/, "")); }); }) };
+    // Ein Bild aus dem Spiel, aber je Thema nur beim ersten Mal.
+    var img = K[ids[0]].img && !st.pics[ids[0]] ? K[ids[0]].img : null;
+    if (img) st.pics[ids[0]] = true;
+    return { text: texts.join(" "), img: img, go: K[id].go || null, chips: chips, focus: focus(ids, f, question || ""), names: ids.map(function (i) { return K[i].names.map(function (x) { return norm(x.replace(/^~/, "")); }); }) };
   }
 
   window.BubblesBrain = {
