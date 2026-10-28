@@ -140,13 +140,17 @@
     })
     .catch(function () { /* without the list the default text stays */ });
 
-  // Discord link from config.js (empty: no button).
+  // Discord link from config.js (empty: tab, banner and footer link disappear).
   var cfgLinks = window.JAYRAID || {};
-  if (cfgLinks.discord) {
-    var dc = document.getElementById("discord");
-    dc.href = cfgLinks.discord;
-    dc.hidden = false;
-  }
+  document.querySelectorAll("[data-discord]").forEach(function (a) {
+    if (cfgLinks.discord) a.href = cfgLinks.discord;
+    else a.hidden = true;
+  });
+  var band = document.getElementById("discord");
+  if (band && !cfgLinks.discord) band.hidden = true;
+  document.querySelectorAll("[data-discord-text]").forEach(function (t) {
+    if (cfgLinks.discord) t.textContent = cfgLinks.discord.replace(/^https?:\/\//, "");
+  });
 
   // The menu marks the section you are looking at, like the launcher.
   // On other pages (changelog) the menu stays as it is.
