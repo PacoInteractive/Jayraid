@@ -6,6 +6,10 @@ Every version of Jayraid, newest first. Version names: **Alpha 1.x.y**. New cont
 
 New: Jayraid leaves the closed alpha and becomes a closed beta on Wednesday, 28 October 2026 at 21:00 CET. On launch night the launcher welcomes you to the beta, and the Jayraid Discord is open for everyone who plays.
 
+## Alpha 1.52.2 · 28.10.2026 · Everything included
+
+Changed: the game now brings everything it needs. No separate .NET install anymore.
+
 ## Alpha 1.52.1 · 28.10.2026 · Ready for the beta
 
 Changed: small technical preparations for the closed beta.

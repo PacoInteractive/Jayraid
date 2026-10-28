@@ -80,13 +80,12 @@
   <div class="hexes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="play-text">
     <h1 aria-label="Jayraid"><span data-hex="JAY" data-cap="72" data-shadow></span><span class="orange" data-hex="RAID" data-cap="72" data-shadow></span></h1>
-    <p class="lead">An endless world built from hexagons. Build whatever you want, or go find the golem.</p>
+    <p class="lead">An endless world built from hexagons.</p>
     <!-- Der Start der Beta (assets/welcome.js): zaehlt herunter und geht um 21:00 in die Begruessung ueber. -->
     <div class="launch" id="launch" hidden>
       <span class="launch-label" data-hex="BETA LAUNCH" data-cap="11"></span>
       <span class="launch-digits" data-hex="00:00:00" data-cap="34" data-shadow></span>
       <span class="launch-units">hours · minutes · seconds</span>
-      <span class="launch-when">Wednesday, 28 October 2026 · 21:00 CET</span>
       <button class="button launch-replay" type="button"><span data-hex="WATCH THE WELCOME" data-cap="12"></span></button>
     </div>
   </div>
@@ -109,9 +108,9 @@
   </div>
 
   <div class="play-info">
-    <p class="tester-text" id="tester-text">Testers get every version first. In return, tell me what works and what doesn't.</p>
-    <p class="tester-os" id="tester-os"><b>Windows 10 or 11 only.</b> On Mac or Linux, <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">play the browser preview</a> instead.</p>
-    <p class="small" id="preview" hidden>All places gone? <a id="preview-link" href="#" rel="noopener">The browser preview</a> is open for everyone: one island, no download.</p>
+    <p class="tester-text" id="tester-text">Testers get every version first.</p>
+    <p class="tester-os" id="tester-os"><b>Windows 10/11 only.</b> Mac or Linux: <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">browser preview</a>.</p>
+    <p class="small" id="preview" hidden>All places gone? Try <a id="preview-link" href="#" rel="noopener">the browser preview</a>.</p>
     <div class="tester-done panel" id="tester-done" hidden>
       <p>You are tester <b class="orange" id="done-nr">#1</b>. Your code:</p>
       <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
@@ -119,7 +118,7 @@
         <a class="button" id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a>
         <a class="button orange-button" id="done-launcher" href="update/Jayraid-Launcher.zip" download><span data-hex="DOWNLOAD LAUNCHER" data-cap="14"></span></a>
       </p>
-      <p class="small">Unpack the launcher, start it and type in your code, or drag the code file into its window. Keep the code to yourself.</p>
+      <p class="small">Unpack, start, enter your code.</p>
     </div>
   </div>
 </section>
@@ -133,7 +132,7 @@
   <div class="discord-text">
     <span class="label" data-hex="COMMUNITY" data-cap="11"></span>
     <h2 aria-label="Join the Discord"><span data-hex="JOIN THE" data-cap="30"></span> <span class="orange" data-hex="DISCORD" data-cap="30"></span></h2>
-    <p>Bug reports, screenshots and what's coming next. New versions show up there first, and you can talk to the other testers.</p>
+    <p>Updates first, bugs, screenshots.</p>
   </div>
   <div class="discord-go">
     <a class="button big" href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener"><span data-hex="JOIN THE DISCORD" data-cap="22"></span></a>
@@ -158,50 +157,49 @@
 
 <section id="game">
   <h2 class="reveal"><span data-hex="THE GAME" data-cap="24"></span></h2>
-  <p class="intro reveal">Jayraid is a sandbox first. Every world comes from a seed, is built from hexagon pillars and doesn't end.
-    If you want more than building, there is a story with two bosses and an actual ending.</p>
+  <p class="intro reveal">A sandbox first. If you want more: a story with two bosses and a real ending.</p>
 
   <div class="features">
     <article class="reveal feature wide">
       <div class="feature-image bloodmoon" style="background-image:url('images/title.jpg')"><span class="tag new" data-hex="NEW IN 1.41" data-cap="10"></span></div>
       <div class="feature-text">
         <h3>Blood moon</h3>
-        <p>Some nights the moon turns red. Then the divers come for your base, and they bring field cannons. Whatever you built during the day had better hold.</p>
+        <p>Some nights the moon turns red and the divers raid your base.</p>
       </div>
     </article>
     <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/world.jpg')"></div>
       <div class="feature-text">
         <h3>Three ways to play</h3>
-        <p>Sandbox if you just want to build. Adventure if you want the story. Challenge if twelve lives sound like too many: you get four.</p>
+        <p>Sandbox, Adventure or Challenge.</p>
       </div>
     </article>
     <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/traders.jpg')"></div>
       <div class="feature-text">
         <h3>Traders and divers</h3>
-        <p>The traders sail between the islands and trade with you. The divers hold the camps and watchtowers. Their ships and towers shoot at each other, with or without you.</p>
+        <p>Traders sail the islands, divers hold the towers. They fight each other.</p>
       </div>
     </article>
     <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/bell.jpg')"></div>
       <div class="feature-text">
         <h3>The bell</h3>
-        <p>Every trader ship carries one, and it guards the golden wand. Hit it and it rings. The sound hurts. Take the wand and the traders won't forgive you.</p>
+        <p>It guards the golden wand. Hit it and it rings.</p>
       </div>
     </article>
     <article class="reveal feature">
       <div class="feature-image" style="background-image:url('images/companion.jpg')"></div>
       <div class="feature-text">
         <h3>Down in the caves</h3>
-        <p>Green fires burn deep in the mountains, guarded by rotten divers. Now and then one gets back up blue and follows you. Give it a sabre.</p>
+        <p>Green fires, rotten divers, maybe a new friend.</p>
       </div>
     </article>
     <article class="reveal feature wide flip">
       <div class="feature-image" style="background-image:url('images/golem.jpg')"></div>
       <div class="feature-text">
         <h3>The golem</h3>
-        <p>Chained in an old castle ruin. Walk quietly and it sleeps. The sabre knocks it down, only the golden wand finishes it. Behind it waits the ending.</p>
+        <p>Chained in a ruin. Behind it waits the ending.</p>
       </div>
     </article>
   </div>
@@ -210,12 +208,11 @@
 <section id="install">
   <h2 class="reveal"><span data-hex="INSTALL" data-cap="24"></span></h2>
   <ol class="steps">
-    <li class="panel reveal"><span class="nr" data-hex="1" data-cap="26"></span><div><h3>Claim a place</h3><p>Your browser saves two files: <code>Jayraid-Tester-Code.txt</code> and <code>Jayraid-Launcher.zip</code>.</p></div></li>
-    <li class="panel reveal"><span class="nr" data-hex="2" data-cap="26"></span><div><h3>Prepare Windows</h3><p>Install the free <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8 Desktop Runtime</a> (x64) once. Unpack the zip into a folder of its own.</p></div></li>
-    <li class="panel reveal"><span class="nr" data-hex="3" data-cap="26"></span><div><h3>Unlock</h3><p>Start <code>Jayraid-Launcher.exe</code>. If Windows warns you: <b>More info</b>, then <b>Run anyway</b>. Enter your code or drop the file onto the window.</p><p class="why">Why the warning? Windows shows it for new programs it hasn't seen often yet. It doesn't mean something is wrong with the file.</p></div></li>
-    <li class="panel reveal"><span class="nr" data-hex="4" data-cap="26"></span><div><h3>Play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. New versions show up as a big <b class="orange">UPDATE</b> button, the launcher updates itself the same way.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="1" data-cap="26"></span><div><h3>Claim a place</h3><p>You get your code and the launcher.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="2" data-cap="26"></span><div><h3>Unpack</h3><p>Unpack the zip into its own folder.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="3" data-cap="26"></span><div><h3>Unlock</h3><p>Start the launcher, enter your code. Windows warning: <b>More info</b>, <b>Run anyway</b>.</p></div></li>
+    <li class="panel reveal"><span class="nr" data-hex="4" data-cap="26"></span><div><h3>Play</h3><p><b>INSTALL</b>, then <b>PLAY</b>. Updates take one click.</p></div></li>
   </ol>
-  <p class="note small">Every version is listed in a signed version list. Before each start the launcher checks every file against it and refuses anything that was changed. Only download the launcher from this page.</p>
 </section>
 
 <section id="controls">
@@ -246,8 +243,7 @@
     </svg>
     <div class="about-text">
       <p class="about-name"><span data-hex="TIXX" data-cap="30"></span><span class="small">Switzerland</span></p>
-      <p>I've been working on Jayraid since the end of September. It's the game I have the most fun making.</p>
-      <p>Questions, bugs or ideas: write to <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a> or come to the <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a>.</p>
+      <p>Solo developer. Write to <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a> or join the <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a>.</p>
     </div>
   </div>
 </section>

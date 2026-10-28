@@ -63,7 +63,7 @@ Every change: [CHANGELOG.md](CHANGELOG.md).
 Jayraid is in a **closed alpha with 50 tester places**. The **beta starts on 28 October 2026 at 21:00 CET**. Testers get every version first and tell me what works and what doesn't.
 
 1. Open the [website](https://pacointeractive.github.io/Jayraid/) and click **CLAIM A PLACE**. Your browser saves your personal code and `Jayraid-Launcher.zip`.
-2. Install the free [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (x64) once and unpack the launcher into a folder of its own.
+2. Unpack the launcher into a folder of its own. Nothing else to install.
 3. Start `Jayraid-Launcher.exe`. If Windows warns you: **More info**, then **Run anyway**. Type in your code or drop the code file onto the window.
 4. **INSTALL**, then **PLAY**. New versions show up as a big **UPDATE** button, and the launcher updates itself the same way.
 

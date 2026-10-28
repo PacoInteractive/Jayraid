@@ -385,14 +385,14 @@
       names: ["install", "installation", "installieren", "~setup", ".net", "net 8", "dotnet", "runtime", "unzip", "entpacken", "requirements", "anforderungen", "~system", "~pc", "~computer", "~laptop", "specs"],
       go: "#install",
       en: {
-        what: "You need Windows 10 or 11 and the free .NET 8 Desktop Runtime (x64), installed once. Then unpack the launcher into its own folder.",
-        how: "Install .NET 8 Desktop Runtime, unpack the zip into a folder, start Jayraid-Launcher.exe, enter your code, then INSTALL and PLAY.",
-        tips: "Choose \"Desktop Runtime\" for Windows x64 on the Microsoft page, not the plain runtime."
+        what: "You need Windows 10 or 11, nothing else. The launcher brings everything with it. Unpack it into its own folder.",
+        how: "Unpack the zip into a folder, start Jayraid-Launcher.exe, enter your code, then INSTALL and PLAY.",
+        tips: "No extra downloads needed. Updates come with one click."
       },
       de: {
-        what: "Du brauchst Windows 10 oder 11 und die kostenlose .NET 8 Desktop Runtime (x64), einmal installiert. Dann den Launcher in einen eigenen Ordner entpacken.",
-        how: ".NET 8 Desktop Runtime installieren, Zip in einen Ordner entpacken, Jayraid-Launcher.exe starten, Code eingeben, dann INSTALL und PLAY.",
-        tips: "Wähle auf der Microsoft-Seite \"Desktop Runtime\" für Windows x64, nicht die normale Runtime."
+        what: "Du brauchst nur Windows 10 oder 11. Der Launcher bringt alles mit. Entpack ihn in einen eigenen Ordner.",
+        how: "Zip in einen Ordner entpacken, Jayraid-Launcher.exe starten, Code eingeben, dann INSTALL und PLAY.",
+        tips: "Nichts extra herunterladen. Updates gehen mit einem Klick."
       }
     },
     warning: {
@@ -535,11 +535,11 @@
       names: ["unblock", "zulassen", "smart app control", "no run anyway", "kein trotzdem", "button missing", "knopf fehlt", "wont start", "startet nicht", "doesnt start", "geht nicht auf", "oeffnet nicht"],
       go: "#install",
       en: {
-        what: "If Windows has no \"Run anyway\" button: right click Jayraid-Launcher.exe, choose Properties and tick \"Unblock\". Also make sure the .NET 8 Desktop Runtime is installed.",
+        what: "If Windows has no \"Run anyway\" button: right click Jayraid-Launcher.exe, choose Properties and tick \"Unblock\".",
         tips: "Keep all files of the launcher folder together, don't start the exe from inside the zip."
       },
       de: {
-        what: "Wenn Windows keinen Knopf „Trotzdem ausführen“ zeigt: Rechtsklick auf Jayraid-Launcher.exe, Eigenschaften, Haken bei „Zulassen“. Und prüf, ob die .NET 8 Desktop Runtime installiert ist.",
+        what: "Wenn Windows keinen Knopf „Trotzdem ausführen“ zeigt: Rechtsklick auf Jayraid-Launcher.exe, Eigenschaften, Haken bei „Zulassen“.",
         tips: "Lass alle Dateien im Launcher-Ordner zusammen und starte die exe nicht direkt aus dem Zip."
       }
     },
