@@ -718,3 +718,24 @@ html.rainbow body::after {
 }
 @keyframes rb-sweep { from { background-position: 0% 50%; } to { background-position: 300% 50%; } }
 @keyframes rb-veil { 0% { opacity: 0; } 12%, 80% { opacity: .42; } 100% { opacity: 0; } }
+
+/* ── About: the logo as an outline, next to a few lines from Tixx ── */
+.about { display: grid; grid-template-columns: 150px 1fr; gap: 36px; align-items: center; max-width: 820px; }
+.about-mark { width: 150px; height: 150px; }
+.about-mark polygon { fill: none; stroke: var(--edge); stroke-width: 1.5; }
+.about-mark .a3 { stroke: var(--orange); stroke-width: 2.5; }
+.about-mark .a4 { fill: var(--orange); stroke: none; }
+.about-text p { color: var(--text); margin: 0 0 10px; }
+.about-text .about-name { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+.steps p.why { margin-top: 8px; font-size: .86rem; }
+@media (max-width: 860px) {
+  .about { grid-template-columns: 1fr; gap: 18px; }
+  .about-mark { width: 96px; height: 96px; }
+}
+
+/* ── Privacy page ─────────────────────────────────────────────────── */
+.privacy { max-width: 760px; }
+.privacy h1 { margin: 0 0 8px; }
+.privacy h3 { margin: 30px 0 6px; }
+.privacy p, .privacy li { color: var(--text); }
+.privacy ul { padding-left: 20px; }
