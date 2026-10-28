@@ -369,13 +369,13 @@
       names: ["join", "tester", "testers", "~place", "~places", "platz", "plaetze", "plätze", "~code", "claim", "mitmachen", "teilnehmen", "~beta", "~alpha", "~access", "zugang", "sign up", "anmelden", "invite", "einladung"],
       go: "#play",
       en: {
-        what: "Jayraid is in a closed alpha with 50 tester places. The beta starts on 28 October 2026 at 21:00 Swiss time. Click CLAIM A PLACE at the top: you get a personal code file and the launcher.",
+        what: "Jayraid is in a closed beta with 50 free tester places. After those, Jayraid will most likely be paid. Click CLAIM A PLACE at the top: you get a personal code file and the launcher.",
         how: "Click CLAIM A PLACE, unpack the launcher, start it and type in your code. Keep the code to yourself.",
         count: "50 places in total.",
         why: "Testers get every version first. In return, Tixx wants to know what works and what doesn't."
       },
       de: {
-        what: "Jayraid ist in einer geschlossenen Alpha mit 50 Tester-Plätzen. Die Beta startet am 28. Oktober 2026 um 21:00 Schweizer Zeit. Klick oben auf CLAIM A PLACE: Du bekommst eine persönliche Code-Datei und den Launcher.",
+        what: "Jayraid ist in einer geschlossenen Beta mit 50 kostenlosen Tester-Plätzen. Danach kostet Jayraid sehr wahrscheinlich etwas. Klick oben auf CLAIM A PLACE: Du bekommst eine persönliche Code-Datei und den Launcher.",
         how: "Auf CLAIM A PLACE klicken, Launcher entpacken, starten und Code eingeben. Behalte den Code für dich.",
         count: "Insgesamt 50 Plätze.",
         why: "Tester bekommen jede Version zuerst. Dafür will Tixx wissen, was funktioniert und was nicht."
@@ -429,8 +429,8 @@
     },
     price: {
       names: ["price", "cost", "costs", "~free", "~pay", "~money", "~buy", "preis", "kostet", "kosten", "gratis", "kostenlos", "bezahlen", "geld", "euro", "dollar", "how much", "wie viel kostet", "was kostet", "kostet das spiel", "game cost", "does the game cost"],
-      en: { what: "Testing the alpha is free. You just need one of the 50 tester places. Anything about a later price isn't decided, as far as I know." },
-      de: { what: "Die Alpha zu testen ist kostenlos. Du brauchst nur einen der 50 Tester-Plätze. Über einen späteren Preis ist meines Wissens nichts entschieden." }
+      en: { what: "The beta is free for the 50 tester places. After those, Jayraid will most likely be paid, so now is the time." },
+      de: { what: "Die Beta ist für die 50 Tester-Plätze kostenlos. Danach kostet Jayraid sehr wahrscheinlich etwas, also jetzt zugreifen." }
     },
     dev: {
       names: ["tixx", "tix", "creator of", "schoepfer", "erschaffer", "developer", "~dev", "jaylen", "paco", "paco interactive", "who made", "wer hat", "entwickler", "made by", "creator", "ersteller", "~team", "~studio", "~engine", "unity", "unreal", "c#", "programmiert", "programmed"],
