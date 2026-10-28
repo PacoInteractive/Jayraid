@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Liste der Seiten fuer Google. In der Google Search Console unter "Sitemaps" diese Adresse eintragen:
+     https://pacointeractive.github.io/Jayraid/sitemap.xml -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pacointeractive.github.io/Jayraid/</loc></url>
+  <url><loc>https://pacointeractive.github.io/Jayraid/changelog.html</loc></url>
+</urlset>
