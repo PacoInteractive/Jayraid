@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Jayraid · Beta-Start testen</title>
+<link rel="icon" href="assets/symbol.png">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* Nur fuer den Entwickler: prueft Countdown, Begruessung, Musik und Regenbogen, ohne bis 21:00 zu warten. */
+  body { min-height: 100vh; }
+  .test { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  .test h1 { margin: 0 0 8px; }
+  .test .lead { margin-bottom: 28px; }
+  .cases { display: grid; gap: 12px; }
+  .case { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 16px 18px; }
+  .case h3 { margin: 0 0 4px; color: var(--ink); }
+  .case p { margin: 0; color: var(--dim); font-size: .92rem; }
+  .state { margin: 22px 0 0; font-size: .92rem; color: var(--text); }
+  .state b { color: var(--orange); }
+  .launcher { margin-top: 32px; padding: 16px 18px; }
+  .launcher code { color: var(--orange); }
+  @media (max-width: 560px) { .case { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="test">
+  <h1><span data-hex="BETA-START TESTEN" data-cap="26"></span></h1>
+  <p class="lead">Hier probierst du alles aus, ohne bis 21:00 zu warten. Jeder Knopf öffnet die echte Startseite in einem bestimmten Zustand. Tipp: vorher einmal irgendwo auf diese Seite klicken, dann darf der Browser die Musik sofort abspielen.</p>
+
+  <div class="cases">
+    <div class="case panel">
+      <div><h3>1. Countdown läuft ab</h3><p>Der Countdown startet bei 10 Sekunden und geht bei 0 nahtlos in die Begrüssung mit Musik über, danach kommt der Regenbogen.</p></div>
+      <button class="button orange-button" type="button" data-go="?countdown=10" data-reset>Starten</button>
+    </div>
+    <div class="case panel">
+      <div><h3>2. Besucher kommt nach 21:00</h3><p>Wie jemand, der um 22:00 oder morgen zum ersten Mal kommt: Die Begrüssung startet gleich beim Öffnen.</p></div>
+      <button class="button orange-button" type="button" data-go="?countdown=-1" data-reset>Starten</button>
+    </div>
+    <div class="case panel">
+      <div><h3>3. Besucher hat sie schon gesehen</h3><p>Keine Begrüssung mehr, stattdessen „The beta is open“ mit dem Knopf „Watch the welcome“.</p></div>
+      <button class="button" type="button" data-go="?countdown=-1" data-seen>Öffnen</button>
+    </div>
+    <div class="case panel">
+      <div><h3>4. Nur die Begrüssung</h3><p>Startet die Animation sofort, egal welcher Zustand.</p></div>
+      <button class="button" type="button" data-go="?begruessung">Öffnen</button>
+    </div>
+    <div class="case panel">
+      <div><h3>5. Nur der Regenbogen</h3><p>Die 11 Sekunden Regenbogen nach der Begrüssung, ohne Animation.</p></div>
+      <button class="button" type="button" data-go="?regenbogen">Öffnen</button>
+    </div>
+    <div class="case panel">
+      <div><h3>6. Den echten Countdown ansehen</h3><p>Die Startseite so, wie sie jetzt für alle aussieht.</p></div>
+      <button class="button" type="button" data-go="">Öffnen</button>
+    </div>
+  </div>
+
+  <p class="state">In diesem Browser gilt die Begrüssung als: <b id="state">…</b>
+    <button class="button" type="button" id="reset" style="margin-left:10px;padding:8px 14px">Zurücksetzen</button></p>
+
+  <div class="launcher panel">
+    <h3>Im Launcher</h3>
+    <p>Starte den Launcher mit <code>Jayraid-Launcher.exe --begruessung</code> (zum Beispiel über eine Verknüpfung oder die Eingabeaufforderung im Launcher-Ordner). Dann kommt die Begrüssung mit Musik sofort, egal wie spät es ist. Ohne diesen Zusatz kommt sie ab 21:00 einmal pro PC.</p>
+  </div>
+</main>
+<script src="assets/hexfont.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/test.js"></script>
+</body>
+</html>
