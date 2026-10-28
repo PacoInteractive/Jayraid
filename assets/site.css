@@ -71,11 +71,10 @@ nav a.on { background: var(--panel-light); color: var(--ink); border-left-color:
 nav a.on i, nav a:hover i { background: var(--orange); }
 .side-foot { margin-top: auto; padding: 20px 24px 24px; color: var(--dim); font-size: .82rem; line-height: 1.5; }
 .side-foot p { margin: 0; }
-.discord {
-  display: block; margin-bottom: 16px; padding: 10px 12px; text-align: center;
-  background: var(--button); border: 1px solid var(--edge); color: var(--ink);
-}
-.discord:hover { background: var(--button-hover); color: var(--ink); text-decoration: none; }
+/* The Discord tab leaves the page, so it stays orange like a launcher button */
+nav a.nav-discord { color: var(--orange); }
+nav a.nav-discord i { background: var(--orange); }
+nav a.nav-discord:hover { color: var(--orange-hover); }
 
 .content { margin-left: var(--side-width); }
 
@@ -135,6 +134,22 @@ nav a.on i, nav a:hover i { background: var(--orange); }
 .button.big { --cut: 22px; min-width: 340px; padding: 24px 48px 27px; }
 .button.big:hover, .orange-button:hover { background: var(--orange-hover); color: var(--orange-ink); }
 .button.off, .button:disabled { background: var(--button); color: var(--dim); cursor: default; }
+
+/* ── Discord: a wide band right under the play bar ────────────────── */
+.discord-band {
+  position: relative; overflow: hidden; max-width: none;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px 48px;
+  margin: 48px 32px 0; padding: 38px 48px 40px;
+  background: linear-gradient(100deg, #24180c 0%, var(--panel) 55%); border: 1px solid var(--line); border-left: 4px solid var(--orange);
+}
+.discord-mark { position: absolute; right: -60px; top: 50%; width: 300px; height: 300px; transform: translateY(-50%); pointer-events: none; }
+.discord-mark polygon { fill: none; stroke: var(--orange); stroke-width: 1.2; opacity: .14; }
+.discord-text, .discord-go { position: relative; }
+.discord-text .label { color: var(--dim); display: block; margin-bottom: 12px; }
+.discord-text h2 { display: flex; flex-wrap: wrap; gap: 10px 16px; margin: 0 0 14px; }
+.discord-text p { color: var(--text); font-size: 1.05rem; max-width: 520px; margin: 0; }
+.discord-go { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.discord-url { letter-spacing: .02em; }
 
 /* ── Sections ───────────────────────────────────────────────────────── */
 section { padding: 64px 56px 0; scroll-margin-top: 0; max-width: 1240px; }
@@ -248,6 +263,9 @@ footer p { margin: 4px 0; }
   .playbar { margin: 0 16px; padding: 16px; gap: 16px; }
   .button.big { min-width: 0; padding: 20px 16px; }
   .play-info { padding: 16px 16px 0; }
+  .discord-band { grid-template-columns: 1fr; margin: 40px 16px 0; padding: 26px 20px 24px; }
+  .discord-mark { width: 200px; height: 200px; right: -70px; top: 24px; transform: none; }
+  .discord-go .button.big { width: 100%; }
   section { padding: 48px 16px 0; }
   .news-top { grid-template-columns: 1fr; gap: 18px; }
   .news-top-image { min-height: 200px; --c: 18px; }

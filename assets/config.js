@@ -4,8 +4,8 @@
 window.JAYRAID = {
   testerApi: "https://jayraid-tester.jayraid-tester.workers.dev",
   preview: "https://paco-interactive.itch.io/jayraid",
-  // discord: der Einladungslink (leer: kein Knopf in der Seitenleiste)
-  discord: "",
+  // discord: der Einladungslink (leer: Reiter, Banner und Fusszeilen-Link verschwinden)
+  discord: "https://discord.gg/SNkbBtUwEf",
   // bubblesApi: der Cloudflare Worker, ueber den Bubbles mit einer echten KI antwortet
   // (tools/bubbles-worker). Leer: Bubbles antwortet mit seinem eigenen kleinen Gehirn.
   bubblesApi: "",
