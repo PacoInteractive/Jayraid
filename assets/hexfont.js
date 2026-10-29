@@ -110,17 +110,16 @@ window.HEXFONT = {
   "ß": [0, 5, ["..#..", "##.##", "#...#", "#..#.", "#...#", "#...#", "#.##."]],
 };
 
-// Masse bei Versalhoehe cap: unter 3,5 Pixeln je Reihe auf ganze Pixel eingerastet.
+// Masse bei Versalhoehe cap. Jede Zelle ist immer ein echtes Sechseck, auch bei kleiner
+// Schrift (frueher wurde unter 3,5 Pixeln je Reihe auf eckige Pixel eingerastet).
 window.hexFontMetrics = function (cap) {
-  var row = cap / 7;
-  if (row < 3.5) {
-    row = Math.min(3, Math.max(2, Math.ceil(row - 0.15)));
-    var col = Math.round(row * 0.866);
-    return { row: row, col: col, gap: col, r: row / Math.sqrt(3), snap: true, cap: 7 * row };
-  }
-  var r = row / Math.sqrt(3);
+  var row = cap / 7, r = row / Math.sqrt(3);
   return { row: row, col: 1.5 * r, gap: 1.5 * r, r: r, snap: false, cap: cap };
 };
+
+// So gross wird ein Sechseck in seiner Zelle gezeichnet: unter 1 bleibt eine feine Fuge,
+// damit man jedes einzelne Sechseck sieht und die Buchstaben nicht zu Klumpen verschmelzen.
+window.HEX_FILL = 0.86;
 
 // Setzt eine Zeile ab (x, y = Oberkante der Versalien); cell(x, y, w, h, snap)
 // bekommt den Kasten jeder Zelle. Gibt die Breite zurueck.
