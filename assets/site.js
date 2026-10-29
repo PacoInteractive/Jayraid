@@ -4,12 +4,12 @@
   "use strict";
   var NS = "http://www.w3.org/2000/svg";
 
-  // Like Look.HexText, laid out by hexfont.js: small text snaps to whole pixels,
-  // large text is drawn as hexagons (odd columns half a cell higher).
+  // Like Look.HexText, laid out by hexfont.js: every cell is a hexagon with a fine
+  // seam around it, at every size (odd columns half a cell higher).
   function hexText(text, cap, shadow) {
     var m = window.hexFontMetrics(cap), cells = [], top = 0, bottom = m.cap;
-    var pen = window.hexFontLayout(text, 0, 0, cap, function (x, y, w, h, snap) {
-      cells.push([x, y, w, h, snap]);
+    var pen = window.hexFontLayout(text, 0, 0, cap, function (x, y, w, h) {
+      cells.push([x, y, w, h]);
       top = Math.min(top, y);
       bottom = Math.max(bottom, y + h);
     });
@@ -26,8 +26,7 @@
       var d = "";
       for (var k = 0; k < cells.length; k++) {
         var c = cells[k], x = c[0] + dx, y = c[1] + dx;
-        if (c[4]) { d += "M" + x + " " + y + "h" + c[2] + "v" + c[3] + "h" + (-c[2]) + "Z"; continue; }
-        var r = c[2] / 2 * 1.02, mx = x + c[2] / 2, my = y + c[3] / 2;
+        var r = c[2] / 2 * window.HEX_FILL, mx = x + c[2] / 2, my = y + c[3] / 2;
         for (var s = 0; s < 6; s++) {
           var a = s * Math.PI / 3;
           d += (s ? "L" : "M") + (mx + r * Math.cos(a)).toFixed(2) + " " + (my + r * Math.sin(a)).toFixed(2);
@@ -37,7 +36,6 @@
       var p = document.createElementNS(NS, "path");
       p.setAttribute("d", d);
       p.setAttribute("fill", fill);
-      if (m.snap) p.setAttribute("shape-rendering", "crispEdges");
       svg.appendChild(p);
     }
     if (shadow) layer(off, "rgba(8,8,8,.75)");

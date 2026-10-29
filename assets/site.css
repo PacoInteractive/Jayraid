@@ -747,3 +747,120 @@ html.rainbow body::after {
 .helper-pic { display: block; flex: none; align-self: flex-start; width: 82%; border: 1px solid var(--edge); line-height: 0; }
 .helper-pic img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .helper-pic:hover { border-color: var(--orange); }
+
+/* ── Sechsecke überall ────────────────────────────────────────────────
+   Jedes Kästchen der Seite ist ein liegendes Sechseck wie die Zellen der Schrift:
+   gerade Ober- und Unterkante, links und rechts eine Spitze. --cut ist die Tiefe
+   der Spitze; bei rund 0,29 x Höhe sind alle Winkel 120°, also ein typisches Sechseck.
+   Ränder würden an den Schrägen abgeschnitten, darum tragen Sechsecke Flächen statt Rahmen. */
+nav a, .playbar, .discord-band, .tester-done, .launch, .feature-image, .news-top-image,
+.tag.new, .log-tag, .log-label, .helper-mode, .log-stat, .log-statbar, .log-filter button, #log-search,
+.version, .table div, kbd, code, .helper-box, .helper-tip, .helper-msg, .helper-asks button,
+.helper-form input, .helper-form button, .helper-lang button, .helper-pic, .welcome-skip, .welcome-sound,
+.ed-bar button, .ed-tools, .ed-tools button, .admin-login input, .admin-row, .log-entry::after {
+  --cut: 12px;
+  clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% 50%, calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 50%);
+  border-radius: 0;
+}
+/* Die Spitzen-Tiefe passend zur Höhe */
+.tag.new, .log-tag, .log-label, .helper-mode, .helper-lang button, code { --cut: 6px; }
+kbd, .ed-tools button { --cut: 8px; }
+kbd.mouse { --cut: .6em; width: 2.6em; }
+nav a { --cut: 16px; }
+.button { --cut: 16px; }
+.button.big { --cut: 24px; }
+.playbar { --cut: 30px; }
+.discord-band { --cut: 48px; }
+.feature-image, .news-top-image { --c: 0px; --cut: 56px; }
+.log-stat, .log-statbar { --cut: 18px; }
+.log-entry::after, .helper-box, .version, .table div { --cut: 22px; }
+.helper-msg, .helper-asks button, .helper-form input, .helper-form button { --cut: 10px; }
+
+/* Flächen statt Rahmen */
+nav a { border-left: 0; margin: 2px 10px; padding-left: 26px; padding-right: 26px; }
+nav a.on { background: var(--panel-light); box-shadow: inset 0 -2px 0 var(--orange); }
+.playbar { border: 0; border-top: 2px solid var(--orange); padding-left: 44px; padding-right: 44px; }
+.discord-band { border: 0; border-top: 2px solid var(--orange); padding-left: 64px; padding-right: 64px; }
+.tester-done { border-left: 0; border-top: 2px solid var(--orange); background: var(--panel); padding: 16px 40px; }
+.launch { border: 0; border-top: 2px solid var(--orange); padding-left: 30px; padding-right: 30px; }
+.tag.new, .log-tag { padding-left: 12px; padding-right: 12px; }
+.tag.new { left: 64px; }
+.log-label { border: 0; padding: 0 12px; background: var(--button); }
+.log-label.new { background: rgba(240,140,30,.16); }
+.log-label.fixed { background: rgba(120,200,110,.14); }
+.log-label.changed { background: #2f2f33; }
+.helper-mode:not(:empty) { padding: 0 10px; }
+kbd { border: 0; padding: 0 .7em; box-shadow: inset 0 -2px 0 rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06); }
+.table div:hover kbd { box-shadow: inset 0 -1px 0 rgba(0,0,0,.45); }
+code { border: 0; padding: 0 .6em; }
+.version { border-left: 0; padding-left: 34px; padding-right: 34px; }
+.table div { padding-left: 34px; padding-right: 34px; }
+.log-stat { border: 0; padding-left: 26px; padding-right: 26px; }
+.log-statbar { padding-left: 30px; padding-right: 30px; background: var(--panel); border: 0; }
+.log-statbar .log-stat { background: none; clip-path: none; }
+.log-filter { border: 0; gap: 4px; }
+.log-filter button { border: 0; padding-left: 22px; padding-right: 22px; }
+.log-filter button:first-child { border: 0; }
+#log-search { border: 0; padding-left: 22px; padding-right: 22px; }
+#log-search:focus { background: var(--panel-light); box-shadow: inset 0 -2px 0 var(--orange); }
+
+/* Die Changelog-Karten: das Sechseck liegt als eigene Fläche dahinter, damit das
+   Zeitleisten-Sechseck links neben der Karte nicht mit abgeschnitten wird. */
+.log-entry, .log-entry.fix, .log-entry.latest, .log-entry.soon, .log-entry.soon.fix { background: none; border: 0; isolation: isolate; padding-left: 34px; padding-right: 34px; }
+.log-entry::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--panel); transition: background .2s; }
+.log-entry:hover::after { background: var(--panel-light); }
+.log-entry.fix::after { background: rgba(28,28,30,.45); }
+.log-entry.latest::after { box-shadow: inset 0 3px 0 var(--orange); }
+.log-entry.soon::after { background: linear-gradient(160deg, rgba(240,140,30,.14), rgba(240,140,30,0) 45%), var(--panel); box-shadow: inset 0 2px 0 rgba(240,140,30,.6); }
+.log-entry.soon:hover::after { box-shadow: inset 0 2px 0 var(--orange); }
+
+/* Bubbles: Fenster, Nachrichten, Knöpfe und Eingabe als Sechsecke; die eckigen Sprechblasen-Zipfel fallen weg */
+.helper-box, .helper-tip { box-shadow: none; filter: drop-shadow(0 12px 26px rgba(0,0,0,.55)); }
+.helper-box::after, .helper-tip::after { display: none; }
+.helper-box { --cut: 30px; width: 370px; }
+.helper-head, .helper-log, .helper-box .helper-asks, .helper-form { padding-left: 34px; padding-right: 34px; }
+.helper-box .helper-hide { margin-left: 34px; }
+.helper-tip { --cut: 16px; padding-left: 24px; padding-right: 24px; }
+.helper.hint .helper-box { padding-left: 24px; padding-right: 36px; }
+.helper-msg { padding-left: 18px; padding-right: 18px; }
+.helper-msg.bot { border-left: 0; }
+.helper-asks button { border: 0; padding-left: 16px; padding-right: 16px; }
+.helper-asks button:hover { background: var(--button-hover); box-shadow: inset 0 -2px 0 var(--orange); }
+.helper-form input { border: 0; padding-left: 16px; padding-right: 16px; }
+.helper-form input:focus { box-shadow: inset 0 -2px 0 var(--orange); }
+.helper-form button { padding: 0 18px; }
+.helper-lang { border: 0; gap: 2px; }
+.helper-lang button { padding: 2px 11px; background: var(--button); }
+.helper-pic { border: 0; }
+.helper-msg.typing i, .bubbles i {
+  border: 0; border-radius: 0; background: var(--dim);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.bubbles i { background: rgba(237,244,232,.45); }
+
+/* Übrige Knöpfe */
+.welcome-skip, .welcome-sound { --cut: 12px; border: 0; padding-left: 22px; padding-right: 22px; }
+.welcome-sound { background: rgba(240,140,30,.18); }
+.welcome-skip:hover, .welcome-skip:focus-visible { background: rgba(255,255,255,.06); }
+.ed-bar button, .ed-tools button { border: 0; padding-left: 18px; padding-right: 18px; }
+.ed-tools { border: 0; padding: 3px 14px; background: var(--orange); }
+.admin-login input { border: 0; padding-left: 20px; padding-right: 20px; }
+.admin-row { background: var(--panel); border-top: 0; margin-top: 4px; padding-left: 30px; padding-right: 30px; }
+
+/* Ein Fokusrahmen ausserhalb würde mit abgeschnitten, darum liegt er innen */
+.button:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ink); }
+
+@media (max-width: 860px) {
+  nav a { flex: none; margin: 0 2px; padding: 10px 18px; --cut: 10px; }
+  .helper-box { width: min(370px, calc(100vw - 20px)); }
+  nav a.on { border-bottom-color: transparent; }
+  .playbar { padding-left: 32px; padding-right: 32px; --cut: 22px; }
+  .discord-band { padding-left: 36px; padding-right: 36px; --cut: 28px; }
+  .feature-image, .news-top-image { --cut: 32px; }
+  .tag.new { left: 40px; }
+  .version, .table div { padding-left: 26px; padding-right: 26px; --cut: 16px; }
+  .log-entry, .log-entry.fix { padding-left: 24px; padding-right: 24px; }
+  .log-entry::after { --cut: 14px; }
+  .log-statbar { padding-left: 22px; padding-right: 22px; }
+  .tester-done { padding-left: 30px; padding-right: 30px; }
+}

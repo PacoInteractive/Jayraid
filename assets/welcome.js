@@ -71,7 +71,7 @@
       if (k <= 0) return;
       var c = css(mix(Flash, colour, smooth(k * 1.4 - 0.4)), alpha * Math.min(1, k * 2));
       if (snap) { g.fillStyle = c; g.fillRect(x, yy, cw, ch); }
-      else fillHex(g, c, x + cw / 2, yy + ch / 2, cw / 2 * 1.02 * easeOutBack(k), false);
+      else fillHex(g, c, x + cw / 2, yy + ch / 2, cw / 2 * window.HEX_FILL * easeOutBack(k), false);
     });
   }
 
@@ -199,7 +199,7 @@
     var skipText = document.createElement("span");
     // Auf dem Handy gibt es kein Esc.
     skipText.setAttribute("data-hex", matchMedia("(pointer: coarse)").matches ? "SKIP" : "ESC  SKIP");
-    skipText.setAttribute("data-cap", "10");
+    skipText.setAttribute("data-cap", "14");
     skip.appendChild(skipText);
     // Die Piano-Musik zur Rede (dieselbe wie im Launcher). Blockiert der Browser den Ton,
     // weil noch niemand auf die Seite geklickt hat, gibt es oben rechts SOUND ON.
@@ -209,7 +209,7 @@
     sound.hidden = true;
     var soundText = document.createElement("span");
     soundText.setAttribute("data-hex", "SOUND ON");
-    soundText.setAttribute("data-cap", "10");
+    soundText.setAttribute("data-cap", "14");
     sound.appendChild(soundText);
     box.appendChild(canvas);
     box.appendChild(skip);
