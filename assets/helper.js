@@ -50,6 +50,11 @@
       hints: { "#install": "Psst. Windows warnt dich. Klick auf Weitere Informationen, dann Trotzdem ausführen.", "#news": "Der Blutmond ist da. Ich versteck mich.", "#controls": "Beide Maustasten blocken einen Schlag. Probier es an einem Säbeltaucher." }
     }
   };
+  // Am 31. Oktober (assets/halloween.js) traegt Bubbles einen Hexenhut und sagt das auch.
+  if (window.JAYRAID_HALLOWEEN) {
+    T.en.hello = "Happy Halloween! I'm Bubbles. Don't mind the hat. Ask me anything about Jayraid.";
+    T.de.hello = "Happy Halloween! Ich bin Bubbles. Achte nicht auf den Hut. Frag mich alles über Jayraid.";
+  }
   var missUrl = (cfg.bubblesLog || "").replace(/\/$/, "");
   var lang = store("jr-lang") === "de" ? "de" : "en";
   function setLang(l, announce) {

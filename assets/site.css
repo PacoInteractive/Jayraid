@@ -747,3 +747,83 @@ html.rainbow body::after {
 .helper-pic { display: block; flex: none; align-self: flex-start; width: 82%; border: 1px solid var(--edge); line-height: 0; }
 .helper-pic img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .helper-pic:hover { border-color: var(--orange); }
+
+/* ── Halloween (assets/halloween.js, nur am 31. Oktober) ──────────────
+   Die Nacht wird ein wenig violett, das Orange bleibt der Kuerbis. */
+html.halloween {
+  --suit: #120f16;
+  --side: #17131c;
+  --panel: #1d1922;
+  --panel-light: #28222f;
+  --line: #332b3b;
+  --night: #8a63c4;
+}
+html.halloween .side { border-right-color: #261f2d; }
+html.halloween .play-image::before,
+html.halloween .log-hero-image::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(60,24,96,.55) 0%, rgba(30,12,48,.25) 60%, rgba(18,15,22,0) 100%);
+  mix-blend-mode: multiply;
+}
+html.halloween .play-image::after {
+  background: linear-gradient(90deg, rgba(18,15,22,.9) 0%, rgba(18,15,22,.45) 45%, rgba(18,15,22,0) 75%),
+              linear-gradient(0deg, var(--suit) 0%, rgba(18,15,22,0) 35%);
+}
+html.halloween .discord-band { background: linear-gradient(100deg, #24163a 0%, var(--panel) 55%); }
+html.halloween .discord-mark polygon { stroke: var(--night); opacity: .22; }
+
+.hw-label { color: var(--orange); margin-bottom: 16px; }
+.log-hero-text .hw-label { margin-bottom: 14px; }
+.hw-foot { color: var(--night); }
+
+/* Das Logo als Kuerbis */
+.mark, .about-mark { overflow: visible; }
+html.halloween .mark .m4, html.halloween .mark .m5, html.halloween .about-mark .a4 { display: none; }
+html.halloween .about-mark .a3 { fill: var(--orange); }
+.hw-face polygon { fill: #1a0d04; }
+.hw-stem { fill: #5f8a3a; }
+.about-mark .hw-face polygon { fill: var(--suit); }
+
+/* Spinne am Faden, oben im Startbild */
+.hw-spider { position: absolute; top: 0; right: 9%; z-index: 3; width: 44px; pointer-events: none;
+  transform-origin: 50% 0; animation: hw-drop 7s ease-in-out infinite alternate; }
+.hw-spider::before { content: ""; position: absolute; left: 50%; bottom: 100%; width: 1px; height: 600px;
+  margin-left: -.5px; background: rgba(237,244,232,.35); }
+.hw-spider-body { display: block; width: 44px; height: 35px; overflow: visible; }
+.hw-legs path { fill: none; stroke: #0c0a0f; stroke-width: 2.4; stroke-linejoin: round; }
+.hw-body { fill: #0c0a0f; stroke: #3a3242; stroke-width: 1.2; }
+.hw-eye { fill: var(--orange); }
+@keyframes hw-drop { from { transform: translateY(70px) rotate(-3deg); } to { transform: translateY(170px) rotate(3deg); } }
+
+/* Fledermaeuse vor dem Himmel */
+.hw-bats { position: absolute; top: 28px; right: 28%; z-index: 3; width: 240px; height: 140px; pointer-events: none; }
+.hw-bat { position: absolute; width: 54px; height: 27px; fill: #0c0a0f; overflow: visible; }
+.hw-bat:nth-child(1) { left: 0; top: 40px; }
+.hw-bat:nth-child(2) { left: 120px; top: 0; width: 38px; height: 19px; }
+.hw-bat:nth-child(3) { left: 180px; top: 70px; width: 26px; height: 13px; }
+.hw-wing { transform-box: fill-box; animation: hw-flap .32s ease-in-out infinite alternate; }
+.hw-wing-l { transform-origin: 100% 40%; }
+.hw-wing-r { transform-origin: 0 40%; }
+.hw-bat:nth-child(2) .hw-wing { animation-duration: .27s; animation-delay: -.1s; }
+.hw-bat:nth-child(3) .hw-wing { animation-duration: .36s; animation-delay: -.2s; }
+@keyframes hw-flap { from { transform: scaleY(1); } to { transform: scaleY(.35); } }
+.hw-bats { animation: hw-hover 6s ease-in-out infinite alternate; }
+@keyframes hw-hover { from { transform: translate(0, 0); } to { transform: translate(-30px, 14px); } }
+
+/* Spinnennetz in der Ecke der Seitenleiste */
+.hw-web { position: absolute; top: 0; right: 0; width: 70px; height: 70px; pointer-events: none; }
+.hw-web path { fill: none; stroke: rgba(237,244,232,.2); stroke-width: 1; vector-effect: non-scaling-stroke; }
+
+/* Bubbles mit Hexenhut, die Lampe hat frei */
+html.halloween .helper-bot .lamp, html.halloween .helper-bot .diver > rect:first-child { display: none; }
+.hw-hat { transform: rotate(-8deg); transform-box: fill-box; transform-origin: 50% 100%; }
+.hw-hat-cone, .hw-hat-brim { fill: #251c30; stroke: #46464a; stroke-width: 2; }
+.hw-hat-band { fill: var(--orange); }
+
+@media (max-width: 860px) {
+  .hw-web { display: none; }
+  .hw-spider { right: 14%; width: 34px; }
+  .hw-spider-body { width: 34px; height: 27px; }
+  @keyframes hw-drop { from { transform: translateY(40px) rotate(-3deg); } to { transform: translateY(110px) rotate(3deg); } }
+  .hw-bats { top: 30px; right: 2%; transform: scale(.75); transform-origin: 100% 0; animation: none; }
+}
