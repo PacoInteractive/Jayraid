@@ -781,8 +781,8 @@ html.halloween .discord-mark polygon { stroke: var(--night); opacity: .22; }
 html.halloween .mark .m4, html.halloween .mark .m5, html.halloween .about-mark .a4 { display: none; }
 html.halloween .about-mark .a3 { fill: var(--orange); }
 .hw-face polygon { fill: #1a0d04; }
-.hw-stem { fill: #5f8a3a; }
-.about-mark .hw-face polygon { fill: var(--suit); }
+.hw-face .hw-stem { fill: #5f8a3a; }
+.about-mark .hw-face polygon:not(.hw-stem) { fill: var(--suit); }
 
 /* Spinne am Faden, oben im Startbild */
 .hw-spider { position: absolute; top: 0; right: 9%; z-index: 3; width: 44px; pointer-events: none;

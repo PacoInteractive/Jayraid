@@ -45,15 +45,22 @@
     '<polygon points="0,-6 4,-3.5 4,3.5 0,6 -4,3.5 -4,-3.5"/><polygon points="-3.5,-5 -2,-9 -0.5,-5.5"/><polygon points="3.5,-5 2,-9 0.5,-5.5"/>';
 
   function decorate() {
-    // Das Logo wird zum Kuerbis: Gesicht ins orange Sechseck geschnitzt, oben ein Stiel.
+    // Das Logo wird zum Kuerbis, auch Gesicht und Stiel ganz aus Sechsecken:
+    // zwei grosse Augen, eine kleine Nase, der Mund als Grinsen mit Luecken als Zaehne.
+    function hx(x, y, r, cls) {
+      var w = r * 0.866;
+      return '<polygon' + (cls ? ' class="' + cls + '"' : "") + ' points="' +
+        [x, y - r, x + w, y - r / 2, x + w, y + r / 2, x, y + r, x - w, y + r / 2, x - w, y - r / 2].map(function (v) { return +v.toFixed(2); }).join(",") + '"/>';
+    }
+    var face = hx(0, -38, 4.6, "hw-stem") + hx(4, -45.5, 3.8, "hw-stem") +
+      hx(-12, -7, 7) + hx(12, -7, 7) + hx(0, 3.5, 3.6) +
+      hx(-19, 6, 4.4) + hx(19, 6, 4.4);
+    [-12, -4, 4, 12].forEach(function (x) { face += hx(x, 12, 4.4); });
+    [-8, 8].forEach(function (x) { face += hx(x, 18.5, 4.4); });
     document.querySelectorAll(".mark, .about-mark").forEach(function (m) {
       var g = document.createElementNS(NS, "g");
       g.setAttribute("class", "hw-face");
-      g.innerHTML =
-        '<rect class="hw-stem" x="-4" y="-47" width="8" height="12"/>' +
-        '<polygon points="-19,-4 -6,-4 -12.5,-16"/><polygon points="19,-4 6,-4 12.5,-16"/>' +
-        '<polygon points="-3,4 3,4 0,-1"/>' +
-        '<polygon points="-20,9 20,9 16,19 10,14 5,21 0,15 -5,21 -10,14 -16,19"/>';
+      g.innerHTML = face;
       m.appendChild(g);
     });
 
