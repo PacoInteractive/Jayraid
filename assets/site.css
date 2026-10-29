@@ -864,3 +864,7 @@ code { border: 0; padding: 0 .6em; }
   .log-statbar { padding-left: 22px; padding-right: 22px; }
   .tester-done { padding-left: 30px; padding-right: 30px; }
 }
+
+/* Halloween (assets/halloween.js, nur am 31. Oktober): das Logo wird zum Kuerbis. */
+html.halloween .mark { overflow: visible; }
+html.halloween .mark .m4, html.halloween .mark .m5 { display: none; }
