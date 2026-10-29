@@ -1,14 +1,14 @@
 # Changelog
 
-Every version of Jayraid, newest first. Version names: **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
+Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
-## Beta 1.0.0 · Coming soon · The closed beta
+## Beta 1.0.1 · 29.10.2026 · Starts on every graphics card
 
-New: Jayraid leaves the closed alpha and becomes a closed beta on Wednesday, 28 October 2026 at 21:00 CET. On launch night the launcher welcomes you to the beta, and the Jayraid Discord is open for everyone who plays.
+Changed: the game no longer crashes at launch on some AMD and Intel graphics cards.
 
-## Alpha 1.52.2 · 28.10.2026 · Everything included
+## Beta 1.0.0 · 28.10.2026 · The closed beta
 
-Changed: the game now brings everything it needs. No separate .NET install anymore.
+New: Jayraid leaves the alpha and becomes a closed beta. Changed: the game now brings everything it needs. No separate .NET install anymore.
 
 ## Alpha 1.52.1 · 28.10.2026 · Ready for the beta
 
