@@ -73,8 +73,9 @@ ol { padding-left: 20px; margin: 0; }
 ol li { margin-bottom: 8px; }
 
 main > section { margin-top: 48px; }
-.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.shots img { display: block; border: 1px solid #111; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.shots a:first-child { grid-column: 1 / -1; }
+.shots img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid #111; }
 
 table { border-collapse: collapse; width: 100%; max-width: 640px; }
 td { padding: 4px 16px 4px 0; border-bottom: 1px solid #333; vertical-align: top; }
@@ -91,7 +92,7 @@ footer { margin-top: 60px; padding-top: 14px; padding-bottom: 30px; border-top: 
   .mark { width: 90px; margin-bottom: 14px; }
   .buy { max-width: 320px; font-size: 28px; }
   .cols { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
-  .shots { grid-template-columns: 1fr 1fr; }
+  .shots { grid-template-columns: 1fr; }
   .logo { font-size: 26px; }
   td:first-child { white-space: normal; }
 }
