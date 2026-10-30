@@ -45,20 +45,13 @@ If you want more than building, there is a story with two bosses and an actual e
 
 ## What's new
 
-The latest updates, all in the launcher now:
-
-- **Alpha 1.52.0 · The deep.** The world reaches down to Y -99, with four levels of dark caves and bedrock at the very bottom. Your existing worlds get the deep too.
-- **Alpha 1.51.0 · Rain and branches.** Rain makes grass grow back on bare dirt, it rains half as hard under leaves, and branches show bark instead of tree rings.
-- **Alpha 1.50.0 · Third person.** Press F2 to see yourself from behind as a diver who walks, looks around and swings the sabre.
-- **Alpha 1.49.0 · Climate.** Height decides the colours: yellow green grass near the sea, deep green higher up, then snow. Shallow water glows turquoise, the deep sea turns dark blue.
-- **Alpha 1.47.0 · Your own block colours.** Paint the textures of all blocks yourself and the game loads them right away.
-- **Alpha 1.46.0 · A new start menu.** A bar with the title, a small animated scene and the news, and a large panel for your worlds.
-- **Alpha 1.44.0 · The fallen sabre.** A giant sabre stuck in a crater, an altar, and a necromancer boss with two phases.
-- **Alpha 1.42.0 · Sky and distant view.** Spectacular sunrises and sunsets, a milky way and shooting stars.
+- **Beta 1.0.1 · Starts on every graphics card.** No more crash at launch on some AMD and Intel cards.
+- **Beta 1.0.0 · The closed beta.** Jayraid leaves the alpha. No separate .NET install anymore.
+- **Alpha 1.52.0 · The deep.** The world reaches down to Y -99, with four levels of dark caves.
 
 Every change: [CHANGELOG.md](CHANGELOG.md).
 
-## Join the closed alpha
+## Join the closed beta
 
 Jayraid is in a **closed beta with 50 free tester places**. After those, Jayraid will most likely be paid. Testers get every version first.
 
