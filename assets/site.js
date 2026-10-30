@@ -24,12 +24,12 @@
       if (v && document.getElementById("news-name")) {
         var t = split(v);
         document.getElementById("news-name").textContent = v.nameEn || v.name;
-        document.getElementById("news-date").textContent = v.datum + (t[0] ? " · " + t[0] : "");
+        document.getElementById("news-date").textContent = v.datum + (t[0] ? ", " + t[0] : "");
         document.getElementById("news-text").textContent = t[1];
         document.getElementById("version").textContent = v.nameEn || v.name;
       }
       var rows = document.getElementById("versions");
-      all.filter(function (x) { return x !== v; }).slice(0, 5).forEach(function (x) {
+      all.filter(function (x) { return x !== v; }).slice(0, 3).forEach(function (x) {
         if (!rows) return;
         var t = split(x), row = document.createElement("li");
         row.innerHTML = "<b></b> <span class=\"small\"></span><br>";
@@ -64,7 +64,7 @@
   if (cfg.preview) document.getElementById("preview-link").href = cfg.preview;
 
   function showCells(total, free) {
-    countEl.textContent = free + " of " + total + " places left.";
+    countEl.textContent = "So far " + (total - free) + " of " + total + " tester places are taken.";
   }
 
   function full(total) {
@@ -91,14 +91,14 @@
   if (!api) {
     // Noch kein Zaehler eingerichtet: die Plaetze sind noch nicht offen.
     showCells(50, 50);
-    countEl.textContent = "50 tester places";
+    countEl.textContent = "";
     claim.disabled = true;
     textEl.textContent = "The tester places open soon.";
   } else {
     fetch(api + "/stand", { cache: "no-store" })
       .then(function (r) { return r.json(); })
       .then(function (s) { if (s.frei <= 0) full(s.gesamt); else showCells(s.gesamt, s.frei); })
-      .catch(function () { countEl.textContent = "Places: no connection right now"; });
+      .catch(function () { countEl.textContent = ""; });
     claim.addEventListener("click", function () {
       claim.disabled = true;
       fetch(api + "/platz", { method: "POST" })

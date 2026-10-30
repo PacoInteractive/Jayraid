@@ -44,73 +44,78 @@
 </head>
 <body>
 
-<header class="top">
-  <a class="brand" href="index.html"><img src="assets/symbol.png" alt="" width="28" height="28">Jayraid</a>
-  <nav>
-    <a href="#news">News</a>
-    <a href="#game">The game</a>
-    <a href="#install">Install</a>
-    <a href="changelog.html">Changelog</a>
-    <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a>
-  </nav>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="index.html"><img src="assets/symbol.png" alt="" width="34" height="34">JAYRAID</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#game">Game</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Community</a>
+    </nav>
+  </div>
 </header>
 
-<main>
+<main class="wrap">
 
-<section class="play" id="play">
-  <img class="shot" src="images/start.jpg" alt="The golem and the divers under a red blood moon" width="2000" height="1125">
-  <h1>Jayraid</h1>
-  <p class="lead">A voxel game made of hexagons. Build, or follow the story to the golem.</p>
-  <p class="small">Current version: <span id="version">Beta 1.0.1</span> · Windows 10/11</p>
+<div class="hero" id="play">
+  <div class="hero-left">
+    <img class="shot" src="images/start.jpg" alt="The golem and the divers under a red blood moon" width="2000" height="1125">
+    <p>Jayraid is a voxel game made of hexagons. Build whatever you like, or follow the story through diver camps and trader ships to the golem in the castle ruin. Some nights the moon turns red and the divers raid your base. <span class="hl" id="tester-count">50 tester places</span> <a href="changelog.html">Every change here</a>.</p>
+  </div>
 
   <!-- Die geschlossene Beta: 50 Tester-Plaetze (Cloudflare Worker, siehe config.js). -->
-  <div class="tester" id="tester">
-    <p><b>Closed beta.</b> <span id="tester-count">50 tester places</span></p>
-    <p id="tester-text">50 free places. After that, Jayraid will most likely be paid.</p>
-    <p><button class="button" id="claim" type="button">Claim a place</button></p>
-    <p class="small" id="tester-os">Windows only. On Mac or Linux try the <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">browser preview</a>.</p>
+  <div class="hero-right" id="tester">
+    <img class="mark" src="assets/symbol.png" alt="" width="150" height="150">
+    <p><button class="buy" id="claim" type="button">Claim a place!</button></p>
+    <p id="tester-text">Closed beta, 50 free places. After that Jayraid will most likely be paid.</p>
+    <p><b>Play Jayraid</b> <span id="version">Beta 1.0.1</span><br><span id="tester-os">Windows 10/11 | <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">In browser</a></span></p>
     <p class="small" id="preview" hidden>All places gone? Try <a id="preview-link" href="#" rel="noopener">the browser preview</a>.</p>
-    <div id="tester-done" hidden>
+    <div class="done" id="tester-done" hidden>
       <p>You are tester <b id="done-nr">#1</b>. Your code:</p>
       <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
-      <p><a class="button" id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a> <a class="button" id="done-launcher" href="update/Jayraid-Launcher.zip" download>Download launcher</a></p>
+      <p><a id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a> | <a id="done-launcher" href="update/Jayraid-Launcher.zip" download>Download launcher</a></p>
       <p class="small">Unpack, start, enter your code.</p>
     </div>
   </div>
+</div>
 
-  <p id="discord">Updates, bugs and screenshots go to the <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a>.</p>
-</section>
+<div class="cols">
+  <section id="discord">
+    <h2><img src="assets/symbol.png" alt="" width="30" height="30">Join the Discord</h2>
+    <p>Updates first, bugs and screenshots. Come say hi at <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">discord.gg/SNkbBtUwEf</a>.</p>
+    <p>Or write me: <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a>. I'm Tixx, I make Jayraid alone in Switzerland.</p>
+  </section>
 
-<!-- site.js fuellt die neueste Version und die Liste aus update/blockwelt-versionen.json. -->
-<section id="news">
-  <h2>News</h2>
-  <h3><span id="news-name">Beta 1.0.1</span> <span class="small" id="news-date">29.10.2026 · Starts on every graphics card</span></h3>
-  <p id="news-text">The game no longer crashes at launch on some AMD and Intel graphics cards.</p>
-  <ul class="versions" id="versions"></ul>
-  <p><a href="changelog.html">Full changelog</a></p>
-</section>
+  <!-- site.js fuellt die neueste Version und die Liste aus update/blockwelt-versionen.json. -->
+  <section id="news">
+    <h2>News</h2>
+    <p class="entry"><a href="changelog.html" id="news-name">Beta 1.0.1</a><br><span class="small" id="news-date">29.10.2026</span></p>
+    <p id="news-text">The game no longer crashes at launch on some AMD and Intel graphics cards.</p>
+    <ul class="versions" id="versions"></ul>
+  </section>
+
+  <section id="install">
+    <h2>How to install</h2>
+    <ol>
+      <li>Claim a place. You get your code and the launcher.</li>
+      <li>Unpack the zip into its own folder.</li>
+      <li>Start the launcher, enter your code. If Windows warns you: <b>More info</b>, <b>Run anyway</b>.</li>
+      <li>INSTALL, then PLAY. Updates take one click.</li>
+    </ol>
+  </section>
+</div>
 
 <section id="game">
-  <h2>The game</h2>
-  <p>A sandbox first. If you want more, there is a story with two bosses and an ending.</p>
+  <h2>Screenshots</h2>
   <div class="shots">
-    <figure><img src="images/title.jpg" alt="Trader ships off the coast" loading="lazy"><figcaption>Islands of hexagon pillars, trader ships on the horizon. Some nights the moon turns red and the divers raid your base.</figcaption></figure>
-    <figure><img src="images/world.jpg" alt="Hexagon mountains and a watchtower" loading="lazy"><figcaption>Sandbox, Adventure or Challenge.</figcaption></figure>
-    <figure><img src="images/traders.jpg" alt="Traders on the deck of their ship" loading="lazy"><figcaption>Traders sail the islands, divers hold the towers. They fight each other.</figcaption></figure>
-    <figure><img src="images/bell.jpg" alt="The bell creature on a ship" loading="lazy"><figcaption>The bell guards the golden wand. Hit it and it rings.</figcaption></figure>
-    <figure><img src="images/companion.jpg" alt="The blue companion with a sabre" loading="lazy"><figcaption>Down in the caves some rotten divers get back up and follow you.</figcaption></figure>
-    <figure><img src="images/golem.jpg" alt="The golem in the castle ruin" loading="lazy"><figcaption>The golem, chained in a ruin. Behind it waits the ending.</figcaption></figure>
+    <a href="images/title.jpg"><img src="images/title.jpg" alt="Trader ships off the coast" loading="lazy"></a>
+    <a href="images/world.jpg"><img src="images/world.jpg" alt="Hexagon mountains and a watchtower" loading="lazy"></a>
+    <a href="images/traders.jpg"><img src="images/traders.jpg" alt="Traders on the deck of their ship" loading="lazy"></a>
+    <a href="images/bell.jpg"><img src="images/bell.jpg" alt="The bell creature on a ship" loading="lazy"></a>
+    <a href="images/companion.jpg"><img src="images/companion.jpg" alt="The blue companion with a sabre" loading="lazy"></a>
+    <a href="images/golem.jpg"><img src="images/golem.jpg" alt="The golem in the castle ruin" loading="lazy"></a>
   </div>
-</section>
-
-<section id="install">
-  <h2>Install</h2>
-  <ol>
-    <li>Claim a place. You get your code and the launcher.</li>
-    <li>Unpack the zip into its own folder.</li>
-    <li>Start the launcher and enter your code. If Windows warns you: <b>More info</b>, then <b>Run anyway</b>.</li>
-    <li>Click INSTALL, then PLAY. Updates take one click.</li>
-  </ol>
 </section>
 
 <section id="controls">
@@ -129,16 +134,10 @@
   </table>
 </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>I'm Tixx, I make Jayraid alone in Switzerland. Write to <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a> or come to the <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a>.</p>
-</section>
-
 </main>
 
-<footer>
-  <p>© 2026 Paco Interactive · <a href="LICENSE">License</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:jayraid.net@gmail.com">Contact</a></p>
-  <p>Only download the launcher from this page.</p>
+<footer class="wrap">
+  <p>© 2026 Paco Interactive · <a href="LICENSE">License</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:jayraid.net@gmail.com">Contact</a> · Only download the launcher from this page.</p>
 </footer>
 
 <script src="assets/config.js"></script>
