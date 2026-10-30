@@ -100,3 +100,10 @@ footer { margin-top: 60px; padding-top: 14px; padding-bottom: 30px; border-top: 
   .logo { font-size: 26px; }
   td:first-child { white-space: normal; }
 }
+
+/* Sechseckschrift (site.js macht aus data-hex ein SVG) */
+[data-hex] { display: inline-block; line-height: 0; vertical-align: middle; max-width: 100%; }
+[data-hex] svg { display: block; max-width: 100%; height: auto; overflow: visible; }
+.buy [data-hex] { color: #fff; }
+.logo [data-hex] { color: #e6e6e6; }
+h2 [data-hex] { color: #fff; }

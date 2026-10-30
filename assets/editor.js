@@ -12,7 +12,7 @@
   if (!/\.html$/.test(file)) file = "index.html";
 
   // Was Skripte zur Laufzeit fuellen: nicht bearbeitbar (kaeme sonst falsch in die Datei).
-  var DYNAMIC = "#log, #versions, script, svg";
+  var DYNAMIC = "#log, #versions, [data-hex], script, svg";
   var FILLED = ["news-name", "news-date", "news-text", "version", "tester-count", "tester-text"];
   // Bausteine, die sich verschieben, kopieren und loeschen lassen.
   var MOVABLE = ["main > section", "nav > a", ".shots > figure", "ol > li", "tr", ".play > *"].join(", ");

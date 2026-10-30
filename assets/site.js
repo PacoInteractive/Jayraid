@@ -1,6 +1,53 @@
 // Jayraid website: the latest version from the signed version list and the tester places.
 (function () {
   "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+
+  // Tixx' Sechseckschrift (hexfont.js, wie Look.HexText im Launcher): jede Zelle ein Sechseck.
+  // <span data-hex="18">News</span> wird zu einem SVG mit Versalhoehe 18 px.
+  function hexText(text, cap, shadow) {
+    var m = window.hexFontMetrics(cap), cells = [], top = 0, bottom = m.cap;
+    var pen = window.hexFontLayout(text, 0, 0, cap, function (x, y, w, h) {
+      cells.push([x, y, w, h]);
+      top = Math.min(top, y);
+      bottom = Math.max(bottom, y + h);
+    });
+    var off = shadow ? Math.max(1, Math.round(cap * 0.08)) : 0;
+    var w = Math.max(1, pen - m.gap + off), h = bottom - top + off;
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 " + top.toFixed(2) + " " + w.toFixed(2) + " " + h.toFixed(2));
+    svg.setAttribute("width", w.toFixed(1));
+    svg.setAttribute("height", h.toFixed(1));
+    svg.setAttribute("aria-hidden", "true");
+    function layer(dx, fill) {
+      var d = "";
+      cells.forEach(function (c) {
+        var r = c[2] / 2 * window.HEX_FILL, mx = c[0] + dx + c[2] / 2, my = c[1] + dx + c[3] / 2;
+        for (var s = 0; s < 6; s++) {
+          var a = s * Math.PI / 3;
+          d += (s ? "L" : "M") + (mx + r * Math.cos(a)).toFixed(2) + " " + (my + r * Math.sin(a)).toFixed(2);
+        }
+        d += "Z";
+      });
+      var p = document.createElementNS(NS, "path");
+      p.setAttribute("d", d);
+      p.setAttribute("fill", fill);
+      svg.appendChild(p);
+    }
+    if (shadow) layer(off, "rgba(0,0,0,.8)");
+    layer(0, "currentColor");
+    return svg;
+  }
+  function hex(el) {
+    if (!window.hexFontLayout) return;
+    var text = el.textContent.trim();
+    el.textContent = "";
+    el.appendChild(hexText(text, parseFloat(el.getAttribute("data-hex")) || 16, el.hasAttribute("data-shadow")));
+    el.setAttribute("role", "img");
+    el.setAttribute("aria-label", text);
+  }
+  document.querySelectorAll("[data-hex]").forEach(hex);
+  window.jayraidHex = hex;
 
   // Bearbeitungsmodus: mit ?edit an der Adresse (assets/editor.js).
   if (/[?&]edit\b/.test(location.search)) {
@@ -24,6 +71,7 @@
       if (v && document.getElementById("news-name")) {
         var t = split(v);
         document.getElementById("news-name").textContent = v.nameEn || v.name;
+        hex(document.getElementById("news-name"));
         document.getElementById("news-date").textContent = v.datum + (t[0] ? ", " + t[0] : "");
         document.getElementById("news-text").textContent = t[1];
         document.getElementById("version").textContent = v.nameEn || v.name;

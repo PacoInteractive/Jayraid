@@ -46,12 +46,12 @@
 
 <header class="bar">
   <div class="wrap bar-in">
-    <a class="logo" href="index.html"><img src="assets/symbol.png" alt="" width="34" height="34">JAYRAID</a>
+    <a class="logo" href="index.html"><img src="assets/symbol.png" alt="" width="34" height="34"><span data-hex="26" data-shadow>JAYRAID</span></a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#game">Game</a>
-      <a href="changelog.html">Changelog</a>
-      <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Community</a>
+      <a href="index.html"><span data-hex="14" data-shadow>Home</span></a>
+      <a href="index.html#game"><span data-hex="14" data-shadow>Game</span></a>
+      <a href="changelog.html"><span data-hex="14" data-shadow>Changelog</span></a>
+      <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener"><span data-hex="14" data-shadow>Community</span></a>
     </nav>
   </div>
 </header>
@@ -67,7 +67,7 @@
   <!-- Die geschlossene Beta: 50 Tester-Plaetze (Cloudflare Worker, siehe config.js). -->
   <div class="hero-right" id="tester">
     <img class="mark" src="assets/symbol.png" alt="" width="150" height="150">
-    <p><button class="buy" id="claim" type="button">Claim a place!</button></p>
+    <p><button class="buy" id="claim" type="button"><span data-hex="28" data-shadow>Claim a place!</span></button></p>
     <p id="tester-text">Closed beta, 50 free places. After that Jayraid will most likely be paid.</p>
     <p><b>Play Jayraid</b> <span id="version">Beta 1.0.1</span><br><span id="tester-os">Windows 10/11 | <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">In browser</a></span></p>
     <p class="small" id="preview" hidden>All places gone? Try <a id="preview-link" href="#" rel="noopener">the browser preview</a>.</p>
@@ -82,21 +82,21 @@
 
 <div class="cols">
   <section id="discord">
-    <h2><img src="assets/symbol.png" alt="" width="30" height="30">Join the Discord</h2>
+    <h2><img src="assets/symbol.png" alt="" width="30" height="30"><span data-hex="18">Join the Discord</span></h2>
     <p>Updates first, bugs and screenshots. Come say hi at <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">discord.gg/SNkbBtUwEf</a>.</p>
-    <p>Or write me: <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a>. I'm Tixx, I make Jayraid alone in Switzerland.</p>
+    <p>Or write me: <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a>.</p>
   </section>
 
   <!-- site.js fuellt die neueste Version und die Liste aus update/blockwelt-versionen.json. -->
   <section id="news">
-    <h2>News</h2>
-    <p class="entry"><a href="changelog.html" id="news-name">Beta 1.0.1</a><br><span class="small" id="news-date">29.10.2026</span></p>
+    <h2><span data-hex="18">News</span></h2>
+    <p class="entry"><a href="changelog.html"><span id="news-name" data-hex="13">Beta 1.0.1</span></a><br><span class="small" id="news-date">29.10.2026</span></p>
     <p id="news-text">The game no longer crashes at launch on some AMD and Intel graphics cards.</p>
     <ul class="versions" id="versions"></ul>
   </section>
 
   <section id="install">
-    <h2>How to install</h2>
+    <h2><span data-hex="18">How to install</span></h2>
     <ol>
       <li>Claim a place. You get your code and the launcher.</li>
       <li>Unpack the zip into its own folder.</li>
@@ -107,7 +107,7 @@
 </div>
 
 <section id="game">
-  <h2>Screenshots</h2>
+  <h2><span data-hex="18">Screenshots</span></h2>
   <div class="shots">
     <a href="images/title.jpg"><img src="images/title.jpg" alt="Trader ships off the coast" loading="lazy"></a>
     <a href="images/world.jpg"><img src="images/world.jpg" alt="Hexagon mountains and a watchtower" loading="lazy"></a>
@@ -119,7 +119,7 @@
 </section>
 
 <section id="controls">
-  <h2>Controls</h2>
+  <h2><span data-hex="18">Controls</span></h2>
   <table>
     <tr><td>W A S D, Shift, Space</td><td>Walk, sprint, jump</td></tr>
     <tr><td>Left / right mouse</td><td>Mine, strike / place, sabre thrust, throw</td></tr>
@@ -141,6 +141,7 @@
 </footer>
 
 <script src="assets/config.js"></script>
+<script src="assets/hexfont.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
