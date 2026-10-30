@@ -9,8 +9,11 @@
     box.textContent = "";
     md.split(/^## /m).slice(1).forEach(function (p) {
       var lines = p.split("\n");
-      var h = document.createElement("h3");
-      h.textContent = lines[0].trim();
+      var h = document.createElement("h3"), name = document.createElement("span");
+      name.setAttribute("data-hex", "13");
+      name.textContent = lines[0].trim();
+      h.appendChild(name);
+      if (window.jayraidHex) window.jayraidHex(name);
       var t = document.createElement("p");
       t.textContent = lines.slice(1).join(" ").replace(/\s+/g, " ").trim();
       box.appendChild(h);
