@@ -61,7 +61,7 @@ Jayraid is in a **closed beta with 50 free tester places**. After those, Jayraid
 4. **INSTALL**, then **PLAY**. New versions show up as a big **UPDATE** button, and the launcher updates itself the same way.
 
 On Mac, Linux or a phone, or if all places are gone: play the [browser preview on itch.io](https://paco-interactive.itch.io/jayraid), one island, no download.
-Questions? Ask **Bubbles**, the little diver in the corner of the website.
+Questions? Ask on the [Discord](https://discord.gg/SNkbBtUwEf).
 
 <p align="center">
   <img src="images/launcher.jpg" alt="Jayraid Launcher" width="720">
@@ -80,8 +80,6 @@ So only download Jayraid from this page.
 | `update/` | Signed version list, encrypted game packages, tester list and the launcher. Read by the launcher. |
 | `index.html`, `changelog.html`, `assets/`, `images/` | The website |
 | [`CHANGELOG.md`](CHANGELOG.md) | Every change since Alpha 1.0.0, also [as a page](https://pacointeractive.github.io/Jayraid/changelog.html) |
-| [`bubbles-faq.md`](bubbles-faq.md) | What Bubbles knows besides the game |
-| `tools/` | Bubbles' optional worker and the format for game knowledge |
 
 ---
 
