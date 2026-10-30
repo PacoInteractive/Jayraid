@@ -20,14 +20,9 @@ h3 { font-size: 16px; margin: 20px 0 2px; }
 .small { font-size: 12px; color: #aaa; }
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
 
-/* Kopfleiste wie Erde: braun mit dunklen Flecken */
 .bar {
-  background-color: #4a3423;
-  background-image:
-    radial-gradient(#3a281a 1px, transparent 1.5px),
-    radial-gradient(#5c4330 1px, transparent 1.5px);
-  background-size: 6px 6px, 9px 9px;
-  background-position: 0 0, 3px 4px;
+  /* 16 x 16 Hexpixel in sehr dunklem Orange (assets/hexbar.svg) */
+  background: #241104 url("hexbar.svg") 0 0 / 1200px 144px repeat-x;
   border-bottom: 2px solid #111;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .6);
 }
