@@ -1,6 +1,6 @@
 // Bearbeitungsmodus der Website (index.html?edit oder changelog.html?edit).
 // Texte anklicken und tippen, Bausteine verschieben, kopieren oder loeschen,
-// Sechseck-Schriften, Links und Bilder per Doppelklick aendern. Gespeichert wird
+// Links und Bilder per Doppelklick aendern. Gespeichert wird
 // die Original-HTML-Datei (nicht das, was die Skripte daraus gemacht haben):
 // als Download oder direkt auf GitHub (eigener Zugangsschluessel, nur im Browser).
 (function () {
@@ -12,11 +12,10 @@
   if (!/\.html$/.test(file)) file = "index.html";
 
   // Was Skripte zur Laufzeit fuellen: nicht bearbeitbar (kaeme sonst falsch in die Datei).
-  var DYNAMIC = "#log, #versions, #tester-cells, #log-stats, .helper, [data-hex], script, svg";
-  var FILLED = ["news-name", "news-date", "news-text", "version", "side-version", "tester-count", "tester-text", "log-empty"];
+  var DYNAMIC = "#log, #versions, script, svg";
+  var FILLED = ["news-name", "news-date", "news-text", "version", "tester-count", "tester-text"];
   // Bausteine, die sich verschieben, kopieren und loeschen lassen.
-  var MOVABLE = [".content > section", "nav > a", ".features > .feature", ".steps > li", ".table > div",
-    ".playbar > div", ".tester-buttons > a", ".log-filter > button", ".content > .play > *:not(.play-image):not(.hexes)"].join(", ");
+  var MOVABLE = ["main > section", "nav > a", ".shots > figure", "ol > li", "tr", ".play > *"].join(", ");
   var INLINE = /^(B|I|EM|STRONG|CODE|KBD|A|BR|SPAN|SMALL)$/;
 
   var live2src = new Map(), changes = 0, original = "", srcDoc;
@@ -88,7 +87,7 @@
     var direct = false;
     for (var n = el.firstChild; n; n = n.nextSibling) {
       if (n.nodeType === 3 && n.textContent.trim()) direct = true;
-      if (n.nodeType === 1 && (!INLINE.test(n.tagName) || n.matches("[data-hex]"))) return false;
+      if (n.nodeType === 1 && (!INLINE.test(n.tagName))) return false;
     }
     return direct;
   }
@@ -128,23 +127,9 @@
     if (a) e.preventDefault();
   }, true);
 
-  // ── Doppelklick: Sechseck-Schrift, Link-Adresse, Bild ────────────
+  // ── Doppelklick: Link-Adresse, Bild ────────────
   document.addEventListener("dblclick", function (e) {
     if (e.target.closest(".ed-bar, .ed-tools")) return;
-    var hex = e.target.closest("[data-hex]");
-    if (hex && live2src.has(hex)) {
-      var t = prompt("Text in the hexagon font:", hex.getAttribute("data-hex"));
-      if (t === null || !t.trim()) return;
-      t = t.toUpperCase();
-      hex.setAttribute("data-hex", t);
-      live2src.get(hex).setAttribute("data-hex", t);
-      var lbl = hex.closest("[aria-label]");
-      if (lbl && lbl !== hex && live2src.has(lbl) && lbl.matches("h1, h2")) { lbl.setAttribute("aria-label", t); live2src.get(lbl).setAttribute("aria-label", t); }
-      hex.removeAttribute("aria-label");
-      window.jayraidHex(hex);
-      changed();
-      return;
-    }
     var link = e.target.closest("a[href]");
     if (link && live2src.has(link)) {
       var h = prompt("Link address:", live2src.get(link).getAttribute("href"));
