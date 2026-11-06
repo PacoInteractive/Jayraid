@@ -1,0 +1,63 @@
+# Releases Alpha 1.41.0 at exactly 09:00 German time (07:00 UTC) on 21 October 2026.
+# The finished release waits on the branch release-1.41. Scheduled runs start early (GitHub can
+# delay them), wait until 07:00 UTC and then fast forward main to that branch. Launchers read
+# update/ from main, so they see the new version from that moment. Running it again does nothing.
+name: Release Alpha 1.41.0
+
+on:
+  schedule:
+    - cron: '0 5 21 10 *'
+    - cron: '30 5 21 10 *'
+    - cron: '0 6 21 10 *'
+    - cron: '25 6 21 10 *'
+    - cron: '45 6 21 10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: release-alpha-1-41
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Only on 21 October 2026
+        id: day
+        run: |
+          if [ "$(date -u +%Y-%m-%d)" != "2026-10-21" ]; then echo "go=no" >> "$GITHUB_OUTPUT"; else echo "go=yes" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Wait until 07:00 UTC
+        if: steps.day.outputs.go == 'yes'
+        run: |
+          target=$(date -u -d '2026-10-21 07:00:00' +%s)
+          now=$(date -u +%s)
+          if [ "$now" -lt "$target" ]; then echo "Waiting $((target - now)) s"; sleep $((target - now)); fi
+          date -u
+
+      - name: Fast forward main to release-1.41
+        if: steps.day.outputs.go == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main release-1.41
+          if git merge-base --is-ancestor origin/release-1.41 origin/main; then
+            echo "Already released."
+            exit 0
+          fi
+          git checkout main
+          git reset --hard origin/main
+          git merge --ff-only origin/release-1.41
+          git push origin main
+          date -u
+          # A push with this token does not start other workflows; start the website deploy by hand.
+          gh workflow run pages.yml --ref main

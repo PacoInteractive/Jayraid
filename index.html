@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Sicherheitsregeln: Skripte nur von dieser Seite, Verbindungen nur zu den eigenen Workern und zu GitHub (Bearbeitungsmodus). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.workers.dev https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jayraid</title>
+<meta name="description" content="Jayraid is a voxel game built from hexagons: trader ships, diver camps, blood moon raids and a chained golem. Closed beta with 50 free tester places.">
+<link rel="canonical" href="https://pacointeractive.github.io/Jayraid/">
+<!-- Vorschau, wenn jemand den Link auf Discord, WhatsApp, Reddit usw. teilt. Bild-Adressen muessen dort vollstaendig sein. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jayraid">
+<meta property="og:url" content="https://pacointeractive.github.io/Jayraid/">
+<meta property="og:title" content="Jayraid">
+<meta property="og:description" content="A voxel game made of hexagons. Get the launcher here.">
+<meta property="og:image" content="https://pacointeractive.github.io/Jayraid/images/start.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1125">
+<meta property="og:image:alt" content="The golem and the divers under a red blood moon">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Fuer Google: sagt, dass das hier ein Spiel ist. Wird nicht ausgefuehrt, darum keine Ausnahme in den Sicherheitsregeln noetig. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Jayraid",
+  "url": "https://pacointeractive.github.io/Jayraid/",
+  "image": "https://pacointeractive.github.io/Jayraid/images/start.jpg",
+  "description": "A voxel game built from hexagons: trader ships, diver camps, blood moon raids and a chained golem.",
+  "genre": ["Sandbox", "Adventure"],
+  "gamePlatform": "PC",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "Game",
+  "inLanguage": ["en", "de"],
+  "author": { "@type": "Organization", "name": "Paco Interactive" },
+  "sameAs": ["https://paco-interactive.itch.io/jayraid", "https://github.com/PacoInteractive/Jayraid", "https://discord.gg/SNkbBtUwEf"]
+}
+</script>
+<meta name="theme-color" content="#111112">
+<link rel="icon" href="assets/symbol.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="index.html"><img src="assets/symbol.png" alt="" width="34" height="34"><span data-hex="26" data-shadow>JAYRAID</span></a>
+    <nav>
+      <a href="index.html"><span data-hex="14" data-shadow>Home</span></a>
+      <a href="index.html#game"><span data-hex="14" data-shadow>Game</span></a>
+      <a href="changelog.html"><span data-hex="14" data-shadow>Changelog</span></a>
+      <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener"><span data-hex="14" data-shadow>Community</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="hero" id="play">
+  <div class="hero-left">
+    <img class="shot" src="images/start.jpg" alt="The golem and the divers under a red blood moon" width="2000" height="1125">
+    <p>Jayraid is a voxel game made of hexagons. Build whatever you like, or follow the story through diver camps and trader ships to the golem in the castle ruin. Some nights the moon turns red and the divers raid your base. <span class="hl" id="tester-count">50 tester places</span> <a href="changelog.html">Every change here</a>.</p>
+  </div>
+
+  <!-- Die geschlossene Beta: 50 Tester-Plaetze (Cloudflare Worker, siehe config.js). -->
+  <div class="hero-right" id="tester">
+    <img class="mark" src="assets/symbol.png" alt="" width="150" height="150">
+    <p><button class="buy" id="claim" type="button"><span data-hex="28" data-shadow>Claim a place!</span></button></p>
+    <p id="tester-text">Closed beta, 50 free places. After that Jayraid will most likely be paid.</p>
+    <p><b>Play Jayraid</b> <span id="version">Beta 1.2.0</span><br><span id="tester-os">Windows 10/11 | <a href="https://paco-interactive.itch.io/jayraid" rel="noopener">In browser</a></span></p>
+    <p class="small" id="preview" hidden>All places gone? Try <a id="preview-link" href="#" rel="noopener">the browser preview</a>.</p>
+    <div class="done" id="tester-done" hidden>
+      <p>You are tester <b id="done-nr">#1</b>. Your code:</p>
+      <p class="code" id="done-code">JAYR-XXXX-XXXX-XXXX</p>
+      <p><a id="done-file" href="#" download="Jayraid-Tester-Code.txt">Save code file</a> | <a id="done-launcher" href="update/Jayraid-Launcher.zip" download>Download launcher</a></p>
+      <p class="small">Unpack, start, enter your code.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cols">
+  <section id="discord">
+    <h2><img src="assets/symbol.png" alt="" width="30" height="30"><span data-hex="18">Join the Discord</span></h2>
+    <p>Updates first, bugs and screenshots. Come say hi at <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">discord.gg/SNkbBtUwEf</a>.</p>
+    <p>Or write me: <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a>.</p>
+  </section>
+
+  <!-- site.js fuellt die neueste Version und die Liste aus update/blockwelt-versionen.json. -->
+  <section id="news">
+    <h2><span data-hex="18">News</span></h2>
+    <p class="entry"><a href="changelog.html"><span id="news-name" data-hex="13">Beta 1.2.0</span></a><br><span class="small" id="news-date">04.11.2026</span></p>
+    <p id="news-text">The trader ships are floating wooden fortresses, with two watchtowers at the stern, a dark hold on two levels and a giant cannon at the bow. Chests lie on board, in a different place on every ship. Open one and its loot flies out at you, but if the traders or the bell creature see it, they come for you, and so does the cannon. The golden wand turns enemies into allies, up to five.</p>
+    <ul class="versions" id="versions"></ul>
+  </section>
+
+  <section id="install">
+    <h2><span data-hex="18">How to install</span></h2>
+    <ol>
+      <li>Claim a place. You get your code and the launcher.</li>
+      <li>Unpack the zip into its own folder.</li>
+      <li>Start the launcher, enter your code. If Windows warns you: <b>More info</b>, <b>Run anyway</b>.</li>
+      <li>INSTALL, then PLAY. Updates take one click.</li>
+    </ol>
+  </section>
+</div>
+
+<section id="game">
+  <h2><span data-hex="18">Screenshots</span></h2>
+  <div class="shots">
+    <a href="images/shot-1.jpg"><img src="images/shot-1.jpg" alt="The coast seen from above, with turquoise shallows and a sandy beach" loading="lazy"></a>
+    <a href="images/shot-2.jpg"><img src="images/shot-2.jpg" alt="An autumn forest in a valley between hexagon cliffs" loading="lazy"></a>
+    <a href="images/shot-3.jpg"><img src="images/shot-3.jpg" alt="A hexagon sun setting behind a mountain ridge" loading="lazy"></a>
+    <a href="images/shot-4.jpg"><img src="images/shot-4.jpg" alt="The fallen sabre glowing red under the milky way" loading="lazy"></a>
+    <a href="images/shot-5.jpg"><img src="images/shot-5.jpg" alt="A forest at night under the stars and a hexagon moon" loading="lazy"></a>
+  </div>
+</section>
+
+<section id="controls">
+  <h2><span data-hex="18">Controls</span></h2>
+  <table>
+    <tr><td>W A S D, Shift, Space</td><td>Walk, sprint, jump</td></tr>
+    <tr><td>Left / right mouse</td><td>Mine, strike / place, sabre thrust, throw</td></tr>
+    <tr><td>Both mouse buttons</td><td>Block a hit</td></tr>
+    <tr><td>1 to 0, mouse wheel</td><td>Hotbar slot</td></tr>
+    <tr><td>I</td><td>Inventory</td></tr>
+    <tr><td>Q + right mouse</td><td>Throw the block in your hand</td></tr>
+    <tr><td>T, R, C</td><td>Torch, golden wand, green cave wand</td></tr>
+    <tr><td>E</td><td>Trade, open a chest, hand your companion a sabre</td></tr>
+    <tr><td>Y</td><td>Story goals on / off</td></tr>
+    <tr><td>Esc, F11</td><td>Pause, full screen</td></tr>
+  </table>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>© 2026 Paco Interactive · <a href="LICENSE">License</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:jayraid.net@gmail.com">Contact</a> · Only download the launcher from this page.</p>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/hexfont.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
