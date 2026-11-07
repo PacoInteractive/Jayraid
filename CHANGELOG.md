@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.3.0 · 05.11.2026 · Height map
+
+New: press Enter in the free camera to see the height map. Textures and water disappear, low ground turns blue, high ground green, and cliffs red, so you can see the shape of the world and its hexagon grid.
+
 ## Beta 1.2.0 · 04.11.2026 · Trader fortresses
 
 New: the trader ships are floating wooden fortresses, with two watchtowers at the stern, a dark hold on two levels and a giant cannon at the bow. Chests lie on board, in a different place on every ship. Open one and its loot flies out at you, but if the traders or the bell creature see it, they come for you, and so does the cannon. The golden wand turns enemies into allies, up to five. Changed: far fewer ships, no more mortars on board, caves and dark rooms are much darker, water shows its hex pixels again, blocks sit properly in your hand, and the helmet is now found in the chests.
