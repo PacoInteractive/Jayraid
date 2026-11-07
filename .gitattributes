@@ -5,3 +5,6 @@
 *.ico binary
 *.sig text eol=lf
 *.json -text
+# Die Browserfassung genau so ausliefern, wie sie gebaut wurde: ihre Dateien werden per Pruefsumme geprueft.
+play/** -text
+*.wasm binary

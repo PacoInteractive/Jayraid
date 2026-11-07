@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jayraid · Browser preview</title>
+<link rel="icon" href="favicon.ico">
+<style>
+  :root { --suit: #111112; --edge: #46464a; --orange: #f08c1e; --ink: #edf4e8; --dim: #aab0aa; }
+  html, body { margin: 0; height: 100%; background: var(--suit); overflow: hidden; }
+  #spiel { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+  /* Der Startbildschirm des Launchers (Splash.cs): Wabe, Schriftzug, Leiste aus Sechsecken. */
+  #splash { position: fixed; inset: 0; display: grid; place-items: center; background: var(--suit); transition: opacity .7s ease; z-index: 2; }
+  #splash.weg { opacity: 0; pointer-events: none; }
+  #splash canvas { width: min(560px, 92vw); height: auto; aspect-ratio: 560 / 340; }
+  #hinweis { position: fixed; left: 0; right: 0; bottom: 18px; text-align: center; color: var(--dim); font: 13px system-ui, sans-serif; z-index: 3; }
+</style>
+</head>
+<body>
+<canvas id="spiel" tabindex="0"></canvas>
+<div id="splash"><canvas id="logo" width="1120" height="680"></canvas></div>
+<div id="hinweis"></div>
+<script src="hexfont.js"></script>
+<script>
+  // Wohin "Tester werden" fuehrt: die Seite mit dem Launcher.
+  window.JAYRAID_TESTER_URL = 'https://pacointeractive.github.io/Jayraid/';
+
+  // ── Der Splash (wie Splash.cs im Launcher), doppelt aufgeloest gezeichnet ──
+  (function () {
+    const cv = document.getElementById('logo'), g = cv.getContext('2d'), S = 2;
+    const de = false;   // die Vorschau ist immer englisch
+    let shown = 0, want = 0, status = de ? 'Spiel wird geladen …' : 'Loading the game';
+    const t0 = performance.now();
+    window.splashReport = (p, text) => { want = Math.max(want, p); if (text) status = text; };
+    const hex = (cx, cy, r) => { g.beginPath(); for (let k = 0; k < 6; k++) { const a = (k * 60 + 30) * Math.PI / 180; g[k ? 'lineTo' : 'moveTo'](cx + r * Math.cos(a), cy + r * Math.sin(a)); } g.closePath(); };
+    const flatHex = (cx, cy, r) => { g.beginPath(); for (let k = 0; k < 6; k++) { const a = k * Math.PI / 3; g[k ? 'lineTo' : 'moveTo'](cx + r * Math.cos(a), cy + r * Math.sin(a)); } g.closePath(); };
+    // Die Sechseckschrift, gesetzt wie im Spiel (hexfont.js): klein eingerastet, gross als Waben.
+    // Gibt die Breite ohne den Abstand nach dem letzten Zeichen zurueck.
+    function hexText(text, x, y, cap, colour, measure) {
+      g.fillStyle = colour || '#000';
+      const w = window.hexFontLayout(text, x, y, cap, measure ? null : (cx, cy, cw, ch, snap) => {
+        if (snap) g.fillRect(cx, cy, cw, ch);
+        else { flatHex(cx + cw / 2, cy + ch / 2, cw / 2 * 1.02); g.fill(); }
+      });
+      return w - window.hexFontMetrics(cap).gap;
+    }
+    function draw(now) {
+      const t = (now - t0) / 1000, W = 560, H = 340;
+      shown += (want - shown) * .12;
+      g.setTransform(S, 0, 0, S, 0, 0);
+      g.fillStyle = '#111112'; g.fillRect(0, 0, W, H);
+      g.strokeStyle = '#46464a'; g.lineWidth = 1; g.strokeRect(.5, .5, W - 1, H - 1);
+      g.fillStyle = '#f08c1e'; g.fillRect(0, 0, W, 3);
+      // Die Wabe: Mitte und sechs Nachbarn; ein Lichtpunkt laeuft im Kreis, die Mitte atmet.
+      const cx = W / 2, cy = 112, r = 22, step = r * 1.8;
+      for (let k = -1; k < 6; k++) {
+        let x = cx, y = cy;
+        if (k >= 0) { const a = (k * 60 - 90) * Math.PI / 180; x += step * Math.cos(a); y += step * Math.sin(a); }
+        let light = k < 0 ? .55 + .45 * Math.sin(t * 3) : Math.max(0, Math.cos((t * 2.4 - k / 6 * Math.PI * 2) % (Math.PI * 2)));
+        light = Math.pow(Math.max(0, light), 2);
+        g.fillStyle = `rgb(${44 + 196 * light | 0},${44 + 96 * light | 0},${48 - 18 * light | 0})`;
+        hex(x, y, r * .92); g.fill();
+        g.strokeStyle = '#111112'; g.lineWidth = 2; g.stroke();
+      }
+      const cap = 26, jay = hexText('JAY', 0, 0, cap, '', true), raid = hexText('RAID', 0, 0, cap, '', true);
+      const gapW = window.hexFontMetrics(cap).gap, lx = (W - jay - gapW - raid) / 2;
+      hexText('JAY', lx, 196, cap, '#edf4e8');
+      hexText('RAID', lx + jay + gapW, 196, cap, '#f08c1e');
+      const sub = de ? 'BROWSER-VORSCHAU' : 'BROWSER PREVIEW', sw = hexText(sub, 0, 0, 13, '', true);
+      hexText(sub, (W - sw) / 2, 236, 13, '#f08c1e');
+      // Die Ladeleiste: 24 kleine Sechsecke, die sich der Reihe nach fuellen.
+      const cells = 24, hr = 6.5, gap = 15.5, x0 = (W - (cells - 1) * gap) / 2;
+      for (let i = 0; i < cells; i++) {
+        const f = Math.min(1, Math.max(0, shown * cells - i));
+        g.fillStyle = `rgb(${52 + 188 * f | 0},${52 + 88 * f | 0},${56 - 26 * f | 0})`;
+        hex(x0 + i * gap, 284, hr); g.fill();
+      }
+      g.fillStyle = '#aab0aa'; g.font = '12px system-ui, sans-serif'; g.textAlign = 'center';
+      g.fillText(status, W / 2, 316);
+      if (!window.splashDone) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+    // Nur Touch, keine Maus: Jayraid braucht Tastatur und Maus.
+    if (matchMedia('(pointer: coarse)').matches && !matchMedia('(pointer: fine)').matches)
+      document.getElementById('hinweis').textContent = de ? 'Jayraid braucht Tastatur und Maus.' : 'Jayraid needs a keyboard and a mouse.';
+  })();
+</script>
+<script type="module">
+  import { boot, start } from './main.js';
+  const de = false;
+  const splash = document.getElementById('splash');
+  try {
+    await boot((done, total) => splashReport(.85 * done / Math.max(1, total)));
+    splashReport(1, de ? 'Bereit.' : 'Ready.');
+    start();
+    setTimeout(() => { splash.classList.add('weg'); setTimeout(() => { window.splashDone = true; splash.remove(); }, 800); }, 250);
+  } catch (e) {
+    console.error(e);
+    splashReport(0, (de ? 'Fehler: ' : 'Error: ') + (e?.message === 'WebGL2 fehlt'
+      ? (de ? 'Dieser Browser kann kein WebGL2.' : 'This browser does not support WebGL2.') : e));
+  }
+</script>
+</body>
+</html>
