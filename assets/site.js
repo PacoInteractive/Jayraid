@@ -7,6 +7,12 @@
   // <span data-hex="18">News</span> wird zu einem SVG mit Versalhoehe 18 px.
   function hexText(text, cap, shadow) {
     var m = window.hexFontMetrics(cap), cells = [], top = 0, bottom = m.cap;
+    // Immer gleich viel Platz unter der Grundlinie und ueber der Versalhoehe (wie bei Buchstaben mit
+    // Unterlaenge), sonst sitzt "Home" tiefer als "Changelog", weil die Box nur mit Unterlaenge hoeher wird.
+    var below = 0;
+    window.hexFontLayout("gjpqy", 0, 0, cap, function (x, y, w, h) { below = Math.max(below, y + h - m.cap); });
+    top = -below;
+    bottom = m.cap + below;
     var pen = window.hexFontLayout(text, 0, 0, cap, function (x, y, w, h) {
       cells.push([x, y, w, h]);
       top = Math.min(top, y);
