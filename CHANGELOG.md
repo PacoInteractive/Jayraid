@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.3.1 · 07.11.2026 · Smoother play
+
+Changed: less stutter while running and flying fast, especially near trader ships, and more frames per second. In a new world, Enter now answers the story question with yes instead of opening the command line.
+
 ## Beta 1.3.0 · 05.11.2026 · Height map
 
 New: press Enter in the free camera to see the height map. Textures and water disappear, low ground turns blue, high ground green, and cliffs red, so you can see the shape of the world and its hexagon grid.
