@@ -2,6 +2,14 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.4.1 · 08.11.2026 · Clouds that hold together
+
+Changed: clouds now stay one soft shape and no longer break into pieces at the edge of view. Closing the window inside a world now shows the saving screen first, so your world is always saved. The seed field can be erased again. The helmet in the start menu is now green like the game icon. Block corners are now calculated exactly, so blocks always meet without gaps.
+
+## Beta 1.4.0 · 07.11.2026 · Swimming allies
+
+New: your allies now follow you into the water. They swim the crawl, tread water when you stop, dive with you, and climb back onto the shore. Changed: the winged diver no longer circles you at the same distance. It picks spots in the air, shoots from there, then switches sides, and it dodges when you hit it or get too close. It never flies into water anymore and waits above the surface while you are under water.
+
 ## Beta 1.3.2 · 07.11.2026 · Shorter thrust
 
 Changed: the sabre thrust now reaches as far as a swing instead of further, also when cutting wood and with the awakened demon sabre.
