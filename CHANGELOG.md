@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.4.3 · 08.11.2026 · Free camera all the way down
+
+Changed: the free camera now flies all the way down past the bedrock instead of stopping halfway.
+
 ## Beta 1.4.2 · 08.11.2026 · Clean grass edges
 
 Changed: no more thin green line on the seam below a grass block, and no more specks of dirt along the top of the grass. The hexagon pixels of every block now end cleanly at the top and bottom edge.
