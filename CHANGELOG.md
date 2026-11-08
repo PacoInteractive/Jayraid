@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.4.2 · 08.11.2026 · Clean grass edges
+
+Changed: no more thin green line on the seam below a grass block, and no more specks of dirt along the top of the grass. The hexagon pixels of every block now end cleanly at the top and bottom edge.
+
 ## Beta 1.4.1 · 08.11.2026 · Clouds that hold together
 
 Changed: clouds now stay one soft shape and no longer break into pieces at the edge of view. Closing the window inside a world now shows the saving screen first, so your world is always saved. The seed field can be erased again. The helmet in the start menu is now green like the game icon. Block corners are now calculated exactly, so blocks always meet without gaps.
