@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.4.4 · 11.11.2026 · Wet gravel stays
+
+Fixed: wet gravel that you placed no longer disappears when you load the world again.
+
 ## Beta 1.4.3 · 08.11.2026 · Free camera all the way down
 
 Changed: the free camera now flies all the way down past the bedrock instead of stopping halfway.
