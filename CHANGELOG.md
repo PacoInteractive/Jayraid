@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.5.0 · 12.11.2026 · Blocks keep their climate
+
+New: grass, dirt, wood and leaves keep the colours of their climate when you mine them and place them somewhere else, and blocks from different climates get their own stacks. Changed: leaves in your hand are now transparent too, your hand now strikes while holding the helmet, and the autumn trees have shuffled their colours.
+
 ## Beta 1.4.5 · 12.11.2026 · Clear view in the helmet
 
 Fixed: with the visor down the picture is no longer distorted. The lower part of the view is no longer stretched.
