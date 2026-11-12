@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.4.5 · 12.11.2026 · Clear view in the helmet
+
+Fixed: with the visor down the picture is no longer distorted. The lower part of the view is no longer stretched.
+
 ## Beta 1.4.4 · 11.11.2026 · Wet gravel stays
 
 Fixed: wet gravel that you placed no longer disappears when you load the world again.
