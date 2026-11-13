@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.5.1 · 13.11.2026 · Softer sabre sky
+
+Changed: the light above a fallen sabre now fades with distance like a fire in the haze. Instead of half the sky turning red, a warm glow sits low on the horizon in its direction, and the light pillar is softer, especially by day. Fixed: a block in your hand has the same shape as in the world and no longer looks stretched.
+
 ## Beta 1.5.0 · 12.11.2026 · Blocks keep their climate
 
 New: grass, dirt, wood and leaves keep the colours of their climate when you mine them and place them somewhere else, and blocks from different climates get their own stacks. Changed: leaves in your hand are now transparent too, your hand now strikes while holding the helmet, and the autumn trees have shuffled their colours.
