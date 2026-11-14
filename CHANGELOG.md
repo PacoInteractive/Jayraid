@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.6.1 · 14.11.2026 · Fallen leaves in every shade
+
+Changed: fallen leaves now take the exact colour of the leaves above them, including how leaves turn cooler higher up and the colour that leaves you placed yourself bring along, and every single pixel has its own slight shade. Their outline now lies flat on the ground. Fixed: fallen leaves no longer float in the air when you dig away the ground beneath them.
+
 ## Beta 1.6.0 · 14.11.2026 · Fallen leaves
 
 New: fallen leaves now lie on the ground beneath the trees, in the colours of the crown above them, golden, orange and red in autumn. Place leaves yourself and after three minutes some fall to the ground below. One hit sweeps them away, and they cannot be picked up.
