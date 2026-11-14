@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.6.0 · 14.11.2026 · Fallen leaves
+
+New: fallen leaves now lie on the ground beneath the trees, in the colours of the crown above them, golden, orange and red in autumn. Place leaves yourself and after three minutes some fall to the ground below. One hit sweeps them away, and they cannot be picked up.
+
 ## Beta 1.5.1 · 13.11.2026 · Softer sabre sky
 
 Changed: the light above a fallen sabre now fades with distance like a fire in the haze. Instead of half the sky turning red, a warm glow sits low on the horizon in its direction, and the light pillar is softer, especially by day. Fixed: a block in your hand has the same shape as in the world and no longer looks stretched.
