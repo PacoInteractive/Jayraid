@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.7.1 · 15.11.2026 · Water stays where it belongs
+
+Fixed: water no longer spreads endlessly over rivers and coasts, and water that already spread this way disappears when you load your world. Fixed: items, debris and divers in the deep caves no longer vanish, and the treasure chest no longer jumps up out of them.
+
 ## Beta 1.7.0 · 15.11.2026 · Living water
 
 New: rivers and brooks now pull downstream, and whatever falls in drifts along: you, your allies and dropped blocks, which now float on the surface. Anything that falls into water makes a splash. Changed: water flows faster, and where it sits between springs or fills a pit next to a lake it becomes a spring itself. A hole dug at the shore fills up and stays full.
