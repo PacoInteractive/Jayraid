@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.7.0 · 15.11.2026 · Living water
+
+New: rivers and brooks now pull downstream, and whatever falls in drifts along: you, your allies and dropped blocks, which now float on the surface. Anything that falls into water makes a splash. Changed: water flows faster, and where it sits between springs or fills a pit next to a lake it becomes a spring itself. A hole dug at the shore fills up and stays full.
+
 ## Beta 1.6.2 · 15.11.2026 · Smooth hex pixels on the sides
 
 Changed: the hex pixels on the sides of blocks are now just as smooth as on top. Up close their edges no longer look jagged.
