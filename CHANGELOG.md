@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.7.2 · 15.11.2026 · New textures at the fallen sabre
+
+Changed: obsidian, rune stone and ash around the fallen sabre have new hand pixelled textures. The obsidian is deeper and glassier, the rune stone carries rows of glowing red runes, and the ash is almost black with smouldering cracks.
+
 ## Beta 1.7.1 · 15.11.2026 · Water stays where it belongs
 
 Fixed: water no longer spreads endlessly over rivers and coasts, and water that already spread this way disappears when you load your world. Fixed: items, debris and divers in the deep caves no longer vanish, and the treasure chest no longer jumps up out of them.
