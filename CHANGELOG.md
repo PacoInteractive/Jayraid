@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.6.2 · 15.11.2026 · Smooth hex pixels on the sides
+
+Changed: the hex pixels on the sides of blocks are now just as smooth as on top. Up close their edges no longer look jagged.
+
 ## Beta 1.6.1 · 14.11.2026 · Fallen leaves in every shade
 
 Changed: fallen leaves now take the exact colour of the leaves above them, including how leaves turn cooler higher up and the colour that leaves you placed yourself bring along, and every single pixel has its own slight shade. Their outline now lies flat on the ground. Fixed: fallen leaves no longer float in the air when you dig away the ground beneath them.
