@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.10.2 · 22.11.2026 · Calm tree crowns
+
+Fixed: tree crowns no longer flicker with noise and no longer show large blotchy holes. Up close the leaves show their gaps hex by hex, further away they let a little light through evenly, and far in the distance they are dense.
+
 ## Beta 1.10.1 · 22.11.2026 · Hexagon gaps in the leaves
 
 Fixed: the gaps in distant tree crowns are hexagons again instead of square cut outs. Fixed: frosted trees no longer flicker with noise from afar.
