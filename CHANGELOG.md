@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.8.1 · 22.11.2026 · Green grass in the distance
+
+Fixed: tall grass in the distance no longer turns into black patches. It stays green and airy, just like up close.
+
 ## Beta 1.8.0 · 22.11.2026 · Tall grass
 
 New: tall grass now grows on the meadows and sways in the wind: star shaped clumps of blades, small tufts and, in warm and dry lands, golden grass with ripe ears that reaches over your head. It takes the colour of the grass where it grows. You walk right through it, one hit cuts it, and a placed block pushes it aside.
