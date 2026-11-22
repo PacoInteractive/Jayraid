@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.9.1 · 22.11.2026 · Calm leaves
+
+Fixed: tree crowns no longer flicker with noise when seen from further away or at an angle; there the leaves stay dense and only show their gaps up close. Fixed: in the frost lands snow and frost sit cleanly on every hex pixel, and fallen leaves there no longer show colourful pixels.
+
 ## Beta 1.9.0 · 22.11.2026 · Frost lands
 
 New: deep inside the autumn forests lie cold lands without snow blocks. There the grass, the tree crowns and the fallen leaves are white with frost, only small white tufts grow, and instead of rain it snows hexagon flakes in five different shapes.
