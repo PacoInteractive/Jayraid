@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.9.0 · 22.11.2026 · Frost lands
+
+New: deep inside the autumn forests lie cold lands without snow blocks. There the grass, the tree crowns and the fallen leaves are white with frost, only small white tufts grow, and instead of rain it snows hexagon flakes in five different shapes.
+
 ## Beta 1.8.1 · 22.11.2026 · Green grass in the distance
 
 Fixed: tall grass in the distance no longer turns into black patches. It stays green and airy, just like up close.
