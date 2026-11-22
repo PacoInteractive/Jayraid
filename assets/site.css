@@ -99,3 +99,29 @@ footer { margin-top: 60px; padding-top: 14px; padding-bottom: 30px; border-top: 
 .buy [data-hex] { color: #fff; }
 .logo [data-hex] { color: #e6e6e6; }
 h2 [data-hex] { color: #fff; }
+
+/* Galerie: Vorschaubilder als Sechseck-Raster, die Grossansicht (assets/gallery.js) ueber der Seite */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; gap: 10px; margin-top: 14px; }
+.gallery a { display: block; position: relative; overflow: hidden; border: 1px solid #111; background: #111; }
+.gallery img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease, filter .25s ease; }
+.gallery a:hover img, .gallery a:focus-visible img { transform: scale(1.06); filter: brightness(1.08); }
+.gallery a:focus-visible { outline: 2px solid #ffa63c; outline-offset: 2px; }
+.gallery a:nth-child(1), .gallery a:nth-child(7), .gallery a:nth-child(12), .gallery a:nth-child(16) { grid-column: span 2; grid-row: span 2; }
+.lightbox { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; background: rgba(8, 8, 9, .94); }
+.lightbox[hidden] { display: none; }
+.lightbox figure { margin: 0; max-width: 92vw; text-align: center; }
+.lightbox img { max-width: 92vw; max-height: 82vh; border: 1px solid #333; box-shadow: 0 8px 30px rgba(0, 0, 0, .8); }
+.lightbox figcaption { margin-top: 10px; color: #ccc; font-size: 14px; }
+.lightbox button {
+  position: absolute; border: 1px solid #b45f0a; border-radius: 6px; background: linear-gradient(#ffa63c, #e57d10);
+  color: #fff; font: bold 22px/1 Arial, sans-serif; width: 46px; height: 46px; cursor: pointer;
+}
+.lightbox button:hover { background: linear-gradient(#ffb455, #f08c1e); }
+.lightbox .lb-close { top: 16px; right: 16px; }
+.lightbox .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 800px) {
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery a:nth-child(1), .gallery a:nth-child(7), .gallery a:nth-child(12), .gallery a:nth-child(16) { grid-row: auto; }
+  .lightbox .lb-prev, .lightbox .lb-next { top: auto; bottom: 16px; transform: none; }
+}
