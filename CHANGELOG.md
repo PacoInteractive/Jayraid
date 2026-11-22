@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.10.0 · 22.11.2026 · Beach finds
+
+New: shells, pebbles and seaweed now lie on the sand along the beaches. One hit sweeps them away, and they cannot be picked up. Changed: tree crowns now show their gaps from far away; the further a tree is, the larger its gaps become, so nothing flickers.
+
 ## Beta 1.9.1 · 22.11.2026 · Calm leaves
 
 Fixed: tree crowns no longer flicker with noise when seen from further away or at an angle; there the leaves stay dense and only show their gaps up close. Fixed: in the frost lands snow and frost sit cleanly on every hex pixel, and fallen leaves there no longer show colourful pixels.
