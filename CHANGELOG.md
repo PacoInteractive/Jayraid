@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.8.0 · 22.11.2026 · Tall grass
+
+New: tall grass now grows on the meadows and sways in the wind: star shaped clumps of blades, small tufts and, in warm and dry lands, golden grass with ripe ears that reaches over your head. It takes the colour of the grass where it grows. You walk right through it, one hit cuts it, and a placed block pushes it aside.
+
 ## Beta 1.7.2 · 15.11.2026 · New textures at the fallen sabre
 
 Changed: obsidian, rune stone and ash around the fallen sabre have new hand pixelled textures. The obsidian is deeper and glassier, the rune stone carries rows of glowing red runes, and the ash is almost black with smouldering cracks.
