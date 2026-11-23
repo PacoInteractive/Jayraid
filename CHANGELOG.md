@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.11.0 · 23.11.2026 · Alpine roses
+
+New: high in the mountains, just below the snow where the grass is at its deepest green, alpine roses now bloom with pink clusters of flowers: round shrubs, small sprigs and, very rarely, a big bush almost two blocks tall. They are rare and grow mostly in small patches. One hit picks them, they go into your inventory, and you can plant them again on grass.
+
 ## Beta 1.10.3 · 22.11.2026 · Leaf gaps from further away
 
 Changed: the gaps in the leaves now show from further away before the crown turns into an even, soft see through.
