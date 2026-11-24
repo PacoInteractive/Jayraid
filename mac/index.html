@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Die Mac-Testseite: nirgends verlinkt, nicht in sitemap.xml, fuer Suchmaschinen gesperrt (noindex). Nur wer den Link bekommt, findet sie. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.workers.dev https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jayraid for Mac</title>
+<meta name="description" content="Early test build of Jayraid for Mac.">
+<meta name="theme-color" content="#111112">
+<link rel="icon" href="../assets/symbol.png">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  a.buy { display: block; max-width: 420px; text-align: center; text-decoration: none; margin: 10px 0; }
+  .mac-list li { margin: 8px 0; }
+  .mac-cmd { display: block; padding: 8px 12px; background: #1a1a1a; border: 1px solid #444; overflow-x: auto; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="../index.html"><img src="../assets/symbol.png" alt="" width="34" height="34"><span data-hex="26" data-shadow>JAYRAID</span></a>
+    <nav>
+      <a href="../index.html"><span data-hex="14" data-shadow>Home</span></a>
+      <a href="../changelog.html"><span data-hex="14" data-shadow>Changelog</span></a>
+      <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener"><span data-hex="14" data-shadow>Community</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap page">
+
+<section>
+  <h1><span data-hex="34">Jayraid for Mac</span></h1>
+  <p>This is an early test build for Mac. Thank you for trying it! It needs a Mac with Apple silicon (M1 or newer) and macOS 12 or newer.</p>
+
+  <h3><span data-hex="13">Downloads</span></h3>
+  <p><a class="buy" href="Jayraid-Launcher-Mac.zip" download><span data-hex="24" data-shadow>Mac launcher</span></a></p>
+  <p><a class="buy" href="Jayraid-Game-Mac.zip" download><span data-hex="24" data-shadow>Game test build</span></a></p>
+  <p class="small">The launcher needs your tester code. Mac versions for the launcher are on their way; until then the game test build lets you play right away.</p>
+
+  <h3><span data-hex="13">The first start</span></h3>
+  <ol class="mac-list">
+    <li>Double click the zip to unpack it. Move <b>Jayraid Launcher</b> into your Applications folder.</li>
+    <li>macOS does not know Jayraid yet and blocks it the first time. Open Terminal and run this once:
+      <code class="mac-cmd">xattr -cr "/Applications/Jayraid Launcher.app" ~/Downloads/Jayraid-Game-Mac</code>
+      Or open it once, then go to System Settings, Privacy &amp; Security, and click <b>Open Anyway</b>.</li>
+    <li>Launcher: start it and enter your tester code.</li>
+    <li>Game test build: open the folder Jayraid-Game-Mac and double click <b>Blockwelt2</b>. A Terminal window opens next to the game, that is normal.</li>
+  </ol>
+
+  <h3><span data-hex="13">Tell me how it runs</span></h3>
+  <p>Does it start? Do the graphics, the sound and the mouse work? Screenshots help a lot, and if it crashes, a copy of what the Terminal window says. Send it on <a href="https://discord.gg/SNkbBtUwEf" data-discord target="_blank" rel="noopener">Discord</a> or to <a href="mailto:jayraid.net@gmail.com">jayraid.net@gmail.com</a>.</p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>© 2026 Paco Interactive · <a href="../LICENSE">License</a> · <a href="../privacy.html">Privacy</a> · <a href="mailto:jayraid.net@gmail.com">Contact</a> · Only download Jayraid from this site.</p>
+</footer>
+
+<script src="../assets/config.js"></script>
+<script src="../assets/hexfont.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
