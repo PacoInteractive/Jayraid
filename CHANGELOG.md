@@ -2,6 +2,10 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.13.1 · 27.11.2026 · No false alarm
+
+Fixed: Windows Defender no longer mistakes the game for a trojan and no longer removes it while installing.
+
 ## Beta 1.13.0 · 27.11.2026 · World build
 
 New: when you create a world, the land around your starting point first builds itself block by block, seen from above, with the name of the world on top. An orange hexagon shows where you will stand. Click once to jump to the finished picture, twice to go straight into the world.

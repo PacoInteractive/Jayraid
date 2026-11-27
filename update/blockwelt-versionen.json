@@ -1,7 +1,7 @@
 {
   "spiel": "Jayraid",
-  "erstellt": "2026-11-27T22:11:12.4365806+01:00",
-  "neueste": "2026-11-27-weltaufbau",
+  "erstellt": "2026-11-27T22:19:32.8511451+01:00",
+  "neueste": "2026-11-27-virenfix",
   "versionen": [
     {
       "id": "2026-11-24-laub-neunfach",
@@ -9,7 +9,7 @@
       "datum": "24.11.2026",
       "neu": "Laubluecken noch weiter: Geaendert: die einzelnen Luecken im Laub sieht man jetzt noch einmal dreimal so weit, fast bis zum Rand der dichten Ferne.",
       "paket": "2026-11-24-laub-neunfach.jpak",
-      "paketSha256": "3d3df02d9af4b0181a5da92a9f933995eb8def87bf985b6a3248f359ba45edd5",
+      "paketSha256": "6a082fe86255b7951955039c80b9db994e5c66c9d880aba141d17d6502bdb41d",
       "groesse": 38787791,
       "dateien": {
         "Blockwelt2.deps.json": "e71853ee528afe9b5ab670ed956780321e20bfe3e61143ac20fe793e9e0907d0",
@@ -226,7 +226,7 @@
       "datum": "24.11.2026",
       "neu": "Laubluecken bis in die Ferne: Geaendert: die einzelnen Luecken im Laub sieht man jetzt noch einmal dreimal so weit, auch an weit entfernten Baumkronen.",
       "paket": "2026-11-24-laub-ferne.jpak",
-      "paketSha256": "a5c800ed2e233607fa12cc17f04eea84c1b3c0c1a75051920957ea97eb634a9c",
+      "paketSha256": "3b4ec5ba5086b71fa064a0dea1166eed5bce7e9e006ee8d39acf174ae1d6e69b",
       "groesse": 38787798,
       "dateien": {
         "Blockwelt2.deps.json": "e71853ee528afe9b5ab670ed956780321e20bfe3e61143ac20fe793e9e0907d0",
@@ -443,7 +443,7 @@
       "datum": "24.11.2026",
       "neu": "Feste Halme: Behoben: im hohen Gras schweben keine einzelnen Waben mehr in der Luft. Jede Wabe haengt an ihrem Halm, auch bei den kleinen Buescheln und den Alpenrosen.",
       "paket": "2026-11-24-halme.jpak",
-      "paketSha256": "307eecdd113bd6dcb54185f57efd58c263280de0b75edbc2c08f6a67cee4f965",
+      "paketSha256": "1b81e0fa2175dd74f9dabdfa2fb9c5b51d3f377cb729f67529f35e34183e95ef",
       "groesse": 38788987,
       "dateien": {
         "Blockwelt2.deps.json": "e71853ee528afe9b5ab670ed956780321e20bfe3e61143ac20fe793e9e0907d0",
@@ -655,16 +655,16 @@
       "zipSha256": "c7cd81112a371f496cf39d4bf2eae4c320c5a44f6e29b89345c2f636ba01a63d"
     },
     {
-      "id": "2026-11-27-weltaufbau",
-      "name": "Beta 1.13.0",
+      "id": "2026-11-27-virenfix",
+      "name": "Beta 1.13.1",
       "datum": "27.11.2026",
-      "neu": "Weltaufbau: Neu: legt man eine Welt an, baut sich zuerst das Stueck Welt um den Startpunkt Block fuer Block auf, von schraeg oben, mit dem Namen der Welt darueber. Eine orange Wabe zeigt, wo man gleich steht. Ein Klick springt zum fertigen Bild, ein zweiter gleich in die Welt.",
-      "paket": "2026-11-27-weltaufbau.jpak",
-      "paketSha256": "1654bdb0d98869d9e0fd496cd70ccb13c3c6305852f90afcb3ed08ed938d9e8a",
-      "groesse": 38816471,
+      "neu": "Kein Fehlalarm: Behoben: Windows Defender haelt das Spiel nicht mehr faelschlich fuer einen Trojaner und entfernt es nicht mehr beim Installieren.",
+      "paket": "2026-11-27-virenfix.jpak",
+      "paketSha256": "1fcdf92bc0e8bc466b28acdd7cf409715b4c386d4d486732ca72d428c43cfb5d",
+      "groesse": 38816428,
       "dateien": {
         "Blockwelt2.deps.json": "e71853ee528afe9b5ab670ed956780321e20bfe3e61143ac20fe793e9e0907d0",
-        "Blockwelt2.dll": "77886af65828a670a1f7f0b4a7979e2d8c7eb7ce22a3fb128bcd3dded975fd45",
+        "Blockwelt2.dll": "4385884dd322c6f0bdba7269bc494ffef4a616b303564905c4aeb19f044b2bbb",
         "Blockwelt2.exe": "8e4aa754000391c531a3991e4bc2ea46e4d0290db4f40a5e171acbcce4d3b4df",
         "Blockwelt2.runtimeconfig.json": "678c45dfa025b6bbbc9b400b20b647ffea512779db20617c16026fb12f764bf0",
         "clretwrc.dll": "bc233572d7702ec8d8763c143ec62687c38abc3aad26336fb45c26657bf3a5e7",
@@ -861,22 +861,22 @@
         "System.Xml.XmlSerializer.dll": "ea1eb8da8a46bafe8ee7a8628900e5c4a3fe23cabc7d63d5be5eb5edd3fb76fb",
         "System.Xml.XPath.dll": "cd0b232b8b161a4167b77387885b13e6bf938dfce4addfd68a646fa2e5471fcf",
         "System.Xml.XPath.XDocument.dll": "01f4f51c85b1533eef9ef35fcec4c281565e661a415f7cb10422c3840c5973f7",
-        "version.txt": "f40d23164d13c6ecd22c2853c435e83dc9b85a01d30c2be8c1ff456a1e91c96d",
+        "version.txt": "14a9f827b127ea91ca00b1189ceca5bb768c0aa0ec780552756ca5cda6683b65",
         "WindowsBase.dll": "d2b82fd6347b45b6bc3ff23c60d215a8431906d25b68bf84a2ff6a0b2c46ae9e"
       },
       "eigenerOrdner": true,
-      "nr": 113,
-      "nameEn": "Beta 1.13.0",
-      "neuEn": "World build: New: when you create a world, the land around your starting point first builds itself block by block, seen from above, with the name of the world on top. An orange hexagon shows where you will stand. Click once to jump to the finished picture, twice to go straight into the world.",
+      "nr": 114,
+      "nameEn": "Beta 1.13.1",
+      "neuEn": "No false alarm: Fixed: Windows Defender no longer mistakes the game for a trojan and no longer removes it while installing.",
       "verschluesselt": true,
-      "zipSha256": "72b7acff8d5e7ea2363dc8df7d4bcedf84e48300f2e70811da69041905065a6a"
+      "zipSha256": "422e098f021c60bec74e1cc603008e0c93da401b0517b286d5f36ef0a63bf3c0"
     }
   ],
   "launcher": {
-    "version": "1.6.0",
+    "version": "1.6.1",
     "paket": "Jayraid-Launcher.zip",
-    "paketSha256": "3ba52f35440e8c796be049daad9e276069e379101cbe7c122f940aa14e7c4e15",
-    "groesse": 77240904
+    "paketSha256": "6c8d5f3c435510b11e920d937fe18edfc644ee4d56cbc2992dd435300f25a6e0",
+    "groesse": 77240004
   },
   "medien": [
     {
