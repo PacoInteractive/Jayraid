@@ -2,6 +2,38 @@
 
 Every version of Jayraid, newest first. Since 28 October 2026 the versions are called **Beta 1.x.y**, before that **Alpha 1.x.y**. New content raises the middle number, a pure fix the last one.
 
+## Beta 1.13.0 · 27.11.2026 · World build
+
+New: when you create a world, the land around your starting point first builds itself block by block, seen from above, with the name of the world on top. An orange hexagon shows where you will stand. Click once to jump to the finished picture, twice to go straight into the world.
+
+## Beta 1.12.5 · 24.11.2026 · Solid grass blades
+
+Fixed: no more single hex pixels floating in the air above tall grass. Every pixel now hangs on its blade, also on the small tufts and the alpine roses.
+
+## Beta 1.12.4 · 24.11.2026 · Leaf gaps into the distance
+
+Changed: the single gaps in the leaves now show three times further again, even on far away tree crowns.
+
+## Beta 1.12.3 · 24.11.2026 · Leaf gaps even further
+
+Changed: the single gaps in the leaves now show three times further again, almost out to where distant crowns turn solid.
+
+## Beta 1.12.2 · 24.11.2026 · Leaf gaps further away
+
+Changed: the single gaps in the leaves now show up to three times as far away.
+
+## Beta 1.12.1 · 24.11.2026 · Single leaf gaps
+
+Changed: the gaps in the leaves are single hex pixels again, about one in three is open, and every leaf block now shares the same fixed pattern, also the one in your hand. Further away the gaps close so nothing sparkles like pepper.
+
+## Beta 1.12.0 · 23.11.2026 · The old brass pot
+
+New: new worlds now hold old abandoned houses, half fallen apart, and in each one stands an old brass pot. Press E to look inside: it has eight slots. Put in a sabre and an alpine rose and it brews a glowing pink potion for five seconds; afterwards the sabre hits 20 % harder for ten minutes. New: alpine roses can be thrown like blocks. Changed: the gaps in the leaves now come in small clusters and no longer sparkle like pepper, not even far away.
+
+## Beta 1.11.1 · 23.11.2026 · Leaves stay grounded
+
+Fixed: fallen leaves no longer float in the air when the ground below them was blown away or already dug out in an older world. Changed: the gaps in the tree crowns now show as real holes three times as far away.
+
 ## Beta 1.11.0 · 23.11.2026 · Alpine roses
 
 New: high in the mountains, just below the snow where the grass is at its deepest green, alpine roses now bloom with pink clusters of flowers: round shrubs, small sprigs and, very rarely, a big bush almost two blocks tall. They are rare and grow mostly in small patches. One hit picks them, they go into your inventory, and you can plant them again on grass.
